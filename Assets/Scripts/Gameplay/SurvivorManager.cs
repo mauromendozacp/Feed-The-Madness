@@ -10,12 +10,11 @@ public class SurvivorManager : MonoBehaviour
     #endregion
 
     #region PRIVATE FIELDS
-    private List<Survivor> survivorsList = new List<Survivor>();
+
     #endregion
 
     #region PROPERTIES
-    public List<Survivor> Survivors => survivorsList;
-    public float TimerSpawn => timerSpawn;
+    public List<Survivor> Survivors { get; } = new List<Survivor>();
     public bool SpawnActivated { get; set; } = false;
     #endregion
 
@@ -37,13 +36,13 @@ public class SurvivorManager : MonoBehaviour
         GameObject survivorGO = Instantiate(prefab);
         Survivor survivor = survivorGO.GetComponent<Survivor>();
 
-        survivorGO.name = "Survivor " + (survivorsList.Count + 1);
+        survivorGO.name = "Survivor " + (Survivors.Count + 1);
         survivorGO.transform.position = spawnPos;
         survivorGO.transform.parent = transform;
 
         survivor.InitModuleHandlers();
         survivor.SActions.OnDestroy += DestroySurvivor;
-        survivorsList.Add(survivor);
+        Survivors.Add(survivor);
 
         SpawnActivated = true;
         Invoke(nameof(ResetSpawnActivate), timerSpawn);
@@ -58,7 +57,7 @@ public class SurvivorManager : MonoBehaviour
     #region PRIVATE_METHODS
     private void DestroySurvivor(Survivor survivor)
     {
-        survivorsList.Remove(survivor);
+        Survivors.Remove(survivor);
     }
     #endregion
 }

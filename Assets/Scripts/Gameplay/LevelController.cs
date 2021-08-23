@@ -7,6 +7,7 @@ public class LevelController : MonoBehaviour
     #region EXPOSED_FIELDS
     [SerializeField] private Killer killer = null;
     [SerializeField] private SurvivorManager survivorManager = null;
+    [SerializeField] private ObstacleManager obstacleManager = null;
     [SerializeField] private FloorLoop floorLoop = null;
 
     [SerializeField] private Transform spawn = null;
@@ -22,7 +23,9 @@ public class LevelController : MonoBehaviour
     private void Update()
     {
         SpawnSurvivors();
+        SpawnObstacles();
 
+        MoveObstacles();
         MoveFloors();
         MoveSurvivors();
     }
@@ -37,9 +40,25 @@ public class LevelController : MonoBehaviour
         }
     }
 
+    private void SpawnObstacles()
+    {
+        if (!obstacleManager.SpawnActivated)
+        {
+            obstacleManager.SpawnObstacles(GetRandomPosition());
+        }
+    }
+
     private void Move(GameObject obj, float speed)
     {
         obj.transform.Translate((-transform.forward) * speed * Time.deltaTime);
+    }
+
+    private void MoveObstacles()
+    {
+        foreach (Obstacle obstacle in obstacleManager.ObstacleList)
+        {
+            Move(obstacle.gameObject, obstacle.Speed);
+        }
     }
 
     private void MoveSurvivors()

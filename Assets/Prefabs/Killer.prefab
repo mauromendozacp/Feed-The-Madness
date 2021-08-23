@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3776590579684937514}
   - component: {fileID: 9073092632505496551}
   - component: {fileID: 8289085067873002471}
-  - component: {fileID: 4907784757815672194}
+  - component: {fileID: 2227707953138084022}
   - component: {fileID: 728142543801204838}
   - component: {fileID: 4543504702171015179}
   m_Layer: 8
@@ -82,7 +82,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!54 &4907784757815672194
+--- !u!54 &2227707953138084022
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,7 +97,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &728142543801204838
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -127,5 +127,8 @@ MonoBehaviour:
   horizontalSpeed: 0
   craziness: 0
   survivorMask:
+    serializedVersion: 2
+    m_Bits: 0
+  obstacleMask:
     serializedVersion: 2
     m_Bits: 0

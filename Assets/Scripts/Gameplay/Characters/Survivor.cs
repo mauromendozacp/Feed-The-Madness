@@ -24,7 +24,6 @@ public class Survivor : Character
 
     #region PROPERTIES
     public float Speed => speed;
-
     public SActions SActions => sActions;
     #endregion
 

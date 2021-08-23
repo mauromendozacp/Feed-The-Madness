@@ -1,14 +1,20 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Killer : Character
 {
     #region EXPOSED_FIELDS
     [SerializeField] private float horizontalSpeed = 0f;
+    [SerializeField] private float jumpSpeed = 0f;
     [SerializeField] private float craziness = 0f;
-    [SerializeField] private LayerMask survivorMask = 0;
+    [SerializeField] private float jumpTimer = 0f;
+    [SerializeField] private LayerMask obstacleMask = 0;
     #endregion
 
     #region PRIVATE_FIELDS
+    
+    private bool jumping = false;
+    private bool dead = false;
 
     #endregion
 
@@ -24,9 +30,28 @@ public class Killer : Character
 
     public override void Update()
     {
-        base.Update();
+        if (!dead)
+        {
+            base.Update();
 
-        MoveHorizontal();
+            MoveHorizontal();
+            DecreaseCraziness();
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (!jumping)
+        {
+            if (Tools.CheckLayerInMask(obstacleMask, other.gameObject.layer))
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    Obstacle obstacle = other.gameObject.GetComponent<Obstacle>();
+                    Jump(obstacle.JumpPoint.position);
+                }
+            }
+        }
     }
     #endregion
 
@@ -40,21 +65,57 @@ public class Killer : Character
     #region PRIVATE_METHODS
     private void MoveHorizontal()
     {
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        if (!jumping)
         {
-            Vector3 dir = Vector3.zero;
-
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
             {
-                dir = -transform.right;
-            }
-            else if (Input.GetKey(KeyCode.D))
-            {
-                dir = transform.right;
-            }
+                Vector3 dir = Vector3.zero;
 
-            transform.Translate(dir * horizontalSpeed * Time.deltaTime);
+                if (Input.GetKey(KeyCode.A))
+                {
+                    dir = -transform.right;
+                }
+                else if (Input.GetKey(KeyCode.D))
+                {
+                    dir = transform.right;
+                }
+
+                transform.Translate(dir * horizontalSpeed * Time.deltaTime);
+            }
         }
+    }
+
+    private void DecreaseCraziness()
+    {
+        craziness -= Time.deltaTime;
+
+        if (craziness < 0f)
+        {
+            dead = true;
+        }
+    }
+
+    private void Jump(Vector3 jumpPoint)
+    {
+        jumping = true;
+        StartCoroutine(JumpMove(jumpPoint));
+        Invoke(nameof(RestartJump), jumpTimer);
+    }
+
+    private void RestartJump()
+    {
+        jumping = false;
+    }
+
+    private IEnumerator JumpMove(Vector3 jumpPoint)
+    {
+        while (transform.position.y < jumpPoint.y)
+        {
+            transform.Translate(transform.up * jumpSpeed * Time.deltaTime);
+            yield return new WaitForEndOfFrame();
+        }
+
+        yield return null;
     }
     #endregion
 }
