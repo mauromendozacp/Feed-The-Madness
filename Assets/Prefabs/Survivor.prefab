@@ -124,7 +124,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd672e20512c85f46a0b5bbb62e9c7c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  jumpSpeed: 0
+  jumpTimer: 0
+  jumpDistance: 0
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  floorMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  speed: 5
   crazinessPoints: 10
   killerMask:
     serializedVersion: 2

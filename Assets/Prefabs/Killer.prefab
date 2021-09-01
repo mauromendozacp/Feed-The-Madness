@@ -124,11 +124,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 507c2c6183225174298e23c15c7e6148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalSpeed: 0
-  craziness: 0
-  survivorMask:
-    serializedVersion: 2
-    m_Bits: 0
+  jumpSpeed: 0
+  jumpTimer: 0
+  jumpDistance: 0
   obstacleMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
+  floorMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  horizontalSpeed: 0
+  craziness: 0

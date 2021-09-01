@@ -4,25 +4,54 @@ using UnityEngine;
 public class Killer : Character
 {
     #region EXPOSED_FIELDS
+
     [SerializeField] private float horizontalSpeed = 0f;
-    [SerializeField] private float jumpSpeed = 0f;
     [SerializeField] private float craziness = 0f;
-    [SerializeField] private float jumpTimer = 0f;
-    [SerializeField] private LayerMask obstacleMask = 0;
+
     #endregion
 
     #region PRIVATE_FIELDS
-    
-    private bool jumping = false;
-    private bool dead = false;
+
+    private LCActions lcActions = null;
 
     #endregion
 
     #region PROPERTIES
 
+    public bool Dead
+    {
+        get => dead;
+        set
+        {
+            dead = value;
+            if (dead)
+            {
+                lcActions.OnKillerDead?.Invoke();
+            }
+        }
+    }
+
+    public float Craziness
+    {
+        get => craziness;
+        set
+        {
+            if (value > 0)
+            {
+                craziness = value;
+            }
+            else
+            {
+                craziness = 0;
+                Dead = true;
+            }
+        }
+    }
+
     #endregion
 
     #region UNITY_CALLS
+
     private void Start()
     {
 
@@ -33,36 +62,50 @@ public class Killer : Character
         if (!dead)
         {
             base.Update();
+            InputJump();
 
             MoveHorizontal();
             DecreaseCraziness();
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (!jumping)
+        if (Tools.CheckLayerInMask(obstacleMask, collision.gameObject.layer))
         {
-            if (Tools.CheckLayerInMask(obstacleMask, other.gameObject.layer))
+            if (!Dead)
             {
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    Obstacle obstacle = other.gameObject.GetComponent<Obstacle>();
-                    Jump(obstacle.JumpPoint.position);
-                }
+                Dead = true;
             }
         }
     }
+
     #endregion
 
     #region PUBLIC_METHODS
+
+    public void InitModuleHandlers(LCActions lcActions)
+    {
+        this.lcActions = lcActions;
+    }
+
     public void IncreaseCraziness(float craz)
     {
-        craziness += craz;
+        Craziness += craz;
     }
+
     #endregion
 
     #region PRIVATE_METHODS
+
+    private void InputJump()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Jump();
+        }
+    }
+
     private void MoveHorizontal()
     {
         if (!jumping)
@@ -87,35 +130,8 @@ public class Killer : Character
 
     private void DecreaseCraziness()
     {
-        craziness -= Time.deltaTime;
-
-        if (craziness < 0f)
-        {
-            dead = true;
-        }
+        Craziness -= Time.deltaTime;
     }
 
-    private void Jump(Vector3 jumpPoint)
-    {
-        jumping = true;
-        StartCoroutine(JumpMove(jumpPoint));
-        Invoke(nameof(RestartJump), jumpTimer);
-    }
-
-    private void RestartJump()
-    {
-        jumping = false;
-    }
-
-    private IEnumerator JumpMove(Vector3 jumpPoint)
-    {
-        while (transform.position.y < jumpPoint.y)
-        {
-            transform.Translate(transform.up * jumpSpeed * Time.deltaTime);
-            yield return new WaitForEndOfFrame();
-        }
-
-        yield return null;
-    }
     #endregion
 }

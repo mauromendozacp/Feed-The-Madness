@@ -2,9 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public class LCActions
+{
+    public Action OnKillerDead = null;
+}
+
 public class LevelController : MonoBehaviour
 {
     #region EXPOSED_FIELDS
+
     [SerializeField] private Killer killer = null;
     [SerializeField] private SurvivorManager survivorManager = null;
     [SerializeField] private ObstacleManager obstacleManager = null;
@@ -12,26 +18,49 @@ public class LevelController : MonoBehaviour
 
     [SerializeField] private Transform spawn = null;
     [SerializeField] private float maxX = 0f;
+
+    #endregion
+
+    #region PRIVATE_FIELDS
+
+    private LCActions lcActions = null;
+    private bool endLevel = false;
+
     #endregion
 
     #region UNITY_CALLS
+
     void Start()
     {
-
+        InitModuleHandlers();
     }
 
     private void Update()
     {
-        SpawnSurvivors();
-        SpawnObstacles();
+        if (!endLevel)
+        {
+            SpawnSurvivors();
+            SpawnObstacles();
 
-        MoveObstacles();
-        MoveFloors();
-        MoveSurvivors();
+            MoveObstacles();
+            MoveFloors();
+            MoveSurvivors();
+        }
     }
+
     #endregion
 
     #region PRIVATE_FIELDS
+
+    private void InitModuleHandlers()
+    {
+        lcActions = new LCActions();
+
+        lcActions.OnKillerDead += EndLevel;
+
+        killer.InitModuleHandlers(lcActions);
+    }
+
     private void SpawnSurvivors()
     {
         if (!survivorManager.SpawnActivated)
@@ -50,7 +79,7 @@ public class LevelController : MonoBehaviour
 
     private void Move(GameObject obj, float speed)
     {
-        obj.transform.Translate((-transform.forward) * speed * Time.deltaTime);
+        obj.transform.Translate((-transform.forward) * (speed * Time.deltaTime));
     }
 
     private void MoveObstacles()
@@ -83,6 +112,11 @@ public class LevelController : MonoBehaviour
         pos.x = UnityEngine.Random.Range(pos.x - maxX, pos.x + maxX);
 
         return pos;
+    }
+
+    private void EndLevel()
+    {
+        endLevel = true;
     }
     #endregion
 }
