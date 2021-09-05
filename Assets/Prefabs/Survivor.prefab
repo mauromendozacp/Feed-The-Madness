@@ -130,11 +130,9 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 2048
-  floorMask:
-    serializedVersion: 2
-    m_Bits: 4096
   speed: 5
   crazinessPoints: 10
+  points: 50
   killerMask:
     serializedVersion: 2
     m_Bits: 256

@@ -1,5 +1,11 @@
-﻿using System.Collections;
+﻿using System;
 using UnityEngine;
+
+public class KActions
+{
+    public Action<int> OnScoreRecieved = null;
+    public Action<float, float> OnCrazinessUpdated = null;
+}
 
 public class Killer : Character
 {
@@ -12,6 +18,10 @@ public class Killer : Character
 
     #region PRIVATE_FIELDS
 
+    private int score = 0;
+    private float crazinessBase = 0f;
+
+    private KActions kActions = null;
     private LCActions lcActions = null;
 
     #endregion
@@ -31,6 +41,16 @@ public class Killer : Character
         }
     }
 
+    public int Score
+    {
+        get => score;
+        set
+        {
+            score = value;
+            kActions.OnScoreRecieved?.Invoke(score);
+        }
+    }
+
     public float Craziness
     {
         get => craziness;
@@ -38,15 +58,25 @@ public class Killer : Character
         {
             if (value > 0)
             {
-                craziness = value;
+                if (value < crazinessBase)
+                {
+                    craziness = value;
+                }
+                else
+                {
+                    craziness = crazinessBase;
+                }
             }
             else
             {
                 craziness = 0;
                 Dead = true;
             }
+            kActions.OnCrazinessUpdated?.Invoke(crazinessBase, craziness);
         }
     }
+
+    public KActions KActions => kActions;
 
     #endregion
 
@@ -86,12 +116,19 @@ public class Killer : Character
 
     public void InitModuleHandlers(LCActions lcActions)
     {
+        kActions = new KActions();
         this.lcActions = lcActions;
     }
 
-    public void IncreaseCraziness(float craz)
+    public void Init()
+    {
+        crazinessBase = craziness;
+    }
+
+    public void KillSurvivor(float craz, int points)
     {
         Craziness += craz;
+        Score += points;
     }
 
     #endregion
@@ -123,7 +160,7 @@ public class Killer : Character
                     dir = transform.right;
                 }
 
-                transform.Translate(dir * horizontalSpeed * Time.deltaTime);
+                transform.Translate(dir * (horizontalSpeed * Time.deltaTime));
             }
         }
     }

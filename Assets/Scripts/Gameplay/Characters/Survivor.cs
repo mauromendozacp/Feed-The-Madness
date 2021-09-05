@@ -12,22 +12,30 @@ public class SActions
 public class Survivor : Character
 {
     #region EXPOSED_FIELDS
+
     [SerializeField] private float speed = 0f;
     [SerializeField] private float crazinessPoints = 0f;
+    [SerializeField] private int points = 0;
     [SerializeField] private LayerMask killerMask = default;
     [SerializeField] private LayerMask limitMask = default;
+
     #endregion
 
     #region PRIVATE_FIELDS
+
     private SActions sActions = null;
+
     #endregion
 
     #region PROPERTIES
+
     public float Speed => speed;
     public SActions SActions => sActions;
+
     #endregion
 
     #region UNITY_CALLS
+
     void Start()
     {
 
@@ -45,7 +53,7 @@ public class Survivor : Character
         if (Tools.CheckLayerInMask(killerMask, collision.gameObject.layer))
         {
             Killer killer = collision.gameObject.GetComponent<Killer>();
-            killer.IncreaseCraziness(crazinessPoints);
+            killer.KillSurvivor(crazinessPoints, points);
             Destroy();
         }
         else if (Tools.CheckLayerInMask(limitMask, collision.gameObject.layer))
@@ -53,6 +61,7 @@ public class Survivor : Character
             Destroy();
         }
     }
+
     #endregion
 
     #region PUBLIC_METHODS

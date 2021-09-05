@@ -2,20 +2,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
-    [SerializeField] private TMP_Text timerText = null;
-    [SerializeField] private TMP_Text crazinessValue = null;
+    #region EXPOSED_FIELDS
 
-    void Start()
+    [SerializeField] private TMP_Text scoreText = null;
+    [SerializeField] private Image crazinessBar = null;
+
+    #endregion
+
+    #region PRIVATE_FIELDS
+
+    private KActions kActions = null;
+
+    #endregion
+
+    #region PUBLIC_METHODS
+
+    public void InitModuleHandlers(KActions kActions)
     {
-        
+        this.kActions = kActions;
+
+        kActions.OnScoreRecieved += UpdateScore;
+        kActions.OnCrazinessUpdated += UpdateCraziness;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DeInitModuleHandlers()
     {
-        
+        kActions.OnScoreRecieved -= UpdateScore;
+        kActions.OnCrazinessUpdated -= UpdateCraziness;
     }
+
+    public void UpdateScore(int score)
+    {
+        scoreText.text = "Score: " + score + "pts";
+    }
+
+    public void UpdateCraziness(float crazinessBase, float crazinessPoints)
+    {
+        crazinessBar.fillAmount = crazinessPoints / crazinessBase;
+    }
+
+    #endregion
 }

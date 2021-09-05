@@ -8,7 +8,6 @@ public class ObstacleManager : MonoBehaviour
 
     [SerializeField] private GameObject prefab = null;
     [SerializeField] private float timerSpawn = 0f;
-    [SerializeField] private float jumpDistance = 0f;
 
     #endregion
 

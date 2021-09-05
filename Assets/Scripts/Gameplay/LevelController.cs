@@ -15,6 +15,7 @@ public class LevelController : MonoBehaviour
     [SerializeField] private SurvivorManager survivorManager = null;
     [SerializeField] private ObstacleManager obstacleManager = null;
     [SerializeField] private FloorLoop floorLoop = null;
+    [SerializeField] private HUD hud = null;
 
     [SerializeField] private Transform spawn = null;
     [SerializeField] private float maxX = 0f;
@@ -30,9 +31,10 @@ public class LevelController : MonoBehaviour
 
     #region UNITY_CALLS
 
-    void Start()
+    private void Start()
     {
         InitModuleHandlers();
+        Init();
     }
 
     private void Update()
@@ -48,6 +50,11 @@ public class LevelController : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        DeInit();
+    }
+
     #endregion
 
     #region PRIVATE_FIELDS
@@ -59,6 +66,19 @@ public class LevelController : MonoBehaviour
         lcActions.OnKillerDead += EndLevel;
 
         killer.InitModuleHandlers(lcActions);
+        hud.InitModuleHandlers(killer.KActions);
+    }
+
+    public void Init()
+    {
+        killer.Init();
+    }
+
+    public void DeInit()
+    {
+        lcActions.OnKillerDead -= EndLevel;
+
+        hud.DeInitModuleHandlers();
     }
 
     private void SpawnSurvivors()
