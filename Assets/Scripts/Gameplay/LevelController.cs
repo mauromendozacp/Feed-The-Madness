@@ -33,6 +33,7 @@ public class LevelController : MonoBehaviour
 
     private void Start()
     {
+        GameManager.Get().Init();
         InitModuleHandlers();
         Init();
     }
@@ -137,6 +138,7 @@ public class LevelController : MonoBehaviour
     private void EndLevel()
     {
         endLevel = true;
+        GameManager.Get().FinishGame(killer.Score);
     }
     #endregion
 }
