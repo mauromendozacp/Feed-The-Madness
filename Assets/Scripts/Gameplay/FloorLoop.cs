@@ -12,7 +12,7 @@ public class FloorLoop : MonoBehaviour
 
     #region PRIVATE_FIELDS
     private Vector3 playerPosition = Vector3.zero;
-    private float lenghtZ = 0f;
+    private float lenghtZ = 65;
     #endregion
 
     #region PROPERTIES
@@ -23,7 +23,6 @@ public class FloorLoop : MonoBehaviour
     #region UNITY_CALLS
     void Start()
     {
-        lenghtZ = floors[0].transform.lossyScale.z;
         playerPosition = player.transform.position;
     }
 
