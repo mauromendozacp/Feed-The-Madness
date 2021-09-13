@@ -10,6 +10,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Hachas_Mano
+    second: {fileID: 2100000, guid: 6d1f139118d488946be6ab7f1b157e8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Hachas_blinn1
     second: {fileID: 2100000, guid: 218d3903f614faf42a062f5bc4d16bc3, type: 2}
   - first:
