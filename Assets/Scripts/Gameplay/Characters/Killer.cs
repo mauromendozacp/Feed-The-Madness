@@ -22,7 +22,7 @@ public class Killer : Character
 
     private int score = 0;
     private float crazinessBase = 0f;
-    private float animAttackDistance = 5f;
+    private float animAttackDistance = 3f;
 
     private KActions kActions = null;
     private LCActions lcActions = null;

@@ -1,37 +1,40 @@
-﻿using System;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OActions
-{
-    public Action<Obstacle> OnDestroy = null;
-}
-
-public class Obstacle : MonoBehaviour
+public class MovableObject : MonoBehaviour
 {
     #region EXPOSED_FIELDS
 
-    [SerializeField] private Transform jumpPoint = null;
     [SerializeField] private float speed = 0f;
     [SerializeField] private LayerMask limitMask = default;
 
     #endregion
 
-    #region PRIVATE_METHODS
+    #region PRIVATE_FIELDS
 
-    private OActions oActions = null;
+    private MOMActions momActions = null;
 
     #endregion
 
     #region PROPERTIES
 
-    public Transform JumpPoint => jumpPoint;
     public float Speed => speed;
-    public OActions OActions => oActions;
+    public MOMActions MOMActions => momActions;
 
     #endregion
 
     #region UNITY_CALLS
+
+    void Start()
+    {
+        
+    }
+
+    void Update()
+    {
+        MoveBack();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -47,13 +50,22 @@ public class Obstacle : MonoBehaviour
 
     public void InitModuleHandlers()
     {
-        oActions = new OActions();
+        momActions = new MOMActions();
     }
 
     public void Destroy()
     {
-        oActions.OnDestroy?.Invoke(this);
+        momActions.OnRemove?.Invoke(this);
         Destroy(gameObject);
+    }
+
+    #endregion
+
+    #region PRIVATE_METHODS
+
+    private void MoveBack()
+    {
+        transform.Translate(-transform.forward * speed * Time.deltaTime);
     }
 
     #endregion

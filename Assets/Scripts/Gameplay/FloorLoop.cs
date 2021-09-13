@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,12 +22,17 @@ public class FloorLoop : MonoBehaviour
     #endregion
 
     #region UNITY_CALLS
-    void Start()
+    private void Start()
     {
         playerPosition = player.transform.position;
     }
 
-    void LateUpdate()
+    private void Update()
+    {
+        MoveBack();
+    }
+
+    private void LateUpdate()
     {
         CheckFloor();
     }
@@ -43,6 +49,11 @@ public class FloorLoop : MonoBehaviour
                     new Vector3(obj.transform.position.x, obj.transform.position.y, obj.transform.position.z + lenghtZ * floors.Length);
             }
         }
+    }
+
+    private void MoveBack()
+    {
+        transform.Translate(-transform.forward * speed * Time.deltaTime);
     }
     #endregion
 }
