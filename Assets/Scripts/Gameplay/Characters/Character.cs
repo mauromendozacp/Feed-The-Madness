@@ -6,7 +6,7 @@ public class Character : MonoBehaviour
 {
     #region EXPOSED_FIELDS
 
-    [SerializeField] protected float jumpSpeed = 0f;
+    [SerializeField] protected float jumpForce = 0f;
     [SerializeField] protected float jumpTimer = 0f;
     [SerializeField] protected float jumpDistance = 0f;
     [SerializeField] protected LayerMask obstacleMask = 0;
@@ -17,6 +17,7 @@ public class Character : MonoBehaviour
 
     protected bool jumping = false;
     protected bool dead = false;
+    protected Rigidbody rigid = null;
 
     #endregion
 
@@ -40,14 +41,9 @@ public class Character : MonoBehaviour
     {
         if (!jumping)
         {
-            if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, jumpDistance, obstacleMask))
-            {
-                Obstacle obstacle = hit.transform.gameObject.GetComponent<Obstacle>();
-                jumping = true;
-
-                StartCoroutine(JumpMove(obstacle.JumpPoint.position));
-                Invoke(nameof(RestartJump), jumpTimer);
-            }
+            jumping = true;
+            rigid.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+            Invoke(nameof(RestartJump), jumpTimer);
         }
     }
 
@@ -60,7 +56,7 @@ public class Character : MonoBehaviour
     {
         while (transform.position.y < jumpPoint.y)
         {
-            transform.Translate(transform.up * jumpSpeed * Time.deltaTime);
+            transform.Translate(transform.up * jumpForce * Time.deltaTime);
             yield return new WaitForEndOfFrame();
         }
 

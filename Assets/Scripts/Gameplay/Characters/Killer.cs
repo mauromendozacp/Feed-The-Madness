@@ -13,6 +13,8 @@ public class Killer : Character
 
     [SerializeField] private float horizontalSpeed = 0f;
     [SerializeField] private float craziness = 0f;
+    [SerializeField] private Animator anim = null;
+    [SerializeField] private LayerMask survivorMask = default;
 
     #endregion
 
@@ -20,6 +22,7 @@ public class Killer : Character
 
     private int score = 0;
     private float crazinessBase = 0f;
+    private float animAttackDistance = 5f;
 
     private KActions kActions = null;
     private LCActions lcActions = null;
@@ -35,9 +38,7 @@ public class Killer : Character
         {
             dead = value;
             if (dead)
-            {
                 lcActions.OnKillerDead?.Invoke();
-            }
         }
     }
 
@@ -84,7 +85,7 @@ public class Killer : Character
 
     private void Start()
     {
-
+        rigid = GetComponent<Rigidbody>();
     }
 
     public override void Update()
@@ -92,6 +93,7 @@ public class Killer : Character
         if (!dead)
         {
             base.Update();
+            AttackAnimation();
             InputJump();
 
             MoveHorizontal();
@@ -104,9 +106,7 @@ public class Killer : Character
         if (Tools.CheckLayerInMask(obstacleMask, collision.gameObject.layer))
         {
             if (!Dead)
-            {
                 Dead = true;
-            }
         }
     }
 
@@ -138,9 +138,7 @@ public class Killer : Character
     private void InputJump()
     {
         if (Input.GetKeyDown(KeyCode.Space))
-        {
             Jump();
-        }
     }
 
     private void MoveHorizontal()
@@ -161,6 +159,17 @@ public class Killer : Character
                 }
 
                 transform.Translate(dir * (horizontalSpeed * Time.deltaTime));
+            }
+        }
+    }
+
+    private void AttackAnimation()
+    {
+        if (Physics.Raycast(transform.position, transform.forward, animAttackDistance, survivorMask))
+        {
+            if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+            {
+                anim.SetTrigger("Attack");
             }
         }
     }

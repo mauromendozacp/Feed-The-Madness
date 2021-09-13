@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpPoint: {fileID: 8149218266536625543}
-  speed: 10
+  speed: 5
   limitMask:
     serializedVersion: 2
     m_Bits: 1024
