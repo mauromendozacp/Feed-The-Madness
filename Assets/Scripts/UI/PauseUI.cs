@@ -26,6 +26,7 @@ public class PauseUI : MonoBehaviour
 
     public void BackToMenu()
     {
+        Time.timeScale = 1f;
         GameManager.Get().ChangeScene(GameManager.SceneGame.MainMenu);
     }
 

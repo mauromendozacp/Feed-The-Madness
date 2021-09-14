@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
                 sceneName = "MainMenu";
                 break;
             case SceneGame.GamePlay:
-                sceneName = "Test";
+                sceneName = "Gameplay";
                 break;
             case SceneGame.GameOver:
                 sceneName = "Gameover";
