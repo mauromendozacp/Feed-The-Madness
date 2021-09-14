@@ -145,7 +145,7 @@ MonoBehaviour:
   - {fileID: 1789357282}
   - {fileID: 142289331}
   player: {fileID: 2056854051}
-  speed: 7.5
+  speed: 12.5
 --- !u!4 &41454201 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2029762473808899692, guid: 022572db35694eb499f4766936ef5163,
@@ -2667,12 +2667,12 @@ PrefabInstance:
     - target: {fileID: 2227707953138084022, guid: 16f9c7563e3648a4eac8583defa32e0e,
         type: 3}
       propertyPath: m_Drag
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2227707953138084022, guid: 16f9c7563e3648a4eac8583defa32e0e,
         type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 2227707953138084022, guid: 16f9c7563e3648a4eac8583defa32e0e,
         type: 3}
@@ -2777,7 +2777,7 @@ PrefabInstance:
     - target: {fileID: 4543504702171015179, guid: 16f9c7563e3648a4eac8583defa32e0e,
         type: 3}
       propertyPath: jumpForce
-      value: 6.5
+      value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 4543504702171015179, guid: 16f9c7563e3648a4eac8583defa32e0e,
         type: 3}

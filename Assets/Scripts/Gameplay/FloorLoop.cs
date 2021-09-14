@@ -45,15 +45,19 @@ public class FloorLoop : MonoBehaviour
         {
             if (obj.transform.position.z + lenghtZ < playerPosition.z)
             {
-                obj.transform.position =
-                    new Vector3(obj.transform.position.x, obj.transform.position.y, obj.transform.position.z + lenghtZ * floors.Length);
+                Vector3 position = obj.transform.position;
+                position = new Vector3(position.x, position.y, position.z + lenghtZ * floors.Length);
+                obj.transform.position = position;
             }
         }
     }
 
     private void MoveBack()
     {
-        transform.Translate(-transform.forward * speed * Time.deltaTime);
+        foreach (GameObject obj in floors)
+        {
+            obj.transform.Translate(-transform.forward * (speed * Time.deltaTime));
+        }
     }
     #endregion
 }
