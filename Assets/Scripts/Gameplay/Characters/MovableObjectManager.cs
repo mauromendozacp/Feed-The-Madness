@@ -13,7 +13,7 @@ public class MovableObjectManager : MonoBehaviour
 {
     #region EXPOSED_FIELDS
 
-    [SerializeField] private GameObject prefab = null;
+    [SerializeField] private GameObject[] prefabs = null;
     [SerializeField] private float timerSpawn = 0f;
     [SerializeField] private float maxX = 0f;
 
@@ -42,11 +42,11 @@ public class MovableObjectManager : MonoBehaviour
 
     #region PRIVATE_METHODS
 
-    public void SpawnSurvivor()
+    private void SpawnSurvivor()
     {
         if (!SpawnActivated)
         {
-            GameObject movableGO = Instantiate(prefab, transform, true);
+            GameObject movableGO = Instantiate(GetRandomPrefab(), transform, true);
             MovableObject movable = movableGO.GetComponent<MovableObject>();
 
             movableGO.transform.position = GetRandomPosition();
@@ -65,9 +65,15 @@ public class MovableObjectManager : MonoBehaviour
         Movables.Remove(movable);
     }
 
-    public void ResetSpawnActivate()
+    private void ResetSpawnActivate()
     {
         SpawnActivated = false;
+    }
+
+    private GameObject GetRandomPrefab()
+    {
+        int index = Random.Range(0, prefabs.Length);
+        return prefabs[index];
     }
 
     private Vector3 GetRandomPosition()
