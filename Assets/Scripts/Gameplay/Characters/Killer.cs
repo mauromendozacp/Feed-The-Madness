@@ -15,6 +15,7 @@ public class Killer : Character
     [SerializeField] private float craziness = 0f;
     [SerializeField] private Animator anim = null;
     [SerializeField] private LayerMask survivorMask = default;
+    [SerializeField] private LayerMask limitMask = default;
 
     #endregion
 
@@ -23,6 +24,7 @@ public class Killer : Character
     private int score = 0;
     private float crazinessBase = 0f;
     private float animAttackDistance = 3f;
+    private float checkHorDistance = 2f;
 
     private KActions kActions = null;
     private LCActions lcActions = null;
@@ -158,10 +160,15 @@ public class Killer : Character
                     dir = transform.right;
                 }
 
+                if (Physics.Raycast(transform.position, dir, checkHorDistance, limitMask))
+                    return;
+
                 transform.Translate(dir * (horizontalSpeed * Time.deltaTime));
             }
         }
     }
+
+
 
     private void AttackAnimation()
     {

@@ -183,7 +183,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 205550455}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.65, y: 3, z: 15}
+  m_LocalPosition: {x: -17.5, y: 3, z: 15}
   m_LocalScale: {x: 1, y: 12, z: 8}
   m_Children: []
   m_Father: {fileID: 2060747926}
@@ -999,7 +999,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 721066466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: 3, z: 15}
+  m_LocalPosition: {x: 17.5, y: 3, z: 15}
   m_LocalScale: {x: 1, y: 12, z: 8}
   m_Children: []
   m_Father: {fileID: 2060747926}
@@ -2870,6 +2870,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4543504702171015179, guid: 16f9c7563e3648a4eac8583defa32e0e,
         type: 3}
+      propertyPath: limitMask.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 4543504702171015179, guid: 16f9c7563e3648a4eac8583defa32e0e,
+        type: 3}
       propertyPath: obstacleMask.m_Bits
       value: 2048
       objectReference: {fileID: 0}
@@ -2886,7 +2891,7 @@ PrefabInstance:
     - target: {fileID: 4913082509774548358, guid: 16f9c7563e3648a4eac8583defa32e0e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5706373272379950423, guid: 16f9c7563e3648a4eac8583defa32e0e,
         type: 3}
