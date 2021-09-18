@@ -8,13 +8,20 @@ public class Survivor : Character
 
     [SerializeField] private float crazinessPoints = 0f;
     [SerializeField] private int points = 0;
-    [SerializeField] private LayerMask killerMask = default;
 
     #endregion
 
     #region PRIVATE_FIELDS
 
     private MovableObject movable = null;
+
+    #endregion
+
+    #region PROPERTIES
+
+    public float CrazinessPoints => crazinessPoints;
+
+    public int Points => points;
 
     #endregion
 
@@ -32,12 +39,16 @@ public class Survivor : Character
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (Tools.CheckLayerInMask(killerMask, collision.gameObject.layer))
-        {
-            Killer killer = collision.gameObject.GetComponent<Killer>();
-            killer.KillSurvivor(crazinessPoints, points);
-            movable.Destroy();
-        }
+        
+    }
+
+    #endregion
+
+    #region PUBLIC_METHODS
+
+    public void Death()
+    {
+        movable.Destroy();
     }
 
     #endregion

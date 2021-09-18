@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class KActions
@@ -13,6 +14,7 @@ public class Killer : Character
 
     [SerializeField] private float horizontalSpeed = 0f;
     [SerializeField] private float craziness = 0f;
+    [SerializeField] private float attackDistance = 0f;
     [SerializeField] private Animator anim = null;
     [SerializeField] private LayerMask survivorMask = default;
     [SerializeField] private LayerMask limitMask = default;
@@ -23,7 +25,6 @@ public class Killer : Character
 
     private int score = 0;
     private float crazinessBase = 0f;
-    private float animAttackDistance = 3f;
     private float checkHorDistance = 2f;
 
     private KActions kActions = null;
@@ -95,10 +96,10 @@ public class Killer : Character
         if (!dead)
         {
             base.Update();
-            AttackAnimation();
+            MoveHorizontal();
+            Attack();
             InputJump();
 
-            MoveHorizontal();
             DecreaseCraziness();
         }
     }
@@ -168,15 +169,36 @@ public class Killer : Character
         }
     }
 
-
-
-    private void AttackAnimation()
+    private void Attack()
     {
-        if (Physics.Raycast(transform.position, transform.forward, animAttackDistance, survivorMask))
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
-            if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+            if (Input.GetMouseButtonDown(0))
             {
                 anim.SetTrigger("Attack");
+
+                IEnumerator CastAttack()
+                {
+                    yield return new WaitForSeconds(0.2f);
+
+                    while (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+                    {
+                        if (Physics.Raycast(transform.position, transform.forward, 
+                            out RaycastHit hit, attackDistance, survivorMask, QueryTriggerInteraction.UseGlobal))
+                        {
+                            Survivor survivor = hit.transform.gameObject.GetComponent<Survivor>();
+                            survivor.Death();
+
+                            KillSurvivor(survivor.CrazinessPoints, survivor.Points);
+                        }
+
+                        yield return new WaitForEndOfFrame();
+                    }
+
+                    yield return null;
+                }
+
+                StartCoroutine(CastAttack());
             }
         }
     }
