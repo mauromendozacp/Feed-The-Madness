@@ -18,8 +18,6 @@ public class MovableObject : MonoBehaviour
     #endregion
 
     #region PROPERTIES
-
-    public float Speed => speed;
     public MOMActions MOMActions => momActions;
 
     #endregion
@@ -55,7 +53,8 @@ public class MovableObject : MonoBehaviour
 
     public void Destroy()
     {
-        momActions.OnRemove?.Invoke(this);
+        momActions?.OnRemove?.Invoke(this);
+
         Destroy(gameObject);
     }
 
