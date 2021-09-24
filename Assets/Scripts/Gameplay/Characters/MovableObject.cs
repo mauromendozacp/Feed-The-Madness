@@ -17,11 +17,6 @@ public class MovableObject : MonoBehaviour
 
     #endregion
 
-    #region PROPERTIES
-    public MOMActions MOMActions => momActions;
-
-    #endregion
-
     #region UNITY_CALLS
 
     void Start()
@@ -46,16 +41,15 @@ public class MovableObject : MonoBehaviour
 
     #region PUBLIC_METHODS
 
-    public void InitModuleHandlers()
+    public void InitModuleHandlers(MOMActions momActions)
     {
-        momActions = new MOMActions();
+        this.momActions = momActions;
     }
 
     public void Destroy()
     {
         momActions?.OnRemove?.Invoke(this);
-
-        Destroy(gameObject);
+        momActions?.OnReturnPoolManager?.Invoke(gameObject);
     }
 
     #endregion

@@ -7,15 +7,22 @@ using Random = UnityEngine.Random;
 public class MOMActions
 {
     public Action<MovableObject> OnRemove = null;
+    public Action<GameObject> OnReturnPoolManager = null;
 }
 
 public class MovableObjectManager : MonoBehaviour
 {
     #region EXPOSED_FIELDS
 
-    [SerializeField] private GameObject[] prefabs = null;
     [SerializeField] private float timerSpawn = 0f;
     [SerializeField] private float maxX = 0f;
+    [SerializeField] private PoolManager poolManager = null;
+
+    #endregion
+
+    #region PRIVATE_FIELDS
+
+    private MOMActions momActions = null;
 
     #endregion
 
@@ -30,7 +37,7 @@ public class MovableObjectManager : MonoBehaviour
 
     void Start()
     {
-        
+        InitModuleHandlers();
     }
 
     void Update()
@@ -42,17 +49,24 @@ public class MovableObjectManager : MonoBehaviour
 
     #region PRIVATE_METHODS
 
+    private void InitModuleHandlers()
+    {
+        momActions = new MOMActions();
+
+        momActions.OnRemove += Remove;
+        momActions.OnReturnPoolManager += poolManager.ReturnObjectToPool;
+    }
+
     private void SpawnSurvivor()
     {
         if (!SpawnActivated)
         {
-            GameObject movableGO = Instantiate(GetRandomPrefab(), transform, true);
+            GameObject movableGO = poolManager.GetObjectFromPool();
             MovableObject movable = movableGO.GetComponent<MovableObject>();
 
+            movable.InitModuleHandlers(momActions);
             movableGO.transform.position = GetRandomPosition();
 
-            movable.InitModuleHandlers();
-            movable.MOMActions.OnRemove += Remove;
             Movables.Add(movable);
 
             SpawnActivated = true;
@@ -70,18 +84,17 @@ public class MovableObjectManager : MonoBehaviour
         SpawnActivated = false;
     }
 
-    private GameObject GetRandomPrefab()
-    {
-        int index = Random.Range(0, prefabs.Length);
-        return prefabs[index];
-    }
-
     private Vector3 GetRandomPosition()
     {
         Vector3 pos = transform.position;
         pos.x = Random.Range(pos.x - maxX, pos.x + maxX);
 
         return pos;
+    }
+
+    private PoolManager GetPoolManager()
+    {
+        return poolManager;
     }
 
     #endregion

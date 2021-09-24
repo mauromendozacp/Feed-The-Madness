@@ -1007,6 +1007,7 @@ GameObject:
   m_Component:
   - component: {fileID: 353035279}
   - component: {fileID: 353035280}
+  - component: {fileID: 353035281}
   m_Layer: 0
   m_Name: SurvivorManager
   m_TagString: Untagged
@@ -1040,10 +1041,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d6ae6d5c1c9274396a76802d8e1100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs:
-  - {fileID: 3702245979201308299, guid: 8f5e6beb89ab2b544afd6ee631effddd, type: 3}
   timerSpawn: 2.5
   maxX: 10
+  poolManager: {fileID: 353035281}
+--- !u!114 &353035281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353035278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bfbad507840ed24d83935bcfe4fd40c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 3702245979201308299, guid: 8f5e6beb89ab2b544afd6ee631effddd, type: 3}
+  length: 15
 --- !u!1 &356593702
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,6 +1069,7 @@ GameObject:
   m_Component:
   - component: {fileID: 356593704}
   - component: {fileID: 356593703}
+  - component: {fileID: 356593705}
   m_Layer: 0
   m_Name: ObstacleManager
   m_TagString: Untagged
@@ -1073,10 +1089,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d6ae6d5c1c9274396a76802d8e1100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs:
-  - {fileID: 1587300316429414045, guid: ca819a5c6db1cb145b2da1d8ef76172e, type: 3}
   timerSpawn: 5
   maxX: 10
+  poolManager: {fileID: 356593705}
 --- !u!4 &356593704
 Transform:
   m_ObjectHideFlags: 0
@@ -1091,6 +1106,21 @@ Transform:
   m_Father: {fileID: 499798608}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &356593705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356593702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bfbad507840ed24d83935bcfe4fd40c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 1587300316429414045, guid: ca819a5c6db1cb145b2da1d8ef76172e, type: 3}
+  length: 10
 --- !u!1 &366295303
 GameObject:
   m_ObjectHideFlags: 0
@@ -1822,6 +1852,7 @@ GameObject:
   m_Component:
   - component: {fileID: 457548433}
   - component: {fileID: 457548434}
+  - component: {fileID: 457548435}
   m_Layer: 0
   m_Name: TreeManager1
   m_TagString: Untagged
@@ -1855,11 +1886,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d6ae6d5c1c9274396a76802d8e1100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerSpawn: 0.75
+  maxX: 1.25
+  poolManager: {fileID: 457548435}
+--- !u!114 &457548435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457548432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bfbad507840ed24d83935bcfe4fd40c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   prefabs:
   - {fileID: 4308386678919005538, guid: 17337c45921c4854ba9424256da553cb, type: 3}
   - {fileID: 4308386678919005538, guid: 335dea94c15c81243806c37af0e0818c, type: 3}
-  timerSpawn: 0.75
-  maxX: 1.25
+  length: 15
 --- !u!1 &458157522
 GameObject:
   m_ObjectHideFlags: 0
@@ -3330,6 +3375,7 @@ GameObject:
   m_Component:
   - component: {fileID: 860446261}
   - component: {fileID: 860446262}
+  - component: {fileID: 860446263}
   m_Layer: 0
   m_Name: FenceManager
   m_TagString: Untagged
@@ -3363,10 +3409,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d6ae6d5c1c9274396a76802d8e1100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs:
-  - {fileID: 2658974923963703165, guid: 3c5a2122dd926444c8ba78a3675aae83, type: 3}
   timerSpawn: 10
   maxX: 10
+  poolManager: {fileID: 860446263}
+--- !u!114 &860446263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860446260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bfbad507840ed24d83935bcfe4fd40c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 2658974923963703165, guid: 3c5a2122dd926444c8ba78a3675aae83, type: 3}
+  length: 10
 --- !u!1001 &934522337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4195,6 +4255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1248203065}
   - component: {fileID: 1248203066}
+  - component: {fileID: 1248203067}
   m_Layer: 0
   m_Name: TreeManager2
   m_TagString: Untagged
@@ -4228,11 +4289,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d6ae6d5c1c9274396a76802d8e1100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerSpawn: 0.8
+  maxX: 2
+  poolManager: {fileID: 1248203067}
+--- !u!114 &1248203067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248203064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bfbad507840ed24d83935bcfe4fd40c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   prefabs:
   - {fileID: 4308386678919005538, guid: 17337c45921c4854ba9424256da553cb, type: 3}
   - {fileID: 4308386678919005538, guid: 335dea94c15c81243806c37af0e0818c, type: 3}
-  timerSpawn: 0.8
-  maxX: 2
+  length: 15
 --- !u!1 &1249307390
 GameObject:
   m_ObjectHideFlags: 0
@@ -4677,6 +4752,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1453028425}
   - component: {fileID: 1453028426}
+  - component: {fileID: 1453028427}
   m_Layer: 0
   m_Name: TreeManager4
   m_TagString: Untagged
@@ -4710,11 +4786,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d6ae6d5c1c9274396a76802d8e1100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerSpawn: 0.55
+  maxX: 1.3
+  poolManager: {fileID: 1453028427}
+--- !u!114 &1453028427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453028424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bfbad507840ed24d83935bcfe4fd40c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   prefabs:
   - {fileID: 4308386678919005538, guid: 17337c45921c4854ba9424256da553cb, type: 3}
   - {fileID: 4308386678919005538, guid: 335dea94c15c81243806c37af0e0818c, type: 3}
-  timerSpawn: 0.55
-  maxX: 1.3
+  length: 15
 --- !u!1001 &1461227464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5907,6 +5997,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1978951362}
   - component: {fileID: 1978951363}
+  - component: {fileID: 1978951364}
   m_Layer: 0
   m_Name: TreeManager3
   m_TagString: Untagged
@@ -5940,11 +6031,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d6ae6d5c1c9274396a76802d8e1100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerSpawn: 0.6
+  maxX: 1.25
+  poolManager: {fileID: 1978951364}
+--- !u!114 &1978951364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978951361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bfbad507840ed24d83935bcfe4fd40c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   prefabs:
   - {fileID: 4308386678919005538, guid: 17337c45921c4854ba9424256da553cb, type: 3}
   - {fileID: 4308386678919005538, guid: 335dea94c15c81243806c37af0e0818c, type: 3}
-  timerSpawn: 0.6
-  maxX: 1.25
+  length: 15
 --- !u!4 &1998010297 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5488319527562622368, guid: 335dea94c15c81243806c37af0e0818c,
@@ -6228,7 +6333,7 @@ PrefabInstance:
     - target: {fileID: 4543504702171015179, guid: 16f9c7563e3648a4eac8583defa32e0e,
         type: 3}
       propertyPath: decreaseCrazinessVel
-      value: 2.5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4907784757815672194, guid: 16f9c7563e3648a4eac8583defa32e0e,
         type: 3}
