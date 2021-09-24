@@ -8,6 +8,8 @@ public class Survivor : Character
 
     [SerializeField] private float crazinessPoints = 0f;
     [SerializeField] private int points = 0;
+    [SerializeField] private float deathTimer = 0f;
+    [SerializeField] private Animator anim = null;
 
     #endregion
 
@@ -47,6 +49,20 @@ public class Survivor : Character
     #region PUBLIC_METHODS
 
     public void Death()
+    {
+        if (!dead)
+        {
+            dead = true;
+            anim.SetBool("Death", true);
+            Invoke(nameof(DestroySurvivor), deathTimer);
+        }
+    }
+
+    #endregion
+
+    #region PRIVATE_METHODS
+
+    private void DestroySurvivor()
     {
         movable.Destroy();
     }

@@ -64,7 +64,7 @@ public class MovableObject : MonoBehaviour
 
     private void MoveBack()
     {
-        transform.Translate(-transform.forward * speed * Time.deltaTime);
+        transform.Translate(Vector3.back * (speed * Time.deltaTime));
     }
 
     #endregion

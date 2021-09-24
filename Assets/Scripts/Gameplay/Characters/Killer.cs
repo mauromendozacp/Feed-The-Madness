@@ -18,6 +18,7 @@ public class Killer : Character
     [SerializeField] private Animator anim = null;
     [SerializeField] private LayerMask survivorMask = default;
     [SerializeField] private LayerMask limitMask = default;
+    [SerializeField] private float decreaseCrazinessVel = 0f;
 
     #endregion
 
@@ -26,6 +27,8 @@ public class Killer : Character
     private int score = 0;
     private float crazinessBase = 0f;
     private float checkHorDistance = 2f;
+    private bool attackAvailable = false;
+    private float resetAttackTimer = 0.5f;
 
     private KActions kActions = null;
     private LCActions lcActions = null;
@@ -171,7 +174,7 @@ public class Killer : Character
 
     private void Attack()
     {
-        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        if (!attackAvailable)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -179,9 +182,7 @@ public class Killer : Character
 
                 IEnumerator CastAttack()
                 {
-                    yield return new WaitForSeconds(0.2f);
-
-                    while (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+                    while (attackAvailable)
                     {
                         if (Physics.Raycast(transform.position, transform.forward, 
                             out RaycastHit hit, attackDistance, survivorMask, QueryTriggerInteraction.UseGlobal))
@@ -198,14 +199,22 @@ public class Killer : Character
                     yield return null;
                 }
 
+                attackAvailable = true;
+                Invoke(nameof(ResetAttack), resetAttackTimer);
+
                 StartCoroutine(CastAttack());
             }
         }
     }
 
+    private void ResetAttack()
+    {
+        attackAvailable = false;
+    }
+
     private void DecreaseCraziness()
     {
-        Craziness -= Time.deltaTime;
+        Craziness -= Time.deltaTime * decreaseCrazinessVel;
     }
 
     #endregion
