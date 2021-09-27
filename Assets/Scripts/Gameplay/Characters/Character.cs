@@ -19,6 +19,21 @@ public class Character : MonoBehaviour
     protected bool dead = false;
     protected Rigidbody rigid = null;
 
+    protected bool isGrounded = false;
+    protected float origGroundCheckDistance = 0f;
+    protected float groundCheckDistance = 0.2f;
+    protected float gravityMultiplier = 3f;
+
+    #endregion
+
+    #region PROPERTIES
+
+    public virtual bool Dead
+    {
+        get => dead;
+        set => dead = value;
+    }
+
     #endregion
 
     #region UNITY_CALLS
@@ -35,7 +50,7 @@ public class Character : MonoBehaviour
 
     #endregion
 
-    #region PRIVATE_METHODS
+    #region PROTECTED_METHODS
 
     protected void Jump()
     {
@@ -47,20 +62,27 @@ public class Character : MonoBehaviour
         }
     }
 
-    private void RestartJump()
+    protected void RestartJump()
     {
         jumping = false;
     }
 
-    private IEnumerator JumpMove(Vector3 jumpPoint)
+    protected void CheckGroundStatus()
     {
-        while (transform.position.y < jumpPoint.y)
-        {
-            transform.Translate(transform.up * jumpForce * Time.deltaTime);
-            yield return new WaitForEndOfFrame();
-        }
+        isGrounded = Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out _, groundCheckDistance);
 
-        yield return null;
+        if (!isGrounded)
+        {
+            HandleAirborneMovement();
+        }
+    }
+
+    private void HandleAirborneMovement()
+    {
+        Vector3 extraGravityForce = (Physics.gravity * gravityMultiplier) - Physics.gravity;
+        rigid.AddForce(extraGravityForce);
+
+        groundCheckDistance = rigid.velocity.y < 0 ? origGroundCheckDistance : groundCheckDistance;
     }
 
     #endregion

@@ -37,7 +37,7 @@ public class Killer : Character
 
     #region PROPERTIES
 
-    public bool Dead
+    public override bool Dead
     {
         get => dead;
         set
@@ -92,6 +92,7 @@ public class Killer : Character
     private void Start()
     {
         rigid = GetComponent<Rigidbody>();
+        origGroundCheckDistance = GetComponent<CapsuleCollider>().height * 3 / 4;
     }
 
     public override void Update()
@@ -102,7 +103,7 @@ public class Killer : Character
             MoveHorizontal();
             Attack();
             InputJump();
-
+            CheckGroundStatus();
             DecreaseCraziness();
         }
     }
@@ -129,6 +130,8 @@ public class Killer : Character
     public void Init()
     {
         crazinessBase = craziness;
+        groundCheckDistance = GetComponent<CapsuleCollider>().height;
+        origGroundCheckDistance = groundCheckDistance;
     }
 
     public void KillSurvivor(float craz, int points)
@@ -143,32 +146,32 @@ public class Killer : Character
 
     private void InputJump()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            Jump();
+        if (isGrounded)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+                Jump();
+        }
     }
 
     private void MoveHorizontal()
     {
-        if (!jumping)
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+            Vector3 dir = Vector3.zero;
+
+            if (Input.GetKey(KeyCode.A))
             {
-                Vector3 dir = Vector3.zero;
-
-                if (Input.GetKey(KeyCode.A))
-                {
-                    dir = -transform.right;
-                }
-                else if (Input.GetKey(KeyCode.D))
-                {
-                    dir = transform.right;
-                }
-
-                if (Physics.Raycast(transform.position, dir, checkHorDistance, limitMask))
-                    return;
-
-                transform.Translate(dir * (horizontalSpeed * Time.deltaTime));
+                dir = -transform.right;
             }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                dir = transform.right;
+            }
+
+            if (Physics.Raycast(transform.position, dir, checkHorDistance, limitMask))
+                return;
+
+            transform.Translate(dir * (horizontalSpeed * Time.deltaTime));
         }
     }
 
@@ -188,9 +191,12 @@ public class Killer : Character
                             out RaycastHit hit, attackDistance, survivorMask, QueryTriggerInteraction.UseGlobal))
                         {
                             Survivor survivor = hit.transform.gameObject.GetComponent<Survivor>();
-                            survivor.Death();
 
-                            KillSurvivor(survivor.CrazinessPoints, survivor.Points);
+                            if (!survivor.Dead)
+                            {
+                                survivor.Death();
+                                KillSurvivor(survivor.CrazinessPoints, survivor.Points);
+                            }
                         }
 
                         yield return new WaitForEndOfFrame();
