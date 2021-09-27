@@ -22,7 +22,7 @@ public class Character : MonoBehaviour
     protected bool isGrounded = false;
     protected float origGroundCheckDistance = 0f;
     protected float groundCheckDistance = 0.2f;
-    protected float gravityMultiplier = 3f;
+    protected float gravityMultiplier = 5f;
 
     #endregion
 

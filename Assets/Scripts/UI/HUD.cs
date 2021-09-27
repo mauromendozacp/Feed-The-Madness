@@ -10,6 +10,9 @@ public class HUD : MonoBehaviour
 
     [SerializeField] private TMP_Text scoreText = null;
     [SerializeField] private Image crazinessBar = null;
+    [SerializeField] private GameObject CrazinessIcon = null;
+    [SerializeField] private Transform barStart = null;
+    [SerializeField] private Transform barEnd = null;
 
     #endregion
 
@@ -37,12 +40,14 @@ public class HUD : MonoBehaviour
 
     public void UpdateScore(int score)
     {
-        scoreText.text = "Score: " + score + "pts";
+        scoreText.text = "Score " + score;
     }
 
     public void UpdateCraziness(float crazinessBase, float crazinessPoints)
     {
         crazinessBar.fillAmount = crazinessPoints / crazinessBase;
+        CrazinessIcon.transform.position =
+            Vector3.Lerp(barStart.position, barEnd.position, crazinessPoints / crazinessBase);
     }
 
     #endregion

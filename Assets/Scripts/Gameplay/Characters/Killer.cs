@@ -110,7 +110,7 @@ public class Killer : Character
     {
         rigid = GetComponent<Rigidbody>();
         capsule = GetComponent<CapsuleCollider>();
-        origGroundCheckDistance = GetComponent<CapsuleCollider>().height * 3 / 4;
+        origGroundCheckDistance = GetComponent<CapsuleCollider>().height * 11 / 16;
 
         volume.profile.TryGetSettings(out chromatic);
         volume.profile.TryGetSettings(out vignette);
