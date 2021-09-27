@@ -7384,6 +7384,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4543504702171015179, guid: 16f9c7563e3648a4eac8583defa32e0e,
         type: 3}
+      propertyPath: cameraAnim
+      value: 
+      objectReference: {fileID: 1639958202}
+    - target: {fileID: 4543504702171015179, guid: 16f9c7563e3648a4eac8583defa32e0e,
+        type: 3}
+      propertyPath: killerAnim
+      value: 
+      objectReference: {fileID: 1727444387}
+    - target: {fileID: 4543504702171015179, guid: 16f9c7563e3648a4eac8583defa32e0e,
+        type: 3}
       propertyPath: attackRadius
       value: 2.5
       objectReference: {fileID: 0}

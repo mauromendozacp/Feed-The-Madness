@@ -17,7 +17,8 @@ public class Killer : Character
     [SerializeField] private float craziness = 0f;
     [SerializeField] private float attackDistance = 0f;
     [SerializeField] private float obstacleCrazDecrease = 25f;
-    [SerializeField] private Animator anim = null;
+    [SerializeField] private Animator killerAnim = null;
+    [SerializeField] private Animator cameraAnim = null;
     [SerializeField] private LayerMask survivorMask = default;
     [SerializeField] private LayerMask limitMask = default;
     [SerializeField] private float decreaseCrazinessVel = 0f;
@@ -34,6 +35,7 @@ public class Killer : Character
     private float resetAttackTimer = 0.5f;
     private bool hitted = false;
     private float invulnerableTimer = 1.2f;
+    private float deathTimer = 1.5f;
     private CapsuleCollider capsule = null;
 
     private ChromaticAberration chromatic = null;
@@ -57,7 +59,7 @@ public class Killer : Character
         {
             dead = value;
             if (dead)
-                lcActions.OnKillerDead?.Invoke();
+                Death();
         }
     }
 
@@ -199,7 +201,7 @@ public class Killer : Character
         {
             if (Input.GetMouseButtonDown(0))
             {
-                anim.SetTrigger("Attack");
+                killerAnim.SetTrigger("Attack");
 
                 IEnumerator CastAttack()
                 {
@@ -289,6 +291,25 @@ public class Killer : Character
         float crazinessPercent = 100 - craziness * 100 / crazinessBase;
         float chromaticValue = (maxChromaticValue - minChromaticValue) * crazinessPercent / 100 + minChromaticValue;
         return chromaticValue;
+    }
+
+    private void Death()
+    {
+        cameraAnim.SetBool("Death", true);
+        IEnumerator VignetteEffect()
+        {
+            float timer = 0f;
+            while (timer < deathTimer)
+            {
+                timer += Time.deltaTime;
+                vignette.intensity.value = Mathf.Lerp(minVignetteValue, maxVignetteValue, timer / deathTimer);
+                yield return new WaitForEndOfFrame();
+            }
+
+            lcActions.OnKillerDead?.Invoke();
+            yield return null;
+        }
+        StartCoroutine(VignetteEffect());
     }
 
     #endregion
