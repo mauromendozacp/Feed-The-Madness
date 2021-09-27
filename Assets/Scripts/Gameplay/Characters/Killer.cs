@@ -16,6 +16,7 @@ public class Killer : Character
     [SerializeField] private float horizontalSpeed = 0f;
     [SerializeField] private float craziness = 0f;
     [SerializeField] private float attackDistance = 0f;
+    [SerializeField] private float obstacleCrazDecrease = 25f;
     [SerializeField] private Animator anim = null;
     [SerializeField] private LayerMask survivorMask = default;
     [SerializeField] private LayerMask limitMask = default;
@@ -31,6 +32,9 @@ public class Killer : Character
     private float checkHorDistance = 2f;
     private bool attackAvailable = false;
     private float resetAttackTimer = 0.5f;
+    private bool hitted = false;
+    private float invulnerableTimer = 1.2f;
+    private CapsuleCollider capsule = null;
 
     private ChromaticAberration chromatic = null;
     private Vignette vignette = null;
@@ -103,6 +107,7 @@ public class Killer : Character
     private void Start()
     {
         rigid = GetComponent<Rigidbody>();
+        capsule = GetComponent<CapsuleCollider>();
         origGroundCheckDistance = GetComponent<CapsuleCollider>().height * 3 / 4;
 
         volume.profile.TryGetSettings(out chromatic);
@@ -126,8 +131,7 @@ public class Killer : Character
     {
         if (Tools.CheckLayerInMask(obstacleMask, collision.gameObject.layer))
         {
-            if (!Dead)
-                Dead = true;
+            Hit();
         }
     }
 
@@ -230,6 +234,49 @@ public class Killer : Character
     private void ResetAttack()
     {
         attackAvailable = false;
+    }
+
+    private void Hit()
+    {
+        if (!hitted)
+        {
+            Craziness -= obstacleCrazDecrease;
+
+            IEnumerator VignetteEffect()
+            {
+                float halfTimer = invulnerableTimer / 2;
+                float timer = 0f;
+                while (timer < halfTimer)
+                {
+                    timer += Time.deltaTime;
+                    vignette.intensity.value = Mathf.Lerp(minVignetteValue, maxVignetteValue, timer / halfTimer);
+                    yield return new WaitForEndOfFrame();
+                }
+
+                timer = 0f;
+                while (timer < halfTimer)
+                {
+                    timer += Time.deltaTime;
+                    vignette.intensity.value = Mathf.Lerp(maxVignetteValue, minVignetteValue, timer / halfTimer);
+                    yield return new WaitForEndOfFrame();
+                }
+
+                yield return null;
+            }
+            StartCoroutine(VignetteEffect());
+
+            hitted = true;
+            rigid.useGravity = false;
+            capsule.isTrigger = true;
+            Invoke(nameof(ResetHitted), invulnerableTimer);
+        }
+    }
+
+    private void ResetHitted()
+    {
+        hitted = false;
+        rigid.useGravity = true;
+        capsule.isTrigger = false;
     }
 
     private void DecreaseCraziness()
