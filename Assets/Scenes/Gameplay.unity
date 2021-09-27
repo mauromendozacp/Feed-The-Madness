@@ -7359,6 +7359,11 @@ PrefabInstance:
       objectReference: {fileID: 1727444387}
     - target: {fileID: 4543504702171015179, guid: 16f9c7563e3648a4eac8583defa32e0e,
         type: 3}
+      propertyPath: volume
+      value: 
+      objectReference: {fileID: 2120599684}
+    - target: {fileID: 4543504702171015179, guid: 16f9c7563e3648a4eac8583defa32e0e,
+        type: 3}
       propertyPath: craziness
       value: 100
       objectReference: {fileID: 0}

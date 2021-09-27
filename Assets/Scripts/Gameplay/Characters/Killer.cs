@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class KActions
 {
@@ -19,6 +20,7 @@ public class Killer : Character
     [SerializeField] private LayerMask survivorMask = default;
     [SerializeField] private LayerMask limitMask = default;
     [SerializeField] private float decreaseCrazinessVel = 0f;
+    [SerializeField] private PostProcessVolume volume = null;
 
     #endregion
 
@@ -29,6 +31,13 @@ public class Killer : Character
     private float checkHorDistance = 2f;
     private bool attackAvailable = false;
     private float resetAttackTimer = 0.5f;
+
+    private ChromaticAberration chromatic = null;
+    private Vignette vignette = null;
+    private float minChromaticValue = 0.2f;
+    private float maxChromaticValue = 1f;
+    private float minVignetteValue = 0f;
+    private float maxVignetteValue = 1f;
 
     private KActions kActions = null;
     private LCActions lcActions = null;
@@ -79,7 +88,9 @@ public class Killer : Character
                 craziness = 0;
                 Dead = true;
             }
+
             kActions.OnCrazinessUpdated?.Invoke(crazinessBase, craziness);
+            chromatic.intensity.value = GetChromaticValue();
         }
     }
 
@@ -93,6 +104,9 @@ public class Killer : Character
     {
         rigid = GetComponent<Rigidbody>();
         origGroundCheckDistance = GetComponent<CapsuleCollider>().height * 3 / 4;
+
+        volume.profile.TryGetSettings(out chromatic);
+        volume.profile.TryGetSettings(out vignette);
     }
 
     public override void Update()
@@ -221,6 +235,13 @@ public class Killer : Character
     private void DecreaseCraziness()
     {
         Craziness -= Time.deltaTime * decreaseCrazinessVel;
+    }
+
+    private float GetChromaticValue()
+    {
+        float crazinessPercent = 100 - craziness * 100 / crazinessBase;
+        float chromaticValue = (maxChromaticValue - minChromaticValue) * crazinessPercent / 100 + minChromaticValue;
+        return chromaticValue;
     }
 
     #endregion
