@@ -29,7 +29,7 @@ public class Survivor : Character
 
     #region UNITY_CALLS
 
-    void Start()
+    private void Start()
     {
         movable = GetComponent<MovableObject>();
     }
@@ -39,9 +39,9 @@ public class Survivor : Character
         base.Update();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnEnable()
     {
-        
+        Init();
     }
 
     #endregion
@@ -61,6 +61,12 @@ public class Survivor : Character
     #endregion
 
     #region PRIVATE_METHODS
+
+    private void Init()
+    {
+        dead = false;
+        anim.SetBool("Death", false);
+    }
 
     private void DestroySurvivor()
     {

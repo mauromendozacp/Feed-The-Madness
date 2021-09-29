@@ -42,7 +42,7 @@ public class MovableObjectManager : MonoBehaviour
 
     void Update()
     {
-        SpawnSurvivor();
+        Spawn();
     }
 
     #endregion
@@ -57,7 +57,7 @@ public class MovableObjectManager : MonoBehaviour
         momActions.OnReturnPoolManager += poolManager.ReturnObjectToPool;
     }
 
-    private void SpawnSurvivor()
+    private void Spawn()
     {
         if (!SpawnActivated)
         {

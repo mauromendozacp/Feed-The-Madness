@@ -3799,8 +3799,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190246
-  m_fontColor: {r: 0.6509434, g: 0, b: 0, a: 1}
+    rgba: 3188000111
+  m_fontColor: {r: 0.4339623, g: 0.01842292, b: 0.01842292, a: 0.74509805}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4091,7 +4091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d6ae6d5c1c9274396a76802d8e1100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerSpawn: 10
+  timerSpawn: 7
   maxX: 10
   poolManager: {fileID: 860446263}
 --- !u!114 &860446263
@@ -7800,8 +7800,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190239
-  m_fontColor: {r: 0.6226415, g: 0, b: 0, a: 1}
+    rgba: 3188197460
+  m_fontColor: {r: 0.32941177, g: 0.03137255, b: 0.03137255, a: 0.74509805}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

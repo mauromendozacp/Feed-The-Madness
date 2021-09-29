@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4614844288183459435}
   - component: {fileID: 8873222451913357825}
   - component: {fileID: 176883623118637222}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Tree2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,6 +156,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8234750406694002428, guid: 12b01b555fac1e74caf273d55e3f0e4f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: -4292824698482994511, guid: 12b01b555fac1e74caf273d55e3f0e4f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -166,10 +171,20 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 366c45365d6d8284d837fe364c234e86, type: 2}
+    - target: {fileID: -472744520329576450, guid: 12b01b555fac1e74caf273d55e3f0e4f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 12b01b555fac1e74caf273d55e3f0e4f,
         type: 3}
       propertyPath: m_Name
       value: Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 12b01b555fac1e74caf273d55e3f0e4f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12b01b555fac1e74caf273d55e3f0e4f, type: 3}
