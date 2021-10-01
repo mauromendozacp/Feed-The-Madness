@@ -50,6 +50,9 @@ public class MovableObject : MonoBehaviour
     {
         momActions?.OnRemove?.Invoke(this);
         momActions?.OnReturnPoolManager?.Invoke(gameObject);
+
+        if (momActions == null)
+            Destroy(gameObject);
     }
 
     #endregion

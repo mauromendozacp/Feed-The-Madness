@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 public class MainmenuUI : MonoBehaviour
 {
@@ -6,6 +7,16 @@ public class MainmenuUI : MonoBehaviour
 
     [SerializeField] private GameObject menuPanel = null;
     [SerializeField] private GameObject creditsPanel = null;
+    [SerializeField] private TMP_Text versionText = null;
+
+    #endregion
+
+    #region UNITY_CALLS
+
+    private void Start()
+    {
+        versionText.text = "v" + Application.version;
+    }
 
     #endregion
 

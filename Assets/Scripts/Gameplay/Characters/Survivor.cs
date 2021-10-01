@@ -16,7 +16,8 @@ public class Survivor : Character
 
     #region PRIVATE_FIELDS
 
-    private Rigidbody rigidbody = null;
+    private float checkDistance = 5f;
+    private Vector3 startPos = Vector3.zero;
     private CapsuleCollider capsuleCollider = null;
     private MovableObject movable = null;
 
@@ -32,16 +33,24 @@ public class Survivor : Character
 
     #region UNITY_CALLS
 
-    private void Start()
+    private void Awake()
     {
         movable = GetComponent<MovableObject>();
         capsuleCollider = GetComponent<CapsuleCollider>();
-        rigidbody = GetComponent<Rigidbody>();
+        rigid = GetComponent<Rigidbody>();
+
+        startPos = transform.position;
+        startPos.y -= capsuleCollider.height / 4;
     }
 
     public override void Update()
     {
         base.Update();
+
+        if (!dead)
+        {
+            CheckObstacle();
+        }
     }
 
     private void OnEnable()
@@ -61,7 +70,7 @@ public class Survivor : Character
 
             anim.SetBool("Death", true);
             blood.Play();
-            rigidbody.useGravity = false;
+            rigid.useGravity = false;
             capsuleCollider.isTrigger = true;
 
             Invoke(nameof(DestroySurvivor), deathTimer);
@@ -76,6 +85,24 @@ public class Survivor : Character
     {
         dead = false;
         anim.SetBool("Death", false);
+        rigid.useGravity = true;
+        capsuleCollider.isTrigger = false;
+    }
+
+    private void CheckObstacle()
+    {
+        if (Physics.Raycast(startPos, Vector3.forward, out RaycastHit hit, checkDistance, obstacleMask))
+        {
+            Vector3 hitPos = hit.transform.position;
+            if (transform.position.x < hitPos.x)
+            {
+                transform.Translate(Vector3.left * (horizontalSpeed * Time.deltaTime));
+            }
+            else
+            {
+                transform.Translate(Vector3.right * (horizontalSpeed * Time.deltaTime));
+            }
+        }
     }
 
     private void DestroySurvivor()

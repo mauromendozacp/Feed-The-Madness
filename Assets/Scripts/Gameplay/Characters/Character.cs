@@ -6,6 +6,7 @@ public class Character : MonoBehaviour
 {
     #region EXPOSED_FIELDS
 
+    [SerializeField] protected float horizontalSpeed = 0f;
     [SerializeField] protected float jumpForce = 0f;
     [SerializeField] protected float jumpTimer = 0f;
     [SerializeField] protected float jumpDistance = 0f;

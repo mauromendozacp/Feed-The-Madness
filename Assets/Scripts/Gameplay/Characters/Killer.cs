@@ -13,7 +13,6 @@ public class Killer : Character
 {
     #region EXPOSED_FIELDS
 
-    [SerializeField] private float horizontalSpeed = 0f;
     [SerializeField] private float craziness = 0f;
     [SerializeField] private float attackDistance = 0f;
     [SerializeField] private float obstacleCrazDecrease = 25f;
