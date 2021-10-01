@@ -10,11 +10,14 @@ public class Survivor : Character
     [SerializeField] private int points = 0;
     [SerializeField] private float deathTimer = 0f;
     [SerializeField] private Animator anim = null;
+    [SerializeField] private ParticleSystem blood = null;
 
     #endregion
 
     #region PRIVATE_FIELDS
 
+    private Rigidbody rigidbody = null;
+    private CapsuleCollider capsuleCollider = null;
     private MovableObject movable = null;
 
     #endregion
@@ -32,6 +35,8 @@ public class Survivor : Character
     private void Start()
     {
         movable = GetComponent<MovableObject>();
+        capsuleCollider = GetComponent<CapsuleCollider>();
+        rigidbody = GetComponent<Rigidbody>();
     }
 
     public override void Update()
@@ -53,7 +58,12 @@ public class Survivor : Character
         if (!dead)
         {
             dead = true;
+
             anim.SetBool("Death", true);
+            blood.Play();
+            rigidbody.useGravity = false;
+            capsuleCollider.isTrigger = true;
+
             Invoke(nameof(DestroySurvivor), deathTimer);
         }
     }
