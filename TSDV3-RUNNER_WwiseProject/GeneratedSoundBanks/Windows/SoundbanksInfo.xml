@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
+	<RootPaths>
+		<ProjectRoot>D:\Image Campus\Cursada\4to Cuatri\Desarrollo de Videojuegos III\DV 3 - TPs\TSDV3-RUNNER\TSDV3-RUNNER_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\Image Campus\Cursada\4to Cuatri\Desarrollo de Videojuegos III\DV 3 - TPs\TSDV3-RUNNER\TSDV3-RUNNER_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Image Campus\Cursada\4to Cuatri\Desarrollo de Videojuegos III\DV 3 - TPs\TSDV3-RUNNER\TSDV3-RUNNER_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>D:\Image Campus\Cursada\4to Cuatri\Desarrollo de Videojuegos III\DV 3 - TPs\TSDV3-RUNNER\TSDV3-RUNNER_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX" Hash="3690994985">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3815026176" Language="SFX" Hash="1017956396">
+			<ObjectPath>\SoundBanks\Default Work Unit\SoundBankTestxd</ObjectPath>
+			<ShortName>SoundBankTestxd</ShortName>
+			<Path>SoundBankTestxd.bnk</Path>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

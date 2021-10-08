@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{16A36CCB-CEC7-48AF-8911-36FC55147748}" SchemaVersion="97">
+<WwiseDocument Type="WorkUnit" ID="{26F5F587-42E0-42E1-A61B-0D5A68857A69}" SchemaVersion="103">
 	<Switches>
-		<WorkUnit Name="Default Work Unit" ID="{16A36CCB-CEC7-48AF-8911-36FC55147748}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{26F5F587-42E0-42E1-A61B-0D5A68857A69}" PersistMode="Standalone"/>
 	</Switches>
 </WwiseDocument>
