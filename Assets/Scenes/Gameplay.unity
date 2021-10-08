@@ -1448,7 +1448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabs:
   - {fileID: 1587300316429414045, guid: ca819a5c6db1cb145b2da1d8ef76172e, type: 3}
-  length: 15
+  length: 10
 --- !u!4 &360270197 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5488319527562622368, guid: 17337c45921c4854ba9424256da553cb,
@@ -4340,7 +4340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabs:
   - {fileID: 2658974923963703165, guid: 3c5a2122dd926444c8ba78a3675aae83, type: 3}
-  length: 15
+  length: 10
 --- !u!1001 &909952493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7376,8 +7376,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 0
-  m_Maskable: 0
+  m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
