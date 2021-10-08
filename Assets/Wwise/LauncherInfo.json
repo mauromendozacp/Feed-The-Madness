@@ -1,0 +1,28 @@
+{
+    "originalSdkFolder": "D:\\Audiokinetic\\Wwise 2019.2.13.7577\\SDK",
+    "currentVersion": {
+        "build": 2104,
+        "major": 2,
+        "minor": 13,
+        "nickname": "",
+        "year": 2019
+    },
+    "installedBundleGroups": [
+        {
+            "id": "Packages",
+            "valueId": "Unity"
+        },
+        {
+            "id": "Packages",
+            "valueId": "Extensions"
+        },
+        {
+            "id": "DeploymentPlatforms",
+            "valueId": "Mac"
+        },
+        {
+            "id": "DeploymentPlatforms",
+            "valueId": "Windows"
+        }
+    ]
+}
