@@ -14,7 +14,8 @@ public class MovableObjectManager : MonoBehaviour
 {
     #region EXPOSED_FIELDS
 
-    [SerializeField] private float timerSpawn = 0f;
+    [SerializeField] private float minTimerSpawn = 0f;
+    [SerializeField] private float maxTimerSpawn = 0f;
     [SerializeField] private float maxX = 0f;
     [SerializeField] private PoolManager poolManager = null;
 
@@ -70,7 +71,7 @@ public class MovableObjectManager : MonoBehaviour
             Movables.Add(movable);
 
             SpawnActivated = true;
-            Invoke(nameof(ResetSpawnActivate), timerSpawn);
+            Invoke(nameof(ResetSpawnActivate), GetRandomTimerSpawn());
         }
     }
 
@@ -90,6 +91,11 @@ public class MovableObjectManager : MonoBehaviour
         pos.x = Random.Range(pos.x - maxX, pos.x + maxX);
 
         return pos;
+    }
+
+    private float GetRandomTimerSpawn()
+    {
+        return Random.Range(minTimerSpawn, maxTimerSpawn);
     }
 
     private PoolManager GetPoolManager()

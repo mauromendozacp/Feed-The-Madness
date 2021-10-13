@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,6 +17,7 @@ public class Survivor : Character
 
     #region PRIVATE_FIELDS
 
+    private bool dodged = false;
     private float checkDistance = 5f;
     private Vector3 startPos = Vector3.zero;
     private CapsuleCollider capsuleCollider = null;
@@ -38,9 +40,6 @@ public class Survivor : Character
         movable = GetComponent<MovableObject>();
         capsuleCollider = GetComponent<CapsuleCollider>();
         rigid = GetComponent<Rigidbody>();
-
-        startPos = transform.position;
-        startPos.y -= capsuleCollider.height / 4;
     }
 
     public override void Update()
@@ -49,7 +48,7 @@ public class Survivor : Character
 
         if (!dead)
         {
-            CheckObstacle();
+            DodgeObstacle();
         }
     }
 
@@ -89,18 +88,45 @@ public class Survivor : Character
         capsuleCollider.isTrigger = false;
     }
 
-    private void CheckObstacle()
+    private void DodgeObstacle()
     {
-        if (Physics.Raycast(startPos, Vector3.forward, out RaycastHit hit, checkDistance, obstacleMask))
+        if (!dodged)
         {
-            Vector3 hitPos = hit.transform.position;
-            if (transform.position.x < hitPos.x)
+            startPos = transform.position;
+            startPos.y -= capsuleCollider.height / 4;
+
+            if (Physics.Raycast(startPos, Vector3.forward, out RaycastHit hit, checkDistance, obstacleMask))
             {
-                transform.Translate(Vector3.left * (horizontalSpeed * Time.deltaTime));
-            }
-            else
-            {
-                transform.Translate(Vector3.right * (horizontalSpeed * Time.deltaTime));
+                dodged = true;
+
+                Vector3 hitPos = hit.transform.position;
+                BoxCollider col = hit.transform.gameObject.GetComponent<BoxCollider>();
+                float colWidth = col.bounds.size.x;
+
+                IEnumerator MovePosition()
+                {
+                    if (transform.position.x < hitPos.x)
+                    {
+                        while (transform.position.x > hitPos.x - colWidth)
+                        {
+                            transform.Translate(Vector3.left * (horizontalSpeed * Time.deltaTime));
+                            yield return new WaitForEndOfFrame();
+                        }
+                    }
+                    else
+                    {
+                        while (transform.position.x < hitPos.x + colWidth)
+                        {
+                            transform.Translate(Vector3.right * (horizontalSpeed * Time.deltaTime));
+                            yield return new WaitForEndOfFrame();
+                        }
+                    }
+
+                    dodged = false;
+                    yield return null;
+                }
+
+                StartCoroutine(MovePosition());
             }
         }
     }
