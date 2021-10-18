@@ -11,6 +11,16 @@ public class MovableObject : MonoBehaviour
 
     #endregion
 
+    #region PROPERTIES
+
+    public float Speed
+    {
+        get => speed;
+        set => speed = value;
+    }
+
+    #endregion
+
     #region PRIVATE_FIELDS
 
     private MOMActions momActions = null;

@@ -1,6 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using UnityEngine;
+
+[Serializable]
+public struct DIFFICULTY
+{
+    public float time;
+    public float increaseSpeed;
+}
 
 public class LCActions
 {
@@ -13,12 +19,15 @@ public class LevelController : MonoBehaviour
 
     [SerializeField] private Killer killer = null;
     [SerializeField] private HUD hud = null;
+    [SerializeField] private DIFFICULTY[] difficulties = null;
 
     #endregion
 
     #region PRIVATE_FIELDS
 
     private LCActions lcActions = null;
+    private float timer = 0f;
+    private int difficultyIndex = 0;
 
     #endregion
 
@@ -29,6 +38,11 @@ public class LevelController : MonoBehaviour
         GameManager.Get().Init();
         InitModuleHandlers();
         Init();
+    }
+
+    private void Update()
+    {
+        CheckTimer();
     }
 
     private void OnDestroy()
@@ -50,12 +64,12 @@ public class LevelController : MonoBehaviour
         hud.InitModuleHandlers(killer.KActions);
     }
 
-    public void Init()
+    private void Init()
     {
         killer.Init();
     }
 
-    public void DeInit()
+    private void DeInit()
     {
         lcActions.OnKillerDead -= EndLevel;
 
@@ -66,5 +80,25 @@ public class LevelController : MonoBehaviour
     {
         GameManager.Get().FinishGame(killer.Score);
     }
+
+    private void CheckTimer()
+    {
+        timer += Time.deltaTime;
+
+        if (difficultyIndex < difficulties.Length - 1)
+        {
+            if (timer > difficulties[difficultyIndex].time)
+            {
+                MovableObjectManager[] movables = FindObjectsOfType<MovableObjectManager>();
+                foreach (MovableObjectManager movable in movables)
+                {
+                    movable.Speed += movable.Speed * difficulties[difficultyIndex].increaseSpeed / 100;
+                }
+
+                difficultyIndex++;
+            }
+        }
+    }
+
     #endregion
 }

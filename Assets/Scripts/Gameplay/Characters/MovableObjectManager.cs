@@ -17,6 +17,7 @@ public class MovableObjectManager : MonoBehaviour
     [SerializeField] private float minTimerSpawn = 0f;
     [SerializeField] private float maxTimerSpawn = 0f;
     [SerializeField] private float maxX = 0f;
+    [SerializeField] private float speed = 0f;
     [SerializeField] private PoolManager poolManager = null;
 
     #endregion
@@ -31,6 +32,11 @@ public class MovableObjectManager : MonoBehaviour
 
     public List<MovableObject> Movables { get; } = new List<MovableObject>();
     public bool SpawnActivated { get; set; } = false;
+    public float Speed
+    {
+        get => speed;
+        set => speed = value;
+    }
 
     #endregion
 
@@ -66,6 +72,7 @@ public class MovableObjectManager : MonoBehaviour
             MovableObject movable = movableGO.GetComponent<MovableObject>();
 
             movable.InitModuleHandlers(momActions);
+            movable.Speed = speed;
             movableGO.transform.position = GetRandomPosition();
 
             Movables.Add(movable);
