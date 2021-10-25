@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 3939963930271577560}
   - component: {fileID: -2933889720410927070}
   m_Layer: 9
-  m_Name: Survivor
+  m_Name: Survivor1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -196,7 +196,7 @@ MonoBehaviour:
   jumpDistance: 0
   obstacleMask:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 67584
   crazinessPoints: 10
   points: 50
   deathTimer: 1.1

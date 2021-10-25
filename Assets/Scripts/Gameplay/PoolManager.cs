@@ -1,19 +1,26 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+
+[Serializable]
+public struct RESPAWN
+{
+    public GameObject prefab;
+    public float percent;
+    public int length;
+}
 
 public class PoolManager : MonoBehaviour
 {
     #region EXPOSED_FIELDS
 
-    [SerializeField] private GameObject[] prefabs;
-    [SerializeField] private int length;
+    [SerializeField] private RESPAWN[] respawns;
 
     #endregion
 
     #region PRIVATE_FIELDS
 
-    private Queue<GameObject> pool;
+    private Queue<GameObject>[] pool;
 
     #endregion
 
@@ -21,13 +28,18 @@ public class PoolManager : MonoBehaviour
 
     void Awake()
     {
-        pool = new Queue<GameObject>();
+        pool = new Queue<GameObject>[respawns.Length];
 
-        for (int i = 0; i < length; i++)
+        for (int i = 0; i < pool.Length; i++)
         {
-            GameObject objectGO = Instantiate(GetRandomPrefab(), transform, true);
+            pool[i] = new Queue<GameObject>();
 
-            ReturnObjectToPool(objectGO);
+            for (int j = 0; j < respawns[i].length; j++)
+            {
+                GameObject objectGO = Instantiate(respawns[i].prefab, transform, true);
+                objectGO.GetComponent<MovableObject>().Index = i;
+                ReturnObjectToPool(objectGO);
+            }
         }
     }
 
@@ -37,26 +49,40 @@ public class PoolManager : MonoBehaviour
 
     public GameObject GetObjectFromPool()
     {
-        GameObject objectGO = pool.Dequeue();
+        int index = GetRandomIndex();
+        GameObject objectGO = pool[index].Dequeue();
         objectGO.SetActive(true);
+        objectGO.GetComponent<MovableObject>().Index = index;
 
         return objectGO;
     }
 
     public void ReturnObjectToPool(GameObject objectGO)
     {
+        int index = objectGO.GetComponent<MovableObject>().Index;
         objectGO.SetActive(false);
-        pool.Enqueue(objectGO);
+        pool[index].Enqueue(objectGO);
     }
 
     #endregion
 
     #region PRIVATE_METHODS
 
-    private GameObject GetRandomPrefab()
+    private int GetRandomIndex()
     {
-        int index = Random.Range(0, prefabs.Length);
-        return prefabs[index];
+        int percent = UnityEngine.Random.Range(1, 101);
+        int index = 0;
+
+        for (int i = 0; i < respawns.Length; i++)
+        {
+            if (percent < respawns[i].percent)
+            {
+                index = i;
+                break;
+            }
+        }
+
+        return index;
     }
 
     #endregion

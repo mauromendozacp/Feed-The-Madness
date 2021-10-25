@@ -18,10 +18,12 @@ public class Killer : Character
     [SerializeField] private float obstacleCrazDecrease = 25f;
     [SerializeField] private Animator killerAnim = null;
     [SerializeField] private Animator cameraAnim = null;
-    [SerializeField] private LayerMask survivorMask = default;
-    [SerializeField] private LayerMask limitMask = default;
     [SerializeField] private float decreaseCrazinessVel = 0f;
     [SerializeField] private PostProcessVolume volume = null;
+
+    [SerializeField] private LayerMask survivorMask = default;
+    [SerializeField] private LayerMask powerupMask = default;
+    [SerializeField] private LayerMask limitMask = default;
 
     #endregion
 
@@ -33,6 +35,8 @@ public class Killer : Character
     private bool attackAvailable = false;
     private float resetAttackTimer = 0.5f;
     private bool hitted = false;
+    private bool crazinessStoped = false;
+    private float crazinessStopedTimer = 3f;
     private float invulnerableTimer = 1.2f;
     private float deathTimer = 1.5f;
     private CapsuleCollider capsule = null;
@@ -133,6 +137,11 @@ public class Killer : Character
         if (Tools.CheckLayerInMask(obstacleMask, collision.gameObject.layer))
         {
             Hit();
+        }
+        else if (Tools.CheckLayerInMask(powerupMask, collision.gameObject.layer))
+        {
+            collision.gameObject.GetComponent<MovableObject>().Destroy();
+            Powerup();
         }
     }
 
@@ -273,6 +282,13 @@ public class Killer : Character
         }
     }
 
+    private void Powerup()
+    {
+        crazinessStoped = true;
+
+        Invoke(nameof(ResetCrazinessStop), crazinessStopedTimer);
+    }
+
     private void ResetHitted()
     {
         hitted = false;
@@ -280,9 +296,17 @@ public class Killer : Character
         capsule.isTrigger = false;
     }
 
+    private void ResetCrazinessStop()
+    {
+        crazinessStoped = false;
+    }
+
     private void DecreaseCraziness()
     {
-        Craziness -= Time.deltaTime * decreaseCrazinessVel;
+        if (!crazinessStoped)
+        {
+            Craziness -= Time.deltaTime * decreaseCrazinessVel;
+        }
     }
 
     private float GetChromaticValue()

@@ -13,6 +13,8 @@ public class MovableObject : MonoBehaviour
 
     #region PROPERTIES
 
+    public int Index { get; set; } = 0;
+
     public float Speed
     {
         get => speed;

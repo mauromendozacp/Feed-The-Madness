@@ -10,7 +10,7 @@ public class Character : MonoBehaviour
     [SerializeField] protected float jumpForce = 0f;
     [SerializeField] protected float jumpTimer = 0f;
     [SerializeField] protected float jumpDistance = 0f;
-    [SerializeField] protected LayerMask obstacleMask = 0;
+    [SerializeField] protected LayerMask obstacleMask = default;
 
     #endregion
 

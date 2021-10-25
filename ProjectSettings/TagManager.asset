@@ -20,9 +20,9 @@ TagManager:
   - Floor
   - PostProcessing
   - Tree
-  - 
-  - 
-  - 
+  - Powerup
+  - TreeObstacle
+  - Terrain
   - 
   - 
   - 

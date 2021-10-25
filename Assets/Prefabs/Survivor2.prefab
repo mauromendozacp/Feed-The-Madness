@@ -196,7 +196,7 @@ MonoBehaviour:
   jumpDistance: 0
   obstacleMask:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 67584
   crazinessPoints: 10
   points: 50
   deathTimer: 1.1
