@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{B618A953-CDD5-417A-9182-61FF8A662B32}" SchemaVersion="103">
 	<GameParameters>
-		<WorkUnit Name="Default Work Unit" ID="{B618A953-CDD5-417A-9182-61FF8A662B32}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{B618A953-CDD5-417A-9182-61FF8A662B32}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="frenesi" ID="{01EA4C00-2601-4D67-A26A-A0009DA23B36}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="1"/>
+						<Property Name="Max" Type="Real64" Value="1"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
 	</GameParameters>
 </WwiseDocument>

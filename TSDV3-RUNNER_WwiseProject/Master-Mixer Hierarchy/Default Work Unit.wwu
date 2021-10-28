@@ -9,6 +9,27 @@
 							<ObjectRef Name="System" ID="{02272B47-6FF2-4819-89D1-025700379989}" WorkUnitID="{45620F74-C241-4539-AA56-BAA629070A54}"/>
 						</Reference>
 					</ReferenceList>
+					<StateInfo>
+						<StateGroupList>
+							<StateGroupInfo>
+								<StateGroupRef Name="pause" ID="{F9B1D6DD-5DBF-4111-9587-17F7C41310A5}"/>
+							</StateGroupInfo>
+						</StateGroupList>
+						<CustomStateList>
+							<CustomState>
+								<StateRef Name="on" ID="{42228F38-D817-4AF9-B33A-80C2725752D9}"/>
+								<CustomState Name="" ID="{95464C23-5A02-4397-9B5B-1253B2A0B666}" ShortID="765572836">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16" Value="70"/>
+									</PropertyList>
+								</CustomState>
+							</CustomState>
+							<CustomState>
+								<StateRef Name="off" ID="{6107D4A2-A104-4E7B-9057-A2245A272303}"/>
+								<CustomState Name="" ID="{78C02F64-DBF0-4AE7-9E17-6C0E31B53547}" ShortID="408302621"/>
+							</CustomState>
+						</CustomStateList>
+					</StateInfo>
 					<ObjectLists/>
 				</Bus>
 			</ChildrenList>

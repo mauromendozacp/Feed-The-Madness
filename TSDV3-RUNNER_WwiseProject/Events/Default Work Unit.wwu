@@ -4,6 +4,22 @@
 		<WorkUnit Name="Default Work Unit" ID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}" PersistMode="Standalone">
 			<ChildrenList>
 				<Event Name="testxd" ID="{A7630B32-0ADF-4CF9-9FE1-DDFC46094651}"/>
+				<Event Name="cha_footsteps" ID="{3189D242-001D-4C99-B003-045A2E406D7D}"/>
+				<Event Name="cha_jump" ID="{01D2D67D-1381-4AD8-972B-4AF851D17901}"/>
+				<Event Name="cha_axe" ID="{4339229A-761C-460A-AB59-FE50769BD7BD}"/>
+				<Event Name="cha_throw_axe" ID="{2EDF4D95-D122-40F5-BD4A-E4F6B6497120}"/>
+				<Event Name="cha_damage" ID="{328D02E0-8822-47EF-B05C-4548A1D2C65D}"/>
+				<Event Name="ui_button" ID="{97A6C62C-82A8-4DD7-BC98-48577749ECC8}"/>
+				<Event Name="ui_menu" ID="{0E0DBB0C-86D7-469E-9AF3-E204BBA0BCB3}"/>
+				<Event Name="amb_tent" ID="{CB31920E-6406-457A-9D3F-17DD3F55367F}"/>
+				<Event Name="amb_trees" ID="{53C79EC9-1006-4A19-9748-7BE4355BEC5B}"/>
+				<Event Name="amb_col_tree" ID="{45CD1D5A-CD4B-47D6-8BFC-FE5A5889C60E}"/>
+				<Event Name="amb_wind" ID="{3254ED30-862B-4AFF-99F3-B43750803F8C}"/>
+				<Event Name="mx_menu" ID="{44A35AD1-A095-428B-9F15-75FF1F4BAFF3}"/>
+				<Event Name="mx_horn" ID="{E538DB0B-F0E2-4DEA-BCDD-4BB2D347F1D6}"/>
+				<Event Name="mx_gameover" ID="{7B8EFCDE-61C2-4900-BBA2-5A47BBEABE36}"/>
+				<Event Name="amb_falling_tree" ID="{C5A0D4B4-FC90-4723-8EF2-8B565EAE5D6C}"/>
+				<Event Name="cha_axe_success" ID="{4BB3755D-6EC7-48F8-B0D0-23903FCD8486}"/>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

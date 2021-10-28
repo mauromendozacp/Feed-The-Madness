@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{26F5F587-42E0-42E1-A61B-0D5A68857A69}" SchemaVersion="103">
 	<Switches>
-		<WorkUnit Name="Default Work Unit" ID="{26F5F587-42E0-42E1-A61B-0D5A68857A69}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{26F5F587-42E0-42E1-A61B-0D5A68857A69}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="terrain" ID="{EFCC8DC5-B5A3-48A9-9024-DC4B0530C358}">
+					<ChildrenList>
+						<Switch Name="t_dirt" ID="{0C3D4A19-E343-4E60-A376-61F0AB4CF1F7}"/>
+						<Switch Name="t_grass" ID="{F1B2994D-9B13-41FB-91C1-34CDD127E0F2}"/>
+						<Switch Name="t_long_grass" ID="{E82DE739-09B3-47AB-8298-078BE3813325}"/>
+					</ChildrenList>
+				</SwitchGroup>
+				<SwitchGroup Name="menu" ID="{0D2B04C6-390C-426B-8FF9-135BC24D2977}">
+					<ChildrenList>
+						<Switch Name="index" ID="{E34750B5-9908-4BA3-9194-8CE005513581}"/>
+						<Switch Name="credits" ID="{77C712DE-79B5-463A-8548-2B0C807BFB22}"/>
+						<Switch Name="gameover" ID="{4B94731F-A286-4F9D-8427-E705124C4ED8}"/>
+					</ChildrenList>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</Switches>
 </WwiseDocument>
