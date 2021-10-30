@@ -2593,11 +2593,14 @@ MonoBehaviour:
   hud: {fileID: 712251332}
   floorLoop: {fileID: 41454200}
   difficulties:
-  - time: 30
+  - difficulty: 0
+    time: 30
     increaseSpeed: 15
-  - time: 75
+  - difficulty: 1
+    time: 75
     increaseSpeed: 30
-  - time: 135
+  - difficulty: 2
+    time: 135
     increaseSpeed: 50
 --- !u!1001 &528772497
 PrefabInstance:
