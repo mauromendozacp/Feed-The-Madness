@@ -17,8 +17,15 @@ public class FloorLoop : MonoBehaviour
     #endregion
 
     #region PROPERTIES
+
     public GameObject[] Floors => floors;
-    public float Speed => speed;
+
+    public float Speed
+    {
+        get => speed;
+        set => speed = value;
+    }
+
     #endregion
 
     #region UNITY_CALLS

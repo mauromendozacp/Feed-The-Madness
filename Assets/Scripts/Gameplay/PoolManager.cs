@@ -20,6 +20,7 @@ public class PoolManager : MonoBehaviour
 
     #region PRIVATE_FIELDS
 
+    private float limitZ = -6f;
     private Queue<GameObject>[] pool;
 
     #endregion
@@ -37,7 +38,10 @@ public class PoolManager : MonoBehaviour
             for (int j = 0; j < respawns[i].length; j++)
             {
                 GameObject objectGO = Instantiate(respawns[i].prefab, transform, true);
-                objectGO.GetComponent<MovableObject>().Index = i;
+                MovableObject obj = objectGO.GetComponent<MovableObject>();
+                obj.Index = i;
+                obj.LimitZ = limitZ;
+
                 ReturnObjectToPool(objectGO);
             }
         }

@@ -21,6 +21,8 @@ public class MovableObject : MonoBehaviour
         set => speed = value;
     }
 
+    public float LimitZ { get; set; } = 0f;
+
     #endregion
 
     #region PRIVATE_FIELDS
@@ -39,14 +41,6 @@ public class MovableObject : MonoBehaviour
     void Update()
     {
         MoveBack();
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (Tools.CheckLayerInMask(limitMask, collision.gameObject.layer))
-        {
-            Destroy();
-        }
     }
 
     #endregion
@@ -74,6 +68,9 @@ public class MovableObject : MonoBehaviour
     private void MoveBack()
     {
         transform.Translate(Vector3.back * (speed * Time.deltaTime));
+
+        if (transform.position.z < LimitZ)
+            Destroy();
     }
 
     #endregion
