@@ -8,6 +8,7 @@ public struct RESPAWN
     public GameObject prefab;
     public float percent;
     public int length;
+    public bool enabled;
 }
 
 public class PoolManager : MonoBehaviour
@@ -22,6 +23,12 @@ public class PoolManager : MonoBehaviour
 
     private float limitZ = -6f;
     private Queue<GameObject>[] pool;
+
+    #endregion
+
+    #region PROPERTIES
+
+    public RESPAWN[] Respawns => respawns;
 
     #endregion
 
@@ -79,7 +86,8 @@ public class PoolManager : MonoBehaviour
 
         for (int i = 0; i < respawns.Length; i++)
         {
-            if (percent < respawns[i].percent)
+            if (percent < respawns[i].percent
+                && respawns[i].enabled)
             {
                 index = i;
                 break;

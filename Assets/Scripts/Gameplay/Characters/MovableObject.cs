@@ -1,6 +1,12 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+
+public class MOActions
+{
+    public Action OnStart = null;
+    public Action OnEnd = null;
+}
 
 public class MovableObject : MonoBehaviour
 {
@@ -8,6 +14,13 @@ public class MovableObject : MonoBehaviour
 
     [SerializeField] private float speed = 0f;
     [SerializeField] private LayerMask limitMask = default;
+
+    #endregion
+
+    #region PRIVATE_FIELDS
+
+    private MOMActions momActions = null;
+    private MOActions moActions = null;
 
     #endregion
 
@@ -23,11 +36,7 @@ public class MovableObject : MonoBehaviour
 
     public float LimitZ { get; set; } = 0f;
 
-    #endregion
-
-    #region PRIVATE_FIELDS
-
-    private MOMActions momActions = null;
+    public MOActions MOActions => moActions;
 
     #endregion
 
@@ -49,6 +58,7 @@ public class MovableObject : MonoBehaviour
 
     public void InitModuleHandlers(MOMActions momActions)
     {
+        moActions = new MOActions();
         this.momActions = momActions;
     }
 
@@ -56,6 +66,8 @@ public class MovableObject : MonoBehaviour
     {
         momActions?.OnRemove?.Invoke(this);
         momActions?.OnReturnPoolManager?.Invoke(gameObject);
+
+        moActions?.OnEnd?.Invoke();
 
         if (momActions == null)
             Destroy(gameObject);

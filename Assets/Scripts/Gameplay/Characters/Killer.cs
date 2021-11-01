@@ -16,9 +16,10 @@ public class Killer : Character
     [SerializeField] private float craziness = 0f;
     [SerializeField] private float attackDistance = 0f;
     [SerializeField] private float obstacleCrazDecrease = 25f;
+    [SerializeField] private float decreaseCrazinessVel = 0f;
+
     [SerializeField] private Animator killerAnim = null;
     [SerializeField] private Animator cameraAnim = null;
-    [SerializeField] private float decreaseCrazinessVel = 0f;
     [SerializeField] private PostProcessVolume volume = null;
 
     [SerializeField] private LayerMask survivorMask = default;
@@ -30,15 +31,17 @@ public class Killer : Character
     #region PRIVATE_FIELDS
 
     private int score = 0;
+    private bool hitted = false;
+    private float invulnerableTimer = 1.2f;
+    private float deathTimer = 1.5f;
+
     private bool crazinessStop = false;
     private float crazinessBase = 0f;
     private float crazinessStopTimer = 5f;
     private float checkHorDistance = 2f;
+
     private bool attackAvailable = false;
     private float resetAttackTimer = 0.5f;
-    private bool hitted = false;
-    private float invulnerableTimer = 1.2f;
-    private float deathTimer = 1.5f;
     private CapsuleCollider capsule = null;
 
     private ChromaticAberration chromatic = null;
@@ -126,6 +129,7 @@ public class Killer : Character
             base.Update();
             MoveHorizontal();
             Attack();
+            //Throw();
             InputJump();
             CheckGroundStatus();
             DecreaseCraziness();
@@ -237,6 +241,17 @@ public class Killer : Character
                 Invoke(nameof(ResetAttack), resetAttackTimer);
 
                 StartCoroutine(CastAttack());
+            }
+        }
+    }
+
+    private void Throw()
+    {
+        if (!attackAvailable)
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                killerAnim.SetTrigger("Throw");
             }
         }
     }

@@ -30,6 +30,11 @@ public class LevelController : MonoBehaviour
     [SerializeField] private FloorLoop floorLoop = null;
     [SerializeField] private LEVEL[] difficulties = null;
 
+    [Header("Obstacles"), Space]
+    [SerializeField] private PoolManager obstacleManager = null;
+    [SerializeField] private PoolManager treeLeftManager = null;
+    [SerializeField] private PoolManager treeRightManager = null;
+
     #endregion
 
     #region PRIVATE_FIELDS
@@ -109,10 +114,19 @@ public class LevelController : MonoBehaviour
                 switch (difficulties[difficultyIndex].difficulty)
                 {
                     case DIFFICULTY.EASY:
+
+                        obstacleManager.Respawns[1].enabled = true;
+                        obstacleManager.Respawns[2].enabled = true;
+
                         break;
                     case DIFFICULTY.MEDIUM:
+
+                        treeLeftManager.Respawns[2].enabled = true;
+                        treeRightManager.Respawns[2].enabled = true;
+
                         break;
                     case DIFFICULTY.HARD:
+
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
