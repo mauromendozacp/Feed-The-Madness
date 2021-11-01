@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{415A6879-4EFF-4C2A-BB9F-047D0D797A3B}" SchemaVersion="103">
 	<SoundcasterSessions>
-		<WorkUnit Name="Default Work Unit" ID="{415A6879-4EFF-4C2A-BB9F-047D0D797A3B}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{415A6879-4EFF-4C2A-BB9F-047D0D797A3B}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="prueba" ID="{EFC4FF63-D4DC-4CA2-98E6-0E40C95EA775}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="ambient" ID="{3254ED30-862B-4AFF-99F3-B43750803F8C}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="amb_tent" ID="{CB31920E-6406-457A-9D3F-17DD3F55367F}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="amb_falling_tree" ID="{C5A0D4B4-FC90-4723-8EF2-8B565EAE5D6C}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="location" ID="{E2AA16DE-DCFE-4858-B2F7-7F70997CD4A1}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="frenesi" ID="{01EA4C00-2601-4D67-A26A-A0009DA23B36}"/>
+							<Value>1</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="None" ID="{EC96A951-0A8C-42DB-9220-6DB2FC914547}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="gameplay" ID="{77C712DE-79B5-463A-8548-2B0C807BFB22}"/>
+						<CurrentSwitchRef Name="t_long_grass" ID="{E82DE739-09B3-47AB-8298-078BE3813325}"/>
+					</CurrentSwitchList>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundcasterSessions>
 </WwiseDocument>

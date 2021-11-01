@@ -13,7 +13,7 @@
 				<SwitchGroup Name="menu" ID="{0D2B04C6-390C-426B-8FF9-135BC24D2977}">
 					<ChildrenList>
 						<Switch Name="index" ID="{E34750B5-9908-4BA3-9194-8CE005513581}"/>
-						<Switch Name="credits" ID="{77C712DE-79B5-463A-8548-2B0C807BFB22}"/>
+						<Switch Name="gameplay" ID="{77C712DE-79B5-463A-8548-2B0C807BFB22}"/>
 						<Switch Name="gameover" ID="{4B94731F-A286-4F9D-8427-E705124C4ED8}"/>
 					</ChildrenList>
 				</SwitchGroup>
