@@ -1,9 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-[Serializable]
-public struct DIFFICULTY
+public enum DIFFICULTY
 {
+    EASY,
+    MEDIUM,
+    HARD
+}
+
+[Serializable]
+public struct LEVEL
+{
+    public DIFFICULTY difficulty;
     public float time;
     public float increaseSpeed;
 }
@@ -19,7 +27,13 @@ public class LevelController : MonoBehaviour
 
     [SerializeField] private Killer killer = null;
     [SerializeField] private HUD hud = null;
-    [SerializeField] private DIFFICULTY[] difficulties = null;
+    [SerializeField] private FloorLoop floorLoop = null;
+    [SerializeField] private LEVEL[] difficulties = null;
+
+    [Header("Obstacles"), Space]
+    [SerializeField] private PoolManager obstacleManager = null;
+    [SerializeField] private PoolManager treeLeftManager = null;
+    [SerializeField] private PoolManager treeRightManager = null;
 
     #endregion
 
@@ -93,6 +107,29 @@ public class LevelController : MonoBehaviour
                 foreach (MovableObjectManager movable in movables)
                 {
                     movable.Speed += movable.Speed * difficulties[difficultyIndex].increaseSpeed / 100;
+                }
+
+                floorLoop.Speed += floorLoop.Speed * difficulties[difficultyIndex].increaseSpeed / 100;
+
+                switch (difficulties[difficultyIndex].difficulty)
+                {
+                    case DIFFICULTY.EASY:
+
+                        obstacleManager.Respawns[1].enabled = true;
+                        obstacleManager.Respawns[2].enabled = true;
+
+                        break;
+                    case DIFFICULTY.MEDIUM:
+
+                        treeLeftManager.Respawns[2].enabled = true;
+                        treeRightManager.Respawns[2].enabled = true;
+
+                        break;
+                    case DIFFICULTY.HARD:
+
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
                 }
 
                 difficultyIndex++;

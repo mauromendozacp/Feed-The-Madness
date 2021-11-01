@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,6 +17,11 @@ public class TreeFall : MonoBehaviour
     void OnEnable()
     {
         Invoke(nameof(StartFall), fallTimer);
+    }
+
+    void OnDisable()
+    {
+        anim.SetTrigger("off");
     }
 
     #endregion

@@ -16,9 +16,10 @@ public class Killer : Character
     [SerializeField] private float craziness = 0f;
     [SerializeField] private float attackDistance = 0f;
     [SerializeField] private float obstacleCrazDecrease = 25f;
+    [SerializeField] private float decreaseCrazinessVel = 0f;
+
     [SerializeField] private Animator killerAnim = null;
     [SerializeField] private Animator cameraAnim = null;
-    [SerializeField] private float decreaseCrazinessVel = 0f;
     [SerializeField] private PostProcessVolume volume = null;
 
     [SerializeField] private LayerMask survivorMask = default;
@@ -30,15 +31,17 @@ public class Killer : Character
     #region PRIVATE_FIELDS
 
     private int score = 0;
-    private float crazinessBase = 0f;
-    private float checkHorDistance = 2f;
-    private bool attackAvailable = false;
-    private float resetAttackTimer = 0.5f;
     private bool hitted = false;
-    private bool crazinessStoped = false;
-    private float crazinessStopedTimer = 3f;
     private float invulnerableTimer = 1.2f;
     private float deathTimer = 1.5f;
+
+    private bool crazinessStop = false;
+    private float crazinessBase = 0f;
+    private float crazinessStopTimer = 5f;
+    private float checkHorDistance = 2f;
+
+    private bool attackAvailable = false;
+    private float resetAttackTimer = 0.5f;
     private CapsuleCollider capsule = null;
 
     private ChromaticAberration chromatic = null;
@@ -126,6 +129,7 @@ public class Killer : Character
             base.Update();
             MoveHorizontal();
             Attack();
+            //Throw();
             InputJump();
             CheckGroundStatus();
             DecreaseCraziness();
@@ -241,6 +245,17 @@ public class Killer : Character
         }
     }
 
+    private void Throw()
+    {
+        if (!attackAvailable)
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                killerAnim.SetTrigger("Throw");
+            }
+        }
+    }
+
     private void ResetAttack()
     {
         attackAvailable = false;
@@ -284,9 +299,14 @@ public class Killer : Character
 
     private void Powerup()
     {
-        crazinessStoped = true;
+        Craziness = crazinessBase;
+        crazinessStop = true;
+        Invoke(nameof(ResetCrazinessStop), crazinessStopTimer);
+    }
 
-        Invoke(nameof(ResetCrazinessStop), crazinessStopedTimer);
+    private void ResetCrazinessStop()
+    {
+        crazinessStop = false;
     }
 
     private void ResetHitted()
@@ -296,14 +316,9 @@ public class Killer : Character
         capsule.isTrigger = false;
     }
 
-    private void ResetCrazinessStop()
-    {
-        crazinessStoped = false;
-    }
-
     private void DecreaseCraziness()
     {
-        if (!crazinessStoped)
+        if (!crazinessStop)
         {
             Craziness -= Time.deltaTime * decreaseCrazinessVel;
         }

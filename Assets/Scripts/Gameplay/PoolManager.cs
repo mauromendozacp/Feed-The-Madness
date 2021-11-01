@@ -8,6 +8,7 @@ public struct RESPAWN
     public GameObject prefab;
     public float percent;
     public int length;
+    public bool enabled;
 }
 
 public class PoolManager : MonoBehaviour
@@ -20,7 +21,14 @@ public class PoolManager : MonoBehaviour
 
     #region PRIVATE_FIELDS
 
+    private float limitZ = -6f;
     private Queue<GameObject>[] pool;
+
+    #endregion
+
+    #region PROPERTIES
+
+    public RESPAWN[] Respawns => respawns;
 
     #endregion
 
@@ -37,7 +45,10 @@ public class PoolManager : MonoBehaviour
             for (int j = 0; j < respawns[i].length; j++)
             {
                 GameObject objectGO = Instantiate(respawns[i].prefab, transform, true);
-                objectGO.GetComponent<MovableObject>().Index = i;
+                MovableObject obj = objectGO.GetComponent<MovableObject>();
+                obj.Index = i;
+                obj.LimitZ = limitZ;
+
                 ReturnObjectToPool(objectGO);
             }
         }
@@ -75,7 +86,8 @@ public class PoolManager : MonoBehaviour
 
         for (int i = 0; i < respawns.Length; i++)
         {
-            if (percent < respawns[i].percent)
+            if (percent < respawns[i].percent
+                && respawns[i].enabled)
             {
                 index = i;
                 break;
