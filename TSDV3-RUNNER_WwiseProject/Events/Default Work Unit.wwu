@@ -316,6 +316,27 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="cha_dead" ID="{E8EFCBC0-6371-4B4C-AC23-A195229167D5}">
+					<ChildrenList>
+						<Action Name="" ID="{96789126-67B7-4E70-BE79-8E0F14C9180F}" ShortID="922691296">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="game_over" ID="{D8114A5A-BCEA-47A6-BBA1-0673E6DCBCAC}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{163CCED5-A1B3-4FC5-8763-04D2E245BC1C}" ShortID="892187292">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="breathing" ID="{74292A70-C149-46C7-B316-7D269D08D336}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

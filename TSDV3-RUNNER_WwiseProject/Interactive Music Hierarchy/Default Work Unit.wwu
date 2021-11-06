@@ -296,7 +296,6 @@
 													<PropertyList>
 														<Property Name="IsFolder" Type="bool" Value="True"/>
 													</PropertyList>
-													<ReferenceList/>
 													<TransitionInfo/>
 												</MusicTransition>
 											</TransitionList>
@@ -1458,6 +1457,14 @@
 							</Path>
 							<AudioNodeInfo>
 								<AudioNodeRef Name="mx_menu" ID="{1E99F185-EFA6-44AE-B16F-580903367944}" WorkUnitID="{2635C566-F42E-485A-AC76-B775F6474BC5}" Platform="Linked"/>
+							</AudioNodeInfo>
+						</Entry>
+						<Entry>
+							<Path>
+								<PathElementRef Name="menu" ID="{0D2B04C6-390C-426B-8FF9-135BC24D2977}"/>
+							</Path>
+							<AudioNodeInfo>
+								<NoObject Platform="Linked"/>
 							</AudioNodeInfo>
 						</Entry>
 					</EntryList>
