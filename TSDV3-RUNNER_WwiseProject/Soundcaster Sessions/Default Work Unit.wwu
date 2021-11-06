@@ -10,12 +10,36 @@
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="mx" ID="{E90A416F-F65B-45AE-88E8-38FC632400DB}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="cha_damage" ID="{328D02E0-8822-47EF-B05C-4548A1D2C65D}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="amb_tent" ID="{CB31920E-6406-457A-9D3F-17DD3F55367F}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}"/>
 							<Position X="1" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="cha_footsteps" ID="{3189D242-001D-4C99-B003-045A2E406D7D}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="cha_axe" ID="{4339229A-761C-460A-AB59-FE50769BD7BD}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="amb_falling_tree" ID="{C5A0D4B4-FC90-4723-8EF2-8B565EAE5D6C}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}"/>
 							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="cha_boost" ID="{E538DB0B-F0E2-4DEA-BCDD-4BB2D347F1D6}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="cha_axe_success" ID="{4BB3755D-6EC7-48F8-B0D0-23903FCD8486}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}"/>
+							<Position X="2" Y="2"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
@@ -25,11 +49,11 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="frenesi" ID="{01EA4C00-2601-4D67-A26A-A0009DA23B36}"/>
-							<Value>1</Value>
+							<Value>0.99</Value>
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="None" ID="{EC96A951-0A8C-42DB-9220-6DB2FC914547}"/>
+						<CurrentStateRef Name="off" ID="{6107D4A2-A104-4E7B-9057-A2245A272303}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="gameplay" ID="{77C712DE-79B5-463A-8548-2B0C807BFB22}"/>

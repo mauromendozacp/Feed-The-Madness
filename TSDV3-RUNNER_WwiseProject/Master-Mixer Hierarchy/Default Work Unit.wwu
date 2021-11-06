@@ -9,6 +9,28 @@
 							<ObjectRef Name="System" ID="{02272B47-6FF2-4819-89D1-025700379989}" WorkUnitID="{45620F74-C241-4539-AA56-BAA629070A54}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<Bus Name="HDR" ID="{77D7E668-532C-458B-932D-19C5F4C653E9}">
+							<PropertyList>
+								<Property Name="HdrEnable" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="HdrThreshold" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="HdrPeakOutputGameParameter">
+									<ObjectRef Name="frenesi" ID="{01EA4C00-2601-4D67-A26A-A0009DA23B36}" WorkUnitID="{B618A953-CDD5-417A-9182-61FF8A662B32}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</Bus>
+					</ChildrenList>
 					<StateInfo>
 						<StateGroupList>
 							<StateGroupInfo>

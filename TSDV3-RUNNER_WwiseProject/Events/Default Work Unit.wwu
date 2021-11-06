@@ -40,7 +40,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="axe_woosh" ID="{96572F79-29D7-4D58-BE08-CF6ADCC95334}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+									<ObjectRef Name="axe_whoosh" ID="{FF4701C3-6F0B-4F5B-B448-54B25B7BEA26}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -61,7 +61,17 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="axe_throw" ID="{B2818D2C-559E-4AD5-8943-55922E1350C2}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+									<ObjectRef Name="axe_whoosh" ID="{FF4701C3-6F0B-4F5B-B448-54B25B7BEA26}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{7FC19E56-98EA-4328-AD18-28A0568EB811}" ShortID="108296600">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="0.1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="axe_throw" ID="{58A42144-3517-4A91-860A-EFBA526F4B75}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -80,7 +90,7 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="26"/>
 								<Property Name="FadeTime" Type="Real64" Value="0.5"/>
-								<Property Name="Lowpass" Type="int16" Value="70"/>
+								<Property Name="Lowpass" Type="int16" Value="50"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -98,6 +108,28 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3B28702A-C0E1-4E3F-A481-655B176D90E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{CEC0DF6B-67A3-43A3-95B2-F15E436C7849}" ShortID="647631781">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="breathing" ID="{74292A70-C149-46C7-B316-7D269D08D336}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{70762048-9FE3-406E-8676-D54066E4535B}" ShortID="932735816">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Delay" Type="Real64" Value="4"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="breathing" ID="{74292A70-C149-46C7-B316-7D269D08D336}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -196,29 +228,31 @@
 						<Action Name="" ID="{E66D65A7-D369-4D30-80CF-E1644363DA0A}" ShortID="119436858">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="axe_damage" ID="{2173AFAE-1484-4C41-8E5D-C7CF257D04F8}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+									<ObjectRef Name="axe_damage" ID="{51977B7D-65BE-4653-B2C2-45C2B1199546}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 						<Action Name="" ID="{095415AC-796C-4491-8569-5AA046CCE275}" ShortID="759251915">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.1"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="axe_throw" ID="{B2818D2C-559E-4AD5-8943-55922E1350C2}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+									<ObjectRef Name="axe_throw" ID="{58A42144-3517-4A91-860A-EFBA526F4B75}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 						<Action Name="" ID="{B12AAFA6-8057-4D34-B6BB-1635D736F139}" ShortID="139099807">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.1"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="axe_woosh" ID="{96572F79-29D7-4D58-BE08-CF6ADCC95334}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+									<ObjectRef Name="axe_whoosh" ID="{FF4701C3-6F0B-4F5B-B448-54B25B7BEA26}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -250,6 +284,38 @@
 					</ChildrenList>
 				</Event>
 				<Event Name="amb_rain" ID="{4B1E85FF-80EF-45A2-A8D0-98328DBBC216}"/>
+				<Event Name="cha_breath" ID="{DBE72546-19E3-4CE5-A4B4-CC99DFBE89EF}">
+					<ChildrenList>
+						<Action Name="" ID="{FE0CEEB4-861F-46CC-9D6D-AAB9DB5D6B18}" ShortID="505368671">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="breathing" ID="{74292A70-C149-46C7-B316-7D269D08D336}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{17869C03-AD28-411A-AEBC-EFF5B7C620F0}" ShortID="796334285">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="breathing" ID="{74292A70-C149-46C7-B316-7D269D08D336}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="mx" ID="{E90A416F-F65B-45AE-88E8-38FC632400DB}">
+					<ChildrenList>
+						<Action Name="" ID="{F6A582CE-28D4-4CFA-B3E3-5265B8829BBE}" ShortID="693061859">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="mx" ID="{4683BB79-93D5-4503-A91B-47EEC292E344}" WorkUnitID="{2635C566-F42E-485A-AC76-B775F6474BC5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
