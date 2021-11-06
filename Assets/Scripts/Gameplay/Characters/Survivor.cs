@@ -69,6 +69,8 @@ public class Survivor : Character
 
             anim.SetBool("Death", true);
             blood.Play();
+            AkSoundEngine.PostEvent("cha_axe_success", gameObject);
+
             rigid.useGravity = false;
             capsuleCollider.isTrigger = true;
 

@@ -120,6 +120,9 @@ public class Killer : Character
 
         volume.profile.TryGetSettings(out chromatic);
         volume.profile.TryGetSettings(out vignette);
+
+        /*AkSoundEngine.SetRTPCValue("cha_heart", Craziness);
+        AkSoundEngine.PostEvent("cha_heart", gameObject);*/
     }
 
     public override void Update()
@@ -129,7 +132,7 @@ public class Killer : Character
             base.Update();
             MoveHorizontal();
             Attack();
-            //Throw();
+            Throw();
             InputJump();
             CheckGroundStatus();
             DecreaseCraziness();
@@ -181,7 +184,10 @@ public class Killer : Character
         if (isGrounded)
         {
             if (Input.GetKeyDown(KeyCode.Space))
+            {
                 Jump();
+                AkSoundEngine.PostEvent("cha_jump", gameObject);
+            }
         }
     }
 
@@ -214,6 +220,7 @@ public class Killer : Character
             if (Input.GetMouseButtonDown(0))
             {
                 killerAnim.SetTrigger("Attack");
+                AkSoundEngine.PostEvent("cha_axe", gameObject);
 
                 IEnumerator CastAttack()
                 {
@@ -252,6 +259,7 @@ public class Killer : Character
             if (Input.GetMouseButtonDown(1))
             {
                 killerAnim.SetTrigger("Throw");
+                AkSoundEngine.PostEvent("cha_throw_axe", gameObject);
             }
         }
     }
@@ -266,6 +274,7 @@ public class Killer : Character
         if (!hitted)
         {
             Craziness -= obstacleCrazDecrease;
+            AkSoundEngine.PostEvent("cha_damage", gameObject);
 
             IEnumerator VignetteEffect()
             {
@@ -301,12 +310,15 @@ public class Killer : Character
     {
         Craziness = crazinessBase;
         crazinessStop = true;
+        AkSoundEngine.PostEvent("cha_boost", gameObject);
+
         Invoke(nameof(ResetCrazinessStop), crazinessStopTimer);
     }
 
     private void ResetCrazinessStop()
     {
         crazinessStop = false;
+        AkSoundEngine.PostEvent("cha_boost_stop", gameObject);
     }
 
     private void ResetHitted()
