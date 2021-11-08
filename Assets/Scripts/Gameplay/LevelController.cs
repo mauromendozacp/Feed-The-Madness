@@ -83,6 +83,8 @@ public class LevelController : MonoBehaviour
         killer.Init();
 
         //AkSoundEngine.PostEvent("mx", gameObject);
+        AkSoundEngine.PostEvent("ambient", gameObject);
+        AkSoundEngine.PostEvent("amb_rain", gameObject);
     }
 
     private void DeInit()

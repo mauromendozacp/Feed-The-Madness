@@ -31,6 +31,7 @@ public class MainmenuUI : MonoBehaviour
     {
         menuPanel.SetActive(false);
         creditsPanel.SetActive(true);
+        AkSoundEngine.PostEvent("ui_button", gameObject);
     }
 
     public void ShowMenu()

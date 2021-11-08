@@ -83,7 +83,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 210bccce3454284db754d6120c071294
     GuidInternal: 
-    m_lastTime: -8585658263861221229
+    m_lastTime: -8585654399388280997
     List:
     - name: SoundBankTestxd
       guid: 4955bd060e1a4446b856aed3a8d3aaf4
@@ -111,7 +111,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 56714d5b82b64b4895ddb6b49b972b1f
     GuidInternal: 
-    m_lastTime: -8585654434408027552
+    m_lastTime: -8585654402922168616
     List:
     - name: amb_falling_tree
       guid: b4d4a0c590fc23478ef28b565eae5d6c
@@ -283,6 +283,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: cha_dead
+      guid: c0cbefe871634c4bac23a195229167d5
+      id: 3274811914
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 56714d5b82b64b4895ddb6b49b972b1f
+      - ElementName: cha_dead
+        ObjectType: 3
+        guid: c0cbefe871634c4bac23a195229167d5
+      Path: Events\Default Work Unit\cha_dead
+      maxAttenuation: 0
+      maxDuration: 1.394562
+      minDuration: 1.29675
     - name: cha_footsteps
       guid: 42d289311d00994cb003045a2e406d7d
       id: 1375541365

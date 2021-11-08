@@ -11,15 +11,867 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="3690994985">
+		<SoundBank Id="1355168291" Language="SFX" Hash="3271112024">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
+			<StateGroups>
+				<StateGroup Id="3092587493" Name="pause" ObjectPath="\States\Default Work Unit\pause" GUID="{F9B1D6DD-5DBF-4111-9587-17F7C41310A5}">
+					<States>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\pause\None" GUID="{EC96A951-0A8C-42DB-9220-6DB2FC914547}"/>
+						<State Id="1651971902" Name="on" ObjectPath="\States\Default Work Unit\pause\on" GUID="{42228F38-D817-4AF9-B33A-80C2725752D9}"/>
+						<State Id="930712164" Name="off" ObjectPath="\States\Default Work Unit\pause\off" GUID="{6107D4A2-A104-4E7B-9057-A2245A272303}"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3815026176" Language="SFX" Hash="1017956396">
+		<SoundBank Id="3815026176" Language="SFX" Hash="3615301552">
 			<ObjectPath>\SoundBanks\Default Work Unit\SoundBankTestxd</ObjectPath>
 			<ShortName>SoundBankTestxd</ShortName>
 			<Path>SoundBankTestxd.bnk</Path>
+			<IncludedEvents>
+				<Event Id="2954529342" Name="amb_falling_tree" ObjectPath="\Events\Default Work Unit\amb_falling_tree" MaxAttenuation="50.000000" DurationType="OneShot" DurationMin="1.122610" DurationMax="2.378898">
+					<IncludedMemoryFiles>
+						<File Id="55562161" Language="SFX">
+							<ShortName>wood_crash.wav</ShortName>
+							<Path>SFX\wood_crash_5BB5696B.wem</Path>
+						</File>
+						<File Id="154217479" Language="SFX">
+							<ShortName>falling_tree.wav</ShortName>
+							<Path>SFX\falling_tree_6D711368.wem</Path>
+						</File>
+						<File Id="191201624" Language="SFX">
+							<ShortName>wood_crash.wav</ShortName>
+							<Path>SFX\wood_crash_91E62C1E.wem</Path>
+						</File>
+						<File Id="288683351" Language="SFX">
+							<ShortName>falling_tree.wav</ShortName>
+							<Path>SFX\falling_tree_5A88C6D4.wem</Path>
+						</File>
+						<File Id="699848618" Language="SFX">
+							<ShortName>falling_tree.wav</ShortName>
+							<Path>SFX\falling_tree_12239CE2.wem</Path>
+						</File>
+						<File Id="978247448" Language="SFX">
+							<ShortName>falling_tree.wav</ShortName>
+							<Path>SFX\falling_tree_EF6642C0.wem</Path>
+						</File>
+						<File Id="1004829790" Language="SFX">
+							<ShortName>wood_crash.wav</ShortName>
+							<Path>SFX\wood_crash_E3D1C194.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3302041772" Name="amb_rain" ObjectPath="\Events\Default Work Unit\amb_rain" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3300706377" Name="amb_tent" ObjectPath="\Events\Default Work Unit\amb_tent" MaxAttenuation="50.000000" DurationType="OneShot" DurationMin="6.956689" DurationMax="17.370285">
+					<IncludedMemoryFiles>
+						<File Id="225467137" Language="SFX">
+							<ShortName>RADIO CAMP (esquema).wav</ShortName>
+							<Path>SFX\RADIO CAMP (esquema)_61359328.wem</Path>
+						</File>
+						<File Id="261930146" Language="SFX">
+							<ShortName>RADIO CAMP (esquema).wav</ShortName>
+							<Path>SFX\RADIO CAMP (esquema)_EF2C1955.wem</Path>
+						</File>
+						<File Id="273954166" Language="SFX">
+							<ShortName>RADIO CAMP (esquema).wav</ShortName>
+							<Path>SFX\RADIO CAMP (esquema)_5B3F38B1.wem</Path>
+						</File>
+						<File Id="409517096" Language="SFX">
+							<ShortName>RADIO CAMP (esquema).wav</ShortName>
+							<Path>SFX\RADIO CAMP (esquema)_3898CB7F.wem</Path>
+						</File>
+						<File Id="494600008" Language="SFX">
+							<ShortName>RADIO CAMP (esquema).wav</ShortName>
+							<Path>SFX\RADIO CAMP (esquema)_335B5A0B.wem</Path>
+						</File>
+						<File Id="535433963" Language="SFX">
+							<ShortName>RADIO CAMP (esquema).wav</ShortName>
+							<Path>SFX\RADIO CAMP (esquema)_03214321.wem</Path>
+						</File>
+						<File Id="535662543" Language="SFX">
+							<ShortName>RADIO CAMP (esquema).wav</ShortName>
+							<Path>SFX\RADIO CAMP (esquema)_424C05C8.wem</Path>
+						</File>
+						<File Id="765129716" Language="SFX">
+							<ShortName>RADIO CAMP (esquema).wav</ShortName>
+							<Path>SFX\RADIO CAMP (esquema)_1F87BC80.wem</Path>
+						</File>
+						<File Id="1000972102" Language="SFX">
+							<ShortName>RADIO CAMP (esquema).wav</ShortName>
+							<Path>SFX\RADIO CAMP (esquema)_BAC287EA.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="77978275" Name="ambient" ObjectPath="\Events\Default Work Unit\ambient" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="28560980" Language="SFX">
+							<ShortName>wind_heavy.wav</ShortName>
+							<Path>SFX\wind_heavy_236F0673.wem</Path>
+						</File>
+						<File Id="92947230" Language="SFX">
+							<ShortName>wind_light.wav</ShortName>
+							<Path>SFX\wind_light_1374AE44.wem</Path>
+						</File>
+						<File Id="117148675" Language="SFX">
+							<ShortName>wind_heavy.wav</ShortName>
+							<Path>SFX\wind_heavy_17902668.wem</Path>
+						</File>
+						<File Id="577589598" Language="SFX">
+							<ShortName>wind_light.wav</ShortName>
+							<Path>SFX\wind_light_AB3060F6.wem</Path>
+						</File>
+						<File Id="666711306" Language="SFX">
+							<ShortName>wind_heavy.wav</ShortName>
+							<Path>SFX\wind_heavy_DE400741.wem</Path>
+						</File>
+						<File Id="731640594" Language="SFX">
+							<ShortName>cricket.wav</ShortName>
+							<Path>SFX\cricket_2EE68164.wem</Path>
+						</File>
+						<File Id="752069216" Language="SFX">
+							<ShortName>wind_light.wav</ShortName>
+							<Path>SFX\wind_light_F4294657.wem</Path>
+						</File>
+						<File Id="765758406" Language="SFX">
+							<ShortName>wind_heavy.wav</ShortName>
+							<Path>SFX\wind_heavy_FD43906C.wem</Path>
+						</File>
+						<File Id="857354918" Language="SFX">
+							<ShortName>wind_light.wav</ShortName>
+							<Path>SFX\wind_light_4169001E.wem</Path>
+						</File>
+						<File Id="1067221748" Language="SFX">
+							<ShortName>wind_heavy.wav</ShortName>
+							<Path>SFX\wind_heavy_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3931567716" Name="cha_axe" ObjectPath="\Events\Default Work Unit\cha_axe" DurationType="OneShot" DurationMin="1.621565" DurationMax="2.138648">
+					<IncludedMemoryFiles>
+						<File Id="126313226" Language="SFX">
+							<ShortName>WhooshMagic1.wav</ShortName>
+							<Path>SFX\WhooshMagic1_10C4C929.wem</Path>
+						</File>
+						<File Id="149354456" Language="SFX">
+							<ShortName>WhooshMetal2.wav</ShortName>
+							<Path>SFX\WhooshMetal2_10C4C929.wem</Path>
+						</File>
+						<File Id="240849092" Language="SFX">
+							<ShortName>Golpe 04.wav</ShortName>
+							<Path>SFX\Golpe 04_9C4F33DC.wem</Path>
+						</File>
+						<File Id="241774127" Language="SFX">
+							<ShortName>WhooshMagic3.wav</ShortName>
+							<Path>SFX\WhooshMagic3_10C4C929.wem</Path>
+						</File>
+						<File Id="293511876" Language="SFX">
+							<ShortName>WhooshHigh3.wav</ShortName>
+							<Path>SFX\WhooshHigh3_10C4C929.wem</Path>
+						</File>
+						<File Id="337551595" Language="SFX">
+							<ShortName>WhooshLow1.wav</ShortName>
+							<Path>SFX\WhooshLow1_10C4C929.wem</Path>
+						</File>
+						<File Id="350058797" Language="SFX">
+							<ShortName>WhooshMid3.wav</ShortName>
+							<Path>SFX\WhooshMid3_10C4C929.wem</Path>
+						</File>
+						<File Id="447782890" Language="SFX">
+							<ShortName>WhooshMagic2.wav</ShortName>
+							<Path>SFX\WhooshMagic2_10C4C929.wem</Path>
+						</File>
+						<File Id="516092181" Language="SFX">
+							<ShortName>WhooshMetal1.wav</ShortName>
+							<Path>SFX\WhooshMetal1_10C4C929.wem</Path>
+						</File>
+						<File Id="673053479" Language="SFX">
+							<ShortName>Golpe 02.wav</ShortName>
+							<Path>SFX\Golpe 02_003C6025.wem</Path>
+						</File>
+						<File Id="678015089" Language="SFX">
+							<ShortName>WhooshMetal3.wav</ShortName>
+							<Path>SFX\WhooshMetal3_10C4C929.wem</Path>
+						</File>
+						<File Id="707458351" Language="SFX">
+							<ShortName>WhooshHigh1.wav</ShortName>
+							<Path>SFX\WhooshHigh1_10C4C929.wem</Path>
+						</File>
+						<File Id="709253069" Language="SFX">
+							<ShortName>Golpe 01.wav</ShortName>
+							<Path>SFX\Golpe 01_F406075A.wem</Path>
+						</File>
+						<File Id="718835456" Language="SFX">
+							<ShortName>WhooshMid2.wav</ShortName>
+							<Path>SFX\WhooshMid2_10C4C929.wem</Path>
+						</File>
+						<File Id="838380201" Language="SFX">
+							<ShortName>WhooshLow3.wav</ShortName>
+							<Path>SFX\WhooshLow3_10C4C929.wem</Path>
+						</File>
+						<File Id="851551356" Language="SFX">
+							<ShortName>WhooshMid1.wav</ShortName>
+							<Path>SFX\WhooshMid1_10C4C929.wem</Path>
+						</File>
+						<File Id="946424091" Language="SFX">
+							<ShortName>WhooshHigh2.wav</ShortName>
+							<Path>SFX\WhooshHigh2_10C4C929.wem</Path>
+						</File>
+						<File Id="979263350" Language="SFX">
+							<ShortName>WhooshLow2.wav</ShortName>
+							<Path>SFX\WhooshLow2_10C4C929.wem</Path>
+						</File>
+						<File Id="1063872518" Language="SFX">
+							<ShortName>Golpe 05.wav</ShortName>
+							<Path>SFX\Golpe 05_DEC8872C.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1266274484" Name="cha_axe_success" ObjectPath="\Events\Default Work Unit\cha_axe_success" DurationType="OneShot" DurationMin="1.566674" DurationMax="2.093624">
+					<IncludedMemoryFiles>
+						<File Id="96152212" Language="SFX">
+							<ShortName>HitFleshLow2.wav</ShortName>
+							<Path>SFX\HitFleshLow2_10C4C929.wem</Path>
+						</File>
+						<File Id="120784938" Language="SFX">
+							<ShortName>HitFleshLow3.wav</ShortName>
+							<Path>SFX\HitFleshLow3_10C4C929.wem</Path>
+						</File>
+						<File Id="189570900" Language="SFX">
+							<ShortName>HitFleshMid4.wav</ShortName>
+							<Path>SFX\HitFleshMid4_10C4C929.wem</Path>
+						</File>
+						<File Id="258150865" Language="SFX">
+							<ShortName>HitFleshMid1.wav</ShortName>
+							<Path>SFX\HitFleshMid1_10C4C929.wem</Path>
+						</File>
+						<File Id="310434310" Language="SFX">
+							<ShortName>HitFleshBlood3.wav</ShortName>
+							<Path>SFX\HitFleshBlood3_10C4C929.wem</Path>
+						</File>
+						<File Id="375815315" Language="SFX">
+							<ShortName>HitFleshHigh2.wav</ShortName>
+							<Path>SFX\HitFleshHigh2_10C4C929.wem</Path>
+						</File>
+						<File Id="440513626" Language="SFX">
+							<ShortName>HitFleshBlood2.wav</ShortName>
+							<Path>SFX\HitFleshBlood2_10C4C929.wem</Path>
+						</File>
+						<File Id="457339040" Language="SFX">
+							<ShortName>HitFleshBlood1.wav</ShortName>
+							<Path>SFX\HitFleshBlood1_10C4C929.wem</Path>
+						</File>
+						<File Id="513128787" Language="SFX">
+							<ShortName>HitFleshHigh4.wav</ShortName>
+							<Path>SFX\HitFleshHigh4_10C4C929.wem</Path>
+						</File>
+						<File Id="646588763" Language="SFX">
+							<ShortName>HitFleshLow1.wav</ShortName>
+							<Path>SFX\HitFleshLow1_10C4C929.wem</Path>
+						</File>
+						<File Id="808673011" Language="SFX">
+							<ShortName>HitFleshHigh1.wav</ShortName>
+							<Path>SFX\HitFleshHigh1_10C4C929.wem</Path>
+						</File>
+						<File Id="873955820" Language="SFX">
+							<ShortName>HitFleshMid2.wav</ShortName>
+							<Path>SFX\HitFleshMid2_10C4C929.wem</Path>
+						</File>
+						<File Id="879319792" Language="SFX">
+							<ShortName>HitFleshBlood4.wav</ShortName>
+							<Path>SFX\HitFleshBlood4_10C4C929.wem</Path>
+						</File>
+						<File Id="965872002" Language="SFX">
+							<ShortName>HitFleshLow4.wav</ShortName>
+							<Path>SFX\HitFleshLow4_10C4C929.wem</Path>
+						</File>
+						<File Id="1016272197" Language="SFX">
+							<ShortName>HitFleshMid3.wav</ShortName>
+							<Path>SFX\HitFleshMid3_10C4C929.wem</Path>
+						</File>
+						<File Id="1049983712" Language="SFX">
+							<ShortName>HitFleshHigh3.wav</ShortName>
+							<Path>SFX\HitFleshHigh3_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3502767369" Name="cha_boost" ObjectPath="\Events\Default Work Unit\cha_boost" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="9156317" Language="SFX">
+							<ShortName>Respiración grunt 01 Rapido.wav</ShortName>
+							<Path>SFX\Respiración grunt 01 Rapido_F30A037E.wem</Path>
+						</File>
+						<File Id="24396625" Language="SFX">
+							<ShortName>Grito 01.wav</ShortName>
+							<Path>SFX\Grito 01_C31C7D69.wem</Path>
+						</File>
+						<File Id="24851964" Language="SFX">
+							<ShortName>Grito 03.wav</ShortName>
+							<Path>SFX\Grito 03_497CECB4.wem</Path>
+						</File>
+						<File Id="51423992" Language="SFX">
+							<ShortName>Respiración grunt 02 Rapido.wav</ShortName>
+							<Path>SFX\Respiración grunt 02 Rapido_C28D220E.wem</Path>
+						</File>
+						<File Id="72451553" Language="SFX">
+							<ShortName>Respiración grunt 02 Rapido.wav</ShortName>
+							<Path>SFX\Respiración grunt 02 Rapido_72B8BF06.wem</Path>
+						</File>
+						<File Id="77597799" Language="SFX">
+							<ShortName>Grito 02.wav</ShortName>
+							<Path>SFX\Grito 02_4264B099.wem</Path>
+						</File>
+						<File Id="213488018" Language="SFX">
+							<ShortName>Grito 03.wav</ShortName>
+							<Path>SFX\Grito 03_4F80A5BE.wem</Path>
+						</File>
+						<File Id="223062000" Language="SFX">
+							<ShortName>Respiración frenesi 01.wav</ShortName>
+							<Path>SFX\Respiración frenesi 01_812F5B0F.wem</Path>
+						</File>
+						<File Id="238581228" Language="SFX">
+							<ShortName>Respiración frenesi 01.wav</ShortName>
+							<Path>SFX\Respiración frenesi 01_EA5279A6.wem</Path>
+						</File>
+						<File Id="245858078" Language="SFX">
+							<ShortName>Grito 03.wav</ShortName>
+							<Path>SFX\Grito 03_E9C08531.wem</Path>
+						</File>
+						<File Id="290361751" Language="SFX">
+							<ShortName>Grito 02.wav</ShortName>
+							<Path>SFX\Grito 02_21365013.wem</Path>
+						</File>
+						<File Id="305964500" Language="SFX">
+							<ShortName>Respiración frenesi 01.wav</ShortName>
+							<Path>SFX\Respiración frenesi 01_DD73DF95.wem</Path>
+						</File>
+						<File Id="336634634" Language="SFX">
+							<ShortName>Grito 01.wav</ShortName>
+							<Path>SFX\Grito 01_C889AED6.wem</Path>
+						</File>
+						<File Id="338955360" Language="SFX">
+							<ShortName>Respiración frenesi 01.wav</ShortName>
+							<Path>SFX\Respiración frenesi 01_2EBC8A09.wem</Path>
+						</File>
+						<File Id="340061354" Language="SFX">
+							<ShortName>Respiración grunt 01 Rapido.wav</ShortName>
+							<Path>SFX\Respiración grunt 01 Rapido_1EF41789.wem</Path>
+						</File>
+						<File Id="380243240" Language="SFX">
+							<ShortName>Respiración grunt 01 Rapido.wav</ShortName>
+							<Path>SFX\Respiración grunt 01 Rapido_3195508B.wem</Path>
+						</File>
+						<File Id="389662116" Language="SFX">
+							<ShortName>Grito 01.wav</ShortName>
+							<Path>SFX\Grito 01_C67EC661.wem</Path>
+						</File>
+						<File Id="416703525" Language="SFX">
+							<ShortName>Grito 03.wav</ShortName>
+							<Path>SFX\Grito 03_F00C0D00.wem</Path>
+						</File>
+						<File Id="489839947" Language="SFX">
+							<ShortName>Grito 01.wav</ShortName>
+							<Path>SFX\Grito 01_5FE5384B.wem</Path>
+						</File>
+						<File Id="494678471" Language="SFX">
+							<ShortName>Grito 02.wav</ShortName>
+							<Path>SFX\Grito 02_5CE9587B.wem</Path>
+						</File>
+						<File Id="501679175" Language="SFX">
+							<ShortName>Grito 01.wav</ShortName>
+							<Path>SFX\Grito 01_F77A77BB.wem</Path>
+						</File>
+						<File Id="527976143" Language="SFX">
+							<ShortName>Respiración grunt 01 Rapido.wav</ShortName>
+							<Path>SFX\Respiración grunt 01 Rapido_0A76DA75.wem</Path>
+						</File>
+						<File Id="529025923" Language="SFX">
+							<ShortName>Grito 02.wav</ShortName>
+							<Path>SFX\Grito 02_39B9EF7D.wem</Path>
+						</File>
+						<File Id="542764019" Language="SFX">
+							<ShortName>Respiración grunt 02 Rapido.wav</ShortName>
+							<Path>SFX\Respiración grunt 02 Rapido_0C88A1A7.wem</Path>
+						</File>
+						<File Id="613512675" Language="SFX">
+							<ShortName>Grito 01.wav</ShortName>
+							<Path>SFX\Grito 01_81FEE83F.wem</Path>
+						</File>
+						<File Id="615054674" Language="SFX">
+							<ShortName>Respiración grunt 01 Rapido.wav</ShortName>
+							<Path>SFX\Respiración grunt 01 Rapido_EB6650B6.wem</Path>
+						</File>
+						<File Id="616590970" Language="SFX">
+							<ShortName>Grito 02.wav</ShortName>
+							<Path>SFX\Grito 02_8894780B.wem</Path>
+						</File>
+						<File Id="648480149" Language="SFX">
+							<ShortName>Grito 02.wav</ShortName>
+							<Path>SFX\Grito 02_53EDB1BF.wem</Path>
+						</File>
+						<File Id="710359553" Language="SFX">
+							<ShortName>Grito 01.wav</ShortName>
+							<Path>SFX\Grito 01_FAD4F052.wem</Path>
+						</File>
+						<File Id="725228500" Language="SFX">
+							<ShortName>Grito 01.wav</ShortName>
+							<Path>SFX\Grito 01_29243A30.wem</Path>
+						</File>
+						<File Id="727902533" Language="SFX">
+							<ShortName>Grito 02.wav</ShortName>
+							<Path>SFX\Grito 02_1EEEB4AC.wem</Path>
+						</File>
+						<File Id="754516641" Language="SFX">
+							<ShortName>Respiración frenesi 01.wav</ShortName>
+							<Path>SFX\Respiración frenesi 01_D5C795B0.wem</Path>
+						</File>
+						<File Id="789834864" Language="SFX">
+							<ShortName>Grito 03.wav</ShortName>
+							<Path>SFX\Grito 03_A0819411.wem</Path>
+						</File>
+						<File Id="818869965" Language="SFX">
+							<ShortName>Grito 03.wav</ShortName>
+							<Path>SFX\Grito 03_E19C9A6A.wem</Path>
+						</File>
+						<File Id="823624662" Language="SFX">
+							<ShortName>Grito 01.wav</ShortName>
+							<Path>SFX\Grito 01_6B5940B2.wem</Path>
+						</File>
+						<File Id="858967365" Language="SFX">
+							<ShortName>Respiración frenesi 01.wav</ShortName>
+							<Path>SFX\Respiración frenesi 01_4047B255.wem</Path>
+						</File>
+						<File Id="906281659" Language="SFX">
+							<ShortName>Respiración grunt 02 Rapido.wav</ShortName>
+							<Path>SFX\Respiración grunt 02 Rapido_60B9A706.wem</Path>
+						</File>
+						<File Id="911312820" Language="SFX">
+							<ShortName>Grito 03.wav</ShortName>
+							<Path>SFX\Grito 03_284B886D.wem</Path>
+						</File>
+						<File Id="946938730" Language="SFX">
+							<ShortName>Grito 03.wav</ShortName>
+							<Path>SFX\Grito 03_F20FB0D6.wem</Path>
+						</File>
+						<File Id="948181095" Language="SFX">
+							<ShortName>Grito 02.wav</ShortName>
+							<Path>SFX\Grito 02_580108B4.wem</Path>
+						</File>
+						<File Id="949204258" Language="SFX">
+							<ShortName>Respiración frenesi 01.wav</ShortName>
+							<Path>SFX\Respiración frenesi 01_A640EBFB.wem</Path>
+						</File>
+						<File Id="973015685" Language="SFX">
+							<ShortName>Respiración grunt 02 Rapido.wav</ShortName>
+							<Path>SFX\Respiración grunt 02 Rapido_77E2958B.wem</Path>
+						</File>
+						<File Id="1026521465" Language="SFX">
+							<ShortName>Grito 03.wav</ShortName>
+							<Path>SFX\Grito 03_41B682BD.wem</Path>
+						</File>
+						<File Id="1035754881" Language="SFX">
+							<ShortName>Grito 02.wav</ShortName>
+							<Path>SFX\Grito 02_C7DE07E3.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2833872060" Name="cha_boost_stop" ObjectPath="\Events\Default Work Unit\cha_boost_stop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="623398006" Name="cha_breath" ObjectPath="\Events\Default Work Unit\cha_breath" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="51844267" Language="SFX">
+							<ShortName>Respiración cansado 01.wav</ShortName>
+							<Path>SFX\Respiración cansado 01_B017A334.wem</Path>
+						</File>
+						<File Id="230507652" Language="SFX">
+							<ShortName>Respiración grunt 02.wav</ShortName>
+							<Path>SFX\Respiración grunt 02_7A6F4690.wem</Path>
+						</File>
+						<File Id="401065570" Language="SFX">
+							<ShortName>Respiración grunt 01.wav</ShortName>
+							<Path>SFX\Respiración grunt 01_E964039A.wem</Path>
+						</File>
+						<File Id="424125822" Language="SFX">
+							<ShortName>Respiración Nariz 02.wav</ShortName>
+							<Path>SFX\Respiración Nariz 02_E85F8752.wem</Path>
+						</File>
+						<File Id="485564398" Language="SFX">
+							<ShortName>Respiración Nariz 01.wav</ShortName>
+							<Path>SFX\Respiración Nariz 01_C6734F25.wem</Path>
+						</File>
+						<File Id="581725351" Language="SFX">
+							<ShortName>Respiración Nariz 03.wav</ShortName>
+							<Path>SFX\Respiración Nariz 03_3B8CF7B1.wem</Path>
+						</File>
+						<File Id="614612371" Language="SFX">
+							<ShortName>Respiración cansado 02.wav</ShortName>
+							<Path>SFX\Respiración cansado 02_FA0E94D4.wem</Path>
+						</File>
+						<File Id="804239349" Language="SFX">
+							<ShortName>Respiración Nariz 01.wav</ShortName>
+							<Path>SFX\Respiración Nariz 01_C195ED97.wem</Path>
+						</File>
+						<File Id="1004942126" Language="SFX">
+							<ShortName>Respiración cansado 03.wav</ShortName>
+							<Path>SFX\Respiración cansado 03_12B23098.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1566291291" Name="cha_damage" ObjectPath="\Events\Default Work Unit\cha_damage" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="51844267" Language="SFX">
+							<ShortName>Respiración cansado 01.wav</ShortName>
+							<Path>SFX\Respiración cansado 01_B017A334.wem</Path>
+						</File>
+						<File Id="230507652" Language="SFX">
+							<ShortName>Respiración grunt 02.wav</ShortName>
+							<Path>SFX\Respiración grunt 02_7A6F4690.wem</Path>
+						</File>
+						<File Id="401065570" Language="SFX">
+							<ShortName>Respiración grunt 01.wav</ShortName>
+							<Path>SFX\Respiración grunt 01_E964039A.wem</Path>
+						</File>
+						<File Id="424125822" Language="SFX">
+							<ShortName>Respiración Nariz 02.wav</ShortName>
+							<Path>SFX\Respiración Nariz 02_E85F8752.wem</Path>
+						</File>
+						<File Id="485564398" Language="SFX">
+							<ShortName>Respiración Nariz 01.wav</ShortName>
+							<Path>SFX\Respiración Nariz 01_C6734F25.wem</Path>
+						</File>
+						<File Id="514774019" Language="SFX">
+							<ShortName>Golpe 02.wav</ShortName>
+							<Path>SFX\Golpe 02_9E2D480B.wem</Path>
+						</File>
+						<File Id="581725351" Language="SFX">
+							<ShortName>Respiración Nariz 03.wav</ShortName>
+							<Path>SFX\Respiración Nariz 03_3B8CF7B1.wem</Path>
+						</File>
+						<File Id="614612371" Language="SFX">
+							<ShortName>Respiración cansado 02.wav</ShortName>
+							<Path>SFX\Respiración cansado 02_FA0E94D4.wem</Path>
+						</File>
+						<File Id="631228918" Language="SFX">
+							<ShortName>Golpe 05.wav</ShortName>
+							<Path>SFX\Golpe 05_E83E993E.wem</Path>
+						</File>
+						<File Id="706826198" Language="SFX">
+							<ShortName>Golpe 04.wav</ShortName>
+							<Path>SFX\Golpe 04_4AD5D027.wem</Path>
+						</File>
+						<File Id="737399413" Language="SFX">
+							<ShortName>Golpe 01.wav</ShortName>
+							<Path>SFX\Golpe 01_9F51CE17.wem</Path>
+						</File>
+						<File Id="804239349" Language="SFX">
+							<ShortName>Respiración Nariz 01.wav</ShortName>
+							<Path>SFX\Respiración Nariz 01_C195ED97.wem</Path>
+						</File>
+						<File Id="1004942126" Language="SFX">
+							<ShortName>Respiración cansado 03.wav</ShortName>
+							<Path>SFX\Respiración cansado 03_12B23098.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3274811914" Name="cha_dead" ObjectPath="\Events\Default Work Unit\cha_dead" DurationType="OneShot" DurationMin="1.296750" DurationMax="1.394562">
+					<IncludedMemoryFiles>
+						<File Id="334485784" Language="SFX">
+							<ShortName>Grito 01 gameover.wav</ShortName>
+							<Path>SFX\Grito 01 gameover_10C4C929.wem</Path>
+						</File>
+						<File Id="799236845" Language="SFX">
+							<ShortName>Grito 02 gameover.wav</ShortName>
+							<Path>SFX\Grito 02 gameover_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1375541365" Name="cha_footsteps" ObjectPath="\Events\Default Work Unit\cha_footsteps" DurationType="OneShot" DurationMin="0.299969" DurationMax="3.141563">
+					<IncludedMemoryFiles>
+						<File Id="9622770" Language="SFX">
+							<ShortName>Hojarasca.wav</ShortName>
+							<Path>SFX\Hojarasca_91B031EA.wem</Path>
+						</File>
+						<File Id="78483480" Language="SFX">
+							<ShortName>Footstep_Grass_5.wav</ShortName>
+							<Path>SFX\Footstep_Grass_5_5AF631AC.wem</Path>
+						</File>
+						<File Id="81610158" Language="SFX">
+							<ShortName>Hojarasca.wav</ShortName>
+							<Path>SFX\Hojarasca_77C19F04.wem</Path>
+						</File>
+						<File Id="115216142" Language="SFX">
+							<ShortName>Footstep_Grass_7.wav</ShortName>
+							<Path>SFX\Footstep_Grass_7_62176A12.wem</Path>
+						</File>
+						<File Id="128537500" Language="SFX">
+							<ShortName>Footstep_Grass_1.wav</ShortName>
+							<Path>SFX\Footstep_Grass_1_80345508.wem</Path>
+						</File>
+						<File Id="346677404" Language="SFX">
+							<ShortName>Hojarasca.wav</ShortName>
+							<Path>SFX\Hojarasca_A6034E0B.wem</Path>
+						</File>
+						<File Id="477685215" Language="SFX">
+							<ShortName>Footstep_Grass_3.wav</ShortName>
+							<Path>SFX\Footstep_Grass_3_57F1DDF0.wem</Path>
+						</File>
+						<File Id="638429619" Language="SFX">
+							<ShortName>Footstep_Grass_6.wav</ShortName>
+							<Path>SFX\Footstep_Grass_6_436DA23F.wem</Path>
+						</File>
+						<File Id="824298306" Language="SFX">
+							<ShortName>Footstep_Grass_8.wav</ShortName>
+							<Path>SFX\Footstep_Grass_8_62B53452.wem</Path>
+						</File>
+						<File Id="1019520289" Language="SFX">
+							<ShortName>Footstep_Grass_2.wav</ShortName>
+							<Path>SFX\Footstep_Grass_2_D96B4383.wem</Path>
+						</File>
+						<File Id="1042795472" Language="SFX">
+							<ShortName>Footstep_Grass_4.wav</ShortName>
+							<Path>SFX\Footstep_Grass_4_EC66F39B.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<DefaultSwitchValue>{0C3D4A19-E343-4E60-A376-61F0AB4CF1F7}</DefaultSwitchValue>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{0C3D4A19-E343-4E60-A376-61F0AB4CF1F7}">
+							<Media>
+								<File Id="78483480"/>
+								<File Id="115216142"/>
+								<File Id="128537500"/>
+								<File Id="477685215"/>
+								<File Id="638429619"/>
+								<File Id="824298306"/>
+								<File Id="1019520289"/>
+								<File Id="1042795472"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{E82DE739-09B3-47AB-8298-078BE3813325}">
+							<Media>
+								<File Id="9622770"/>
+								<File Id="78483480"/>
+								<File Id="81610158"/>
+								<File Id="115216142"/>
+								<File Id="128537500"/>
+								<File Id="346677404"/>
+								<File Id="477685215"/>
+								<File Id="638429619"/>
+								<File Id="824298306"/>
+								<File Id="1019520289"/>
+								<File Id="1042795472"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="3994005892" Name="cha_heart" ObjectPath="\Events\Default Work Unit\cha_heart" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="565165601" Language="SFX">
+							<ShortName>heartbeat.wav</ShortName>
+							<Path>SFX\heartbeat_46449B39.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="683827540" Name="cha_jump" ObjectPath="\Events\Default Work Unit\cha_jump" DurationType="OneShot" DurationMin="0.496940" DurationMax="0.997101">
+					<IncludedMemoryFiles>
+						<File Id="238263990" Language="SFX">
+							<ShortName>Salto 03.wav</ShortName>
+							<Path>SFX\Salto 03_10C4C929.wem</Path>
+						</File>
+						<File Id="745921469" Language="SFX">
+							<ShortName>Salto 02.wav</ShortName>
+							<Path>SFX\Salto 02_C37DD18F.wem</Path>
+						</File>
+						<File Id="868332119" Language="SFX">
+							<ShortName>Salto 04.wav</ShortName>
+							<Path>SFX\Salto 04_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3921742761" Name="cha_throw_axe" ObjectPath="\Events\Default Work Unit\cha_throw_axe" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="57804743" Language="SFX">
+							<ShortName>WhooshLow3.wav</ShortName>
+							<Path>SFX\WhooshLow3_01404150.wem</Path>
+						</File>
+						<File Id="126313226" Language="SFX">
+							<ShortName>WhooshMagic1.wav</ShortName>
+							<Path>SFX\WhooshMagic1_10C4C929.wem</Path>
+						</File>
+						<File Id="149354456" Language="SFX">
+							<ShortName>WhooshMetal2.wav</ShortName>
+							<Path>SFX\WhooshMetal2_10C4C929.wem</Path>
+						</File>
+						<File Id="240849092" Language="SFX">
+							<ShortName>Golpe 04.wav</ShortName>
+							<Path>SFX\Golpe 04_9C4F33DC.wem</Path>
+						</File>
+						<File Id="241774127" Language="SFX">
+							<ShortName>WhooshMagic3.wav</ShortName>
+							<Path>SFX\WhooshMagic3_10C4C929.wem</Path>
+						</File>
+						<File Id="293511876" Language="SFX">
+							<ShortName>WhooshHigh3.wav</ShortName>
+							<Path>SFX\WhooshHigh3_10C4C929.wem</Path>
+						</File>
+						<File Id="337551595" Language="SFX">
+							<ShortName>WhooshLow1.wav</ShortName>
+							<Path>SFX\WhooshLow1_10C4C929.wem</Path>
+						</File>
+						<File Id="350058797" Language="SFX">
+							<ShortName>WhooshMid3.wav</ShortName>
+							<Path>SFX\WhooshMid3_10C4C929.wem</Path>
+						</File>
+						<File Id="447782890" Language="SFX">
+							<ShortName>WhooshMagic2.wav</ShortName>
+							<Path>SFX\WhooshMagic2_10C4C929.wem</Path>
+						</File>
+						<File Id="516092181" Language="SFX">
+							<ShortName>WhooshMetal1.wav</ShortName>
+							<Path>SFX\WhooshMetal1_10C4C929.wem</Path>
+						</File>
+						<File Id="673053479" Language="SFX">
+							<ShortName>Golpe 02.wav</ShortName>
+							<Path>SFX\Golpe 02_003C6025.wem</Path>
+						</File>
+						<File Id="678015089" Language="SFX">
+							<ShortName>WhooshMetal3.wav</ShortName>
+							<Path>SFX\WhooshMetal3_10C4C929.wem</Path>
+						</File>
+						<File Id="707458351" Language="SFX">
+							<ShortName>WhooshHigh1.wav</ShortName>
+							<Path>SFX\WhooshHigh1_10C4C929.wem</Path>
+						</File>
+						<File Id="709253069" Language="SFX">
+							<ShortName>Golpe 01.wav</ShortName>
+							<Path>SFX\Golpe 01_F406075A.wem</Path>
+						</File>
+						<File Id="718835456" Language="SFX">
+							<ShortName>WhooshMid2.wav</ShortName>
+							<Path>SFX\WhooshMid2_10C4C929.wem</Path>
+						</File>
+						<File Id="795062150" Language="SFX">
+							<ShortName>WhooshLow1.wav</ShortName>
+							<Path>SFX\WhooshLow1_01404150.wem</Path>
+						</File>
+						<File Id="838380201" Language="SFX">
+							<ShortName>WhooshLow3.wav</ShortName>
+							<Path>SFX\WhooshLow3_10C4C929.wem</Path>
+						</File>
+						<File Id="851551356" Language="SFX">
+							<ShortName>WhooshMid1.wav</ShortName>
+							<Path>SFX\WhooshMid1_10C4C929.wem</Path>
+						</File>
+						<File Id="946424091" Language="SFX">
+							<ShortName>WhooshHigh2.wav</ShortName>
+							<Path>SFX\WhooshHigh2_10C4C929.wem</Path>
+						</File>
+						<File Id="979263350" Language="SFX">
+							<ShortName>WhooshLow2.wav</ShortName>
+							<Path>SFX\WhooshLow2_10C4C929.wem</Path>
+						</File>
+						<File Id="1063872518" Language="SFX">
+							<ShortName>Golpe 05.wav</ShortName>
+							<Path>SFX\Golpe 05_DEC8872C.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1685527054" Name="mx" ObjectPath="\Events\Default Work Unit\mx" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="97762785" Language="SFX">
+							<ShortName>MX_MN_00_FULLMIX_120bpm_4_4_Cdim_-6 LUFS 48_24.wav</ShortName>
+							<Path>SFX\MX_MN_00_FULLMIX_120bpm_4_4_Cdim_-6 LUFS 48_24_D79FB2B7.wem</Path>
+						</File>
+						<File Id="257725224" Language="SFX">
+							<ShortName>MX_GP1_02_STEM_HN_120bpm_4_4_Cdim_44_24_-10 LUFS.wav</ShortName>
+							<Path>SFX\MX_GP1_02_STEM_HN_120bpm_4_4_Cdim_44_24_-10 LUFS_D79FB2B7.wem</Path>
+						</File>
+						<File Id="423116183" Language="SFX">
+							<ShortName>MX_GP1_01_STEM_WW_120bpm_4_4_Cdim_44_24_-10 LUFS.wav</ShortName>
+							<Path>SFX\MX_GP1_01_STEM_WW_120bpm_4_4_Cdim_44_24_-10 LUFS_D79FB2B7.wem</Path>
+						</File>
+						<File Id="839646719" Language="SFX">
+							<ShortName>MX_GP1_03_STEM_STR_120bpm_4_4_Cdim_44_24_-10 LUFS.wav</ShortName>
+							<Path>SFX\MX_GP1_03_STEM_STR_120bpm_4_4_Cdim_44_24_-10 LUFS_D79FB2B7.wem</Path>
+						</File>
+						<File Id="923049557" Language="SFX">
+							<ShortName>MX_GP1_05_STEM_PRC_120bpm_4_4_Cdim_44_24_-10 LUFS.wav</ShortName>
+							<Path>SFX\MX_GP1_05_STEM_PRC_120bpm_4_4_Cdim_44_24_-10 LUFS_D79FB2B7.wem</Path>
+						</File>
+						<File Id="1007954810" Language="SFX">
+							<ShortName>MX_GP1_04_STEM_DRN_120bpm_4_4_Cdim_44_24_-10 LUFS.wav</ShortName>
+							<Path>SFX\MX_GP1_04_STEM_DRN_120bpm_4_4_Cdim_44_24_-10 LUFS_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="4087515445" Name="mx_gameover" ObjectPath="\Events\Default Work Unit\mx_gameover" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2103702368" Name="mx_menu" ObjectPath="\Events\Default Work Unit\mx_menu" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="97762785" Language="SFX">
+							<ShortName>MX_MN_00_FULLMIX_120bpm_4_4_Cdim_-6 LUFS 48_24.wav</ShortName>
+							<Path>SFX\MX_MN_00_FULLMIX_120bpm_4_4_Cdim_-6 LUFS 48_24_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2505162442" Name="ui_button" ObjectPath="\Events\Default Work Unit\ui_button" DurationType="OneShot" DurationMin="0.188547" DurationMax="0.318874">
+					<IncludedMemoryFiles>
+						<File Id="542448997" Language="SFX">
+							<ShortName>Papel.wav</ShortName>
+							<Path>SFX\Papel_A803ABEB.wem</Path>
+						</File>
+						<File Id="829958707" Language="SFX">
+							<ShortName>Papel.wav</ShortName>
+							<Path>SFX\Papel_BFBD9753.wem</Path>
+						</File>
+						<File Id="841434747" Language="SFX">
+							<ShortName>Papel.wav</ShortName>
+							<Path>SFX\Papel_9EE111A8.wem</Path>
+						</File>
+						<File Id="906153555" Language="SFX">
+							<ShortName>Papel.wav</ShortName>
+							<Path>SFX\Papel_BA218A50.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2511555531" Name="ui_menu" ObjectPath="\Events\Default Work Unit\ui_menu" DurationType="OneShot" DurationMin="0.623858" DurationMax="0.814584">
+					<IncludedMemoryFiles>
+						<File Id="142466547" Language="SFX">
+							<ShortName>Papel.wav</ShortName>
+							<Path>SFX\Papel_63E3F5D5.wem</Path>
+						</File>
+						<File Id="159710898" Language="SFX">
+							<ShortName>Papel.wav</ShortName>
+							<Path>SFX\Papel_7D091AFF.wem</Path>
+						</File>
+						<File Id="508304510" Language="SFX">
+							<ShortName>Papel.wav</ShortName>
+							<Path>SFX\Papel_5BA69ADD.wem</Path>
+						</File>
+						<File Id="980966871" Language="SFX">
+							<ShortName>Papel.wav</ShortName>
+							<Path>SFX\Papel_8DE499BF.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+			<GameParameters>
+				<GameParameter Id="553325089" Name="frenesi" ObjectPath="\Game Parameters\Default Work Unit\frenesi"/>
+				<GameParameter Id="1176052424" Name="location" ObjectPath="\Game Parameters\Default Work Unit\location"/>
+			</GameParameters>
+			<SwitchGroups>
+				<SwitchGroup Id="354267144" Name="terrain" ObjectPath="\Switches\Default Work Unit\terrain" GUID="{EFCC8DC5-B5A3-48A9-9024-DC4B0530C358}">
+					<Switches>
+						<Switch Id="3951045445" Name="t_dirt" ObjectPath="\Switches\Default Work Unit\terrain\t_dirt" GUID="{0C3D4A19-E343-4E60-A376-61F0AB4CF1F7}"/>
+						<Switch Id="4157097528" Name="t_grass" ObjectPath="\Switches\Default Work Unit\terrain\t_grass" GUID="{F1B2994D-9B13-41FB-91C1-34CDD127E0F2}"/>
+						<Switch Id="563894323" Name="t_long_grass" ObjectPath="\Switches\Default Work Unit\terrain\t_long_grass" GUID="{E82DE739-09B3-47AB-8298-078BE3813325}"/>
+					</Switches>
+				</SwitchGroup>
+				<SwitchGroup Id="2607556080" Name="menu" ObjectPath="\Switches\Default Work Unit\menu" GUID="{0D2B04C6-390C-426B-8FF9-135BC24D2977}">
+					<Switches>
+						<Switch Id="904728615" Name="index" ObjectPath="\Switches\Default Work Unit\menu\index" GUID="{E34750B5-9908-4BA3-9194-8CE005513581}"/>
+						<Switch Id="89505537" Name="gameplay" ObjectPath="\Switches\Default Work Unit\menu\gameplay" GUID="{77C712DE-79B5-463A-8548-2B0C807BFB22}"/>
+						<Switch Id="4158285989" Name="gameover" ObjectPath="\Switches\Default Work Unit\menu\gameover" GUID="{4B94731F-A286-4F9D-8427-E705124C4ED8}"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>

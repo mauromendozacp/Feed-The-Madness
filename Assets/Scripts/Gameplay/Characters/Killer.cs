@@ -7,6 +7,7 @@ public class KActions
 {
     public Action<int> OnScoreRecieved = null;
     public Action<float, float> OnCrazinessUpdated = null;
+    public Action<float, int> OnKillSurvivor = null;
 }
 
 public class Killer : Character
@@ -17,6 +18,7 @@ public class Killer : Character
     [SerializeField] private float attackDistance = 0f;
     [SerializeField] private float obstacleCrazDecrease = 25f;
     [SerializeField] private float decreaseCrazinessVel = 0f;
+    [SerializeField] private ThrowAxe throwAxe = null;
 
     [SerializeField] private Animator killerAnim = null;
     [SerializeField] private Animator cameraAnim = null;
@@ -121,6 +123,10 @@ public class Killer : Character
         volume.profile.TryGetSettings(out chromatic);
         volume.profile.TryGetSettings(out vignette);
 
+        Steps();
+
+        throwAxe.InitModuleHandlers(kActions);
+
         /*AkSoundEngine.SetRTPCValue("cha_heart", Craziness);
         AkSoundEngine.PostEvent("cha_heart", gameObject);*/
     }
@@ -167,6 +173,8 @@ public class Killer : Character
         crazinessBase = craziness;
         groundCheckDistance = GetComponent<CapsuleCollider>().height;
         origGroundCheckDistance = groundCheckDistance;
+
+        kActions.OnKillSurvivor = KillSurvivor;
     }
 
     public void KillSurvivor(float craz, int points)
@@ -211,6 +219,20 @@ public class Killer : Character
 
             transform.Translate(dir * (horizontalSpeed * Time.deltaTime));
         }
+    }
+
+    private void Steps()
+    {
+        IEnumerator StepSoundDelay()
+        {
+            while (!dead)
+            {
+                AkSoundEngine.PostEvent("cha_footsteps", gameObject);
+
+                yield return new WaitForSeconds(0.3f);
+            }
+        }
+        StartCoroutine(StepSoundDelay());
     }
 
     private void Attack()
@@ -259,7 +281,10 @@ public class Killer : Character
             if (Input.GetMouseButtonDown(1))
             {
                 killerAnim.SetTrigger("Throw");
-                AkSoundEngine.PostEvent("cha_throw_axe", gameObject);
+                //AkSoundEngine.PostEvent("cha_throw_axe", gameObject);
+
+                attackAvailable = true;
+                Invoke(nameof(ResetAttack), resetAttackTimer);
             }
         }
     }
@@ -346,6 +371,8 @@ public class Killer : Character
     private void Death()
     {
         cameraAnim.SetBool("Death", true);
+        AkSoundEngine.PostEvent("cha_dead", gameObject);
+
         IEnumerator VignetteEffect()
         {
             float timer = 0f;

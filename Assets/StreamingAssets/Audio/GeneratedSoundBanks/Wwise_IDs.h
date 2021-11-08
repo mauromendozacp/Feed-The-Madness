@@ -23,6 +23,7 @@ namespace AK
         static const AkUniqueID CHA_BOOST_STOP = 2833872060U;
         static const AkUniqueID CHA_BREATH = 623398006U;
         static const AkUniqueID CHA_DAMAGE = 1566291291U;
+        static const AkUniqueID CHA_DEAD = 3274811914U;
         static const AkUniqueID CHA_FOOTSTEPS = 1375541365U;
         static const AkUniqueID CHA_HEART = 3994005892U;
         static const AkUniqueID CHA_JUMP = 683827540U;

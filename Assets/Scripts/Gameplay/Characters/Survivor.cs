@@ -72,6 +72,7 @@ public class Survivor : Character
             AkSoundEngine.PostEvent("cha_axe_success", gameObject);
 
             rigid.useGravity = false;
+            rigid.velocity = Vector3.zero;
             capsuleCollider.isTrigger = true;
 
             Invoke(nameof(DestroySurvivor), deathTimer);
