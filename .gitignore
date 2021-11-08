@@ -71,7 +71,7 @@ WwiseUnityIntegration_*_Src.zip
 # Caché temporal de project data (en carpeta de Assets de Unity)
 /[Aa]ssets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset*
 # Sound Banks: NO VERSIONARLOS. REGENERARLOS CADA VEZ.
-*WwiseProject/GeneratedSoundBanks/
+*TSDV3-RUNNER_WwiseProject/GeneratedSoundBanks/
 # Documentación: NO VERSIONARLA.
 /[Aa]ssets/Wwise/Documentation.meta
 /[Aa]ssets/Wwise/Documentation/*
@@ -79,17 +79,3 @@ WwiseUnityIntegration_*_Src.zip
 PROYECTO DE UNITY HAGA LA INTEGRACIÓN DE WWISE DE FORMA PROPIA
 /[Aa]ssets/Wwise/API/Runtime/Plugins.meta
 /[Aa]ssets/Wwise/API/Runtime/Plugins/*
-TSDV3-RUNNER_WwiseProject/GeneratedSoundBanks/Mac/Init.bnk
-TSDV3-RUNNER_WwiseProject/GeneratedSoundBanks/Mac/Init.txt
-TSDV3-RUNNER_WwiseProject/GeneratedSoundBanks/Mac/PluginInfo.xml
-TSDV3-RUNNER_WwiseProject/GeneratedSoundBanks/Mac/SoundbanksInfo.xml
-TSDV3-RUNNER_WwiseProject/GeneratedSoundBanks/Windows/Init.bnk
-TSDV3-RUNNER_WwiseProject/GeneratedSoundBanks/Windows/Init.txt
-TSDV3-RUNNER_WwiseProject/GeneratedSoundBanks/Windows/PluginInfo.xml
-TSDV3-RUNNER_WwiseProject/GeneratedSoundBanks/Windows/SoundbanksInfo.xml
-TSDV3-RUNNER_WwiseProject/GeneratedSoundBanks/Windows/SoundBankTestxd.bnk
-TSDV3-RUNNER_WwiseProject/GeneratedSoundBanks/Windows/SoundBankTestxd.txt
-TSDV3-RUNNER_WwiseProject/SoundBanks/Default Work Unit.wwu
-TSDV3-RUNNER_WwiseProject/TSDV3-RUNNER_WwiseProject.user.validationcache
-TSDV3-RUNNER_WwiseProject/TSDV3-RUNNER_WwiseProject.user.wsettings
-TSDV3-RUNNER_WwiseProject/GeneratedSoundBanks/Windows/SoundBankTestxd.bnk
