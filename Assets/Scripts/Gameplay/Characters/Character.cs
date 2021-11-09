@@ -17,6 +17,7 @@ public class Character : MonoBehaviour
     protected bool jumping = false;
     protected bool dead = false;
     protected Rigidbody rigid = null;
+    protected CapsuleCollider capsule = null;
 
     protected bool isGrounded = false;
     protected float origGroundCheckDistance = 0f;
@@ -37,14 +38,10 @@ public class Character : MonoBehaviour
 
     #region UNITY_CALLS
 
-    private void Start()
+    protected virtual void Awake()
     {
-
-    }
-
-    public virtual void Update()
-    {
-        
+        rigid = GetComponent<Rigidbody>();
+        capsule = GetComponent<CapsuleCollider>();
     }
 
     #endregion

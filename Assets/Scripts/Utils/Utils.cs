@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Tools : MonoBehaviour
+public class Utils : MonoBehaviour
 {
     #region PUBLIC_METHODS
 

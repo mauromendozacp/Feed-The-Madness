@@ -24,7 +24,7 @@ public class Axe : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (Tools.CheckLayerInMask(suvivorMask, other.gameObject.layer))
+        if (Utils.CheckLayerInMask(suvivorMask, other.gameObject.layer))
         {
             Survivor survivor = other.gameObject.GetComponent<Survivor>();
 

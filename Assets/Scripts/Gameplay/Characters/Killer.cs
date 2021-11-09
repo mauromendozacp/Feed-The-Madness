@@ -44,7 +44,6 @@ public class Killer : Character
 
     private bool attackAvailable = false;
     private float resetAttackTimer = 0.5f;
-    private CapsuleCollider capsule = null;
 
     private ChromaticAberration chromatic = null;
     private Vignette vignette = null;
@@ -114,28 +113,30 @@ public class Killer : Character
 
     #region UNITY_CALLS
 
+    protected override void Awake()
+    {
+        base.Awake();
+
+        origGroundCheckDistance = capsule.height * 11 / 16;
+    }
+
     private void Start()
     {
-        rigid = GetComponent<Rigidbody>();
-        capsule = GetComponent<CapsuleCollider>();
-        origGroundCheckDistance = GetComponent<CapsuleCollider>().height * 11 / 16;
-
         volume.profile.TryGetSettings(out chromatic);
         volume.profile.TryGetSettings(out vignette);
 
-        Steps();
-
         throwAxe.InitModuleHandlers(kActions);
+
+        Steps();
 
         /*AkSoundEngine.SetRTPCValue("cha_heart", Craziness);
         AkSoundEngine.PostEvent("cha_heart", gameObject);*/
     }
 
-    public override void Update()
+    private void Update()
     {
         if (!dead)
         {
-            base.Update();
             MoveHorizontal();
             Attack();
             Throw();
@@ -147,11 +148,11 @@ public class Killer : Character
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (Tools.CheckLayerInMask(obstacleMask, collision.gameObject.layer))
+        if (Utils.CheckLayerInMask(obstacleMask, collision.gameObject.layer))
         {
             Hit();
         }
-        else if (Tools.CheckLayerInMask(powerupMask, collision.gameObject.layer))
+        else if (Utils.CheckLayerInMask(powerupMask, collision.gameObject.layer))
         {
             collision.gameObject.GetComponent<MovableObject>().Destroy();
             Powerup();

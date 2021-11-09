@@ -18,7 +18,6 @@ public class Survivor : Character
     private bool dodged = false;
     private float checkDistance = 5f;
     private Vector3 startPos = Vector3.zero;
-    private CapsuleCollider capsuleCollider = null;
     private MovableObject movable = null;
 
     #endregion
@@ -33,21 +32,17 @@ public class Survivor : Character
 
     #region UNITY_CALLS
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         movable = GetComponent<MovableObject>();
-        capsuleCollider = GetComponent<CapsuleCollider>();
-        rigid = GetComponent<Rigidbody>();
     }
 
-    public override void Update()
+    private void Update()
     {
-        base.Update();
-
         if (!dead)
-        {
             DodgeObstacle();
-        }
     }
 
     private void OnEnable()
@@ -71,7 +66,7 @@ public class Survivor : Character
 
         rigid.useGravity = false;
         rigid.velocity = Vector3.zero;
-        capsuleCollider.isTrigger = true;
+        capsule.isTrigger = true;
 
         Invoke(nameof(DestroySurvivor), deathTimer);
     }
@@ -85,7 +80,7 @@ public class Survivor : Character
         dead = false;
         anim.SetBool("Death", false);
         rigid.useGravity = true;
-        capsuleCollider.isTrigger = false;
+        capsule.isTrigger = false;
     }
 
     private void DodgeObstacle()
@@ -94,7 +89,7 @@ public class Survivor : Character
             return;
 
         startPos = transform.position;
-        startPos.y -= capsuleCollider.height / 4;
+        startPos.y -= capsule.height / 4;
 
         if (Physics.Raycast(startPos, Vector3.forward, out RaycastHit hit, checkDistance, obstacleMask))
         {
