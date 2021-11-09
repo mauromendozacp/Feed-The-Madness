@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FloorLoop : MonoBehaviour
 {
@@ -17,8 +14,6 @@ public class FloorLoop : MonoBehaviour
     #endregion
 
     #region PROPERTIES
-
-    public GameObject[] Floors => floors;
 
     public float Speed
     {

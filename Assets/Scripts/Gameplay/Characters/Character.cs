@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Character : MonoBehaviour
 {
@@ -55,12 +53,12 @@ public class Character : MonoBehaviour
 
     protected void Jump()
     {
-        if (!jumping)
-        {
-            jumping = true;
-            rigid.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-            Invoke(nameof(RestartJump), jumpTimer);
-        }
+        if (jumping)
+            return;
+
+        jumping = true;
+        rigid.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+        Invoke(nameof(RestartJump), jumpTimer);
     }
 
     protected void RestartJump()
@@ -73,9 +71,7 @@ public class Character : MonoBehaviour
         isGrounded = Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out _, groundCheckDistance);
 
         if (!isGrounded)
-        {
             HandleAirborneMovement();
-        }
     }
 
     private void HandleAirborneMovement()

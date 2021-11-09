@@ -189,13 +189,13 @@ public class Killer : Character
 
     private void InputJump()
     {
-        if (isGrounded)
+        if (!isGrounded)
+            return;
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Jump();
-                AkSoundEngine.PostEvent("cha_jump", gameObject);
-            }
+            Jump();
+            AkSoundEngine.PostEvent("cha_jump", gameObject);
         }
     }
 
@@ -237,55 +237,55 @@ public class Killer : Character
 
     private void Attack()
     {
-        if (!attackAvailable)
+        if (attackAvailable)
+            return;
+
+        if (Input.GetMouseButtonDown(0))
         {
-            if (Input.GetMouseButtonDown(0))
+            killerAnim.SetTrigger("Attack");
+            AkSoundEngine.PostEvent("cha_axe", gameObject);
+
+            IEnumerator CastAttack()
             {
-                killerAnim.SetTrigger("Attack");
-                AkSoundEngine.PostEvent("cha_axe", gameObject);
-
-                IEnumerator CastAttack()
+                while (attackAvailable)
                 {
-                    while (attackAvailable)
+                    if (Physics.Raycast(transform.position, transform.forward,
+                        out RaycastHit hit, attackDistance, survivorMask, QueryTriggerInteraction.UseGlobal))
                     {
-                        if (Physics.Raycast(transform.position, transform.forward, 
-                            out RaycastHit hit, attackDistance, survivorMask, QueryTriggerInteraction.UseGlobal))
+                        Survivor survivor = hit.transform.gameObject.GetComponent<Survivor>();
+
+                        if (!survivor.Dead)
                         {
-                            Survivor survivor = hit.transform.gameObject.GetComponent<Survivor>();
-
-                            if (!survivor.Dead)
-                            {
-                                survivor.Death();
-                                KillSurvivor(survivor.CrazinessPoints, survivor.Points);
-                            }
+                            survivor.Death();
+                            KillSurvivor(survivor.CrazinessPoints, survivor.Points);
                         }
-
-                        yield return new WaitForEndOfFrame();
                     }
 
-                    yield return null;
+                    yield return new WaitForEndOfFrame();
                 }
 
-                attackAvailable = true;
-                Invoke(nameof(ResetAttack), resetAttackTimer);
-
-                StartCoroutine(CastAttack());
+                yield return null;
             }
+
+            attackAvailable = true;
+            Invoke(nameof(ResetAttack), resetAttackTimer);
+
+            StartCoroutine(CastAttack());
         }
     }
 
     private void Throw()
     {
-        if (!attackAvailable)
-        {
-            if (Input.GetMouseButtonDown(1))
-            {
-                killerAnim.SetTrigger("Throw");
-                //AkSoundEngine.PostEvent("cha_throw_axe", gameObject);
+        if (attackAvailable)
+            return;
 
-                attackAvailable = true;
-                Invoke(nameof(ResetAttack), resetAttackTimer);
-            }
+        if (Input.GetMouseButtonDown(1))
+        {
+            killerAnim.SetTrigger("Throw");
+            //AkSoundEngine.PostEvent("cha_throw_axe", gameObject);
+
+            attackAvailable = true;
+            Invoke(nameof(ResetAttack), resetAttackTimer);
         }
     }
 
@@ -296,39 +296,39 @@ public class Killer : Character
 
     private void Hit()
     {
-        if (!hitted)
+        if (hitted)
+            return;
+
+        Craziness -= obstacleCrazDecrease;
+        AkSoundEngine.PostEvent("cha_damage", gameObject);
+
+        IEnumerator VignetteEffect()
         {
-            Craziness -= obstacleCrazDecrease;
-            AkSoundEngine.PostEvent("cha_damage", gameObject);
-
-            IEnumerator VignetteEffect()
+            float halfTimer = invulnerableTimer / 2;
+            float timer = 0f;
+            while (timer < halfTimer)
             {
-                float halfTimer = invulnerableTimer / 2;
-                float timer = 0f;
-                while (timer < halfTimer)
-                {
-                    timer += Time.deltaTime;
-                    vignette.intensity.value = Mathf.Lerp(minVignetteValue, maxVignetteValue, timer / halfTimer);
-                    yield return new WaitForEndOfFrame();
-                }
-
-                timer = 0f;
-                while (timer < halfTimer)
-                {
-                    timer += Time.deltaTime;
-                    vignette.intensity.value = Mathf.Lerp(maxVignetteValue, minVignetteValue, timer / halfTimer);
-                    yield return new WaitForEndOfFrame();
-                }
-
-                yield return null;
+                timer += Time.deltaTime;
+                vignette.intensity.value = Mathf.Lerp(minVignetteValue, maxVignetteValue, timer / halfTimer);
+                yield return new WaitForEndOfFrame();
             }
-            StartCoroutine(VignetteEffect());
 
-            hitted = true;
-            rigid.useGravity = false;
-            capsule.isTrigger = true;
-            Invoke(nameof(ResetHitted), invulnerableTimer);
+            timer = 0f;
+            while (timer < halfTimer)
+            {
+                timer += Time.deltaTime;
+                vignette.intensity.value = Mathf.Lerp(maxVignetteValue, minVignetteValue, timer / halfTimer);
+                yield return new WaitForEndOfFrame();
+            }
+
+            yield return null;
         }
+        StartCoroutine(VignetteEffect());
+
+        hitted = true;
+        rigid.useGravity = false;
+        capsule.isTrigger = true;
+        Invoke(nameof(ResetHitted), invulnerableTimer);
     }
 
     private void Powerup()
@@ -355,10 +355,10 @@ public class Killer : Character
 
     private void DecreaseCraziness()
     {
-        if (!crazinessStop)
-        {
-            Craziness -= Time.deltaTime * decreaseCrazinessVel;
-        }
+        if (crazinessStop)
+            return;
+
+        Craziness -= Time.deltaTime * decreaseCrazinessVel;
     }
 
     private float GetChromaticValue()

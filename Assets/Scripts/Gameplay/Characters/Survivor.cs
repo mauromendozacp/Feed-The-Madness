@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 
 public class Survivor : Character
@@ -63,20 +61,19 @@ public class Survivor : Character
 
     public void Death()
     {
-        if (!dead)
-        {
-            dead = true;
+        if (dead)
+            return;
 
-            anim.SetBool("Death", true);
-            blood.Play();
-            AkSoundEngine.PostEvent("cha_axe_success", gameObject);
+        dead = true;
+        anim.SetBool("Death", true);
+        blood.Play();
+        AkSoundEngine.PostEvent("cha_axe_success", gameObject);
 
-            rigid.useGravity = false;
-            rigid.velocity = Vector3.zero;
-            capsuleCollider.isTrigger = true;
+        rigid.useGravity = false;
+        rigid.velocity = Vector3.zero;
+        capsuleCollider.isTrigger = true;
 
-            Invoke(nameof(DestroySurvivor), deathTimer);
-        }
+        Invoke(nameof(DestroySurvivor), deathTimer);
     }
 
     #endregion
@@ -93,44 +90,44 @@ public class Survivor : Character
 
     private void DodgeObstacle()
     {
-        if (!dodged)
+        if (dodged)
+            return;
+
+        startPos = transform.position;
+        startPos.y -= capsuleCollider.height / 4;
+
+        if (Physics.Raycast(startPos, Vector3.forward, out RaycastHit hit, checkDistance, obstacleMask))
         {
-            startPos = transform.position;
-            startPos.y -= capsuleCollider.height / 4;
+            dodged = true;
 
-            if (Physics.Raycast(startPos, Vector3.forward, out RaycastHit hit, checkDistance, obstacleMask))
+            Vector3 hitPos = hit.transform.position;
+            BoxCollider col = hit.transform.gameObject.GetComponent<BoxCollider>();
+            float colWidth = col.bounds.size.x;
+
+            IEnumerator MovePosition()
             {
-                dodged = true;
-
-                Vector3 hitPos = hit.transform.position;
-                BoxCollider col = hit.transform.gameObject.GetComponent<BoxCollider>();
-                float colWidth = col.bounds.size.x;
-
-                IEnumerator MovePosition()
+                if (transform.position.x < hitPos.x)
                 {
-                    if (transform.position.x < hitPos.x)
+                    while (transform.position.x > hitPos.x - colWidth)
                     {
-                        while (transform.position.x > hitPos.x - colWidth)
-                        {
-                            transform.Translate(Vector3.left * (horizontalSpeed * Time.deltaTime));
-                            yield return new WaitForEndOfFrame();
-                        }
+                        transform.Translate(Vector3.left * (horizontalSpeed * Time.deltaTime));
+                        yield return new WaitForEndOfFrame();
                     }
-                    else
+                }
+                else
+                {
+                    while (transform.position.x < hitPos.x + colWidth)
                     {
-                        while (transform.position.x < hitPos.x + colWidth)
-                        {
-                            transform.Translate(Vector3.right * (horizontalSpeed * Time.deltaTime));
-                            yield return new WaitForEndOfFrame();
-                        }
+                        transform.Translate(Vector3.right * (horizontalSpeed * Time.deltaTime));
+                        yield return new WaitForEndOfFrame();
                     }
-
-                    dodged = false;
-                    yield return null;
                 }
 
-                StartCoroutine(MovePosition());
+                dodged = false;
+                yield return null;
             }
+
+            StartCoroutine(MovePosition());
         }
     }
 

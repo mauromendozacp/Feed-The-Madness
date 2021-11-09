@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MOActions
@@ -36,16 +35,9 @@ public class MovableObject : MonoBehaviour
 
     public float LimitZ { get; set; } = 0f;
 
-    public MOActions MOActions => moActions;
-
     #endregion
 
     #region UNITY_CALLS
-
-    void Start()
-    {
-        
-    }
 
     void Update()
     {

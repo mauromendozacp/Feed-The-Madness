@@ -65,20 +65,20 @@ public class MovableObjectManager : MonoBehaviour
 
     private void Spawn()
     {
-        if (!SpawnActivated)
-        {
-            GameObject movableGO = poolManager.GetObjectFromPool();
-            MovableObject movable = movableGO.GetComponent<MovableObject>();
+        if (SpawnActivated)
+            return;
 
-            movable.InitModuleHandlers(momActions);
-            movable.Speed = speed;
-            movableGO.transform.position = GetRandomPosition();
+        GameObject movableGO = poolManager.GetObjectFromPool();
+        MovableObject movable = movableGO.GetComponent<MovableObject>();
 
-            Movables.Add(movable);
+        movable.InitModuleHandlers(momActions);
+        movable.Speed = speed;
+        movableGO.transform.position = GetRandomPosition();
 
-            SpawnActivated = true;
-            Invoke(nameof(ResetSpawnActivate), GetRandomTimerSpawn());
-        }
+        Movables.Add(movable);
+
+        SpawnActivated = true;
+        Invoke(nameof(ResetSpawnActivate), GetRandomTimerSpawn());
     }
 
     private void Remove(MovableObject movable)
@@ -102,11 +102,6 @@ public class MovableObjectManager : MonoBehaviour
     private float GetRandomTimerSpawn()
     {
         return Random.Range(minTimerSpawn, maxTimerSpawn);
-    }
-
-    private PoolManager GetPoolManager()
-    {
-        return poolManager;
     }
 
     #endregion
