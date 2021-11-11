@@ -18,10 +18,10 @@ public class Killer : Character
     [SerializeField] private float attackDistance = 0f;
     [SerializeField] private float decreaseCrazinessVel = 0f;
     [SerializeField] private ThrowAxe throwAxe = null;
+    [SerializeField] private KilerPostProcessing postProcessing = null;
 
     [SerializeField] private Animator killerAnim = null;
     [SerializeField] private Animator cameraAnim = null;
-    [SerializeField] private PostProcessVolume volume = null;
 
     [SerializeField] private LayerMask survivorMask = default;
     [SerializeField] private LayerMask powerupMask = default;
@@ -43,13 +43,6 @@ public class Killer : Character
 
     private bool attackAvailable = false;
     private float resetAttackTimer = 0.5f;
-
-    private ChromaticAberration chromatic = null;
-    private Vignette vignette = null;
-    private float minChromaticValue = 0.2f;
-    private float maxChromaticValue = 1f;
-    private float minVignetteValue = 0f;
-    private float maxVignetteValue = 1f;
 
     private KActions kActions = null;
     private LCActions lcActions = null;
@@ -102,7 +95,7 @@ public class Killer : Character
             }
 
             kActions.OnCrazinessUpdated?.Invoke(crazinessBase, craziness);
-            chromatic.intensity.value = GetChromaticValue();
+            postProcessing.ChangeChromatic(craziness, crazinessBase);
         }
     }
 
@@ -116,14 +109,12 @@ public class Killer : Character
     {
         base.Awake();
 
+        postProcessing.Init();
         origGroundCheckDistance = capsule.height * 11 / 16;
     }
 
     private void Start()
     {
-        volume.profile.TryGetSettings(out chromatic);
-        volume.profile.TryGetSettings(out vignette);
-
         throwAxe.InitModuleHandlers(kActions);
 
         Steps();
@@ -324,7 +315,7 @@ public class Killer : Character
             while (timer < halfTimer)
             {
                 timer += Time.deltaTime;
-                vignette.intensity.value = Mathf.Lerp(minVignetteValue, maxVignetteValue, timer / halfTimer);
+                postProcessing.ChangeVignette(true, timer / halfTimer);
                 yield return new WaitForEndOfFrame();
             }
 
@@ -332,7 +323,7 @@ public class Killer : Character
             while (timer < halfTimer)
             {
                 timer += Time.deltaTime;
-                vignette.intensity.value = Mathf.Lerp(maxVignetteValue, minVignetteValue, timer / halfTimer);
+                postProcessing.ChangeVignette(false, timer / halfTimer);
                 yield return new WaitForEndOfFrame();
             }
 
@@ -372,13 +363,6 @@ public class Killer : Character
         Craziness -= Time.deltaTime * decreaseCrazinessVel;
     }
 
-    private float GetChromaticValue()
-    {
-        float crazinessPercent = 100 - craziness * 100 / crazinessBase;
-        float chromaticValue = (maxChromaticValue - minChromaticValue) * crazinessPercent / 100 + minChromaticValue;
-        return chromaticValue;
-    }
-
     private void Death()
     {
         cameraAnim.SetBool("Death", true);
@@ -390,7 +374,7 @@ public class Killer : Character
             while (timer < deathTimer)
             {
                 timer += Time.deltaTime;
-                vignette.intensity.value = Mathf.Lerp(minVignetteValue, maxVignetteValue, timer / deathTimer);
+                postProcessing.ChangeVignette(true, timer / deathTimer);
                 yield return new WaitForEndOfFrame();
             }
 

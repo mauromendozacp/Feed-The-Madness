@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2227707953138084022}
   - component: {fileID: 1124364319197033301}
   - component: {fileID: 4543504702171015179}
+  - component: {fileID: 6862592473288889282}
   m_Layer: 8
   m_Name: Killer
   m_TagString: Untagged
@@ -87,9 +88,9 @@ MonoBehaviour:
     m_Bits: 2048
   craziness: 0
   attackDistance: 0
-  obstacleCrazDecrease: 25
   decreaseCrazinessVel: 0
   throwAxe: {fileID: 0}
+  postProcessing: {fileID: 0}
   killerAnim: {fileID: 0}
   cameraAnim: {fileID: 0}
   volume: {fileID: 0}
@@ -102,6 +103,19 @@ MonoBehaviour:
   limitMask:
     serializedVersion: 2
     m_Bits: 0
+--- !u!114 &6862592473288889282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2514265635050643695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0552818a21ee7ea4cb9fa740b014fc3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: {fileID: 0}
 --- !u!95 &895390727962066521
 Animator:
   serializedVersion: 3
