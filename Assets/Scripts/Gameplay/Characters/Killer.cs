@@ -137,12 +137,19 @@ public class Killer : Character
     {
         if (!dead)
         {
-            MoveHorizontal();
             Attack();
             Throw();
             InputJump();
             CheckGroundStatus();
             DecreaseCraziness();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (!dead)
+        {
+            MoveHorizontal();
         }
     }
 
@@ -196,8 +203,14 @@ public class Killer : Character
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
-            AkSoundEngine.PostEvent("cha_jump", gameObject);
+            
         }
+    }
+
+    protected override void Jump()
+    {
+        base.Jump();
+        AkSoundEngine.PostEvent("cha_jump", gameObject);
     }
 
     private void MoveHorizontal()
@@ -218,7 +231,7 @@ public class Killer : Character
             if (Physics.Raycast(transform.position, dir, checkHorDistance, limitMask))
                 return;
 
-            transform.Translate(dir * (horizontalSpeed * Time.deltaTime));
+            rigid.MovePosition(transform.position + dir * (horizontalSpeed * Time.fixedDeltaTime));
         }
     }
 

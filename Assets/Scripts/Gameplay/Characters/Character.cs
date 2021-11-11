@@ -48,7 +48,7 @@ public class Character : MonoBehaviour
 
     #region PROTECTED_METHODS
 
-    protected void Jump()
+    protected virtual void Jump()
     {
         if (jumping)
             return;
