@@ -16,7 +16,6 @@ public class Killer : Character
 
     [SerializeField] private float craziness = 0f;
     [SerializeField] private float attackDistance = 0f;
-    [SerializeField] private float obstacleCrazDecrease = 25f;
     [SerializeField] private float decreaseCrazinessVel = 0f;
     [SerializeField] private ThrowAxe throwAxe = null;
 
@@ -157,6 +156,13 @@ public class Killer : Character
     {
         if (Utils.CheckLayerInMask(obstacleMask, collision.gameObject.layer))
         {
+            Obstacle obstacle = collision.gameObject.GetComponent<Obstacle>();
+            obstacle.Collision();
+
+            if (hitted)
+                return;
+
+            Craziness -= obstacle.Damage;
             Hit();
         }
         else if (Utils.CheckLayerInMask(powerupMask, collision.gameObject.layer))
@@ -203,7 +209,6 @@ public class Killer : Character
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
-            
         }
     }
 
@@ -310,10 +315,6 @@ public class Killer : Character
 
     private void Hit()
     {
-        if (hitted)
-            return;
-
-        Craziness -= obstacleCrazDecrease;
         AkSoundEngine.PostEvent("cha_damage", gameObject);
 
         IEnumerator VignetteEffect()
@@ -340,8 +341,6 @@ public class Killer : Character
         StartCoroutine(VignetteEffect());
 
         hitted = true;
-        rigid.useGravity = false;
-        capsule.isTrigger = true;
         Invoke(nameof(ResetHitted), invulnerableTimer);
     }
 
@@ -363,8 +362,6 @@ public class Killer : Character
     private void ResetHitted()
     {
         hitted = false;
-        rigid.useGravity = true;
-        capsule.isTrigger = false;
     }
 
     private void DecreaseCraziness()

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4743400176455879037}
   - component: {fileID: 1421623051997988547}
   - component: {fileID: 3842534758013356118}
+  - component: {fileID: 3017156623766607142}
   m_Layer: 11
   m_Name: Fence
   m_TagString: Untagged
@@ -80,6 +81,19 @@ MonoBehaviour:
   limitMask:
     serializedVersion: 2
     m_Bits: 1024
+--- !u!114 &3017156623766607142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2658974923963703165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af15f5954c537a240a0d37ed4fd2577b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
 --- !u!1 &5002954470903980107
 GameObject:
   m_ObjectHideFlags: 0
