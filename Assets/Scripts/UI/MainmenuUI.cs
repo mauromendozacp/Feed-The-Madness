@@ -7,6 +7,7 @@ public class MainmenuUI : MonoBehaviour
 
     [SerializeField] private GameObject menuPanel = null;
     [SerializeField] private GameObject creditsPanel = null;
+    [SerializeField] private GameObject controlsPanel = null;
     [SerializeField] private TMP_Text versionText = null;
 
     #endregion
@@ -27,11 +28,17 @@ public class MainmenuUI : MonoBehaviour
         GameManager.Get().ChangeScene(GameManager.SceneGame.GamePlay);
     }
 
+    public void ShowControls()
+    {
+        menuPanel.SetActive(false);
+        controlsPanel.SetActive(true);
+    }
+
     public void ShowCredits()
     {
         menuPanel.SetActive(false);
         creditsPanel.SetActive(true);
-        AkSoundEngine.PostEvent("ui_button", gameObject);
+        //AkSoundEngine.PostEvent("ui_button", gameObject);
     }
 
     public void ShowMenu()
