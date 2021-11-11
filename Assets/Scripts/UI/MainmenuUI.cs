@@ -8,6 +8,7 @@ public class MainmenuUI : MonoBehaviour
     [SerializeField] private GameObject menuPanel = null;
     [SerializeField] private GameObject creditsPanel = null;
     [SerializeField] private GameObject controlsPanel = null;
+    [SerializeField] private GameObject optionsPanel = null;
     [SerializeField] private TMP_Text versionText = null;
 
     #endregion
@@ -45,6 +46,13 @@ public class MainmenuUI : MonoBehaviour
     {
         menuPanel.SetActive(true);
         creditsPanel.SetActive(false);
+        optionsPanel.SetActive(false);
+    }
+
+    public void ShowOptions()
+    {
+        menuPanel.SetActive(false);
+        optionsPanel.SetActive(true);
     }
 
     public void ExitGame()

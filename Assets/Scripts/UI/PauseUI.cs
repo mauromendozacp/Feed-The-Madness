@@ -5,6 +5,7 @@ public class PauseUI : MonoBehaviour
     #region EXPOSED_FIELDS
 
     [SerializeField] private GameObject pausePanel;
+    [SerializeField] private GameObject optionsPanel;
 
     #endregion
 
@@ -20,6 +21,18 @@ public class PauseUI : MonoBehaviour
     {
         Time.timeScale = 1f;
         pausePanel.SetActive(false);
+    }
+
+    public void ShowPause()
+    {
+        pausePanel.SetActive(true);
+        optionsPanel.SetActive(false);
+    }
+
+    public void ShowOptions()
+    {
+        pausePanel.SetActive(false);
+        optionsPanel.SetActive(true);
     }
 
     public void BackToMenu()
