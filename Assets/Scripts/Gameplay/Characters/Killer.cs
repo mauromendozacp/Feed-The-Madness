@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
 
 public class KActions
 {
     public Action<int> OnScoreRecieved = null;
     public Action<float, float> OnCrazinessUpdated = null;
     public Action<float, int> OnKillSurvivor = null;
+    public Action<bool> OnInvincible = null;
+    public Action<bool> OnUnlimitAxes = null;
 }
 
 public class Killer : Character
@@ -17,8 +18,9 @@ public class Killer : Character
     [SerializeField] private float craziness = 0f;
     [SerializeField] private float attackDistance = 0f;
     [SerializeField] private float decreaseCrazinessVel = 0f;
+    [SerializeField] private float throwCooldown = 0f;
     [SerializeField] private ThrowAxe throwAxe = null;
-    [SerializeField] private KilerPostProcessing postProcessing = null;
+    [SerializeField] private PostProcessManager postProcessManager = null;
 
     [SerializeField] private Animator killerAnim = null;
     [SerializeField] private Animator cameraAnim = null;
@@ -42,7 +44,10 @@ public class Killer : Character
     private float checkHorDistance = 2f;
 
     private bool attackAvailable = false;
-    private float resetAttackTimer = 0.5f;
+    private bool throwAvailable = false;
+    private float attackCooldown = 0.5f;
+    private bool isInvincible = false;
+    private bool isUnlimitAxes = false;
 
     private KActions kActions = null;
     private LCActions lcActions = null;
@@ -77,25 +82,28 @@ public class Killer : Character
         get => craziness;
         set
         {
-            if (value > 0)
+            if (!isInvincible)
             {
-                if (value < crazinessBase)
+                if (value > 0)
                 {
-                    craziness = value;
+                    if (value < crazinessBase)
+                    {
+                        craziness = value;
+                    }
+                    else
+                    {
+                        craziness = crazinessBase;
+                    }
                 }
                 else
                 {
-                    craziness = crazinessBase;
+                    craziness = 0;
+                    Dead = true;
                 }
-            }
-            else
-            {
-                craziness = 0;
-                Dead = true;
             }
 
             kActions.OnCrazinessUpdated?.Invoke(crazinessBase, craziness);
-            postProcessing.ChangeChromatic(craziness, crazinessBase);
+            postProcessManager.ChangeChromatic(craziness, crazinessBase);
         }
     }
 
@@ -109,7 +117,7 @@ public class Killer : Character
     {
         base.Awake();
 
-        postProcessing.Init();
+        postProcessManager.Init();
         origGroundCheckDistance = capsule.height * 11 / 16;
     }
 
@@ -180,6 +188,8 @@ public class Killer : Character
         origGroundCheckDistance = groundCheckDistance;
 
         kActions.OnKillSurvivor = KillSurvivor;
+        kActions.OnInvincible = EnableInvincible;
+        kActions.OnUnlimitAxes = EnableUnlimitAxes;
     }
 
     public void KillSurvivor(float craz, int points)
@@ -278,7 +288,7 @@ public class Killer : Character
             }
 
             attackAvailable = true;
-            Invoke(nameof(ResetAttack), resetAttackTimer);
+            Invoke(nameof(ResetAttack), attackCooldown);
 
             StartCoroutine(CastAttack());
         }
@@ -286,7 +296,7 @@ public class Killer : Character
 
     private void Throw()
     {
-        if (attackAvailable)
+        if (throwAvailable || attackAvailable)
             return;
 
         if (Input.GetMouseButtonDown(1))
@@ -294,14 +304,19 @@ public class Killer : Character
             killerAnim.SetTrigger("Throw");
             //AkSoundEngine.PostEvent("cha_throw_axe", gameObject);
 
-            attackAvailable = true;
-            Invoke(nameof(ResetAttack), resetAttackTimer);
+            throwAvailable = true;
+            Invoke(nameof(ResetThrow), isUnlimitAxes ? 0f : throwCooldown);
         }
     }
 
     private void ResetAttack()
     {
         attackAvailable = false;
+    }
+
+    private void ResetThrow()
+    {
+        throwAvailable = false;
     }
 
     private void Hit()
@@ -315,7 +330,7 @@ public class Killer : Character
             while (timer < halfTimer)
             {
                 timer += Time.deltaTime;
-                postProcessing.ChangeVignette(true, timer / halfTimer);
+                postProcessManager.ChangeVignette(true, timer / halfTimer);
                 yield return new WaitForEndOfFrame();
             }
 
@@ -323,7 +338,7 @@ public class Killer : Character
             while (timer < halfTimer)
             {
                 timer += Time.deltaTime;
-                postProcessing.ChangeVignette(false, timer / halfTimer);
+                postProcessManager.ChangeVignette(false, timer / halfTimer);
                 yield return new WaitForEndOfFrame();
             }
 
@@ -374,7 +389,7 @@ public class Killer : Character
             while (timer < deathTimer)
             {
                 timer += Time.deltaTime;
-                postProcessing.ChangeVignette(true, timer / deathTimer);
+                postProcessManager.ChangeVignette(true, timer / deathTimer);
                 yield return new WaitForEndOfFrame();
             }
 
@@ -382,6 +397,18 @@ public class Killer : Character
             yield return null;
         }
         StartCoroutine(VignetteEffect());
+    }
+
+    private void EnableInvincible(bool enabled)
+    {
+        Craziness = crazinessBase;
+        isInvincible = enabled;
+    }
+
+    private void EnableUnlimitAxes(bool enabled)
+    {
+        isUnlimitAxes = enabled;
+        throwAvailable = false;
     }
 
     #endregion

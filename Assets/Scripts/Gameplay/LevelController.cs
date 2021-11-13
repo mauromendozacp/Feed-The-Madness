@@ -9,7 +9,7 @@ public enum DIFFICULTY
 }
 
 [Serializable]
-public struct LEVEL
+public class Level
 {
     public DIFFICULTY difficulty;
     public float time;
@@ -19,6 +19,7 @@ public struct LEVEL
 public class LCActions
 {
     public Action OnKillerDead = null;
+    public Action<int> OnChangeDifficulty = null;
 }
 
 public class LevelController : MonoBehaviour
@@ -28,7 +29,8 @@ public class LevelController : MonoBehaviour
     [SerializeField] private Killer killer = null;
     [SerializeField] private HUD hud = null;
     [SerializeField] private FloorLoop floorLoop = null;
-    [SerializeField] private LEVEL[] difficulties = null;
+    [SerializeField] private Debug debug = null;
+    [SerializeField] private Level[] difficulties = null;
 
     [Header("Obstacles"), Space]
     [SerializeField] private PoolManager obstacleManager = null;
@@ -73,9 +75,11 @@ public class LevelController : MonoBehaviour
         lcActions = new LCActions();
 
         lcActions.OnKillerDead += EndLevel;
+        lcActions.OnChangeDifficulty += ChangeDifficulty;
 
         killer.InitModuleHandlers(lcActions);
         hud.InitModuleHandlers(killer.KActions);
+        debug.InitModuleHandlers(killer.KActions, lcActions);
     }
 
     private void Init()
@@ -90,6 +94,7 @@ public class LevelController : MonoBehaviour
     private void DeInit()
     {
         lcActions.OnKillerDead -= EndLevel;
+        lcActions.OnChangeDifficulty -= ChangeDifficulty;
 
         hud.DeInitModuleHandlers();
     }
@@ -107,37 +112,58 @@ public class LevelController : MonoBehaviour
         {
             if (timer > difficulties[difficultyIndex].time)
             {
-                MovableObjectManager[] movables = FindObjectsOfType<MovableObjectManager>();
-                foreach (MovableObjectManager movable in movables)
-                {
-                    movable.Speed += movable.Speed * difficulties[difficultyIndex].increaseSpeed / 100;
-                }
-
-                floorLoop.Speed += floorLoop.Speed * difficulties[difficultyIndex].increaseSpeed / 100;
-
-                switch (difficulties[difficultyIndex].difficulty)
-                {
-                    case DIFFICULTY.EASY:
-
-                        obstacleManager.Respawns[1].enabled = true;
-                        obstacleManager.Respawns[2].enabled = true;
-
-                        break;
-                    case DIFFICULTY.MEDIUM:
-
-                        treeLeftManager.Respawns[2].enabled = true;
-                        treeRightManager.Respawns[2].enabled = true;
-
-                        break;
-                    case DIFFICULTY.HARD:
-
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException();
-                }
-
+                ChangeDifficulty();
                 difficultyIndex++;
             }
+        }
+    }
+
+    private void ChangeDifficulty()
+    {
+        MovableObjectManager[] movables = FindObjectsOfType<MovableObjectManager>();
+        foreach (MovableObjectManager movable in movables)
+        {
+            movable.Speed += movable.Speed * difficulties[difficultyIndex].increaseSpeed / 100;
+        }
+        floorLoop.Speed += floorLoop.Speed * difficulties[difficultyIndex].increaseSpeed / 100;
+
+        switch (difficulties[difficultyIndex].difficulty)
+        {
+            case DIFFICULTY.EASY:
+
+                obstacleManager.Respawns[1].enabled = true;
+                obstacleManager.Respawns[2].enabled = true;
+
+                treeLeftManager.Respawns[2].enabled = false;
+                treeRightManager.Respawns[2].enabled = false;
+
+                break;
+            case DIFFICULTY.MEDIUM:
+
+                treeLeftManager.Respawns[2].enabled = true;
+                treeRightManager.Respawns[2].enabled = true;
+
+                break;
+            case DIFFICULTY.HARD:
+
+                treeLeftManager.Respawns[2].enabled = true;
+                treeRightManager.Respawns[2].enabled = true;
+
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    }
+
+    private void ChangeDifficulty(int index)
+    {
+        if (index < difficulties.Length)
+        {
+            difficultyIndex = index;
+            ChangeDifficulty();
+
+            int auxDiffIndex = difficultyIndex - 1;
+            timer = auxDiffIndex <= 0 ? 0f : difficulties[auxDiffIndex].time;
         }
     }
 

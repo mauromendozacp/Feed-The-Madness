@@ -1,16 +1,11 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
-public class KilerPostProcessing : MonoBehaviour
+public class PostProcessManager : MonoBehaviour
 {
     #region EXPOSED_FIELDS
 
     [SerializeField] private PostProcessVolume volume = null;
-
-    #endregion
-
-    #region UNITY_CALLS
 
     #endregion
 
