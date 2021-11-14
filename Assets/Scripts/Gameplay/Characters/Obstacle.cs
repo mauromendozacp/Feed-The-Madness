@@ -36,8 +36,10 @@ public class Obstacle : MonoBehaviour
             return;
 
         collision = false;
-        rigid.useGravity = true;
         boxCollider.isTrigger = false;
+
+        if (rigid != null)
+            rigid.useGravity = true;
     }
 
     #endregion
@@ -50,8 +52,10 @@ public class Obstacle : MonoBehaviour
             return;
 
         collision = true;
-        rigid.useGravity = false;
         boxCollider.isTrigger = true;
+
+        if (rigid != null)
+            rigid.useGravity = false;
     }
 
     #endregion

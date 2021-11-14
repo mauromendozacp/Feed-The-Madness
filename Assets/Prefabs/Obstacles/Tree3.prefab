@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6812401149893100330}
   - component: {fileID: 5947680863407625826}
   - component: {fileID: 6332720259763591864}
-  - component: {fileID: 6065392810526256815}
   m_Layer: 11
   m_Name: Tree3
   m_TagString: Untagged
@@ -64,19 +63,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 2212315179894552216}
   fallTimer: 3
---- !u!114 &6065392810526256815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 405364177551208027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af15f5954c537a240a0d37ed4fd2577b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 25
 --- !u!1 &781201733928680609
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +187,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3837644171888509075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329354906897102880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af15f5954c537a240a0d37ed4fd2577b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 25
 --- !u!1 &9013319393500913679
 GameObject:
   m_ObjectHideFlags: 0
