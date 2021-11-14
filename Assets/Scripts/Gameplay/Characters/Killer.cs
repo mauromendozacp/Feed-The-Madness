@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class KActions
 {
@@ -17,7 +18,7 @@ public class Killer : Character
 
     [SerializeField] private float craziness = 0f;
     [SerializeField] private float attackDistance = 0f;
-    [SerializeField] private float decreaseCrazinessVel = 0f;
+    [SerializeField] private float decreaseCrazinessSpeed = 0f;
     [SerializeField] private float throwCooldown = 0f;
     [SerializeField] private ThrowAxe throwAxe = null;
     [SerializeField] private PostProcessManager postProcessManager = null;
@@ -86,14 +87,7 @@ public class Killer : Character
             {
                 if (value > 0)
                 {
-                    if (value < crazinessBase)
-                    {
-                        craziness = value;
-                    }
-                    else
-                    {
-                        craziness = crazinessBase;
-                    }
+                    craziness = value < crazinessBase ? value : crazinessBase;
                 }
                 else
                 {
@@ -105,6 +99,12 @@ public class Killer : Character
             kActions.OnCrazinessUpdated?.Invoke(crazinessBase, craziness);
             postProcessManager.ChangeChromatic(craziness, crazinessBase);
         }
+    }
+
+    public float DecreaseCrazinessSpeed
+    {
+        get => decreaseCrazinessSpeed;
+        set => decreaseCrazinessSpeed = value;
     }
 
     public KActions KActions => kActions;
@@ -260,7 +260,7 @@ public class Killer : Character
         if (attackAvailable)
             return;
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             killerAnim.SetTrigger("Attack");
             AkSoundEngine.PostEvent("cha_axe", gameObject);
@@ -375,7 +375,7 @@ public class Killer : Character
         if (crazinessStop)
             return;
 
-        Craziness -= Time.deltaTime * decreaseCrazinessVel;
+        Craziness -= Time.deltaTime * decreaseCrazinessSpeed;
     }
 
     private void Death()
@@ -410,6 +410,7 @@ public class Killer : Character
         isUnlimitAxes = enabled;
         throwAvailable = false;
     }
+
 
     #endregion
 }

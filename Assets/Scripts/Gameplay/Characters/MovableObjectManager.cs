@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+[Serializable]
+public class RangeTimer
+{
+    public float minTimer = 0f;
+    public float maxTimer = 0f;
+}
+
 public class MOMActions
 {
     public Action<MovableObject> OnRemove = null;
@@ -13,8 +20,7 @@ public class MovableObjectManager : MonoBehaviour
 {
     #region EXPOSED_FIELDS
 
-    [SerializeField] private float minTimerSpawn = 0f;
-    [SerializeField] private float maxTimerSpawn = 0f;
+    [SerializeField] private RangeTimer[] rangeTimerSpawn = null;
     [SerializeField] private float maxX = 0f;
     [SerializeField] private float speed = 0f;
     [SerializeField] private PoolManager poolManager = null;
@@ -23,6 +29,7 @@ public class MovableObjectManager : MonoBehaviour
 
     #region PRIVATE_FIELDS
 
+    private int rangeTimerIndex = 0;
     private MOMActions momActions = null;
 
     #endregion
@@ -49,6 +56,16 @@ public class MovableObjectManager : MonoBehaviour
     void Update()
     {
         Spawn();
+    }
+
+    #endregion
+
+    #region PUBLIC_METHODS
+
+    public void ChangeRangeTimerSpawn(int index)
+    {
+        rangeTimerIndex = index < rangeTimerSpawn.Length ? 
+                          index : rangeTimerSpawn.Length - 1;
     }
 
     #endregion
@@ -101,7 +118,8 @@ public class MovableObjectManager : MonoBehaviour
 
     private float GetRandomTimerSpawn()
     {
-        return Random.Range(minTimerSpawn, maxTimerSpawn);
+        return Random.Range(rangeTimerSpawn[rangeTimerIndex].minTimer,
+                            rangeTimerSpawn[rangeTimerIndex].maxTimer);
     }
 
     #endregion

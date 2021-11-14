@@ -8,12 +8,12 @@ public class Debug : MonoBehaviour
     #region EXPOSED_FIELDS
 
     [SerializeField] private GameObject debugPanel = null;
+    [SerializeField] private float transitionTime = 0f;
 
     #endregion
 
     #region PRIVATE_FIELDS
 
-    private float transitionTime = 1f;
     private bool isOpen = false;
     private bool inTransition = false;
 

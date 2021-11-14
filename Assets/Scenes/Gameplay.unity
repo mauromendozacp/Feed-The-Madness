@@ -1378,8 +1378,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d6ae6d5c1c9274396a76802d8e1100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTimerSpawn: 2
-  maxTimerSpawn: 3.5
+  rangeTimerSpawn:
+  - minTimer: 4
+    maxTimer: 5
+  - minTimer: 2.5
+    maxTimer: 3
+  - minTimer: 1
+    maxTimer: 2
   maxX: 10
   speed: 7.5
   poolManager: {fileID: 353035281}
@@ -1501,9 +1506,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d6ae6d5c1c9274396a76802d8e1100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTimerSpawn: 2.5
-  maxTimerSpawn: 4
-  maxX: 10
+  rangeTimerSpawn:
+  - minTimer: 3
+    maxTimer: 4
+  - minTimer: 1.5
+    maxTimer: 2
+  - minTimer: 0.5
+    maxTimer: 1
+  maxX: 8
   speed: 12.5
   poolManager: {fileID: 356593705}
 --- !u!4 &356593704
@@ -1540,7 +1550,7 @@ MonoBehaviour:
     enabled: 1
   - prefab: {fileID: 2658974923963703165, guid: 3c5a2122dd926444c8ba78a3675aae83,
       type: 3}
-    percent: 90
+    percent: 95
     length: 15
     enabled: 0
   - prefab: {fileID: 6339138212634853913, guid: ad003cd33992a034b875148010d6aa58,
@@ -2477,8 +2487,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d6ae6d5c1c9274396a76802d8e1100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTimerSpawn: 0.5
-  maxTimerSpawn: 0.75
+  rangeTimerSpawn:
+  - minTimer: 0.5
+    maxTimer: 0.75
+  - minTimer: 0.35
+    maxTimer: 0.5
   maxX: 1.25
   speed: 12.5
   poolManager: {fileID: 457548435}
@@ -2806,12 +2819,15 @@ MonoBehaviour:
   - difficulty: 0
     time: 30
     increaseSpeed: 15
+    decreaseCraziness: 2
   - difficulty: 1
     time: 75
     increaseSpeed: 30
+    decreaseCraziness: 3.5
   - difficulty: 2
     time: 135
     increaseSpeed: 50
+    decreaseCraziness: 5
   obstacleManager: {fileID: 356593705}
   treeLeftManager: {fileID: 457548435}
   treeRightManager: {fileID: 1453028427}
@@ -2828,6 +2844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugPanel: {fileID: 1214217912}
+  transitionTime: 0.5
 --- !u!1001 &528772497
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3670,7 +3687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6561,8 +6578,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d6ae6d5c1c9274396a76802d8e1100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTimerSpawn: 0.7
-  maxTimerSpawn: 0.9
+  rangeTimerSpawn:
+  - minTimer: 0.7
+    maxTimer: 0.9
+  - minTimer: 0.4
+    maxTimer: 0.6
   maxX: 2
   speed: 12.5
   poolManager: {fileID: 1248203067}
@@ -7530,8 +7550,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d6ae6d5c1c9274396a76802d8e1100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTimerSpawn: 0.6
-  maxTimerSpawn: 1
+  rangeTimerSpawn:
+  - minTimer: 0.6
+    maxTimer: 1
+  - minTimer: 0.3
+    maxTimer: 0.6
   maxX: 1.3
   speed: 12.5
   poolManager: {fileID: 1453028427}
@@ -10323,8 +10346,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d6ae6d5c1c9274396a76802d8e1100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTimerSpawn: 0.7
-  maxTimerSpawn: 1
+  rangeTimerSpawn:
+  - minTimer: 0.7
+    maxTimer: 1
+  - minTimer: 0.5
+    maxTimer: 0.7
   maxX: 1.25
   speed: 12.5
   poolManager: {fileID: 1978951364}
@@ -10899,6 +10925,11 @@ PrefabInstance:
         type: 3}
       propertyPath: decreaseCrazinessVel
       value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4543504702171015179, guid: 16f9c7563e3648a4eac8583defa32e0e,
+        type: 3}
+      propertyPath: decreaseCrazinessSpeed
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4907784757815672194, guid: 16f9c7563e3648a4eac8583defa32e0e,
         type: 3}

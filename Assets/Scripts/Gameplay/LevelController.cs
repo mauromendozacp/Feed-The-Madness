@@ -11,9 +11,10 @@ public enum DIFFICULTY
 [Serializable]
 public class Level
 {
-    public DIFFICULTY difficulty;
-    public float time;
-    public float increaseSpeed;
+    public DIFFICULTY difficulty = default;
+    public float time = 0f;
+    public float increaseSpeed = 0f;
+    public float decreaseCraziness = 0f;
 }
 
 public class LCActions
@@ -108,7 +109,7 @@ public class LevelController : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (difficultyIndex < difficulties.Length - 1)
+        if (difficultyIndex < difficulties.Length)
         {
             if (timer > difficulties[difficultyIndex].time)
             {
@@ -124,8 +125,10 @@ public class LevelController : MonoBehaviour
         foreach (MovableObjectManager movable in movables)
         {
             movable.Speed += movable.Speed * difficulties[difficultyIndex].increaseSpeed / 100;
+            movable.ChangeRangeTimerSpawn(difficultyIndex);
         }
         floorLoop.Speed += floorLoop.Speed * difficulties[difficultyIndex].increaseSpeed / 100;
+        killer.DecreaseCrazinessSpeed = difficulties[difficultyIndex].decreaseCraziness;
 
         switch (difficulties[difficultyIndex].difficulty)
         {
