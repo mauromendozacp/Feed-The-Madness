@@ -83,7 +83,7 @@ public class Killer : Character
         get => craziness;
         set
         {
-            if (!isInvincible)
+            if (!isInvincible && !Dead)
             {
                 if (value > 0)
                 {
@@ -225,8 +225,10 @@ public class Killer : Character
 
     protected override void Jump()
     {
+        if (!jumping)
+            AkSoundEngine.PostEvent("cha_jump", gameObject);
+
         base.Jump();
-        AkSoundEngine.PostEvent("cha_jump", gameObject);
     }
 
     private void MoveHorizontal()
