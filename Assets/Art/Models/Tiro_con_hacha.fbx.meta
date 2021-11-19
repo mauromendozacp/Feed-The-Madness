@@ -1,26 +1,26 @@
 fileFormatVersion: 2
-guid: d4a46a0b49cfc16499c332ad798d1b01
+guid: 92e372859bbc66346ae752e4bcca5069
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: Attack
+    second: Throw
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Hachas_Mano
+      name: Mano
     second: {fileID: 2100000, guid: 6d1f139118d488946be6ab7f1b157e8c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Hachas_blinn1
+      name: blinn1
     second: {fileID: 2100000, guid: 218d3903f614faf42a062f5bc4d16bc3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Hachas_lambert2
+      name: lambert2
     second: {fileID: 2100000, guid: 23a4cb90ed819f1459a93e72c0ba28cd, type: 2}
   materials:
     materialImportMode: 1
@@ -36,8 +36,8 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: Event Event1 has a time (1.466667) outside the clip's
-      valid range (0.000000..1.433333). It will never be fired
+    animationImportWarnings: Event Event2 has a time (2.297117) outside the clip's
+      valid range (0.000000..2.000000). It will never be fired
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -51,18 +51,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Attack
+      name: Throw
       takeName: Take 001
       internalID: 0
-      firstFrame: 1
-      lastFrame: 45
+      firstFrame: 0
+      lastFrame: 139
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -75,22 +75,21 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 1
-        functionName: CallEvent1
+      - time: 0.99156123
+        functionName: CallEvent2
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 869a369cff0c4ea47b52bed20d87517d,
-          type: 3}
+        objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 1
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.01
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -137,7 +136,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.01
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

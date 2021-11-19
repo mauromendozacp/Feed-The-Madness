@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3776590579684937514}
+  - component: {fileID: 4543504702171015179}
   - component: {fileID: 2227707953138084022}
   - component: {fileID: 1124364319197033301}
-  - component: {fileID: 4543504702171015179}
   - component: {fileID: 6862592473288889282}
   m_Layer: 8
   m_Name: Killer
@@ -31,12 +31,48 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 333689285186203193}
   - {fileID: 8047622655580611107}
+  - {fileID: 333689285186203193}
   - {fileID: 4913082509774548358}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4543504702171015179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2514265635050643695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 507c2c6183225174298e23c15c7e6148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalSpeed: 0
+  jumpForce: 0
+  jumpTimer: 0
+  jumpDistance: 0
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  craziness: 0
+  attackDistance: 0
+  decreaseCrazinessSpeed: 0
+  throwCooldown: 0
+  throwAxe: {fileID: 0}
+  postProcessManager: {fileID: 0}
+  killerAnim: {fileID: 0}
+  cameraAnim: {fileID: 0}
+  survivorMask:
+    serializedVersion: 2
+    m_Bits: 0
+  powerupMask:
+    serializedVersion: 2
+    m_Bits: 0
+  limitMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!54 &2227707953138084022
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -67,42 +103,6 @@ CapsuleCollider:
   m_Height: 3
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4543504702171015179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2514265635050643695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 507c2c6183225174298e23c15c7e6148, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  horizontalSpeed: 0
-  jumpForce: 0
-  jumpTimer: 0
-  jumpDistance: 0
-  obstacleMask:
-    serializedVersion: 2
-    m_Bits: 2048
-  craziness: 0
-  attackDistance: 0
-  decreaseCrazinessVel: 0
-  throwAxe: {fileID: 0}
-  postProcessing: {fileID: 0}
-  killerAnim: {fileID: 0}
-  cameraAnim: {fileID: 0}
-  volume: {fileID: 0}
-  survivorMask:
-    serializedVersion: 2
-    m_Bits: 0
-  powerupMask:
-    serializedVersion: 2
-    m_Bits: 0
-  limitMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &6862592473288889282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,6 +150,46 @@ MonoBehaviour:
   prefab: {fileID: 6878682153899199458, guid: d8e62b4ce548cbe4ebe088d2b1c5548b, type: 3}
   parent: {fileID: 0}
   spawnStart: {fileID: 0}
+--- !u!114 &8679796147039620545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3925124846070237105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 869a369cff0c4ea47b52bed20d87517d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  event1:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4543504702171015179}
+        m_MethodName: ResetAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  event2:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4543504702171015179}
+        m_MethodName: ResetThrowAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4071318227110743574
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,7 +219,7 @@ Transform:
   m_Children:
   - {fileID: 4409878273314774283}
   m_Father: {fileID: 3776590579684937514}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6363047268651605038
 GameObject:
@@ -301,7 +341,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3776590579684937514}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 5.9870005, y: -0.05, z: -0.476}
 --- !u!1001 &4231608564191247072
 PrefabInstance:
