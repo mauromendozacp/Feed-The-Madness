@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 2212315179894552216}
-  fallTimer: 3
+  startAnimPosZ: 100
 --- !u!1 &781201733928680609
 GameObject:
   m_ObjectHideFlags: 0

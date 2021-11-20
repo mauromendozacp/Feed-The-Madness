@@ -429,19 +429,19 @@ public class Killer : Character
 
     private void LocationSound()
     {
-        int locationX = 0;
+        float locationX = 0;
         if (transform.position.x < centerPos.x)
         {
-            locationX = (int)(transform.position.x - leftLimit.position.x);
-            locationX = -(int)(locationX * 100 / centerPos.x);
+            locationX = transform.position.x - leftLimit.position.x;
+            locationX = -(100 - (locationX * 100 / (centerPos.x - leftLimit.position.x)));
         }
         else
         {
-            locationX = (int)(rightLimit.position.x - transform.position.x);
-            locationX = (int)(locationX * 100 / centerPos.x);
+            locationX = rightLimit.position.x - transform.position.x;
+            locationX = 100 - (locationX * 100 / (rightLimit.position.x - centerPos.x));
         }
 
-        AkSoundEngine.SetRTPCValue("location", locationX);
+        AkSoundEngine.SetRTPCValue("location", (int)locationX);
     }
 
     #endregion

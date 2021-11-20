@@ -1,34 +1,58 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class TreeFall : MonoBehaviour
 {
     #region EXPOSED_FIELDS
 
     [SerializeField] private Animator anim;
-    [SerializeField] private float fallTimer = 0f;
+    [SerializeField] private float startAnimPosZ = 0f;
+
+    #endregion
+
+    #region PRIVATE_FIELDS
+
+    private bool playAnim = false;
+    private bool startSpawn = true;
 
     #endregion
 
     #region UNITY_CALLS
 
-    void OnEnable()
+    private void OnEnable()
     {
-        Invoke(nameof(StartFall), fallTimer);
+        if (startSpawn)
+        {
+            startSpawn = false;
+            return;
+        }
+
+        playAnim = false;
+        anim.SetTrigger("off");
+        UnityEngine.Debug.Log("idle");
     }
 
-    void OnDisable()
+    private void Update()
     {
-        anim.SetTrigger("off");
+        Fall();
     }
 
     #endregion
 
     #region PRIVATE_METHODS
 
-    private void StartFall()
+    private void Fall()
     {
-        anim.SetTrigger("fall");
-        AkSoundEngine.PostEvent("amb_falling_tree", gameObject);
+        if (playAnim || !gameObject.activeSelf)
+            return;
+
+        if (transform.position.z < startAnimPosZ)
+        {
+            playAnim = true;
+            anim.SetTrigger("fall");
+            UnityEngine.Debug.Log("caer");
+            AkSoundEngine.PostEvent("amb_falling_tree", gameObject);
+        }
     }
 
     #endregion
