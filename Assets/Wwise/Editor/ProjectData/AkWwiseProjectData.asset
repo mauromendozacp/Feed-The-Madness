@@ -38,10 +38,27 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 2a70283be1c03f4ea481655b176d90e2
     GuidInternal: 
-    m_lastTime: -8585654434407957738
+    m_lastTime: -8585642287448279099
     List:
+    - name: actor
+      guid: 4cfbe9950881334da79f891d6fa48649
+      id: 2213570372
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 2a70283be1c03f4ea481655b176d90e2
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: actor
+        ObjectType: 2
+        guid: 4cfbe9950881334da79f891d6fa48649
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\actor
     - name: HDR
-      guid: 68e6d7772c538b45932d19c5f4c653e9
+      guid: 2e92a81452394e40b557ab4e42225ef2
       id: 931844945
       PathAndIcons:
       - ElementName: Master-Mixer Hierarchy
@@ -53,10 +70,13 @@ MonoBehaviour:
       - ElementName: Master Audio Bus
         ObjectType: 2
         guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: actor
+        ObjectType: 2
+        guid: 4cfbe9950881334da79f891d6fa48649
       - ElementName: HDR
         ObjectType: 2
-        guid: 68e6d7772c538b45932d19c5f4c653e9
-      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\HDR
+        guid: 2e92a81452394e40b557ab4e42225ef2
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\actor\HDR
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
       id: 3803692087
@@ -71,6 +91,23 @@ MonoBehaviour:
         ObjectType: 2
         guid: d8a41415a61d2a41a17e75ca0c2149f3
       Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus
+    - name: mx
+      guid: 8c074b6447cbbc46b9bf4aea486ef61a
+      id: 1685527054
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 2a70283be1c03f4ea481655b176d90e2
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: mx
+        ObjectType: 2
+        guid: 8c074b6447cbbc46b9bf4aea486ef61a
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\mx
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     PathAndIcons:
@@ -83,7 +120,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 210bccce3454284db754d6120c071294
     GuidInternal: 
-    m_lastTime: -8585654399388280997
+    m_lastTime: -8585642287435033426
     List:
     - name: SoundBankTestxd
       guid: 4955bd060e1a4446b856aed3a8d3aaf4
@@ -111,7 +148,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 56714d5b82b64b4895ddb6b49b972b1f
     GuidInternal: 
-    m_lastTime: -8585654402922168616
+    m_lastTime: -8585642283836179521
     List:
     - name: amb_falling_tree
       guid: b4d4a0c590fc23478ef28b565eae5d6c
@@ -127,7 +164,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: b4d4a0c590fc23478ef28b565eae5d6c
       Path: Events\Default Work Unit\amb_falling_tree
-      maxAttenuation: 50
+      maxAttenuation: 75
       maxDuration: 2.378898
       minDuration: 1.12261
     - name: amb_rain
@@ -147,6 +184,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: amb_rain_stop
+      guid: 7949c51a088f0347b4edf843706fa321
+      id: 1416460443
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 56714d5b82b64b4895ddb6b49b972b1f
+      - ElementName: amb_rain_stop
+        ObjectType: 3
+        guid: 7949c51a088f0347b4edf843706fa321
+      Path: Events\Default Work Unit\amb_rain_stop
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: amb_tent
       guid: 0e9231cb06647a459d3f17dd3f55367f
       id: 3300706377
@@ -161,7 +215,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 0e9231cb06647a459d3f17dd3f55367f
       Path: Events\Default Work Unit\amb_tent
-      maxAttenuation: 50
+      maxAttenuation: 75
       maxDuration: 17.370285
       minDuration: 6.956689
     - name: ambient
@@ -212,7 +266,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 5d75b34bc76ef848b0d023903fcd8486
       Path: Events\Default Work Unit\cha_axe_success
-      maxAttenuation: 0
+      maxAttenuation: 25
       maxDuration: 2.093624
       minDuration: 1.566674
     - name: cha_boost
@@ -385,40 +439,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: mx_gameover
-      guid: defc8e7bc2610049bba25a47bbeabe36
-      id: 4087515445
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: 56714d5b82b64b4895ddb6b49b972b1f
-      - ElementName: mx_gameover
-        ObjectType: 3
-        guid: defc8e7bc2610049bba25a47bbeabe36
-      Path: Events\Default Work Unit\mx_gameover
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: mx_menu
-      guid: d15aa34495a08b429f1575ff1f4baff3
-      id: 2103702368
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: 56714d5b82b64b4895ddb6b49b972b1f
-      - ElementName: mx_menu
-        ObjectType: 3
-        guid: d15aa34495a08b429f1575ff1f4baff3
-      Path: Events\Default Work Unit\mx_menu
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
     - name: ui_button
       guid: 2cc6a697a882d74dbc9848577749ecc8
       id: 2505162442
@@ -465,7 +485,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 53a918b6d5cd7a41918261ff8a662b32
     GuidInternal: 
-    m_lastTime: -8585658263871793499
+    m_lastTime: -8585642287448328971
     List:
     - name: frenesi
       guid: 004cea010126674da26aa0009da23b36
@@ -507,8 +527,74 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: a8005f62e3d3334c8c9888e5dfbb7288
     GuidInternal: 
-    m_lastTime: -8585658263861043423
+    m_lastTime: -8585642287429290119
     List:
+    - name: mx_switch
+      guid: c89ed54fbd84ae4cb63bf79e8060e96e
+      id: 2562021653
+      PathAndIcons:
+      - ElementName: States
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a8005f62e3d3334c8c9888e5dfbb7288
+      - ElementName: mx_switch
+        ObjectType: 9
+        guid: c89ed54fbd84ae4cb63bf79e8060e96e
+      Path: States\Default Work Unit\mx_switch
+      values:
+      - name: mx_gameplay
+        guid: f3bc3378091e9d4a98ba0bf28db8d3a5
+        id: 2655229457
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: a8005f62e3d3334c8c9888e5dfbb7288
+        - ElementName: mx_switch
+          ObjectType: 9
+          guid: c89ed54fbd84ae4cb63bf79e8060e96e
+        - ElementName: mx_gameplay
+          ObjectType: 8
+          guid: f3bc3378091e9d4a98ba0bf28db8d3a5
+      - name: mx_menu
+        guid: 22ddb0538b619f4aaae8e618e82554d9
+        id: 2103702368
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: a8005f62e3d3334c8c9888e5dfbb7288
+        - ElementName: mx_switch
+          ObjectType: 9
+          guid: c89ed54fbd84ae4cb63bf79e8060e96e
+        - ElementName: mx_menu
+          ObjectType: 8
+          guid: 22ddb0538b619f4aaae8e618e82554d9
+      - name: None
+        guid: 153cedbbb2de894d9c9057360787c24c
+        id: 748895195
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: a8005f62e3d3334c8c9888e5dfbb7288
+        - ElementName: mx_switch
+          ObjectType: 9
+          guid: c89ed54fbd84ae4cb63bf79e8060e96e
+        - ElementName: None
+          ObjectType: 8
+          guid: 153cedbbb2de894d9c9057360787c24c
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
     - name: pause
       guid: ddd6b1f9bf5d1141958717f7c41310a5
       id: 3092587493
@@ -587,11 +673,11 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 87f5f526e042e142a61b0d5a68857a69
     GuidInternal: 
-    m_lastTime: -8585658263861043423
+    m_lastTime: -8585642287429220002
     List:
-    - name: menu
-      guid: c6042b0d0c396b428ff9135bc24d2977
-      id: 2607556080
+    - name: mx_gameplay
+      guid: c6254af9e82b6c4fbe4c7cdb95cbc7c5
+      id: 2655229457
       PathAndIcons:
       - ElementName: Switches
         ObjectType: 5
@@ -599,14 +685,14 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 87f5f526e042e142a61b0d5a68857a69
-      - ElementName: menu
+      - ElementName: mx_gameplay
         ObjectType: 11
-        guid: c6042b0d0c396b428ff9135bc24d2977
-      Path: Switches\Default Work Unit\menu
+        guid: c6254af9e82b6c4fbe4c7cdb95cbc7c5
+      Path: Switches\Default Work Unit\mx_gameplay
       values:
-      - name: gameover
-        guid: 1f73944b86a29d4f8427e705124c4ed8
-        id: 4158285989
+      - name: mx1
+        guid: d7810495c177844b8d2d6efb10b31848
+        id: 897451067
         PathAndIcons:
         - ElementName: Switches
           ObjectType: 5
@@ -614,15 +700,15 @@ MonoBehaviour:
         - ElementName: Default Work Unit
           ObjectType: 12
           guid: 87f5f526e042e142a61b0d5a68857a69
-        - ElementName: menu
+        - ElementName: mx_gameplay
           ObjectType: 11
-          guid: c6042b0d0c396b428ff9135bc24d2977
-        - ElementName: gameover
+          guid: c6254af9e82b6c4fbe4c7cdb95cbc7c5
+        - ElementName: mx1
           ObjectType: 10
-          guid: 1f73944b86a29d4f8427e705124c4ed8
-      - name: gameplay
-        guid: de12c777b5793a4685482b0c807bfb22
-        id: 89505537
+          guid: d7810495c177844b8d2d6efb10b31848
+      - name: mx2
+        guid: 3b446b96eedef94c94aee46d8892ed6d
+        id: 897451064
         PathAndIcons:
         - ElementName: Switches
           ObjectType: 5
@@ -630,15 +716,15 @@ MonoBehaviour:
         - ElementName: Default Work Unit
           ObjectType: 12
           guid: 87f5f526e042e142a61b0d5a68857a69
-        - ElementName: menu
+        - ElementName: mx_gameplay
           ObjectType: 11
-          guid: c6042b0d0c396b428ff9135bc24d2977
-        - ElementName: gameplay
+          guid: c6254af9e82b6c4fbe4c7cdb95cbc7c5
+        - ElementName: mx2
           ObjectType: 10
-          guid: de12c777b5793a4685482b0c807bfb22
-      - name: index
-        guid: b55047e30899a34b91948ce005513581
-        id: 904728615
+          guid: 3b446b96eedef94c94aee46d8892ed6d
+      - name: mx3
+        guid: 0c7abe65d2554041aa9e97c91aa1a865
+        id: 897451065
         PathAndIcons:
         - ElementName: Switches
           ObjectType: 5
@@ -646,12 +732,28 @@ MonoBehaviour:
         - ElementName: Default Work Unit
           ObjectType: 12
           guid: 87f5f526e042e142a61b0d5a68857a69
-        - ElementName: menu
+        - ElementName: mx_gameplay
           ObjectType: 11
-          guid: c6042b0d0c396b428ff9135bc24d2977
-        - ElementName: index
+          guid: c6254af9e82b6c4fbe4c7cdb95cbc7c5
+        - ElementName: mx3
           ObjectType: 10
-          guid: b55047e30899a34b91948ce005513581
+          guid: 0c7abe65d2554041aa9e97c91aa1a865
+      - name: mx4
+        guid: 31fdc1d2afed8d449cca43fd95f0277a
+        id: 897451070
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 87f5f526e042e142a61b0d5a68857a69
+        - ElementName: mx_gameplay
+          ObjectType: 11
+          guid: c6254af9e82b6c4fbe4c7cdb95cbc7c5
+        - ElementName: mx4
+          ObjectType: 10
+          guid: 31fdc1d2afed8d449cca43fd95f0277a
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
@@ -735,7 +837,7 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585678836058776479
     List: []
-  ExpandedFileSystemItemIds: 020000000300000008000000090000000a000000
+  ExpandedFileSystemItemIds: 020000000300000008000000090000000a0000002c0000002d000000
   ExpandedWaapiItemIds: 08000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1

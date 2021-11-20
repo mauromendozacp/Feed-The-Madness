@@ -15,6 +15,7 @@ namespace AK
     {
         static const AkUniqueID AMB_FALLING_TREE = 2954529342U;
         static const AkUniqueID AMB_RAIN = 3302041772U;
+        static const AkUniqueID AMB_RAIN_STOP = 1416460443U;
         static const AkUniqueID AMB_TENT = 3300706377U;
         static const AkUniqueID AMBIENT = 77978275U;
         static const AkUniqueID CHA_AXE = 3931567716U;
@@ -29,14 +30,24 @@ namespace AK
         static const AkUniqueID CHA_JUMP = 683827540U;
         static const AkUniqueID CHA_THROW_AXE = 3921742761U;
         static const AkUniqueID MX = 1685527054U;
-        static const AkUniqueID MX_GAMEOVER = 4087515445U;
-        static const AkUniqueID MX_MENU = 2103702368U;
         static const AkUniqueID UI_BUTTON = 2505162442U;
         static const AkUniqueID UI_MENU = 2511555531U;
     } // namespace EVENTS
 
     namespace STATES
     {
+        namespace MX_SWITCH
+        {
+            static const AkUniqueID GROUP = 2562021653U;
+
+            namespace STATE
+            {
+                static const AkUniqueID MX_GAMEPLAY = 2655229457U;
+                static const AkUniqueID MX_MENU = 2103702368U;
+                static const AkUniqueID NONE = 748895195U;
+            } // namespace STATE
+        } // namespace MX_SWITCH
+
         namespace PAUSE
         {
             static const AkUniqueID GROUP = 3092587493U;
@@ -53,17 +64,18 @@ namespace AK
 
     namespace SWITCHES
     {
-        namespace MENU
+        namespace MX_GAMEPLAY
         {
-            static const AkUniqueID GROUP = 2607556080U;
+            static const AkUniqueID GROUP = 2655229457U;
 
             namespace SWITCH
             {
-                static const AkUniqueID GAMEOVER = 4158285989U;
-                static const AkUniqueID GAMEPLAY = 89505537U;
-                static const AkUniqueID INDEX = 904728615U;
+                static const AkUniqueID MX1 = 897451067U;
+                static const AkUniqueID MX2 = 897451064U;
+                static const AkUniqueID MX3 = 897451065U;
+                static const AkUniqueID MX4 = 897451070U;
             } // namespace SWITCH
-        } // namespace MENU
+        } // namespace MX_GAMEPLAY
 
         namespace TERRAIN
         {
@@ -93,8 +105,10 @@ namespace AK
 
     namespace BUSSES
     {
+        static const AkUniqueID ACTOR = 2213570372U;
         static const AkUniqueID HDR = 931844945U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
+        static const AkUniqueID MX = 1685527054U;
     } // namespace BUSSES
 
     namespace AUDIO_DEVICES
