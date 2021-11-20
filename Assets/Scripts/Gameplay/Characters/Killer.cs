@@ -46,7 +46,7 @@ public class Killer : Character
 
     private bool attackAvailable = false;
     private bool throwAvailable = false;
-    private float attackCooldown = 0.5f;
+    private bool throwInAnimation = false;
     private bool isInvincible = false;
     private bool isUnlimitAxes = false;
 
@@ -83,7 +83,7 @@ public class Killer : Character
         get => craziness;
         set
         {
-            if (!isInvincible)
+            if (!isInvincible && !Dead)
             {
                 if (value > 0)
                 {
@@ -198,6 +198,16 @@ public class Killer : Character
         Score += points;
     }
 
+    public void ResetAttack()
+    {
+        attackAvailable = false;
+    }
+
+    public void ResetThrowAnimation()
+    {
+        throwInAnimation = false;
+    }
+
     #endregion
 
     #region PRIVATE_METHODS
@@ -215,8 +225,10 @@ public class Killer : Character
 
     protected override void Jump()
     {
+        if (!jumping)
+            AkSoundEngine.PostEvent("cha_jump", gameObject);
+
         base.Jump();
-        AkSoundEngine.PostEvent("cha_jump", gameObject);
     }
 
     private void MoveHorizontal()
@@ -257,7 +269,7 @@ public class Killer : Character
 
     private void Attack()
     {
-        if (attackAvailable)
+        if (attackAvailable || throwInAnimation)
             return;
 
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
@@ -288,7 +300,6 @@ public class Killer : Character
             }
 
             attackAvailable = true;
-            Invoke(nameof(ResetAttack), attackCooldown);
 
             StartCoroutine(CastAttack());
         }
@@ -305,13 +316,9 @@ public class Killer : Character
             //AkSoundEngine.PostEvent("cha_throw_axe", gameObject);
 
             throwAvailable = true;
+            throwInAnimation = true;
             Invoke(nameof(ResetThrow), isUnlimitAxes ? 0f : throwCooldown);
         }
-    }
-
-    private void ResetAttack()
-    {
-        attackAvailable = false;
     }
 
     private void ResetThrow()

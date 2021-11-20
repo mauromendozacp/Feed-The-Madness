@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class OptionsUI : MonoBehaviour
@@ -10,31 +8,33 @@ public class OptionsUI : MonoBehaviour
     [SerializeField] private Image musicImage = null;
     [SerializeField] private Image sfxImage = null;
 
-    [SerializeField] private Transform start = null;
-    [SerializeField] private Transform end = null;
+    #endregion
+
+    #region PRIVATE_FIELDS
+
+    private float soundSpeed = 0.1f;
 
     #endregion
 
     #region PUBLIC_METHODS
 
-    public void ChangeMusic()
+    public void ChangeMusic(bool increment)
     {
-        musicImage.fillAmount = GetPercentValue();
+        musicImage.fillAmount = GetPercentValue(musicImage.fillAmount, increment);
     }
 
-    public void ChangeSfx()
+    public void ChangeSfx(bool increment)
     {
-        sfxImage.fillAmount = GetPercentValue();
+        sfxImage.fillAmount = GetPercentValue(sfxImage.fillAmount, increment);
     }
 
     #endregion
 
     #region PRIVATE_METHODS
 
-    private float GetPercentValue()
+    private float GetPercentValue(float soundBase, bool increment)
     {
-        Vector3 mousePos = Input.mousePosition;
-        return ((start.position.x - end.position.x) - (start.position.x - mousePos.x)) / 100;
+        return increment ? soundBase + soundSpeed : soundBase - soundSpeed;
     }
 
     #endregion

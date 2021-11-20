@@ -8,10 +8,14 @@ public class HUD : MonoBehaviour
     #region EXPOSED_FIELDS
 
     [SerializeField] private TMP_Text scoreText = null;
+
+    [Header("Craziness Bar"), Space]
     [SerializeField] private Image crazinessBar = null;
     [SerializeField] private GameObject CrazinessIcon = null;
     [SerializeField] private Transform barStart = null;
     [SerializeField] private Transform barEnd = null;
+
+    [Header("Fade"), Space]
     [SerializeField] private CanvasGroup fadeCanvasGroup = null;
     [SerializeField] private float fadeTimer = 0f;
 
@@ -48,19 +52,23 @@ public class HUD : MonoBehaviour
         kActions.OnCrazinessUpdated -= UpdateCraziness;
     }
 
-    public void UpdateScore(int score)
+    #endregion
+
+    #region PRIVATE_METHODS
+
+    private void UpdateScore(int score)
     {
         scoreText.text = "Score " + score;
     }
 
-    public void UpdateCraziness(float crazinessBase, float crazinessPoints)
+    private void UpdateCraziness(float crazinessBase, float crazinessPoints)
     {
         crazinessBar.fillAmount = crazinessPoints / crazinessBase;
         CrazinessIcon.transform.position =
             Vector3.Lerp(barStart.position, barEnd.position, crazinessPoints / crazinessBase);
     }
 
-    public IEnumerator StartFade()
+    private IEnumerator StartFade()
     {
         float timer = 0f;
         while (timer < fadeTimer)
