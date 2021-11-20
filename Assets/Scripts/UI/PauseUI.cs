@@ -15,12 +15,14 @@ public class PauseUI : MonoBehaviour
     {
         Time.timeScale = 0f;
         pausePanel.SetActive(true);
+        AkSoundEngine.SetState("pause", "on");
     }
 
     public void ResumeGame()
     {
         Time.timeScale = 1f;
         pausePanel.SetActive(false);
+        AkSoundEngine.SetState("pause", "off");
     }
 
     public void ShowPause()
@@ -38,6 +40,7 @@ public class PauseUI : MonoBehaviour
     public void BackToMenu()
     {
         Time.timeScale = 1f;
+        AkSoundEngine.SetState("pause", "off");
         GameManager.Get().ChangeScene(GameManager.SceneGame.MainMenu);
     }
 

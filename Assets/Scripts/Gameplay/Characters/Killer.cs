@@ -26,6 +26,9 @@ public class Killer : Character
     [SerializeField] private Animator killerAnim = null;
     [SerializeField] private Animator cameraAnim = null;
 
+    [SerializeField] private Transform leftLimit = null;
+    [SerializeField] private Transform rightLimit = null;
+
     [SerializeField] private LayerMask survivorMask = default;
     [SerializeField] private LayerMask powerupMask = default;
     [SerializeField] private LayerMask limitMask = default;
@@ -38,6 +41,7 @@ public class Killer : Character
     private bool hitted = false;
     private float invulnerableTimer = 1.2f;
     private float deathTimer = 1.5f;
+    private Vector3 centerPos = Vector3.zero;
 
     private bool crazinessStop = false;
     private float crazinessBase = 0f;
@@ -127,8 +131,9 @@ public class Killer : Character
 
         Steps();
 
-        /*AkSoundEngine.SetRTPCValue("cha_heart", Craziness);
-        AkSoundEngine.PostEvent("cha_heart", gameObject);*/
+        centerPos = transform.position;
+        AkSoundEngine.SetRTPCValue("frenesi", Craziness);
+        AkSoundEngine.PostEvent("cha_heart", gameObject);
     }
 
     private void Update()
@@ -140,6 +145,7 @@ public class Killer : Character
             InputJump();
             CheckGroundStatus();
             DecreaseCraziness();
+            LocationSound();
         }
     }
 
@@ -259,7 +265,10 @@ public class Killer : Character
         {
             while (!dead)
             {
-                AkSoundEngine.PostEvent("cha_footsteps", gameObject);
+                if (!jumping)
+                {
+                    AkSoundEngine.PostEvent("cha_footsteps", gameObject);
+                }
 
                 yield return new WaitForSeconds(0.3f);
             }
@@ -313,7 +322,6 @@ public class Killer : Character
         if (Input.GetMouseButtonDown(1))
         {
             killerAnim.SetTrigger("Throw");
-            //AkSoundEngine.PostEvent("cha_throw_axe", gameObject);
 
             throwAvailable = true;
             throwInAnimation = true;
@@ -383,6 +391,7 @@ public class Killer : Character
             return;
 
         Craziness -= Time.deltaTime * decreaseCrazinessSpeed;
+        AkSoundEngine.SetRTPCValue("frenesi", Craziness);
     }
 
     private void Death()
@@ -418,6 +427,22 @@ public class Killer : Character
         throwAvailable = false;
     }
 
+    private void LocationSound()
+    {
+        int locationX = 0;
+        if (transform.position.x < centerPos.x)
+        {
+            locationX = (int)(transform.position.x - leftLimit.position.x);
+            locationX = -(int)(locationX * 100 / centerPos.x);
+        }
+        else
+        {
+            locationX = (int)(rightLimit.position.x - transform.position.x);
+            locationX = (int)(locationX * 100 / centerPos.x);
+        }
+
+        AkSoundEngine.SetRTPCValue("location", locationX);
+    }
 
     #endregion
 }

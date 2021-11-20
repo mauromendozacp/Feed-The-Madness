@@ -13,7 +13,6 @@ public class TreeFall : MonoBehaviour
 
     void OnEnable()
     {
-        //AkSoundEngine.PostEvent("amb_falling_tree", gameObject);
         Invoke(nameof(StartFall), fallTimer);
     }
 
@@ -29,6 +28,7 @@ public class TreeFall : MonoBehaviour
     private void StartFall()
     {
         anim.SetTrigger("fall");
+        AkSoundEngine.PostEvent("amb_falling_tree", gameObject);
     }
 
     #endregion

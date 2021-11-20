@@ -13,6 +13,11 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
         GameOver
     }
 
+    private void Start()
+    {
+        AkSoundEngine.PostEvent("mx", gameObject);
+    }
+
     public void ChangeScene(SceneGame scene)
     {
         string sceneName;

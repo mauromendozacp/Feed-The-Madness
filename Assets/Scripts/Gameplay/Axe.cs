@@ -20,6 +20,7 @@ public class Axe : MonoBehaviour
     void Start()
     {
         GetComponent<Rigidbody>().AddForce(Vector3.forward * force, ForceMode.Impulse);
+        AkSoundEngine.PostEvent("cha_throw_axe", gameObject);
     }
 
     private void OnCollisionEnter(Collision other)

@@ -18,6 +18,7 @@ public class MainmenuUI : MonoBehaviour
     private void Start()
     {
         versionText.text = "v" + Application.version;
+        AkSoundEngine.SetState("mx_switch", "mx_menu");
     }
 
     #endregion

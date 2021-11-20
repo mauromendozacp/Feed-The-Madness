@@ -1220,11 +1220,11 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 693699210}
-          m_MethodName: PointerExit
-          m_Mode: 2
+          m_MethodName: PointerDown
+          m_Mode: 1
           m_Arguments:
-            m_ObjectArgument: {fileID: 161227560}
-            m_ObjectArgumentAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -1653,11 +1653,11 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 757563959}
-          m_MethodName: PointerExit
-          m_Mode: 2
+          m_MethodName: PointerDown
+          m_Mode: 1
           m_Arguments:
-            m_ObjectArgument: {fileID: 959927278}
-            m_ObjectArgumentAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -1989,11 +1989,11 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 838813497}
-          m_MethodName: PointerExit
-          m_Mode: 2
+          m_MethodName: PointerDown
+          m_Mode: 1
           m_Arguments:
-            m_ObjectArgument: {fileID: 1681012278}
-            m_ObjectArgumentAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -2009,6 +2009,7 @@ GameObject:
   m_Component:
   - component: {fileID: 842463640}
   - component: {fileID: 842463639}
+  - component: {fileID: 842463641}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -2056,6 +2057,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &842463641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842463638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2064b55bf4d07f6449444bc213406e49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 984db0167ced00e40819c29ac4049c26,
+      type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!1 &926228932
 GameObject:
   m_ObjectHideFlags: 0
@@ -2068,6 +2094,8 @@ GameObject:
   - component: {fileID: 926228936}
   - component: {fileID: 926228935}
   - component: {fileID: 926228934}
+  - component: {fileID: 926228938}
+  - component: {fileID: 926228937}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -2186,6 +2214,76 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 926228932}
   m_CullTransparentMesh: 0
+--- !u!114 &926228937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926228932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcd41e6eb4f948042bb423ce5b289fa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &926228938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926228932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 926228937}
+          m_MethodName: PointerEnter
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2002939506}
+            m_ObjectArgumentAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 926228937}
+          m_MethodName: PointerExit
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2002939506}
+            m_ObjectArgumentAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 926228937}
+          m_MethodName: PointerDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &941704913
 GameObject:
   m_ObjectHideFlags: 0
@@ -3121,11 +3219,11 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1244835841}
-          m_MethodName: PointerExit
-          m_Mode: 2
+          m_MethodName: PointerDown
+          m_Mode: 1
           m_Arguments:
-            m_ObjectArgument: {fileID: 1760907677}
-            m_ObjectArgumentAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -3350,32 +3448,52 @@ PrefabInstance:
     - target: {fileID: 540267861942180124, guid: 414634ca28f288e4a883f05ae4b57bcf,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 540267861942180124, guid: 414634ca28f288e4a883f05ae4b57bcf,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 540267861942180124, guid: 414634ca28f288e4a883f05ae4b57bcf,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 540267861942180124, guid: 414634ca28f288e4a883f05ae4b57bcf,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 540267861942180124, guid: 414634ca28f288e4a883f05ae4b57bcf,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 540267861942180124, guid: 414634ca28f288e4a883f05ae4b57bcf,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 540267862138225044, guid: 414634ca28f288e4a883f05ae4b57bcf,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 540267862138225044, guid: 414634ca28f288e4a883f05ae4b57bcf,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PointerDown
+      objectReference: {fileID: 0}
+    - target: {fileID: 540267862138225044, guid: 414634ca28f288e4a883f05ae4b57bcf,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 540267862138225044, guid: 414634ca28f288e4a883f05ae4b57bcf,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 540267862138225047, guid: 414634ca28f288e4a883f05ae4b57bcf,
         type: 3}
@@ -3531,38 +3649,53 @@ PrefabInstance:
     - target: {fileID: 540267862797428507, guid: 414634ca28f288e4a883f05ae4b57bcf,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 540267862901750296, guid: 414634ca28f288e4a883f05ae4b57bcf,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 540267862901750296, guid: 414634ca28f288e4a883f05ae4b57bcf,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 540267862901750296, guid: 414634ca28f288e4a883f05ae4b57bcf,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 540267862901750296, guid: 414634ca28f288e4a883f05ae4b57bcf,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 540267862901750296, guid: 414634ca28f288e4a883f05ae4b57bcf,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 540267862901750296, guid: 414634ca28f288e4a883f05ae4b57bcf,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -105
       objectReference: {fileID: 0}
+    - target: {fileID: 4057314962528107164, guid: 414634ca28f288e4a883f05ae4b57bcf,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1425094031}
+    - target: {fileID: 4057314962528107164, guid: 414634ca28f288e4a883f05ae4b57bcf,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1425094031}
+    - target: {fileID: 4057314962528107164, guid: 414634ca28f288e4a883f05ae4b57bcf,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1425094031}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 414634ca28f288e4a883f05ae4b57bcf, type: 3}
 --- !u!224 &1425094030 stripped
@@ -3571,6 +3704,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1425094029}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1425094031 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4716917987369483018, guid: 414634ca28f288e4a883f05ae4b57bcf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1425094029}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcd41e6eb4f948042bb423ce5b289fa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1428239740
 GameObject:
   m_ObjectHideFlags: 0
@@ -4334,11 +4479,11 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1871374801}
-          m_MethodName: PointerExit
-          m_Mode: 2
+          m_MethodName: PointerDown
+          m_Mode: 1
           m_Arguments:
-            m_ObjectArgument: {fileID: 1954345442}
-            m_ObjectArgumentAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 

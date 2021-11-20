@@ -10903,6 +10903,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4543504702171015179, guid: 16f9c7563e3648a4eac8583defa32e0e,
         type: 3}
+      propertyPath: leftLimit
+      value: 
+      objectReference: {fileID: 205550456}
+    - target: {fileID: 4543504702171015179, guid: 16f9c7563e3648a4eac8583defa32e0e,
+        type: 3}
       propertyPath: cameraAnim
       value: 
       objectReference: {fileID: 1639958202}
@@ -10911,6 +10916,11 @@ PrefabInstance:
       propertyPath: killerAnim
       value: 
       objectReference: {fileID: 1920847017}
+    - target: {fileID: 4543504702171015179, guid: 16f9c7563e3648a4eac8583defa32e0e,
+        type: 3}
+      propertyPath: rightLimit
+      value: 
+      objectReference: {fileID: 721066467}
     - target: {fileID: 4543504702171015179, guid: 16f9c7563e3648a4eac8583defa32e0e,
         type: 3}
       propertyPath: attackRadius

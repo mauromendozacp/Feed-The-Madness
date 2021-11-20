@@ -36,7 +36,7 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: Event Event1 has a time (1.466667) outside the clip's
+    animationImportWarnings: Event CallEvent1 has a time (1.466667) outside the clip's
       valid range (0.000000..1.433333). It will never be fired
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
