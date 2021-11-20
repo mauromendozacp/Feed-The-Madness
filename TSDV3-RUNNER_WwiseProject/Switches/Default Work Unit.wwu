@@ -10,12 +10,51 @@
 						<Switch Name="t_long_grass" ID="{E82DE739-09B3-47AB-8298-078BE3813325}"/>
 					</ChildrenList>
 				</SwitchGroup>
-				<SwitchGroup Name="menu" ID="{0D2B04C6-390C-426B-8FF9-135BC24D2977}">
+				<SwitchGroup Name="mx_gameplay" ID="{F94A25C6-2BE8-4F6C-BE4C-7CDB95CBC7C5}">
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
 					<ChildrenList>
-						<Switch Name="index" ID="{E34750B5-9908-4BA3-9194-8CE005513581}"/>
-						<Switch Name="gameplay" ID="{77C712DE-79B5-463A-8548-2B0C807BFB22}"/>
-						<Switch Name="gameover" ID="{4B94731F-A286-4F9D-8427-E705124C4ED8}"/>
+						<Switch Name="mx1" ID="{950481D7-77C1-4B84-8D2D-6EFB10B31848}"/>
+						<Switch Name="mx2" ID="{966B443B-DEEE-4CF9-94AE-E46D8892ED6D}"/>
+						<Switch Name="mx3" ID="{65BE7A0C-55D2-4140-AA9E-97C91AA1A865}"/>
+						<Switch Name="mx4" ID="{D2C1FD31-EDAF-448D-9CCA-43FD95F0277A}"/>
 					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="frenesi" ID="{01EA4C00-2601-4D67-A26A-A0009DA23B36}"/>
+						<Curve Name="" ID="{36F12A12-6E78-4696-A8CE-31A8AC46DF9A}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>4</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>25</XPos>
+									<YPos>3</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>50</XPos>
+									<YPos>2</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>75</XPos>
+									<YPos>1</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>100</XPos>
+									<YPos>1</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
 				</SwitchGroup>
 			</ChildrenList>
 		</WorkUnit>

@@ -86,6 +86,31 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{C8662729-E295-49A0-83A2-94C7D0E711FA}" ShortID="153775108">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="27"/>
+								<Property Name="Delay" Type="Real64" Value="1"/>
+								<Property Name="Lowpass" Type="int16" Value="50"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="breathing" ID="{74292A70-C149-46C7-B316-7D269D08D336}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{FA3B1266-A885-429D-B920-BEFF8774B8A8}" ShortID="245830556">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="30"/>
+								<Property Name="Delay" Type="Real64" Value="1"/>
+								<Property Name="Highpass" Type="int16" Value="50"/>
+								<Property Name="Lowpass" Type="int16" Value="50"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="breathing" ID="{74292A70-C149-46C7-B316-7D269D08D336}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 						<Action Name="" ID="{5A07DC89-7619-4E70-BA3E-8D9F3D51AC4E}" ShortID="460010582">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="26"/>
@@ -108,6 +133,31 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3B28702A-C0E1-4E3F-A481-655B176D90E2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{9DED93F9-60F8-4B1A-9F46-DDCA5DFD1519}" ShortID="951261320">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Delay" Type="Real64" Value="1"/>
+								<Property Name="Lowpass" Type="int16" Value="50"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="breathing" ID="{74292A70-C149-46C7-B316-7D269D08D336}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{DD5A717A-94B0-478D-AD9E-256DCD677759}" ShortID="227163380">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="29"/>
+								<Property Name="Delay" Type="Real64" Value="1"/>
+								<Property Name="Highpass" Type="int16" Value="50"/>
+								<Property Name="Lowpass" Type="int16" Value="50"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="breathing" ID="{74292A70-C149-46C7-B316-7D269D08D336}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -159,10 +209,21 @@
 				</Event>
 				<Event Name="amb_tent" ID="{CB31920E-6406-457A-9D3F-17DD3F55367F}">
 					<ChildrenList>
-						<Action Name="" ID="{E7CBFEFD-966A-4C40-AE3E-A1040E15F798}" ShortID="675112532">
+						<Action Name="" ID="{C35A0C76-486D-433E-B90A-C0C420E830C9}" ShortID="517531671">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="radio_tent" ID="{221836B3-9218-46A0-BA0E-0940DF0ADAA3}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+									<ObjectRef Name="tent" ID="{137C2B92-19B6-4606-B770-75EB3D69B31A}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{C86130FA-0436-4501-87B0-9A902430E2C4}" ShortID="299356831">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="tent" ID="{137C2B92-19B6-4606-B770-75EB3D69B31A}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -173,18 +234,7 @@
 						<Action Name="" ID="{966C29C2-C2CD-40C9-A27D-69874D8C7414}" ShortID="623204361">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Ambient" ID="{366FF8B9-9A0B-4387-A2BF-1BD1A64B50AA}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="mx_menu" ID="{44A35AD1-A095-428B-9F15-75FF1F4BAFF3}">
-					<ChildrenList>
-						<Action Name="" ID="{6A47B324-7019-48F4-9D64-E3A77E3AE2FA}" ShortID="22461103">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="mx_menu" ID="{1E99F185-EFA6-44AE-B16F-580903367944}" WorkUnitID="{2635C566-F42E-485A-AC76-B775F6474BC5}"/>
+									<ObjectRef Name="ambient" ID="{366FF8B9-9A0B-4387-A2BF-1BD1A64B50AA}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -209,9 +259,15 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{2A18F156-2A66-4514-92CB-AA06EB1BD570}" ShortID="34785832">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="horns" ID="{F70AA2EF-59CC-45B8-A3E1-31F18AE888E9}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="mx_gameover" ID="{7B8EFCDE-61C2-4900-BBA2-5A47BBEABE36}"/>
 				<Event Name="amb_falling_tree" ID="{C5A0D4B4-FC90-4723-8EF2-8B565EAE5D6C}">
 					<ChildrenList>
 						<Action Name="" ID="{E160FC6E-2544-452D-A015-243A2277DCEE}" ShortID="192000998">
@@ -244,18 +300,6 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
-						<Action Name="" ID="{B12AAFA6-8057-4D34-B6BB-1635D736F139}" ShortID="139099807">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="2"/>
-								<Property Name="FadeTime" Type="Real64" Value="0.1"/>
-								<Property Name="Scope" Type="int16" Value="1"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="axe_whoosh" ID="{FF4701C3-6F0B-4F5B-B448-54B25B7BEA26}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="cha_heart" ID="{6EA67618-15BE-48A4-8AB8-E9CF1C01129B}">
@@ -274,6 +318,7 @@
 						<Action Name="" ID="{F820BD8C-FF7D-4739-816F-B847E2F5996B}" ShortID="473651196">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="2"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -283,7 +328,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="amb_rain" ID="{4B1E85FF-80EF-45A2-A8D0-98328DBBC216}"/>
+				<Event Name="amb_rain" ID="{4B1E85FF-80EF-45A2-A8D0-98328DBBC216}">
+					<ChildrenList>
+						<Action Name="" ID="{290C6CCC-2819-40C7-9C55-659CE2E1476D}" ShortID="655328657">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Rain" ID="{B4636EA9-35F2-41C3-AFDD-24140C7DAF04}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 				<Event Name="cha_breath" ID="{DBE72546-19E3-4CE5-A4B4-CC99DFBE89EF}">
 					<ChildrenList>
 						<Action Name="" ID="{FE0CEEB4-861F-46CC-9D6D-AAB9DB5D6B18}" ShortID="505368671">
@@ -318,13 +373,6 @@
 				</Event>
 				<Event Name="cha_dead" ID="{E8EFCBC0-6371-4B4C-AC23-A195229167D5}">
 					<ChildrenList>
-						<Action Name="" ID="{96789126-67B7-4E70-BE79-8E0F14C9180F}" ShortID="922691296">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="game_over" ID="{D8114A5A-BCEA-47A6-BBA1-0673E6DCBCAC}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
 						<Action Name="" ID="{163CCED5-A1B3-4FC5-8763-04D2E245BC1C}" ShortID="892187292">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="2"/>
@@ -332,6 +380,71 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="breathing" ID="{74292A70-C149-46C7-B316-7D269D08D336}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{632576A3-382D-4B20-9D37-0DC2C55EA1E8}" ShortID="459442913">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ambient" ID="{366FF8B9-9A0B-4387-A2BF-1BD1A64B50AA}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{6566ADF0-7DB7-4045-8AD8-962D21659B85}" ShortID="913727183">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="27"/>
+								<Property Name="Lowpass" Type="int16" Value="95"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="game_over" ID="{D8114A5A-BCEA-47A6-BBA1-0673E6DCBCAC}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{5B9A5E05-7BA5-428A-8D83-6F15443C0D09}" ShortID="450787215">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="game_over" ID="{D8114A5A-BCEA-47A6-BBA1-0673E6DCBCAC}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{258C7C4F-E330-4863-AE79-0C102CA72F77}" ShortID="177741285">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+								<Property Name="Lowpass" Type="int16" Value="70"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="game_over" ID="{D8114A5A-BCEA-47A6-BBA1-0673E6DCBCAC}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{AB63A316-E94B-4894-A0F5-B24760238305}" ShortID="1029472077">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="mx_menu" ID="{53B0DD22-618B-4A9F-AAE8-E618E82554D9}" WorkUnitID="{625F00A8-D3E3-4C33-8C98-88E5DFBB7288}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="amb_rain_stop" ID="{1AC54979-8F08-4703-B4ED-F843706FA321}">
+					<ChildrenList>
+						<Action Name="" ID="{457AF8F2-6D80-4F77-82E8-06965FAC3625}" ShortID="902516312">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Rain" ID="{B4636EA9-35F2-41C3-AFDD-24140C7DAF04}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

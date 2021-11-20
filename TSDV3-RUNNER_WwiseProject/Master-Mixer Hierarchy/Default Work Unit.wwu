@@ -10,24 +10,74 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<Bus Name="HDR" ID="{77D7E668-532C-458B-932D-19C5F4C653E9}">
+						<Bus Name="mx" ID="{644B078C-CB47-46BC-B9BF-4AEA486EF61A}">
+							<ObjectLists/>
+						</Bus>
+						<Bus Name="actor" ID="{95E9FB4C-8108-4D33-A79F-891D6FA48649}">
 							<PropertyList>
-								<Property Name="HdrEnable" Type="bool">
-									<ValueList>
-										<Value>True</Value>
-									</ValueList>
-								</Property>
 								<Property Name="HdrThreshold" Type="Real64">
 									<ValueList>
-										<Value>-6</Value>
+										<Value>12</Value>
 									</ValueList>
 								</Property>
+								<Property Name="Lowpass" Type="int16">
+									<RTPCList>
+										<RTPC Name="" ID="{7CB5A507-3E4E-4852-9A43-3C35835C41F7}" ShortID="899089171">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="frenesi" ID="{01EA4C00-2601-4D67-A26A-A0009DA23B36}" WorkUnitID="{B618A953-CDD5-417A-9182-61FF8A662B32}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{2A4C4BF1-873E-450D-804E-DF647D23C1A7}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="65537"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>70</YPos>
+														<Flags>5</Flags>
+														<SegmentShape>Log1</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>25</XPos>
+														<YPos>0</YPos>
+														<Flags>0</Flags>
+														<SegmentShape>Exp1</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>0</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
 							</PropertyList>
-							<ReferenceList>
-								<Reference Name="HdrPeakOutputGameParameter">
-									<ObjectRef Name="frenesi" ID="{01EA4C00-2601-4D67-A26A-A0009DA23B36}" WorkUnitID="{B618A953-CDD5-417A-9182-61FF8A662B32}"/>
-								</Reference>
-							</ReferenceList>
+							<ChildrenList>
+								<Bus Name="HDR" ID="{14A8922E-3952-404E-B557-AB4E42225EF2}">
+									<PropertyList>
+										<Property Name="HdrEnable" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+										<Property Name="HdrReleaseTime" Type="Real64">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+										<Property Name="HdrThreshold" Type="Real64">
+											<ValueList>
+												<Value>-10</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ObjectLists/>
+								</Bus>
+							</ChildrenList>
 							<ObjectLists/>
 						</Bus>
 					</ChildrenList>
@@ -42,7 +92,7 @@
 								<StateRef Name="on" ID="{42228F38-D817-4AF9-B33A-80C2725752D9}"/>
 								<CustomState Name="" ID="{95464C23-5A02-4397-9B5B-1253B2A0B666}" ShortID="765572836">
 									<PropertyList>
-										<Property Name="Lowpass" Type="int16" Value="70"/>
+										<Property Name="Lowpass" Type="int16" Value="80"/>
 									</PropertyList>
 								</CustomState>
 							</CustomState>

@@ -10,6 +10,13 @@
 						<State Name="off" ID="{6107D4A2-A104-4E7B-9057-A2245A272303}"/>
 					</ChildrenList>
 				</StateGroup>
+				<StateGroup Name="mx_switch" ID="{4FD59EC8-84BD-4CAE-B63B-F79E8060E96E}">
+					<ChildrenList>
+						<State Name="None" ID="{BBED3C15-DEB2-4D89-9C90-57360787C24C}"/>
+						<State Name="mx_menu" ID="{53B0DD22-618B-4A9F-AAE8-E618E82554D9}"/>
+						<State Name="mx_gameplay" ID="{7833BCF3-1E09-4A9D-98BA-0BF28DB8D3A5}"/>
+					</ChildrenList>
+				</StateGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</States>
