@@ -130,7 +130,7 @@
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
 							<GameParameterRef Name="location" ID="{E2AA16DE-DCFE-4858-B2F7-7F70997CD4A1}"/>
-							<Value>8</Value>
+							<Value>0</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="frenesi" ID="{01EA4C00-2601-4D67-A26A-A0009DA23B36}"/>
@@ -138,7 +138,7 @@
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="off" ID="{6107D4A2-A104-4E7B-9057-A2245A272303}"/>
+						<CurrentStateRef Name="None" ID="{EC96A951-0A8C-42DB-9220-6DB2FC914547}"/>
 						<CurrentStateRef Name="mx_gameplay" ID="{7833BCF3-1E09-4A9D-98BA-0BF28DB8D3A5}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
