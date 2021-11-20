@@ -383,16 +383,6 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
-						<Action Name="" ID="{632576A3-382D-4B20-9D37-0DC2C55EA1E8}" ShortID="459442913">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="2"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="ambient" ID="{366FF8B9-9A0B-4387-A2BF-1BD1A64B50AA}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
 						<Action Name="" ID="{6566ADF0-7DB7-4045-8AD8-962D21659B85}" ShortID="913727183">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="27"/>
@@ -430,6 +420,17 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="mx_menu" ID="{53B0DD22-618B-4A9F-AAE8-E618E82554D9}" WorkUnitID="{625F00A8-D3E3-4C33-8C98-88E5DFBB7288}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{A2E34435-86A7-4775-9DAE-9FEA164DFE69}" ShortID="792627983">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ambient" ID="{98A4AAD4-8E6B-47D0-B5B3-CC6A3EBD03F8}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

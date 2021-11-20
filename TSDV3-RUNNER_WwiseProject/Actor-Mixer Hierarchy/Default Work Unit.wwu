@@ -941,7 +941,7 @@
 											<Custom CreatedFrom="{342B6949-BBEE-4632-92E8-5951F9E1B7F7}">
 												<Attenuation Name="Ambient Objects (Custom)" ID="{F1C1345B-0428-4179-BC38-E78647203EB8}" ShortID="237039892">
 													<PropertyList>
-														<Property Name="RadiusMax" Type="Real64" Value="10"/>
+														<Property Name="RadiusMax" Type="Real64" Value="25"/>
 													</PropertyList>
 													<CurveUsageInfoList>
 														<VolumeDryUsage>
@@ -957,7 +957,22 @@
 																			<Flags>5</Flags>
 																		</Point>
 																		<Point>
-																			<XPos>10</XPos>
+																			<XPos>17.5</XPos>
+																			<YPos>-10.4575749056068</YPos>
+																			<Flags>0</Flags>
+																		</Point>
+																		<Point>
+																			<XPos>20.29605</XPos>
+																			<YPos>-7.71004</YPos>
+																			<Flags>0</Flags>
+																		</Point>
+																		<Point>
+																			<XPos>23.98026</XPos>
+																			<YPos>-7.10383</YPos>
+																			<Flags>0</Flags>
+																		</Point>
+																		<Point>
+																			<XPos>25</XPos>
 																			<YPos>-200</YPos>
 																			<Flags>37</Flags>
 																		</Point>
@@ -984,13 +999,13 @@
 																			<Flags>5</Flags>
 																		</Point>
 																		<Point>
-																			<XPos>3</XPos>
+																			<XPos>12.5</XPos>
 																			<YPos>0</YPos>
 																			<Flags>0</Flags>
 																			<SegmentShape>Log2</SegmentShape>
 																		</Point>
 																		<Point>
-																			<XPos>10</XPos>
+																			<XPos>25</XPos>
 																			<YPos>100</YPos>
 																			<Flags>37</Flags>
 																		</Point>
@@ -1015,12 +1030,12 @@
 																			<SegmentShape>Exp2</SegmentShape>
 																		</Point>
 																		<Point>
-																			<XPos>4.974226</XPos>
+																			<XPos>12.435565</XPos>
 																			<YPos>0</YPos>
 																			<Flags>0</Flags>
 																		</Point>
 																		<Point>
-																			<XPos>10</XPos>
+																			<XPos>25</XPos>
 																			<YPos>0</YPos>
 																			<Flags>37</Flags>
 																		</Point>
@@ -1990,7 +2005,7 @@
 											<Custom CreatedFrom="{342B6949-BBEE-4632-92E8-5951F9E1B7F7}">
 												<Attenuation Name="Ambient Objects (Custom)" ID="{95FEB905-D7FA-4403-A9B7-00FEE142EA3B}" ShortID="119058629">
 													<PropertyList>
-														<Property Name="RadiusMax" Type="Real64" Value="50"/>
+														<Property Name="RadiusMax" Type="Real64" Value="25"/>
 													</PropertyList>
 													<CurveUsageInfoList>
 														<VolumeDryUsage>
@@ -2006,7 +2021,22 @@
 																			<Flags>5</Flags>
 																		</Point>
 																		<Point>
-																			<XPos>50</XPos>
+																			<XPos>17.8618421052632</XPos>
+																			<YPos>-10.8870771686452</YPos>
+																			<Flags>0</Flags>
+																		</Point>
+																		<Point>
+																			<XPos>21.2171</XPos>
+																			<YPos>-6.90304</YPos>
+																			<Flags>0</Flags>
+																		</Point>
+																		<Point>
+																			<XPos>23.78289</XPos>
+																			<YPos>-6.79775</YPos>
+																			<Flags>0</Flags>
+																		</Point>
+																		<Point>
+																			<XPos>25</XPos>
 																			<YPos>-200</YPos>
 																			<Flags>37</Flags>
 																		</Point>
@@ -2033,13 +2063,13 @@
 																			<Flags>5</Flags>
 																		</Point>
 																		<Point>
-																			<XPos>15</XPos>
+																			<XPos>12.49999</XPos>
 																			<YPos>0</YPos>
 																			<Flags>0</Flags>
 																			<SegmentShape>Log2</SegmentShape>
 																		</Point>
 																		<Point>
-																			<XPos>50</XPos>
+																			<XPos>25</XPos>
 																			<YPos>100</YPos>
 																			<Flags>37</Flags>
 																		</Point>
@@ -2064,12 +2094,12 @@
 																			<SegmentShape>Exp2</SegmentShape>
 																		</Point>
 																		<Point>
-																			<XPos>24.87113</XPos>
+																			<XPos>12.435565</XPos>
 																			<YPos>0</YPos>
 																			<Flags>0</Flags>
 																		</Point>
 																		<Point>
-																			<XPos>50</XPos>
+																			<XPos>25</XPos>
 																			<YPos>0</YPos>
 																			<Flags>37</Flags>
 																		</Point>
@@ -6802,7 +6832,7 @@
 								<Property Name="OverridePositioning" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-18</Value>
+										<Value>-6</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>

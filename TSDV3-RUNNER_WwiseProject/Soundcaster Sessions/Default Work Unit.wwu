@@ -95,6 +95,10 @@
 							<Position X="1" Y="2"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="cha_dead" ID="{E8EFCBC0-6371-4B4C-AC23-A195229167D5}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}"/>
+							<Position X="1" Y="3"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="cha_axe" ID="{4339229A-761C-460A-AB59-FE50769BD7BD}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}"/>
 							<Position X="2" Y="0"/>
 						</Module>
@@ -139,7 +143,7 @@
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
 						<CurrentStateRef Name="None" ID="{EC96A951-0A8C-42DB-9220-6DB2FC914547}"/>
-						<CurrentStateRef Name="mx_gameplay" ID="{7833BCF3-1E09-4A9D-98BA-0BF28DB8D3A5}"/>
+						<CurrentStateRef Name="mx_menu" ID="{53B0DD22-618B-4A9F-AAE8-E618E82554D9}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
 						<CurrentSwitchRef Name="t_dirt" ID="{0C3D4A19-E343-4E60-A376-61F0AB4CF1F7}"/>
