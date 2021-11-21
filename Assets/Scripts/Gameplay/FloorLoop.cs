@@ -3,18 +3,23 @@
 public class FloorLoop : MonoBehaviour
 {
     #region EXPOSED_FIELDS
+
     [SerializeField] private GameObject[] floors = null;
     [SerializeField] private Killer player = null;
     [SerializeField] private float speed = 0f;
+
     #endregion
 
     #region PRIVATE_FIELDS
+
     private Vector3 playerPosition = Vector3.zero;
     private float lenghtZ = 65;
+
     #endregion
 
     #region PROPERTIES
 
+    public float BaseSpeed { get; set; } = 0f;
     public float Speed
     {
         get => speed;
@@ -27,6 +32,7 @@ public class FloorLoop : MonoBehaviour
     private void Start()
     {
         playerPosition = player.transform.position;
+        BaseSpeed = speed;
     }
 
     private void Update()

@@ -125,10 +125,10 @@ public class LevelController : MonoBehaviour
         MovableObjectManager[] movables = FindObjectsOfType<MovableObjectManager>();
         foreach (MovableObjectManager movable in movables)
         {
-            movable.Speed += movable.Speed * difficulties[difficultyIndex].increaseSpeed / 100;
+            movable.Speed = movable.BaseSpeed + movable.BaseSpeed * difficulties[difficultyIndex].increaseSpeed / 100;
             movable.ChangeRangeTimerSpawn(difficultyIndex);
         }
-        floorLoop.Speed += floorLoop.Speed * difficulties[difficultyIndex].increaseSpeed / 100;
+        floorLoop.Speed = floorLoop.BaseSpeed + floorLoop.BaseSpeed * difficulties[difficultyIndex].increaseSpeed / 100;
         killer.DecreaseCrazinessSpeed = difficulties[difficultyIndex].decreaseCraziness;
 
         switch (difficulties[difficultyIndex].difficulty)
@@ -166,7 +166,7 @@ public class LevelController : MonoBehaviour
             difficultyIndex = index;
             ChangeDifficulty();
 
-            int auxDiffIndex = difficultyIndex - 1;
+            int auxDiffIndex = difficultyIndex;
             timer = auxDiffIndex <= 0 ? 0f : difficulties[auxDiffIndex].time;
         }
     }

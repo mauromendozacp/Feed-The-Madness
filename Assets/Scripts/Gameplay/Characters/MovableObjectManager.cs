@@ -38,6 +38,7 @@ public class MovableObjectManager : MonoBehaviour
 
     public List<MovableObject> Movables { get; } = new List<MovableObject>();
     public bool SpawnActivated { get; set; } = false;
+    public float BaseSpeed { get; set; } = 0f;
     public float Speed
     {
         get => speed;
@@ -51,6 +52,7 @@ public class MovableObjectManager : MonoBehaviour
     void Start()
     {
         InitModuleHandlers();
+        BaseSpeed = speed;
     }
 
     void Update()
