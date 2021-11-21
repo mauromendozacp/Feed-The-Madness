@@ -9,6 +9,14 @@ public class HUD : MonoBehaviour
 
     [SerializeField] private TMP_Text scoreText = null;
 
+    [Header("Throw Icon"), Space]
+    [SerializeField] private Image throwImage = null;
+    [SerializeField] private Image throwTimerImage = null;
+    [SerializeField] private Sprite throwAvailable = null;
+    [SerializeField] private Sprite throwUnavailable = null;
+    [SerializeField] private Color throwStartColor = Color.white;
+    [SerializeField] private Color throwEndColor = Color.white;
+
     [Header("Craziness Bar"), Space]
     [SerializeField] private Image crazinessBar = null;
     [SerializeField] private GameObject CrazinessIcon = null;
@@ -44,12 +52,16 @@ public class HUD : MonoBehaviour
 
         kActions.OnScoreRecieved += UpdateScore;
         kActions.OnCrazinessUpdated += UpdateCraziness;
+        kActions.OnThrowTimerUpdate += UpdateThrowTimer;
+        kActions.OnChangeThrowIcon += ChangeThrowIcon;
     }
 
     public void DeInitModuleHandlers()
     {
         kActions.OnScoreRecieved -= UpdateScore;
         kActions.OnCrazinessUpdated -= UpdateCraziness;
+        kActions.OnThrowTimerUpdate -= UpdateThrowTimer;
+        kActions.OnChangeThrowIcon -= ChangeThrowIcon;
     }
 
     #endregion
@@ -68,6 +80,18 @@ public class HUD : MonoBehaviour
             Vector3.Lerp(barStart.position, barEnd.position, crazinessPoints / crazinessBase);
     }
 
+    private void ChangeThrowIcon(bool active)
+    {
+        throwImage.sprite = active ? throwAvailable : throwUnavailable;
+    }
+
+    private void UpdateThrowTimer(float throwTimer, float throwCooldown)
+    {
+        float interpole = throwTimer / throwCooldown;
+        throwImage.fillAmount = interpole;
+        throwTimerImage.fillAmount = interpole;
+        throwTimerImage.color = Color.Lerp(throwStartColor, throwEndColor, interpole);
+    }
     private IEnumerator StartFade()
     {
         float timer = 0f;

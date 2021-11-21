@@ -7,9 +7,11 @@ public class KActions
 {
     public Action<int> OnScoreRecieved = null;
     public Action<float, float> OnCrazinessUpdated = null;
+    public Action<float, float> OnThrowTimerUpdate = null;
     public Action<float, int> OnKillSurvivor = null;
     public Action<bool> OnInvincible = null;
     public Action<bool> OnUnlimitAxes = null;
+    public Action<bool> OnChangeThrowIcon = null;
 }
 
 public class Killer : Character
@@ -325,13 +327,31 @@ public class Killer : Character
 
             throwAvailable = true;
             throwInAnimation = true;
-            Invoke(nameof(ResetThrow), isUnlimitAxes ? 0f : throwCooldown);
-        }
-    }
 
-    private void ResetThrow()
-    {
-        throwAvailable = false;
+            IEnumerator ThrowAvailableTimer()
+            {
+                kActions.OnChangeThrowIcon?.Invoke(false);
+                float throwTimer = 0f;
+
+                if (!isUnlimitAxes)
+                {
+                    while (throwTimer < throwCooldown)
+                    {
+                        throwTimer += Time.deltaTime;
+                        kActions.OnThrowTimerUpdate?.Invoke(throwTimer, throwCooldown);
+
+                        yield return new WaitForEndOfFrame();
+                    }
+                }
+
+                kActions.OnThrowTimerUpdate?.Invoke(throwCooldown, throwCooldown);
+                kActions.OnChangeThrowIcon?.Invoke(true);
+                throwAvailable = false;
+
+                yield return null;
+            }
+            StartCoroutine(ThrowAvailableTimer());
+        }
     }
 
     private void Hit()
@@ -380,10 +400,7 @@ public class Killer : Character
         AkSoundEngine.PostEvent("cha_boost_stop", gameObject);
     }
 
-    private void ResetHitted()
-    {
-        hitted = false;
-    }
+    private void ResetHitted() => hitted = false;
 
     private void DecreaseCraziness()
     {
