@@ -14,6 +14,18 @@
 						<Property Name="Min" Type="Real64" Value="-100"/>
 					</PropertyList>
 				</GameParameter>
+				<GameParameter Name="mx_volume" ID="{D85D3358-B0CD-41E5-A587-3DA7D86F8F25}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="1"/>
+						<Property Name="Max" Type="Real64" Value="1"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="sfx_volume" ID="{73C2809D-F228-4583-9E06-7D1D4638794A}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="1"/>
+						<Property Name="Max" Type="Real64" Value="1"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

@@ -229,9 +229,19 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="ambient" ID="{3254ED30-862B-4AFF-99F3-B43750803F8C}">
+				<Event Name="amb_wind" ID="{3254ED30-862B-4AFF-99F3-B43750803F8C}">
 					<ChildrenList>
 						<Action Name="" ID="{966C29C2-C2CD-40C9-A27D-69874D8C7414}" ShortID="623204361">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ambient" ID="{366FF8B9-9A0B-4387-A2BF-1BD1A64B50AA}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{45737AEF-4B9A-4E53-B2F2-E4E0D810005B}" ShortID="154966215">
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="ambient" ID="{366FF8B9-9A0B-4387-A2BF-1BD1A64B50AA}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
@@ -305,6 +315,16 @@
 				<Event Name="cha_heart" ID="{6EA67618-15BE-48A4-8AB8-E9CF1C01129B}">
 					<ChildrenList>
 						<Action Name="" ID="{C62C4935-3EEE-4DDC-8021-56E7575DF1F2}" ShortID="247329829">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="heartbeat" ID="{0758FF36-BD65-4544-8005-A0495FB0503E}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{98D88887-BDCE-4121-B7E0-AFE03F7927FD}" ShortID="834033683">
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="heartbeat" ID="{0758FF36-BD65-4544-8005-A0495FB0503E}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
@@ -373,6 +393,18 @@
 				</Event>
 				<Event Name="cha_dead" ID="{E8EFCBC0-6371-4B4C-AC23-A195229167D5}">
 					<ChildrenList>
+						<Action Name="" ID="{D6846130-81D6-4F00-9ABE-9AA2B811FFEF}" ShortID="139991450">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="100"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="frenesi" ID="{01EA4C00-2601-4D67-A26A-A0009DA23B36}" WorkUnitID="{B618A953-CDD5-417A-9182-61FF8A662B32}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 						<Action Name="" ID="{163CCED5-A1B3-4FC5-8763-04D2E245BC1C}" ShortID="892187292">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="2"/>
@@ -385,8 +417,8 @@
 						</Action>
 						<Action Name="" ID="{6566ADF0-7DB7-4045-8AD8-962D21659B85}" ShortID="913727183">
 							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="27"/>
-								<Property Name="Lowpass" Type="int16" Value="95"/>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="Lowpass" Type="int16" Value="-60"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -404,8 +436,8 @@
 						<Action Name="" ID="{258C7C4F-E330-4863-AE79-0C102CA72F77}" ShortID="177741285">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="26"/>
-								<Property Name="FadeTime" Type="Real64" Value="1"/>
-								<Property Name="Lowpass" Type="int16" Value="70"/>
+								<Property Name="FadeTime" Type="Real64" Value="1.3"/>
+								<Property Name="Lowpass" Type="int16" Value="60"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -431,21 +463,6 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Ambient" ID="{98A4AAD4-8E6B-47D0-B5B3-CC6A3EBD03F8}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="amb_rain_stop" ID="{1AC54979-8F08-4703-B4ED-F843706FA321}">
-					<ChildrenList>
-						<Action Name="" ID="{457AF8F2-6D80-4F77-82E8-06965FAC3625}" ShortID="902516312">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="2"/>
-								<Property Name="FadeTime" Type="Real64" Value="5"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Rain" ID="{B4636EA9-35F2-41C3-AFDD-24140C7DAF04}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
