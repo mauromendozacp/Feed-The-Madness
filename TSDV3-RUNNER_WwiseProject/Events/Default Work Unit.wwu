@@ -393,18 +393,6 @@
 				</Event>
 				<Event Name="cha_dead" ID="{E8EFCBC0-6371-4B4C-AC23-A195229167D5}">
 					<ChildrenList>
-						<Action Name="" ID="{D6846130-81D6-4F00-9ABE-9AA2B811FFEF}" ShortID="139991450">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="38"/>
-								<Property Name="FadeTime" Type="Real64" Value="1"/>
-								<Property Name="GameParameterValue" Type="Real64" Value="100"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="frenesi" ID="{01EA4C00-2601-4D67-A26A-A0009DA23B36}" WorkUnitID="{B618A953-CDD5-417A-9182-61FF8A662B32}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
 						<Action Name="" ID="{163CCED5-A1B3-4FC5-8763-04D2E245BC1C}" ShortID="892187292">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="2"/>
@@ -463,6 +451,17 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Ambient" ID="{98A4AAD4-8E6B-47D0-B5B3-CC6A3EBD03F8}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{DCF8ED8E-73FA-4DAC-AFBF-FAD0982E3B09}" ShortID="872889378">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="heartbeat" ID="{0758FF36-BD65-4544-8005-A0495FB0503E}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
