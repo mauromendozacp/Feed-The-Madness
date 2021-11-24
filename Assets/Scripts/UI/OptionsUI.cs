@@ -21,11 +21,13 @@ public class OptionsUI : MonoBehaviour
     public void ChangeMusic(bool increment)
     {
         musicImage.fillAmount = GetPercentValue(musicImage.fillAmount, increment);
+        AkSoundEngine.SetRTPCValue("mx_volume", musicImage.fillAmount);
     }
 
     public void ChangeSfx(bool increment)
     {
         sfxImage.fillAmount = GetPercentValue(sfxImage.fillAmount, increment);
+        AkSoundEngine.SetRTPCValue("sfx_volume", sfxImage.fillAmount);
     }
 
     #endregion

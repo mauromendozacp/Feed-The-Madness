@@ -15,9 +15,8 @@ namespace AK
     {
         static const AkUniqueID AMB_FALLING_TREE = 2954529342U;
         static const AkUniqueID AMB_RAIN = 3302041772U;
-        static const AkUniqueID AMB_RAIN_STOP = 1416460443U;
         static const AkUniqueID AMB_TENT = 3300706377U;
-        static const AkUniqueID AMBIENT = 77978275U;
+        static const AkUniqueID AMB_WIND = 1439088316U;
         static const AkUniqueID CHA_AXE = 3931567716U;
         static const AkUniqueID CHA_AXE_SUCCESS = 1266274484U;
         static const AkUniqueID CHA_BOOST = 3502767369U;
@@ -95,6 +94,8 @@ namespace AK
     {
         static const AkUniqueID FRENESI = 553325089U;
         static const AkUniqueID LOCATION = 1176052424U;
+        static const AkUniqueID MX_VOLUME = 1441253587U;
+        static const AkUniqueID SFX_VOLUME = 1564184899U;
     } // namespace GAME_PARAMETERS
 
     namespace BANKS
@@ -109,6 +110,7 @@ namespace AK
         static const AkUniqueID HDR = 931844945U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID MX = 1685527054U;
+        static const AkUniqueID UI = 1551306167U;
     } // namespace BUSSES
 
     namespace AUDIO_DEVICES

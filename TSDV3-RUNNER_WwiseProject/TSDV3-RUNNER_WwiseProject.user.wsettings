@@ -33,9 +33,9 @@
 				<Property Name="General\LatestPlatform" Type="string" Value="Mac"/>
 				<Property Name="GenerateSoundBanks\x64_SelectedLanguages" Type="string" Value="BvDMKA=="/>
 				<Property Name="GenerateSoundBanks\x64_SelectedPlatforms" Type="string" Value="o24Xpv7b+UmG0fLbMKAwrw0IiRzto6tGtwdaHoJHdDA="/>
-				<Property Name="GenerateSoundBanks\x64_SelectedSoundBanks" Type="string" Value="SVW9Bg4aREa4Vq7TqNOq9A=="/>
+				<Property Name="GenerateSoundBanks\x64_SelectedSoundBanks" Type="string" Value=""/>
 				<Property Name="HardwareController\CurrentSession" Type="string" Value="{2451DD2E-A7B2-45E6-B93B-6F49B9B887AD}"/>
-				<Property Name="HardwareController\{2451DD2E-A7B2-45E6-B93B-6F49B9B887AD}\x64_ActiveGroups" Type="string" Value="r4NbCe9rd0ez4Ejdsy5O+AEDoaP/////DI7m7OJI50WMjdVaGoFHzAEDoaP/////"/>
+				<Property Name="HardwareController\{2451DD2E-A7B2-45E6-B93B-6F49B9B887AD}\x64_ActiveGroups" Type="string" Value="DI7m7OJI50WMjdVaGoFHzAEDPMz/////r4NbCe9rd0ez4Ejdsy5O+AEDPMz/////"/>
 				<Property Name="MeterView\LastObject1" Type="string" Value="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
 				<Property Name="MeterView\MeterMode1" Type="int32" Value="1"/>
 				<Property Name="MeterView\MeterMode1Viewpoint0" Type="int32" Value="1"/>
@@ -75,6 +75,8 @@
 				<Property Name="ProjectExplorer\x64_Expanded_8_1" Type="string" Value=""/>
 				<Property Name="ProjectExplorer\x64_Expanded_9_1" Type="string" Value=""/>
 				<Property Name="RTPC\GameParameterSimValue\{01EA4C00-2601-4D67-A26A-A0009DA23B36}" Type="Real64" Value="1"/>
+				<Property Name="RTPC\GameParameterSimValue\{73C2809D-F228-4583-9E06-7D1D4638794A}" Type="Real64" Value="1"/>
+				<Property Name="RTPC\GameParameterSimValue\{D85D3358-B0CD-41E5-A587-3DA7D86F8F25}" Type="Real64" Value="1"/>
 				<Property Name="RTPC\GameParameterSimValue\{E2AA16DE-DCFE-4858-B2F7-7F70997CD4A1}" Type="Real64" Value="100"/>
 				<Property Name="SoundBank Manager\x64_Expand States" Type="string" Value="IQvMzjRUKE23VNYSDAcSlA=="/>
 				<Property Name="SoundBankHeaderFilePath" Type="string" Value="GeneratedSoundBanks\"/>

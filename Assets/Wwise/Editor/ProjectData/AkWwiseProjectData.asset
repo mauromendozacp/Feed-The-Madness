@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 2a70283be1c03f4ea481655b176d90e2
     GuidInternal: 
-    m_lastTime: -8585642287448279099
+    m_lastTime: -8585639964148591234
     List:
     - name: actor
       guid: 4cfbe9950881334da79f891d6fa48649
@@ -108,6 +108,23 @@ MonoBehaviour:
         ObjectType: 2
         guid: 8c074b6447cbbc46b9bf4aea486ef61a
       Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\mx
+    - name: UI
+      guid: 0927369bab8c0a4c9d3aa22ad8ef4e5e
+      id: 1551306167
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 2a70283be1c03f4ea481655b176d90e2
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: UI
+        ObjectType: 2
+        guid: 0927369bab8c0a4c9d3aa22ad8ef4e5e
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\UI
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     PathAndIcons:
@@ -120,7 +137,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 210bccce3454284db754d6120c071294
     GuidInternal: 
-    m_lastTime: -8585642287435033426
+    m_lastTime: -8585638883273589351
     List:
     - name: SoundBankTestxd
       guid: 4955bd060e1a4446b856aed3a8d3aaf4
@@ -148,7 +165,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 56714d5b82b64b4895ddb6b49b972b1f
     GuidInternal: 
-    m_lastTime: -8585642283836179521
+    m_lastTime: -8585639940810941368
     List:
     - name: amb_falling_tree
       guid: b4d4a0c590fc23478ef28b565eae5d6c
@@ -182,25 +199,8 @@ MonoBehaviour:
         guid: ff851e4bef80a245a8d098328dbbc216
       Path: Events\Default Work Unit\amb_rain
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: amb_rain_stop
-      guid: 7949c51a088f0347b4edf843706fa321
-      id: 1416460443
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: 56714d5b82b64b4895ddb6b49b972b1f
-      - ElementName: amb_rain_stop
-        ObjectType: 3
-        guid: 7949c51a088f0347b4edf843706fa321
-      Path: Events\Default Work Unit\amb_rain_stop
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: amb_tent
       guid: 0e9231cb06647a459d3f17dd3f55367f
       id: 3300706377
@@ -216,11 +216,11 @@ MonoBehaviour:
         guid: 0e9231cb06647a459d3f17dd3f55367f
       Path: Events\Default Work Unit\amb_tent
       maxAttenuation: 75
-      maxDuration: 17.370285
-      minDuration: 6.956689
-    - name: ambient
+      maxDuration: -1
+      minDuration: -1
+    - name: amb_wind
       guid: 30ed54322b86ff4a99f3b43750803f8c
-      id: 77978275
+      id: 1439088316
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -228,10 +228,10 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 56714d5b82b64b4895ddb6b49b972b1f
-      - ElementName: ambient
+      - ElementName: amb_wind
         ObjectType: 3
         guid: 30ed54322b86ff4a99f3b43750803f8c
-      Path: Events\Default Work Unit\ambient
+      Path: Events\Default Work Unit\amb_wind
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -485,7 +485,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 53a918b6d5cd7a41918261ff8a662b32
     GuidInternal: 
-    m_lastTime: -8585642287448328971
+    m_lastTime: -8585639964148760991
     List:
     - name: frenesi
       guid: 004cea010126674da26aa0009da23b36
@@ -515,6 +515,34 @@ MonoBehaviour:
         ObjectType: 13
         guid: de16aae2fedc5848b2f77f70997cd4a1
       Path: Game Parameters\Default Work Unit\location
+    - name: mx_volume
+      guid: 58335dd8cdb0e541a5873da7d86f8f25
+      id: 1441253587
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 53a918b6d5cd7a41918261ff8a662b32
+      - ElementName: mx_volume
+        ObjectType: 13
+        guid: 58335dd8cdb0e541a5873da7d86f8f25
+      Path: Game Parameters\Default Work Unit\mx_volume
+    - name: sfx_volume
+      guid: 9d80c27328f283459e067d1d4638794a
+      id: 1564184899
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 53a918b6d5cd7a41918261ff8a662b32
+      - ElementName: sfx_volume
+        ObjectType: 13
+        guid: 9d80c27328f283459e067d1d4638794a
+      Path: Game Parameters\Default Work Unit\sfx_volume
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     PathAndIcons:
@@ -837,7 +865,7 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585678836058776479
     List: []
-  ExpandedFileSystemItemIds: 020000000300000008000000090000000a0000002c0000002d000000
+  ExpandedFileSystemItemIds: 0200000003000000040000000500000008000000090000000a0000002c0000002d000000
   ExpandedWaapiItemIds: 08000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1

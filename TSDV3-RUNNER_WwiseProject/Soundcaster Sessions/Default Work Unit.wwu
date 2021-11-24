@@ -6,7 +6,7 @@
 				<SoundcasterSession Name="prueba" ID="{EFC4FF63-D4DC-4CA2-98E6-0E40C95EA775}">
 					<ModuleList>
 						<Module>
-							<ObjectRef Name="ambient" ID="{3254ED30-862B-4AFF-99F3-B43750803F8C}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}"/>
+							<ObjectRef Name="amb_wind" ID="{3254ED30-862B-4AFF-99F3-B43750803F8C}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}"/>
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
@@ -67,7 +67,7 @@
 				<SoundcasterSession Name="radio" ID="{EAE6ABA9-F8E5-4DF6-B39A-0397CE6F185C}">
 					<ModuleList>
 						<Module>
-							<ObjectRef Name="ambient" ID="{3254ED30-862B-4AFF-99F3-B43750803F8C}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}"/>
+							<ObjectRef Name="amb_wind" ID="{3254ED30-862B-4AFF-99F3-B43750803F8C}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}"/>
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
@@ -85,10 +85,6 @@
 						<Module>
 							<ObjectRef Name="mx" ID="{E90A416F-F65B-45AE-88E8-38FC632400DB}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}"/>
 							<Position X="1" Y="0"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="amb_rain_stop" ID="{1AC54979-8F08-4703-B4ED-F843706FA321}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}"/>
-							<Position X="1" Y="1"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="amb_tent" ID="{CB31920E-6406-457A-9D3F-17DD3F55367F}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}"/>
