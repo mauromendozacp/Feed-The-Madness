@@ -78,8 +78,10 @@ public class HUD : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            //pause.gameObject.SetActive(true);
-            pause.PauseGame();
+            if (!kActions.OnPlayerDead())
+            {
+                pause.Pause();
+            }
         }
     }
 

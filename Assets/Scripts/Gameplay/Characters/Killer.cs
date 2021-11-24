@@ -12,6 +12,7 @@ public class KActions
     public Action<bool> OnInvincible = null;
     public Action<bool> OnUnlimitAxes = null;
     public Action<bool> OnChangeThrowIcon = null;
+    public Func<bool> OnPlayerDead = null;
 }
 
 public class Killer : Character
@@ -198,6 +199,7 @@ public class Killer : Character
         kActions.OnKillSurvivor = KillSurvivor;
         kActions.OnInvincible = EnableInvincible;
         kActions.OnUnlimitAxes = EnableUnlimitAxes;
+        kActions.OnPlayerDead = () => dead;
     }
 
     public void KillSurvivor(float craz, int points)

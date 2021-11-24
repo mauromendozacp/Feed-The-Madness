@@ -8,7 +8,25 @@ public class PauseUI : MonoBehaviour
 
     #endregion
 
+    #region PRIVATE_FIELDS
+
+    private bool paused = false;
+
+    #endregion
+
     #region PUBLIC_METHODS
+
+    public void Pause()
+    {
+        if (!paused)
+        {
+            PauseGame();
+        }
+        else
+        {
+            ResumeGame();
+        }
+    }
 
     public void PauseGame()
     {
@@ -16,6 +34,7 @@ public class PauseUI : MonoBehaviour
         Time.timeScale = 0f;
         gameObject.SetActive(true);
         AkSoundEngine.SetState("pause", "on");
+        paused = true;
     }
 
     public void ResumeGame()
@@ -24,6 +43,7 @@ public class PauseUI : MonoBehaviour
         Time.timeScale = 1f;
         gameObject.SetActive(false);
         AkSoundEngine.SetState("pause", "off");
+        paused = false;
     }
 
     public void ShowPause()
