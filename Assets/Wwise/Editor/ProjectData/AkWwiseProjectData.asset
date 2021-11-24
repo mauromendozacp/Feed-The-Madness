@@ -137,7 +137,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 210bccce3454284db754d6120c071294
     GuidInternal: 
-    m_lastTime: -8585638883273589351
+    m_lastTime: -8585638416524804866
     List:
     - name: SoundBankTestxd
       guid: 4955bd060e1a4446b856aed3a8d3aaf4
@@ -165,7 +165,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 56714d5b82b64b4895ddb6b49b972b1f
     GuidInternal: 
-    m_lastTime: -8585639940810941368
+    m_lastTime: -8585638416525055830
     List:
     - name: amb_falling_tree
       guid: b4d4a0c590fc23478ef28b565eae5d6c
@@ -456,6 +456,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.318874
       minDuration: 0.188547
+    - name: ui_cooldown
+      guid: f6bb3347a0c8cd468c1be86f98685ba8
+      id: 755941005
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 56714d5b82b64b4895ddb6b49b972b1f
+      - ElementName: ui_cooldown
+        ObjectType: 3
+        guid: f6bb3347a0c8cd468c1be86f98685ba8
+      Path: Events\Default Work Unit\ui_cooldown
+      maxAttenuation: 0
+      maxDuration: 2.422458
+      minDuration: 2.037037
     - name: ui_menu
       guid: 0cbb0d0ed7869e469af3e204bba0bcb3
       id: 2511555531
