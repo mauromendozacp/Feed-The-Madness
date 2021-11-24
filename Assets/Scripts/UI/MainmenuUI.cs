@@ -20,6 +20,7 @@ public class MainmenuUI : MonoBehaviour
         versionText.text = "v" + Application.version;
         AkSoundEngine.SetState("mx_switch", "mx_menu");
         Cursor.lockState = CursorLockMode.None;
+        AkSoundEngine.SetRTPCValue("frenesi", 100f);
     }
 
     #endregion
