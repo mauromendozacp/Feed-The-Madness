@@ -347,6 +347,7 @@ public class Killer : Character
                 kActions.OnThrowTimerUpdate?.Invoke(throwCooldown, throwCooldown);
                 kActions.OnChangeThrowIcon?.Invoke(true);
                 throwAvailable = false;
+                AkSoundEngine.PostEvent("ui_cooldown", gameObject);
 
                 yield return null;
             }

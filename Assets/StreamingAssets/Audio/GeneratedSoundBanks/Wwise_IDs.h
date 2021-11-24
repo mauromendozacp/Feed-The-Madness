@@ -30,6 +30,7 @@ namespace AK
         static const AkUniqueID CHA_THROW_AXE = 3921742761U;
         static const AkUniqueID MX = 1685527054U;
         static const AkUniqueID UI_BUTTON = 2505162442U;
+        static const AkUniqueID UI_COOLDOWN = 755941005U;
         static const AkUniqueID UI_MENU = 2511555531U;
     } // namespace EVENTS
 
