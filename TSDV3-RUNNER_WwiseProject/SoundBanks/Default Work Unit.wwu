@@ -6,11 +6,13 @@
 				<SoundBank Name="SoundBankTestxd" ID="{06BD5549-1A0E-4644-B856-AED3A8D3AAF4}">
 					<ObjectInclusionList>
 						<ObjectRef Name="cha_throw_axe" ID="{2EDF4D95-D122-40F5-BD4A-E4F6B6497120}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="ui_cooldown" ID="{407C2B4B-1EF6-41F8-80C7-C9114C4B6449}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="amb_tent" ID="{CB31920E-6406-457A-9D3F-17DD3F55367F}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="amb_rain" ID="{4B1E85FF-80EF-45A2-A8D0-98328DBBC216}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="mx" ID="{E90A416F-F65B-45AE-88E8-38FC632400DB}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="cha_axe" ID="{4339229A-761C-460A-AB59-FE50769BD7BD}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="ui_menu" ID="{0E0DBB0C-86D7-469E-9AF3-E204BBA0BCB3}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="ui_cooldown" ID="{4733BBF6-C8A0-46CD-8C1B-E86F98685BA8}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="amb_falling_tree" ID="{C5A0D4B4-FC90-4723-8EF2-8B565EAE5D6C}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="cha_damage" ID="{328D02E0-8822-47EF-B05C-4548A1D2C65D}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="cha_heart" ID="{6EA67618-15BE-48A4-8AB8-E9CF1C01129B}" WorkUnitID="{5B4D7156-B682-484B-95DD-B6B49B972B1F}" Origin="Manual" Filter="7"/>

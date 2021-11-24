@@ -7816,6 +7816,60 @@
 							</ChildrenList>
 							<ObjectLists/>
 						</RandomSequenceContainer>
+						<Sound Name="ui_cooldown" ID="{407C2B4B-1EF6-41F8-80C7-C9114C4B6449}" ShortID="532397992">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{89262586-4FF6-42D1-8E2A-2390D9C04400}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="300"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="SpeakerPanning" Type="int16" Value="1"/>
+								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-12</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F4B47D6-CD1C-452F-8B2B-ABD4A8FD7570}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3B28702A-C0E1-4E3F-A481-655B176D90E2}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ui_cooldown" ID="{E20D84A4-F5E3-47C7-9899-59B9DC452E6C}">
+									<Language>SFX</Language>
+									<AudioFile>ui_cooldown.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="627169005"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<PositioningInfo>
+								<Panner Name="" ID="{9B053DF2-453C-448C-A2F8-BABAC16958D6}">
+									<PropertyList>
+										<Property Name="PanX" Type="Real64" Value="-62.5"/>
+										<Property Name="PanY" Type="Real64" Value="100"/>
+									</PropertyList>
+								</Panner>
+							</PositioningInfo>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="ui_cooldown" ID="{E20D84A4-F5E3-47C7-9899-59B9DC452E6C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 					<ObjectLists/>
 				</ActorMixer>

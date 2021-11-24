@@ -467,6 +467,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="ui_cooldown" ID="{4733BBF6-C8A0-46CD-8C1B-E86F98685BA8}">
+					<ChildrenList>
+						<Action Name="" ID="{9B4CA13C-24A2-41B9-87DF-2CDE3139EE45}" ShortID="763807873">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ui_cooldown" ID="{407C2B4B-1EF6-41F8-80C7-C9114C4B6449}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
