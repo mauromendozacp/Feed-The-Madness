@@ -4,7 +4,6 @@ public class PauseUI : MonoBehaviour
 {
     #region EXPOSED_FIELDS
 
-    [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject optionsPanel;
 
     #endregion
@@ -13,27 +12,29 @@ public class PauseUI : MonoBehaviour
 
     public void PauseGame()
     {
+        Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0f;
-        pausePanel.SetActive(true);
+        gameObject.SetActive(true);
         AkSoundEngine.SetState("pause", "on");
     }
 
     public void ResumeGame()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;
-        pausePanel.SetActive(false);
+        gameObject.SetActive(false);
         AkSoundEngine.SetState("pause", "off");
     }
 
     public void ShowPause()
     {
-        pausePanel.SetActive(true);
+        gameObject.SetActive(true);
         optionsPanel.SetActive(false);
     }
 
     public void ShowOptions()
     {
-        pausePanel.SetActive(false);
+        gameObject.SetActive(false);
         optionsPanel.SetActive(true);
     }
 

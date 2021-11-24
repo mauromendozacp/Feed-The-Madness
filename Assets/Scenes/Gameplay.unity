@@ -2696,6 +2696,7 @@ GameObject:
   - component: {fileID: 488608859}
   - component: {fileID: 488608861}
   - component: {fileID: 488608860}
+  - component: {fileID: 488608862}
   m_Layer: 5
   m_Name: Pause
   m_TagString: Untagged
@@ -2760,6 +2761,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 488608858}
   m_CullTransparentMesh: 0
+--- !u!114 &488608862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488608858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc62a4a40b33f04e8902126b1b8b10b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionsPanel: {fileID: 545946574}
 --- !u!1001 &490694535
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3875,6 +3889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5156a356f20b564438bf4cb7c78ce267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pause: {fileID: 488608862}
   scoreText: {fileID: 795018587}
   throwImage: {fileID: 138147629}
   throwTimerImage: {fileID: 669279205}
@@ -4739,7 +4754,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1178301160}
+      - m_Target: {fileID: 488608862}
         m_MethodName: ResumeGame
         m_Mode: 1
         m_Arguments:
@@ -6067,7 +6082,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1178301160}
+      - m_Target: {fileID: 488608862}
         m_MethodName: BackToMenu
         m_Mode: 1
         m_Arguments:
@@ -6266,7 +6281,6 @@ GameObject:
   - component: {fileID: 1178301158}
   - component: {fileID: 1178301157}
   - component: {fileID: 1178301156}
-  - component: {fileID: 1178301160}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -6358,20 +6372,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1178301160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1178301155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abc62a4a40b33f04e8902126b1b8b10b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pausePanel: {fileID: 488608858}
-  optionsPanel: {fileID: 545946574}
 --- !u!1001 &1204888531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7186,7 +7186,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1178301160}
+      - m_Target: {fileID: 488608862}
         m_MethodName: ShowOptions
         m_Mode: 1
         m_Arguments:
@@ -8375,7 +8375,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1566359282
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8438,7 +8438,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1178301160}
+      - m_Target: {fileID: 0}
         m_MethodName: PauseGame
         m_Mode: 1
         m_Arguments:
@@ -11200,7 +11200,7 @@ PrefabInstance:
     - target: {fileID: 4543504702171015179, guid: 16f9c7563e3648a4eac8583defa32e0e,
         type: 3}
       propertyPath: throwCooldown
-      value: 7.5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4543504702171015179, guid: 16f9c7563e3648a4eac8583defa32e0e,
         type: 3}
@@ -11827,7 +11827,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1178301160}
+      objectReference: {fileID: 488608862}
     - target: {fileID: 540267862138225047, guid: 414634ca28f288e4a883f05ae4b57bcf,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName

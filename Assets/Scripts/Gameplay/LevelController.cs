@@ -86,6 +86,7 @@ public class LevelController : MonoBehaviour
     private void Init()
     {
         killer.Init();
+        Cursor.lockState = CursorLockMode.Locked;
 
         AkSoundEngine.SetState("mx_switch", "mx_gameplay");
         AkSoundEngine.PostEvent("amb_wind", gameObject);

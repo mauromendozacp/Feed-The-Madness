@@ -14,6 +14,7 @@ public class GameoverUI : MonoBehaviour
     private void Start()
     {
         scoreText.text = "SCORE: " + GameManager.Get().Score + "pts";
+        Cursor.lockState = CursorLockMode.None;
     }
 
     #endregion

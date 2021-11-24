@@ -7,6 +7,7 @@ public class HUD : MonoBehaviour
 {
     #region EXPOSED_FIELDS
 
+    [SerializeField] private PauseUI pause = null;
     [SerializeField] private TMP_Text scoreText = null;
 
     [Header("Throw Icon"), Space]
@@ -42,6 +43,11 @@ public class HUD : MonoBehaviour
         StartCoroutine(StartFade());
     }
 
+    private void Update()
+    {
+        PlayerPause();
+    }
+
     #endregion
 
     #region PUBLIC_METHODS
@@ -67,6 +73,15 @@ public class HUD : MonoBehaviour
     #endregion
 
     #region PRIVATE_METHODS
+
+    private void PlayerPause()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            //pause.gameObject.SetActive(true);
+            pause.PauseGame();
+        }
+    }
 
     private void UpdateScore(int score)
     {
