@@ -124,13 +124,11 @@ public class Killer : Character
         base.Awake();
 
         postProcessManager.Init();
-        origGroundCheckDistance = capsule.height * 11 / 16;
+        origGroundCheckDistance = capsule.height * 15 / 16;
     }
 
     private void Start()
     {
-        throwAxe.InitModuleHandlers(kActions);
-
         Steps();
 
         centerPos = transform.position;
@@ -187,6 +185,8 @@ public class Killer : Character
     {
         kActions = new KActions();
         this.lcActions = lcActions;
+
+        throwAxe.InitModuleHandlers(kActions);
     }
 
     public void Init()

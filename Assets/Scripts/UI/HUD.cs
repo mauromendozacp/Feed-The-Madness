@@ -112,7 +112,7 @@ public class HUD : MonoBehaviour
         float timer = 0f;
         while (timer < fadeTimer)
         {
-            timer += Time.deltaTime;
+            timer += Time.unscaledDeltaTime;
             fadeCanvasGroup.alpha = Mathf.Lerp(1f, 0f, timer / fadeTimer);
 
             yield return new WaitForEndOfFrame();

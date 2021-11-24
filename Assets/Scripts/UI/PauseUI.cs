@@ -42,7 +42,7 @@ public class PauseUI : MonoBehaviour
     {
         Time.timeScale = 1f;
         AkSoundEngine.SetState("pause", "off");
-        GameManager.Get().ChangeScene(GameManager.SceneGame.MainMenu);
+        GameManager.Get().ChangeScene(SceneGame.MainMenu);
     }
 
     #endregion

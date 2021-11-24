@@ -23,12 +23,12 @@ public class GameoverUI : MonoBehaviour
 
     public void RestartGame()
     {
-        GameManager.Get().ChangeScene(GameManager.SceneGame.GamePlay);
+        GameManager.Get().ChangeScene(SceneGame.GamePlay);
     }
 
     public void BackToMenu()
     {
-        GameManager.Get().ChangeScene(GameManager.SceneGame.MainMenu);
+        GameManager.Get().ChangeScene(SceneGame.MainMenu);
     }
 
     #endregion

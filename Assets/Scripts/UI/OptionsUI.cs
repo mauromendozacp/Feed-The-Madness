@@ -13,6 +13,16 @@ public class OptionsUI : MonoBehaviour
     #region PRIVATE_FIELDS
 
     private float soundSpeed = 0.1f;
+    private Sounds sound = null;
+
+    #endregion
+
+    #region UNITY_CALLS
+
+    private void Start()
+    {
+        InitSounds();
+    }
 
     #endregion
 
@@ -22,17 +32,31 @@ public class OptionsUI : MonoBehaviour
     {
         musicImage.fillAmount = GetPercentValue(musicImage.fillAmount, increment);
         AkSoundEngine.SetRTPCValue("mx_volume", musicImage.fillAmount);
+        sound.Music = musicImage.fillAmount;
     }
 
     public void ChangeSfx(bool increment)
     {
         sfxImage.fillAmount = GetPercentValue(sfxImage.fillAmount, increment);
         AkSoundEngine.SetRTPCValue("sfx_volume", sfxImage.fillAmount);
+        sound.Sfx = sfxImage.fillAmount;
     }
 
     #endregion
 
     #region PRIVATE_METHODS
+
+    private void InitSounds()
+    {
+        if (GameManager.Get().Sound == null)
+        {
+            GameManager.Get().InitSound(sfxImage.fillAmount, musicImage.fillAmount);
+        }
+
+        sound = GameManager.Get().Sound;
+        musicImage.fillAmount = sound.Music;
+        sfxImage.fillAmount = sound.Sfx;
+    }
 
     private float GetPercentValue(float soundBase, bool increment)
     {
