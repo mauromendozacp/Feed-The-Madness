@@ -54,6 +54,7 @@ public class Character : MonoBehaviour
             return;
 
         jumping = true;
+        rigid.velocity = Vector3.zero;
         rigid.AddForce(transform.up * jumpForce, ForceMode.Impulse);
         Invoke(nameof(RestartJump), jumpTimer);
     }
