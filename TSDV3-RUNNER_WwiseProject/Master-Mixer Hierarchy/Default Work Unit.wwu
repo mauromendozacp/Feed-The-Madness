@@ -46,27 +46,6 @@
 									</RTPCList>
 								</Property>
 							</PropertyList>
-							<StateInfo>
-								<StateGroupList>
-									<StateGroupInfo>
-										<StateGroupRef Name="pause" ID="{F9B1D6DD-5DBF-4111-9587-17F7C41310A5}"/>
-									</StateGroupInfo>
-								</StateGroupList>
-								<CustomStateList>
-									<CustomState>
-										<StateRef Name="on" ID="{42228F38-D817-4AF9-B33A-80C2725752D9}"/>
-										<CustomState Name="" ID="{4F396DF7-7DEB-47C3-80C0-3004B2DB8D15}" ShortID="63666103">
-											<PropertyList>
-												<Property Name="Lowpass" Type="int16" Value="60"/>
-											</PropertyList>
-										</CustomState>
-									</CustomState>
-									<CustomState>
-										<StateRef Name="off" ID="{6107D4A2-A104-4E7B-9057-A2245A272303}"/>
-										<CustomState Name="" ID="{DDF42E53-B090-4728-85AB-A056E0CEAE0A}" ShortID="733626320"/>
-									</CustomState>
-								</CustomStateList>
-							</StateInfo>
 							<ObjectLists/>
 						</Bus>
 						<Bus Name="actor" ID="{95E9FB4C-8108-4D33-A79F-891D6FA48649}">
@@ -145,28 +124,6 @@
 									</RTPCList>
 								</Property>
 							</PropertyList>
-							<ChildrenList>
-								<Bus Name="HDR" ID="{14A8922E-3952-404E-B557-AB4E42225EF2}">
-									<PropertyList>
-										<Property Name="HdrEnable" Type="bool">
-											<ValueList>
-												<Value>True</Value>
-											</ValueList>
-										</Property>
-										<Property Name="HdrReleaseTime" Type="Real64">
-											<ValueList>
-												<Value>1</Value>
-											</ValueList>
-										</Property>
-										<Property Name="HdrThreshold" Type="Real64">
-											<ValueList>
-												<Value>-10</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
-									<ObjectLists/>
-								</Bus>
-							</ChildrenList>
 							<StateInfo>
 								<StateGroupList>
 									<StateGroupInfo>
@@ -178,7 +135,7 @@
 										<StateRef Name="on" ID="{42228F38-D817-4AF9-B33A-80C2725752D9}"/>
 										<CustomState Name="" ID="{3FBEA3EE-2334-4EB3-ADB5-1EA01B22E46D}" ShortID="886250873">
 											<PropertyList>
-												<Property Name="Lowpass" Type="int16" Value="60"/>
+												<Property Name="Lowpass" Type="int16" Value="70"/>
 											</PropertyList>
 										</CustomState>
 									</CustomState>
@@ -224,6 +181,26 @@
 											</Curve>
 										</RTPC>
 									</RTPCList>
+								</Property>
+							</PropertyList>
+							<ObjectLists/>
+						</Bus>
+						<Bus Name="HDR" ID="{14A8922E-3952-404E-B557-AB4E42225EF2}">
+							<PropertyList>
+								<Property Name="HdrEnable" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="HdrReleaseTime" Type="Real64">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+								<Property Name="HdrThreshold" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
 								</Property>
 							</PropertyList>
 							<ObjectLists/>
