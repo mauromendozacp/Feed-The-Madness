@@ -19,6 +19,7 @@
 						<Switch Name="mx2" ID="{966B443B-DEEE-4CF9-94AE-E46D8892ED6D}"/>
 						<Switch Name="mx3" ID="{65BE7A0C-55D2-4140-AA9E-97C91AA1A865}"/>
 						<Switch Name="mx4" ID="{D2C1FD31-EDAF-448D-9CCA-43FD95F0277A}"/>
+						<Switch Name="mx5" ID="{559C1F2B-980A-4189-A52A-E6A4B19C4624}"/>
 					</ChildrenList>
 					<SwitchOnRTPC>
 						<GameParameterRef Name="frenesi" ID="{01EA4C00-2601-4D67-A26A-A0009DA23B36}"/>
@@ -29,21 +30,31 @@
 							<PointList>
 								<Point>
 									<XPos>0</XPos>
-									<YPos>4</YPos>
+									<YPos>0</YPos>
 									<Flags>5</Flags>
 								</Point>
 								<Point>
-									<XPos>25</XPos>
+									<XPos>0.001</XPos>
+									<YPos>5</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>20</XPos>
+									<YPos>4</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>40</XPos>
 									<YPos>3</YPos>
 									<Flags>0</Flags>
 								</Point>
 								<Point>
-									<XPos>50</XPos>
+									<XPos>60</XPos>
 									<YPos>2</YPos>
 									<Flags>0</Flags>
 								</Point>
 								<Point>
-									<XPos>75</XPos>
+									<XPos>80</XPos>
 									<YPos>1</YPos>
 									<Flags>0</Flags>
 								</Point>

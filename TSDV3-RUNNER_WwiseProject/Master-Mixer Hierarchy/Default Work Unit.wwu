@@ -29,11 +29,7 @@
 														<XPos>0</XPos>
 														<YPos>-200</YPos>
 														<Flags>5</Flags>
-													</Point>
-													<Point>
-														<XPos>0.40193</XPos>
-														<YPos>-12</YPos>
-														<Flags>0</Flags>
+														<SegmentShape>Exp1</SegmentShape>
 													</Point>
 													<Point>
 														<XPos>1</XPos>
@@ -45,28 +41,9 @@
 										</RTPC>
 									</RTPCList>
 								</Property>
+								<Property Name="Color" Type="int16" Value="11"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
-							<StateInfo>
-								<StateGroupList>
-									<StateGroupInfo>
-										<StateGroupRef Name="pause" ID="{F9B1D6DD-5DBF-4111-9587-17F7C41310A5}"/>
-									</StateGroupInfo>
-								</StateGroupList>
-								<CustomStateList>
-									<CustomState>
-										<StateRef Name="on" ID="{42228F38-D817-4AF9-B33A-80C2725752D9}"/>
-										<CustomState Name="" ID="{4F396DF7-7DEB-47C3-80C0-3004B2DB8D15}" ShortID="63666103">
-											<PropertyList>
-												<Property Name="Lowpass" Type="int16" Value="60"/>
-											</PropertyList>
-										</CustomState>
-									</CustomState>
-									<CustomState>
-										<StateRef Name="off" ID="{6107D4A2-A104-4E7B-9057-A2245A272303}"/>
-										<CustomState Name="" ID="{DDF42E53-B090-4728-85AB-A056E0CEAE0A}" ShortID="733626320"/>
-									</CustomState>
-								</CustomStateList>
-							</StateInfo>
 							<ObjectLists/>
 						</Bus>
 						<Bus Name="actor" ID="{95E9FB4C-8108-4D33-A79F-891D6FA48649}">
@@ -88,11 +65,7 @@
 														<XPos>0</XPos>
 														<YPos>-200</YPos>
 														<Flags>5</Flags>
-													</Point>
-													<Point>
-														<XPos>0.39871</XPos>
-														<YPos>-12</YPos>
-														<Flags>0</Flags>
+														<SegmentShape>Exp1</SegmentShape>
 													</Point>
 													<Point>
 														<XPos>1</XPos>
@@ -104,6 +77,7 @@
 										</RTPC>
 									</RTPCList>
 								</Property>
+								<Property Name="Color" Type="int16" Value="2"/>
 								<Property Name="HdrThreshold" Type="Real64">
 									<ValueList>
 										<Value>12</Value>
@@ -144,29 +118,8 @@
 										</RTPC>
 									</RTPCList>
 								</Property>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
-							<ChildrenList>
-								<Bus Name="HDR" ID="{14A8922E-3952-404E-B557-AB4E42225EF2}">
-									<PropertyList>
-										<Property Name="HdrEnable" Type="bool">
-											<ValueList>
-												<Value>True</Value>
-											</ValueList>
-										</Property>
-										<Property Name="HdrReleaseTime" Type="Real64">
-											<ValueList>
-												<Value>1</Value>
-											</ValueList>
-										</Property>
-										<Property Name="HdrThreshold" Type="Real64">
-											<ValueList>
-												<Value>-10</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
-									<ObjectLists/>
-								</Bus>
-							</ChildrenList>
 							<StateInfo>
 								<StateGroupList>
 									<StateGroupInfo>
@@ -178,7 +131,7 @@
 										<StateRef Name="on" ID="{42228F38-D817-4AF9-B33A-80C2725752D9}"/>
 										<CustomState Name="" ID="{3FBEA3EE-2334-4EB3-ADB5-1EA01B22E46D}" ShortID="886250873">
 											<PropertyList>
-												<Property Name="Lowpass" Type="int16" Value="60"/>
+												<Property Name="Lowpass" Type="int16" Value="70"/>
 											</PropertyList>
 										</CustomState>
 									</CustomState>
@@ -209,11 +162,7 @@
 														<XPos>0</XPos>
 														<YPos>-200</YPos>
 														<Flags>5</Flags>
-													</Point>
-													<Point>
-														<XPos>0.40193</XPos>
-														<YPos>-12</YPos>
-														<Flags>0</Flags>
+														<SegmentShape>Exp1</SegmentShape>
 													</Point>
 													<Point>
 														<XPos>1</XPos>
@@ -225,7 +174,105 @@
 										</RTPC>
 									</RTPCList>
 								</Property>
+								<Property Name="Color" Type="int16" Value="19"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
+							<ObjectLists/>
+						</Bus>
+						<Bus Name="amb" ID="{14A8922E-3952-404E-B557-AB4E42225EF2}">
+							<PropertyList>
+								<Property Name="BusVolume" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{E9E7D6A3-EC8E-420E-B2CF-840C68DCEF48}" ShortID="185575734">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="sfx_volume" ID="{73C2809D-F228-4583-9E06-7D1D4638794A}" WorkUnitID="{B618A953-CDD5-417A-9182-61FF8A662B32}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{4B50AD02-F3CA-4FC1-8168-E6DB926FDBBE}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-200</YPos>
+														<Flags>5</Flags>
+														<SegmentShape>Exp1</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>1</XPos>
+														<YPos>0</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+								<Property Name="Color" Type="int16" Value="4"/>
+								<Property Name="HdrReleaseTime" Type="Real64">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Lowpass" Type="int16">
+									<RTPCList>
+										<RTPC Name="" ID="{4689DAB3-14AC-42A4-9FA2-51C589B210FC}" ShortID="103470931">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="frenesi" ID="{01EA4C00-2601-4D67-A26A-A0009DA23B36}" WorkUnitID="{B618A953-CDD5-417A-9182-61FF8A662B32}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{8BD04EE8-DC14-4D09-A722-77EF98BF6EC7}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="65537"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>10</YPos>
+														<Flags>5</Flags>
+														<SegmentShape>Log3</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>50</XPos>
+														<YPos>0</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>0</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="pause" ID="{F9B1D6DD-5DBF-4111-9587-17F7C41310A5}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="on" ID="{42228F38-D817-4AF9-B33A-80C2725752D9}"/>
+										<CustomState Name="" ID="{59A5B26A-490B-49FF-9BAF-A1C303ABBC49}" ShortID="328704513">
+											<PropertyList>
+												<Property Name="Lowpass" Type="int16" Value="40"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="off" ID="{6107D4A2-A104-4E7B-9057-A2245A272303}"/>
+										<CustomState Name="" ID="{332B3BDE-6E9D-4505-A9D7-705769CB4CE9}" ShortID="918903193"/>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
 							<ObjectLists/>
 						</Bus>
 					</ChildrenList>

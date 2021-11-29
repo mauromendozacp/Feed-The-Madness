@@ -15,6 +15,7 @@
 						<State Name="None" ID="{BBED3C15-DEB2-4D89-9C90-57360787C24C}"/>
 						<State Name="mx_menu" ID="{53B0DD22-618B-4A9F-AAE8-E618E82554D9}"/>
 						<State Name="mx_gameplay" ID="{7833BCF3-1E09-4A9D-98BA-0BF28DB8D3A5}"/>
+						<State Name="mx_gameover" ID="{2E0AA42A-041C-41C4-87E7-31D98E9C3C4F}"/>
 					</ChildrenList>
 				</StateGroup>
 			</ChildrenList>
