@@ -171,156 +171,6 @@
 												</ObjectList>
 											</ObjectLists>
 										</MusicTrack>
-										<MusicTrack Name="MX_MN_02_MIX_ALT2-22,5 LUFS _ -6db Peak_48_24_NEW" ID="{1BB408FB-E0FD-4429-998D-4400AD0BE468}" ShortID="1062033606">
-											<ReferenceList>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3B28702A-C0E1-4E3F-A481-655B176D90E2}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="MX_MN_02_MIX_ALT2-22,5 LUFS _ -6db Peak_48_24_NEW" ID="{F6A81607-F333-40AD-8BDF-C86523825BFB}">
-													<Language>SFX</Language>
-													<AudioFile>MX_MN_02_MIX_ALT2-22,5 LUFS _ -6db Peak_48_24_NEW.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="533099648"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<TransitionList>
-												<MusicTransition Name="Root" ID="{A01B897D-D192-4CF2-B686-3AC529CD3889}">
-													<PropertyList>
-														<Property Name="IsFolder" Type="bool" Value="True"/>
-													</PropertyList>
-													<TransitionInfo/>
-												</MusicTransition>
-											</TransitionList>
-											<ObjectLists>
-												<ObjectList Name="Sequences">
-													<Reference>
-														<Local>
-															<MusicTrackSequence Name="" ID="{468B148A-F9A0-4A3C-ACEE-3212DE9CA14F}">
-																<ObjectLists>
-																	<ObjectList Name="Clips">
-																		<Reference>
-																			<Local>
-																				<MusicClip Name="MX_MN_02_MIX_ALT2-22,5 LUFS _ -6db Peak_48_24_NEW" ID="{FE05F41A-C94B-4459-80B6-3A880BE2449C}">
-																					<PropertyList>
-																						<Property Name="EndTrimOffset" Type="Real64" Value="40000.3125"/>
-																						<Property Name="FadeInMode" Type="int16" Value="0"/>
-																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
-																					</PropertyList>
-																					<AudioSourceRef Name="MX_MN_02_MIX_ALT2-22,5 LUFS _ -6db Peak_48_24_NEW" ID="{F6A81607-F333-40AD-8BDF-C86523825BFB}"/>
-																				</MusicClip>
-																			</Local>
-																		</Reference>
-																	</ObjectList>
-																</ObjectLists>
-															</MusicTrackSequence>
-														</Local>
-													</Reference>
-												</ObjectList>
-											</ObjectLists>
-										</MusicTrack>
-										<MusicTrack Name="MX_MN_03_MIX_ALT3-22,5 LUFS _ -6db Peak_48_24_NEW" ID="{038B19ED-48D0-4790-8A7A-12A81351C606}" ShortID="712416424">
-											<ReferenceList>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3B28702A-C0E1-4E3F-A481-655B176D90E2}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="MX_MN_03_MIX_ALT3-22,5 LUFS _ -6db Peak_48_24_NEW" ID="{C61FF736-41FD-4D88-8946-45A45A27ABCE}">
-													<Language>SFX</Language>
-													<AudioFile>MX_MN_03_MIX_ALT3-22,5 LUFS _ -6db Peak_48_24_NEW.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="975480553"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<TransitionList>
-												<MusicTransition Name="Root" ID="{BF423319-319C-4F2C-A9BD-94B9136E105D}">
-													<PropertyList>
-														<Property Name="IsFolder" Type="bool" Value="True"/>
-													</PropertyList>
-													<TransitionInfo/>
-												</MusicTransition>
-											</TransitionList>
-											<ObjectLists>
-												<ObjectList Name="Sequences">
-													<Reference>
-														<Local>
-															<MusicTrackSequence Name="" ID="{2371C01D-23CC-4A5B-B18A-35EF1AD23338}">
-																<ObjectLists>
-																	<ObjectList Name="Clips">
-																		<Reference>
-																			<Local>
-																				<MusicClip Name="MX_MN_03_MIX_ALT3-22,5 LUFS _ -6db Peak_48_24_NEW" ID="{FB8822E7-59DE-4EC6-802F-95C73E3696F8}">
-																					<PropertyList>
-																						<Property Name="EndTrimOffset" Type="Real64" Value="40000.3125"/>
-																						<Property Name="FadeInMode" Type="int16" Value="0"/>
-																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
-																					</PropertyList>
-																					<AudioSourceRef Name="MX_MN_03_MIX_ALT3-22,5 LUFS _ -6db Peak_48_24_NEW" ID="{C61FF736-41FD-4D88-8946-45A45A27ABCE}"/>
-																				</MusicClip>
-																			</Local>
-																		</Reference>
-																	</ObjectList>
-																</ObjectLists>
-															</MusicTrackSequence>
-														</Local>
-													</Reference>
-												</ObjectList>
-											</ObjectLists>
-										</MusicTrack>
-										<MusicTrack Name="MX_MN_04_MIX_ALT4-22,5 LUFS _ -6db Peak_48_24_NEW" ID="{1714CDF3-833F-45D0-A623-0CDACC1E8041}" ShortID="366728804">
-											<ReferenceList>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3B28702A-C0E1-4E3F-A481-655B176D90E2}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="MX_MN_04_MIX_ALT4-22,5 LUFS _ -6db Peak_48_24_NEW" ID="{F2CD9D40-23BA-43E1-B1CB-1BD29A6E3710}">
-													<Language>SFX</Language>
-													<AudioFile>MX_MN_04_MIX_ALT4-22,5 LUFS _ -6db Peak_48_24_NEW.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="141901837"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<TransitionList>
-												<MusicTransition Name="Root" ID="{504D8271-CECB-4DFE-9B85-BF9A2770E6D7}">
-													<PropertyList>
-														<Property Name="IsFolder" Type="bool" Value="True"/>
-													</PropertyList>
-													<TransitionInfo/>
-												</MusicTransition>
-											</TransitionList>
-											<ObjectLists>
-												<ObjectList Name="Sequences">
-													<Reference>
-														<Local>
-															<MusicTrackSequence Name="" ID="{3FACC4B1-0449-4E52-A392-862E728ED6BC}">
-																<ObjectLists>
-																	<ObjectList Name="Clips">
-																		<Reference>
-																			<Local>
-																				<MusicClip Name="MX_MN_04_MIX_ALT4-22,5 LUFS _ -6db Peak_48_24_NEW" ID="{B3096C43-3082-4EDA-AF69-CBC19BF4135F}">
-																					<PropertyList>
-																						<Property Name="EndTrimOffset" Type="Real64" Value="40000.3125"/>
-																						<Property Name="FadeInMode" Type="int16" Value="0"/>
-																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
-																					</PropertyList>
-																					<AudioSourceRef Name="MX_MN_04_MIX_ALT4-22,5 LUFS _ -6db Peak_48_24_NEW" ID="{F2CD9D40-23BA-43E1-B1CB-1BD29A6E3710}"/>
-																				</MusicClip>
-																			</Local>
-																		</Reference>
-																	</ObjectList>
-																</ObjectLists>
-															</MusicTrackSequence>
-														</Local>
-													</Reference>
-												</ObjectList>
-											</ObjectLists>
-										</MusicTrack>
 									</ChildrenList>
 									<ObjectLists>
 										<ObjectList Name="Cues">
@@ -3420,7 +3270,7 @@
 																										</PropertyList>
 																										<PointList>
 																											<Point>
-																												<XPos>-0</XPos>
+																												<XPos>0</XPos>
 																												<YPos>0</YPos>
 																												<Flags>5</Flags>
 																											</Point>
@@ -3439,7 +3289,7 @@
 																										</PropertyList>
 																										<PointList>
 																											<Point>
-																												<XPos>-0</XPos>
+																												<XPos>0</XPos>
 																												<YPos>0</YPos>
 																												<Flags>5</Flags>
 																											</Point>
@@ -3458,7 +3308,7 @@
 																										</PropertyList>
 																										<PointList>
 																											<Point>
-																												<XPos>-0</XPos>
+																												<XPos>0</XPos>
 																												<YPos>0</YPos>
 																												<Flags>5</Flags>
 																											</Point>
@@ -4675,9 +4525,6 @@
 											</ObjectLists>
 										</MusicSegment>
 										<MusicSegment Name="FTM_MX_GP_T3_1_3" ID="{7A7E9A7D-03C3-485C-8103-98A84B775DDA}" ShortID="631642840">
-											<PropertyList>
-												<Property Name="EndPosition" Type="Real64" Value="4000"/>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Vorbis Quality High" ID="{53A9DE0F-3F4F-4B59-8614-3F9E3C7358FC}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
