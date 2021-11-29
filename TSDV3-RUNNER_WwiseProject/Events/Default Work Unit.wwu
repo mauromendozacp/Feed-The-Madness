@@ -94,7 +94,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="breathing" ID="{74292A70-C149-46C7-B316-7D269D08D336}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+									<ObjectRef Name="respiracion" ID="{43976C2C-3887-4939-ABB8-157278A0F564}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -107,7 +107,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="breathing" ID="{74292A70-C149-46C7-B316-7D269D08D336}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+									<ObjectRef Name="respiracion" ID="{43976C2C-3887-4939-ABB8-157278A0F564}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -144,7 +144,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="breathing" ID="{74292A70-C149-46C7-B316-7D269D08D336}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+									<ObjectRef Name="respiracion" ID="{43976C2C-3887-4939-ABB8-157278A0F564}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -157,7 +157,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="breathing" ID="{74292A70-C149-46C7-B316-7D269D08D336}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+									<ObjectRef Name="respiracion" ID="{43976C2C-3887-4939-ABB8-157278A0F564}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -167,7 +167,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="breathing" ID="{74292A70-C149-46C7-B316-7D269D08D336}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+									<ObjectRef Name="respiracion" ID="{43976C2C-3887-4939-ABB8-157278A0F564}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -179,7 +179,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="breathing" ID="{74292A70-C149-46C7-B316-7D269D08D336}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+									<ObjectRef Name="respiracion" ID="{43976C2C-3887-4939-ABB8-157278A0F564}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -320,14 +320,14 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="heartbeat" ID="{0758FF36-BD65-4544-8005-A0495FB0503E}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+									<ObjectRef Name="cha_low_frenesi" ID="{08DB567D-4DA0-448F-9FCE-DF7E2840216C}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 						<Action Name="" ID="{98D88887-BDCE-4121-B7E0-AFE03F7927FD}" ShortID="834033683">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="heartbeat" ID="{0758FF36-BD65-4544-8005-A0495FB0503E}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+									<ObjectRef Name="cha_low_frenesi" ID="{08DB567D-4DA0-448F-9FCE-DF7E2840216C}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -359,27 +359,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="cha_breath" ID="{DBE72546-19E3-4CE5-A4B4-CC99DFBE89EF}">
-					<ChildrenList>
-						<Action Name="" ID="{FE0CEEB4-861F-46CC-9D6D-AAB9DB5D6B18}" ShortID="505368671">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="2"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="breathing" ID="{74292A70-C149-46C7-B316-7D269D08D336}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-						<Action Name="" ID="{17869C03-AD28-411A-AEBC-EFF5B7C620F0}" ShortID="796334285">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="breathing" ID="{74292A70-C149-46C7-B316-7D269D08D336}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
+				<Event Name="cha_breath" ID="{DBE72546-19E3-4CE5-A4B4-CC99DFBE89EF}"/>
 				<Event Name="mx" ID="{E90A416F-F65B-45AE-88E8-38FC632400DB}">
 					<ChildrenList>
 						<Action Name="" ID="{F6A582CE-28D4-4CFA-B3E3-5265B8829BBE}" ShortID="693061859">
@@ -393,16 +373,6 @@
 				</Event>
 				<Event Name="cha_dead" ID="{E8EFCBC0-6371-4B4C-AC23-A195229167D5}">
 					<ChildrenList>
-						<Action Name="" ID="{163CCED5-A1B3-4FC5-8763-04D2E245BC1C}" ShortID="892187292">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="2"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="breathing" ID="{74292A70-C149-46C7-B316-7D269D08D336}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
 						<Action Name="" ID="{6566ADF0-7DB7-4045-8AD8-962D21659B85}" ShortID="913727183">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="26"/>
@@ -454,14 +424,14 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
-						<Action Name="" ID="{DCF8ED8E-73FA-4DAC-AFBF-FAD0982E3B09}" ShortID="872889378">
+						<Action Name="" ID="{D57CAC96-6CFF-4491-B7EA-ADE6E7B0A6EE}" ShortID="565514521">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="2"/>
-								<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="heartbeat" ID="{0758FF36-BD65-4544-8005-A0495FB0503E}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+									<ObjectRef Name="Character" ID="{1EEE1651-E613-4C01-997B-D1002C51E80B}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

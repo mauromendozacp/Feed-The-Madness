@@ -1959,6 +1959,14 @@
 										<Property Name="Pitch" Type="Real32" Value="-1200"/>
 									</PropertyList>
 								</Effect>
+								<Effect Name="New_Wwise_Pitch_Shifter" ID="{7127309D-A368-4745-A7DE-37CABEDFB10A}" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
+									<PropertyList>
+										<Property Name="DelayTime" Type="Real32" Value="10"/>
+										<Property Name="Input" Type="int32" Value="2"/>
+										<Property Name="Pitch" Type="Real32" Value="-700"/>
+										<Property Name="ProcessLFE" Type="bool" Value="True"/>
+									</PropertyList>
+								</Effect>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Transpose" ID="{3356F030-FA3F-489C-9CC9-BC27F83083C3}" ShortID="691881135">
