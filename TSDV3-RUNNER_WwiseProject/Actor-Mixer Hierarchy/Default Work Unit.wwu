@@ -8087,14 +8087,20 @@
 								<Property Name="3DSpatialization" Type="int16" Value="2"/>
 								<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
 								<Property Name="BlendBehavior" Type="int16" Value="1"/>
+								<Property Name="IgnoreParentMaxSoundInstance" Type="bool" Value="True"/>
+								<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 								<Property Name="MaxSoundPerInstance" Type="int16">
 									<ValueList>
 										<Value>1</Value>
 									</ValueList>
 								</Property>
-								<Property Name="OverLimitBehavior" Type="int16" Value="1"/>
 								<Property Name="OverrideConversion" Type="bool" Value="True"/>
 								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-6</Value>
@@ -9041,6 +9047,31 @@
 									</Playlist>
 								</RandomSequenceContainer>
 							</ChildrenList>
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="mx_switch" ID="{4FD59EC8-84BD-4CAE-B63B-F79E8060E96E}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="mx_gameover" ID="{2E0AA42A-041C-41C4-87E7-31D98E9C3C4F}"/>
+										<CustomState Name="" ID="{F9D8F54E-0B56-4008-A986-45A0BFBD234D}" ShortID="205213328"/>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="mx_gameplay" ID="{7833BCF3-1E09-4A9D-98BA-0BF28DB8D3A5}"/>
+										<CustomState Name="" ID="{2D3E7DFF-D877-434C-A154-DFA2A7DDFA87}" ShortID="522224014"/>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="mx_menu" ID="{53B0DD22-618B-4A9F-AAE8-E618E82554D9}"/>
+										<CustomState Name="" ID="{6EFBA008-E3CD-43B7-BB86-F09E2007B530}" ShortID="778089647">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-108"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
 							<ObjectLists/>
 						</BlendContainer>
 						<BlendContainer Name="Rain" ID="{B4636EA9-35F2-41C3-AFDD-24140C7DAF04}" ShortID="477022857">
