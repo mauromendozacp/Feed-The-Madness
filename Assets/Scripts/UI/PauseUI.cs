@@ -61,6 +61,7 @@ public class PauseUI : MonoBehaviour
     public void BackToMenu()
     {
         Time.timeScale = 1f;
+        AkSoundEngine.PostEvent("back_to_menu", gameObject);
         AkSoundEngine.SetState("pause", "off");
         GameManager.Get().ChangeScene(SceneGame.MainMenu);
     }

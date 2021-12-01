@@ -5587,6 +5587,7 @@
 												<Value>20</Value>
 											</ValueList>
 										</Property>
+										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 										<Property Name="Pitch" Type="int32">
 											<ModifierList>
 												<ModifierInfo>
@@ -5646,88 +5647,113 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<Sound Name="Salto 02" ID="{CB0B3570-14A0-4EF3-B4CB-5C07C6D2A8C8}" ShortID="5838524">
-											<PropertyList>
-												<Property Name="Pitch" Type="int32">
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{B75C1C81-8B04-4E42-82F5-1BC96E0278FD}"/>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-											</PropertyList>
+										<Sound Name="Golpe 04" ID="{B8653D3D-957B-477A-80C8-9F6CC0C33A30}" ShortID="914278329">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F4B47D6-CD1C-452F-8B2B-ABD4A8FD7570}"/>
 												</Reference>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3B28702A-C0E1-4E3F-A481-655B176D90E2}"/>
+													<ObjectRef Name="actor" ID="{95E9FB4C-8108-4D33-A79F-891D6FA48649}" WorkUnitID="{3B28702A-C0E1-4E3F-A481-655B176D90E2}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="Salto 02" ID="{854911E8-1B21-4FE1-8BD0-B91F34392CF8}">
+												<AudioFileSource Name="Golpe 04" ID="{9F812833-E8BA-4698-9014-391ABA34A0D8}">
 													<PropertyList>
-														<Property Name="FadeInDuration" Type="Real64" Value="0.0309050772626931"/>
-														<Property Name="FadeOutDuration" Type="Real64" Value="0.105960264900662"/>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.391345541936756"/>
+														<Property Name="FadeInShape" Type="int16" Value="8"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.323163491117874"/>
+														<Property Name="FadeOutShape" Type="int16" Value="0"/>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimBegin" Type="Real64" Value="0.467991169977926"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.466508624729911"/>
+														<Property Name="VolumeOffset" Type="Real64">
+															<ValueList>
+																<Value>18</Value>
+															</ValueList>
+														</Property>
 													</PropertyList>
 													<Language>SFX</Language>
-													<AudioFile>Salto 02.wav</AudioFile>
+													<AudioFile>Golpe 04.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="745921469"/>
+														<MediaID ID="702861088"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ObjectLists/>
 											<ActiveSourceList>
-												<ActiveSource Name="Salto 02" ID="{854911E8-1B21-4FE1-8BD0-B91F34392CF8}" Platform="Linked"/>
+												<ActiveSource Name="Golpe 04" ID="{9F812833-E8BA-4698-9014-391ABA34A0D8}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="Salto 03" ID="{A7169485-F32F-4636-A018-E3DDFEC2F066}" ShortID="208585640">
+										<Sound Name="Golpe 01" ID="{1D7FE4F3-6D42-4DA1-A82C-989004D268C3}" ShortID="1048663797">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F4B47D6-CD1C-452F-8B2B-ABD4A8FD7570}"/>
 												</Reference>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3B28702A-C0E1-4E3F-A481-655B176D90E2}"/>
+													<ObjectRef Name="actor" ID="{95E9FB4C-8108-4D33-A79F-891D6FA48649}" WorkUnitID="{3B28702A-C0E1-4E3F-A481-655B176D90E2}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="Salto 03" ID="{C4C4E162-9C78-4071-8251-288427CF4776}">
+												<AudioFileSource Name="Golpe 01" ID="{2F956198-07DB-4DC3-8376-80CCB62A1E9E}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.342890683816305"/>
+														<Property Name="FadeInShape" Type="int16" Value="9"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.30242825607064"/>
+														<Property Name="FadeOutShape" Type="int16" Value="0"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.609421454912019"/>
+														<Property Name="VolumeOffset" Type="Real64">
+															<ValueList>
+																<Value>23</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
 													<Language>SFX</Language>
-													<AudioFile>Salto 03.wav</AudioFile>
+													<AudioFile>Golpe 01.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="238263990"/>
+														<MediaID ID="375973056"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ObjectLists/>
 											<ActiveSourceList>
-												<ActiveSource Name="Salto 03" ID="{C4C4E162-9C78-4071-8251-288427CF4776}" Platform="Linked"/>
+												<ActiveSource Name="Golpe 01" ID="{2F956198-07DB-4DC3-8376-80CCB62A1E9E}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="Salto 04" ID="{7037784E-379F-4455-ADA1-C28A7C04C485}" ShortID="12179529">
+										<Sound Name="Golpe 02" ID="{7D6D5E12-D36B-4137-AAAF-B63F41EECFE1}" ShortID="405040553">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F4B47D6-CD1C-452F-8B2B-ABD4A8FD7570}"/>
 												</Reference>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3B28702A-C0E1-4E3F-A481-655B176D90E2}"/>
+													<ObjectRef Name="actor" ID="{95E9FB4C-8108-4D33-A79F-891D6FA48649}" WorkUnitID="{3B28702A-C0E1-4E3F-A481-655B176D90E2}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="Salto 04" ID="{3F29A350-E602-4004-9583-CB28B0F2042C}">
+												<AudioFileSource Name="Golpe 02" ID="{779F48FE-C36B-4277-8C2B-720E0BF2E11C}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.29190432441399"/>
+														<Property Name="FadeInShape" Type="int16" Value="8"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.259381898454746"/>
+														<Property Name="FadeOutShape" Type="int16" Value="0"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.408844696244688"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.813465783664459"/>
+														<Property Name="VolumeOffset" Type="Real64">
+															<ValueList>
+																<Value>9</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
 													<Language>SFX</Language>
-													<AudioFile>Salto 04.wav</AudioFile>
+													<AudioFile>Golpe 02.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="868332119"/>
+														<MediaID ID="1058554471"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ObjectLists/>
 											<ActiveSourceList>
-												<ActiveSource Name="Salto 04" ID="{3F29A350-E602-4004-9583-CB28B0F2042C}" Platform="Linked"/>
+												<ActiveSource Name="Golpe 02" ID="{779F48FE-C36B-4277-8C2B-720E0BF2E11C}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
@@ -6336,11 +6362,6 @@
 						<BlendContainer Name="ambient" ID="{366FF8B9-9A0B-4387-A2BF-1BD1A64B50AA}" ShortID="1028322698">
 							<PropertyList>
 								<Property Name="BlendBehavior" Type="int16" Value="1"/>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-3</Value>
-									</ValueList>
-								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -6356,6 +6377,11 @@
 										<Property Name="3DSpatialization" Type="int16" Value="2"/>
 										<Property Name="BelowThresholdBehavior" Type="int16" Value="3"/>
 										<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>50</Value>
+											</ValueList>
+										</Property>
 										<Property Name="Lowpass" Type="int16">
 											<ModifierList>
 												<ModifierInfo>
@@ -6385,7 +6411,7 @@
 										<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="15"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>6</Value>
+												<Value>9</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -6597,7 +6623,7 @@
 										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-7</Value>
+												<Value>-10</Value>
 											</ValueList>
 											<ModifierList>
 												<ModifierInfo>
@@ -6971,7 +6997,7 @@
 										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>12</Value>
+												<Value>9</Value>
 											</ValueList>
 											<ModifierList>
 												<ModifierInfo>
@@ -7138,6 +7164,11 @@
 										<Property Name="3DSpatialization" Type="int16" Value="2"/>
 										<Property Name="BelowThresholdBehavior" Type="int16" Value="3"/>
 										<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>50</Value>
+											</ValueList>
+										</Property>
 										<Property Name="OverridePositioning" Type="bool" Value="True"/>
 										<Property Name="OverridePriority" Type="bool" Value="True"/>
 										<Property Name="OverrideVirtualVoice" Type="bool" Value="True"/>
@@ -7150,7 +7181,7 @@
 										<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="15"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>6</Value>
+												<Value>9</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -7347,7 +7378,7 @@
 										<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="75"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>12</Value>
+												<Value>9</Value>
 											</ValueList>
 											<ModifierList>
 												<ModifierInfo>
@@ -8101,11 +8132,6 @@
 										<Value>True</Value>
 									</ValueList>
 								</Property>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-6</Value>
-									</ValueList>
-								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -8119,73 +8145,6 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<Sound Name="00_RADIO CAMP NOISE FLOOR" ID="{C70AA527-EB43-400E-905C-D7C61C9D9947}" ShortID="460216630">
-									<PropertyList>
-										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>-18</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F4B47D6-CD1C-452F-8B2B-ABD4A8FD7570}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3B28702A-C0E1-4E3F-A481-655B176D90E2}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<SourcePlugin Name="Wwise Synth One" ID="{23FA5FB6-CF92-4500-B121-5C6B8DA9B35E}" ShortID="874311422" PluginName="Wwise Synth One" CompanyID="0" PluginID="148">
-											<PropertyList>
-												<Property Name="NoiseLevel" Type="Real32" Value="-32"/>
-												<Property Name="NoiseShape" Type="int32" Value="3"/>
-												<Property Name="Osc1Level" Type="Real32" Value="-96"/>
-												<Property Name="Osc2Level" Type="Real32" Value="-96"/>
-												<Property Name="OutputLevel" Type="Real32">
-													<RTPCList>
-														<RTPC Name="" ID="{90418067-97E5-4DFE-B729-17FDA65A6943}" ShortID="528277356">
-															<ReferenceList>
-																<Reference Name="ControlInput">
-																	<Custom>
-																		<ModulatorEnvelope Name="Modulator Envelope (Custom)" ID="{742766BD-4BFD-46F6-BAD7-7E1706799776}" ShortID="359733128">
-																			<PropertyList>
-																				<Property Name="EnvelopeAttackTime" Type="Real64" Value="0.01"/>
-																			</PropertyList>
-																		</ModulatorEnvelope>
-																	</Custom>
-																</Reference>
-															</ReferenceList>
-															<Curve Name="" ID="{67A443AB-4879-48EE-8C1D-3F1F842B513A}">
-																<PropertyList>
-																	<Property Name="Flags" Type="int32" Value="3"/>
-																</PropertyList>
-																<PointList>
-																	<Point>
-																		<XPos>0</XPos>
-																		<YPos>-96</YPos>
-																		<Flags>21</Flags>
-																	</Point>
-																	<Point>
-																		<XPos>1</XPos>
-																		<YPos>0</YPos>
-																		<Flags>53</Flags>
-																	</Point>
-																</PointList>
-															</Curve>
-														</RTPC>
-													</RTPCList>
-												</Property>
-											</PropertyList>
-											<Language>SFX</Language>
-										</SourcePlugin>
-									</ChildrenList>
-									<ObjectLists/>
-									<ActiveSourceList>
-										<ActiveSource Name="Wwise Synth One" ID="{23FA5FB6-CF92-4500-B121-5C6B8DA9B35E}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
 								<RandomSequenceContainer Name="radio" ID="{F3A19E39-4CE5-4362-9B19-900CD74F2107}" ShortID="152820775">
 									<PropertyList>
 										<Property Name="BelowThresholdBehavior" Type="int16" Value="2"/>
@@ -8200,6 +8159,11 @@
 										<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.5"/>
 										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">

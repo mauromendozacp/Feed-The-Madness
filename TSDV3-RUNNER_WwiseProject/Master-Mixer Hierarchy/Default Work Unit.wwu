@@ -44,6 +44,27 @@
 								<Property Name="Color" Type="int16" Value="11"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="pause" ID="{F9B1D6DD-5DBF-4111-9587-17F7C41310A5}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="on" ID="{42228F38-D817-4AF9-B33A-80C2725752D9}"/>
+										<CustomState Name="" ID="{CBF2D8BF-E3CA-485D-B6C3-0882CDBB8969}" ShortID="363787529">
+											<PropertyList>
+												<Property Name="BusVolume" Type="Real64" Value="-9"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="off" ID="{6107D4A2-A104-4E7B-9057-A2245A272303}"/>
+										<CustomState Name="" ID="{62647114-6877-4950-AF88-357F4F657B94}" ShortID="914054944"/>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
 							<ObjectLists/>
 						</Bus>
 						<Bus Name="actor" ID="{95E9FB4C-8108-4D33-A79F-891D6FA48649}">

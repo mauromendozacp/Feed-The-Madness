@@ -16,7 +16,27 @@
 				</Event>
 				<Event Name="cha_jump" ID="{01D2D67D-1381-4AD8-972B-4AF851D17901}">
 					<ChildrenList>
+						<Action Name="" ID="{B5616752-DB4D-4DE3-A790-BFFBEF293087}" ShortID="502780006">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="footsteps" ID="{2ABCC5DA-3438-4E26-AF8A-271138A21558}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{DB828D1F-24C5-465A-A066-738305FACE98}" ShortID="232781235">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="0.05"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="footsteps" ID="{2ABCC5DA-3438-4E26-AF8A-271138A21558}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 						<Action Name="" ID="{DB56E9CE-6677-43CB-8D4A-CF5F1D2E10D5}" ShortID="521647481">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="1.25"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="jump" ID="{B7DDC5F0-A271-495B-9FEE-F98CE3E33CF0}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
@@ -416,6 +436,7 @@
 						<Action Name="" ID="{A2E34435-86A7-4775-9DAE-9FEA164DFE69}" ShortID="792627983">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.1"/>
 								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
@@ -428,6 +449,7 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="2"/>
 								<Property Name="FadeTime" Type="Real64" Value="1"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -443,6 +465,34 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="ui_cooldown" ID="{407C2B4B-1EF6-41F8-80C7-C9114C4B6449}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="back_to_menu" ID="{79F6625D-74E4-4148-BDC5-5373394B1E0F}">
+					<ChildrenList>
+						<Action Name="" ID="{1C26AB9D-042B-44CE-920D-A531C16FE3C4}" ShortID="686156009">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.1"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ambient" ID="{98A4AAD4-8E6B-47D0-B5B3-CC6A3EBD03F8}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{986A6D73-478E-44C4-A2DA-E3CF12F40480}" ShortID="794388586">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.1"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Character" ID="{1EEE1651-E613-4C01-997B-D1002C51E80B}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
