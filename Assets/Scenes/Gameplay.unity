@@ -558,6 +558,44 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 772680425}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &142289332
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142289331}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 50, y: 5, z: 50}
+  m_Center: {x: 33, y: 0, z: 0}
+--- !u!114 &142289333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142289331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd38f645652598c4d8251ab31ec69007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: d1bbb3b5
+  useOtherObject: 1
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0366d4c35f362864d93f331f041cdee8,
+      type: 2}
+  valueIdInternal: 0
+  groupIdInternal: 0
+  valueGuidInternal: 
+  groupGuidInternal: 
 --- !u!1001 &145003061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6588,6 +6626,69 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 772680425}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1214910055
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214910054}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 50, y: 5, z: 33}
+  m_Center: {x: 33, y: 0, z: 17}
+--- !u!114 &1214910057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214910054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd38f645652598c4d8251ab31ec69007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: d1bbb3b5
+  useOtherObject: 1
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0e6ea856ce629834cb3268cfacc6fd8a,
+      type: 2}
+  valueIdInternal: 0
+  groupIdInternal: 0
+  valueGuidInternal: 
+  groupGuidInternal: 
+--- !u!114 &1214910059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214910054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd38f645652598c4d8251ab31ec69007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: cd2be4c0
+  useOtherObject: 1
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2e4d59164e6030b40be1e82268c710a5,
+      type: 2}
+  valueIdInternal: 0
+  groupIdInternal: 0
+  valueGuidInternal: 
+  groupGuidInternal: 
 --- !u!1001 &1227721142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9590,6 +9691,44 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 772680425}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1789357283
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789357282}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 50, y: 5, z: 50}
+  m_Center: {x: 33, y: 0, z: 0}
+--- !u!114 &1789357286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789357282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd38f645652598c4d8251ab31ec69007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: d1bbb3b5
+  useOtherObject: 1
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2e4d59164e6030b40be1e82268c710a5,
+      type: 2}
+  valueIdInternal: 0
+  groupIdInternal: 0
+  valueGuidInternal: 
+  groupGuidInternal: 
 --- !u!1 &1812666501
 GameObject:
   m_ObjectHideFlags: 0

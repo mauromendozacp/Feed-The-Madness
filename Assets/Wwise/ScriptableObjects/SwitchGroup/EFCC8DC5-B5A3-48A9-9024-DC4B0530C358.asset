@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 864fcb3c207189a4da0c2529e5114378, type: 3}
-  m_Name: 06BD5549-1A0E-4644-B856-AED3A8D3AAF4
+  m_Script: {fileID: 11500000, guid: 0ec73677abb006b48a0fc99b7e4b69d3, type: 3}
+  m_Name: EFCC8DC5-B5A3-48A9-9024-DC4B0530C358
   m_EditorClassIdentifier: 
-  objectName: Main
-  id: 3161908922
-  guid: 06BD5549-1A0E-4644-B856-AED3A8D3AAF4
+  objectName: terrain
+  id: 354267144
+  guid: EFCC8DC5-B5A3-48A9-9024-DC4B0530C358

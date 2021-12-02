@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 71f06b8b62168c4ca01d16c9d6338d60
     GuidInternal: 
-    m_lastTime: -8585678836057130286
+    m_lastTime: -8585670279541377755
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 2a70283be1c03f4ea481655b176d90e2
     GuidInternal: 
-    m_lastTime: -8585639964148591234
+    m_lastTime: -8585632145731881024
     List:
     - name: actor
       guid: 4cfbe9950881334da79f891d6fa48649
@@ -57,9 +57,9 @@ MonoBehaviour:
         ObjectType: 2
         guid: 4cfbe9950881334da79f891d6fa48649
       Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\actor
-    - name: HDR
+    - name: amb
       guid: 2e92a81452394e40b557ab4e42225ef2
-      id: 931844945
+      id: 1117531639
       PathAndIcons:
       - ElementName: Master-Mixer Hierarchy
         ObjectType: 5
@@ -70,13 +70,10 @@ MonoBehaviour:
       - ElementName: Master Audio Bus
         ObjectType: 2
         guid: d8a41415a61d2a41a17e75ca0c2149f3
-      - ElementName: actor
-        ObjectType: 2
-        guid: 4cfbe9950881334da79f891d6fa48649
-      - ElementName: HDR
+      - ElementName: amb
         ObjectType: 2
         guid: 2e92a81452394e40b557ab4e42225ef2
-      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\actor\HDR
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\amb
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
       id: 3803692087
@@ -137,11 +134,11 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 210bccce3454284db754d6120c071294
     GuidInternal: 
-    m_lastTime: -8585638416524804866
+    m_lastTime: -8585632116908314374
     List:
-    - name: SoundBankTestxd
+    - name: Main
       guid: 4955bd060e1a4446b856aed3a8d3aaf4
-      id: 3815026176
+      id: 3161908922
       PathAndIcons:
       - ElementName: SoundBanks
         ObjectType: 5
@@ -149,10 +146,10 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 210bccce3454284db754d6120c071294
-      - ElementName: SoundBankTestxd
+      - ElementName: Main
         ObjectType: 7
         guid: 4955bd060e1a4446b856aed3a8d3aaf4
-      Path: SoundBanks\Default Work Unit\SoundBankTestxd
+      Path: SoundBanks\Default Work Unit\Main
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
@@ -165,7 +162,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 56714d5b82b64b4895ddb6b49b972b1f
     GuidInternal: 
-    m_lastTime: -8585638416525055830
+    m_lastTime: -8585632154039052614
     List:
     - name: amb_falling_tree
       guid: b4d4a0c590fc23478ef28b565eae5d6c
@@ -181,7 +178,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: b4d4a0c590fc23478ef28b565eae5d6c
       Path: Events\Default Work Unit\amb_falling_tree
-      maxAttenuation: 75
+      maxAttenuation: 50
       maxDuration: 2.378898
       minDuration: 1.12261
     - name: amb_rain
@@ -215,7 +212,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 0e9231cb06647a459d3f17dd3f55367f
       Path: Events\Default Work Unit\amb_tent
-      maxAttenuation: 75
+      maxAttenuation: 50
       maxDuration: -1
       minDuration: -1
     - name: amb_wind
@@ -235,6 +232,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: back_to_menu
+      guid: 5d62f679e4744841bdc55373394b1e0f
+      id: 1110175026
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 56714d5b82b64b4895ddb6b49b972b1f
+      - ElementName: back_to_menu
+        ObjectType: 3
+        guid: 5d62f679e4744841bdc55373394b1e0f
+      Path: Events\Default Work Unit\back_to_menu
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: cha_axe
       guid: 9a2239431c760a46ab59fe50769bd7bd
       id: 3931567716
@@ -318,8 +332,8 @@ MonoBehaviour:
         guid: 4625e7dbe319e54ca4b4cc99dfbe89ef
       Path: Events\Default Work Unit\cha_breath
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: cha_damage
       guid: e0028d322288ef47b05c4548a1d2c65d
       id: 1566291291
@@ -369,8 +383,8 @@ MonoBehaviour:
         guid: 42d289311d00994cb003045a2e406d7d
       Path: Events\Default Work Unit\cha_footsteps
       maxAttenuation: 0
-      maxDuration: 3.141563
-      minDuration: 0.299969
+      maxDuration: 1.313381
+      minDuration: 0.557173
     - name: cha_heart
       guid: 1876a66ebe15a4488ab8e9cf1c01129b
       id: 3994005892
@@ -403,8 +417,8 @@ MonoBehaviour:
         guid: 7dd6d2018113d84a972b4af851d17901
       Path: Events\Default Work Unit\cha_jump
       maxAttenuation: 0
-      maxDuration: 0.997101
-      minDuration: 0.49694
+      maxDuration: 1.666477
+      minDuration: 1.608162
     - name: cha_throw_axe
       guid: 954ddf2e22d1f540bd4ae4f6b6497120
       id: 3921742761
@@ -502,7 +516,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 53a918b6d5cd7a41918261ff8a662b32
     GuidInternal: 
-    m_lastTime: -8585639964148760991
+    m_lastTime: -8585639982833369456
     List:
     - name: frenesi
       guid: 004cea010126674da26aa0009da23b36
@@ -572,7 +586,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: a8005f62e3d3334c8c9888e5dfbb7288
     GuidInternal: 
-    m_lastTime: -8585642287429290119
+    m_lastTime: -8585632147148104526
     List:
     - name: mx_switch
       guid: c89ed54fbd84ae4cb63bf79e8060e96e
@@ -589,6 +603,22 @@ MonoBehaviour:
         guid: c89ed54fbd84ae4cb63bf79e8060e96e
       Path: States\Default Work Unit\mx_switch
       values:
+      - name: mx_gameover
+        guid: 2aa40a2e1c04c44187e731d98e9c3c4f
+        id: 4087515445
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: a8005f62e3d3334c8c9888e5dfbb7288
+        - ElementName: mx_switch
+          ObjectType: 9
+          guid: c89ed54fbd84ae4cb63bf79e8060e96e
+        - ElementName: mx_gameover
+          ObjectType: 8
+          guid: 2aa40a2e1c04c44187e731d98e9c3c4f
       - name: mx_gameplay
         guid: f3bc3378091e9d4a98ba0bf28db8d3a5
         id: 2655229457
@@ -718,7 +748,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 87f5f526e042e142a61b0d5a68857a69
     GuidInternal: 
-    m_lastTime: -8585642287429220002
+    m_lastTime: -8585635798626349348
     List:
     - name: mx_gameplay
       guid: c6254af9e82b6c4fbe4c7cdb95cbc7c5
@@ -799,6 +829,22 @@ MonoBehaviour:
         - ElementName: mx4
           ObjectType: 10
           guid: 31fdc1d2afed8d449cca43fd95f0277a
+      - name: mx5
+        guid: 2b1f9c550a988941a52ae6a4b19c4624
+        id: 897451071
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 87f5f526e042e142a61b0d5a68857a69
+        - ElementName: mx_gameplay
+          ObjectType: 11
+          guid: c6254af9e82b6c4fbe4c7cdb95cbc7c5
+        - ElementName: mx5
+          ObjectType: 10
+          guid: 2b1f9c550a988941a52ae6a4b19c4624
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
@@ -880,10 +926,10 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 542289b937423d49b26c69d8dc36957d
     GuidInternal: 
-    m_lastTime: -8585678836058776479
+    m_lastTime: -8585670279541377755
     List: []
-  ExpandedFileSystemItemIds: 0200000003000000040000000500000008000000090000000a0000002c0000002d000000
-  ExpandedWaapiItemIds: 08000000
+  ExpandedFileSystemItemIds: 010000000500000006000000070000000d000000
+  ExpandedWaapiItemIds: 180000001900000020000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 1
