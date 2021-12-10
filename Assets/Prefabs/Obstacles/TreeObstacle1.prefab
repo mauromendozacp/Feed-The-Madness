@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5947680863407625826}
   - component: {fileID: 6332720259763591864}
   m_Layer: 11
-  m_Name: Tree3
+  m_Name: TreeObstacle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,9 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 12.5
-  limitMask:
-    serializedVersion: 2
-    m_Bits: 1024
 --- !u!114 &6332720259763591864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,6 +60,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 2212315179894552216}
   startAnimPosZ: 100
+  survivorMask:
+    serializedVersion: 2
+    m_Bits: 512
+  treeObstacle: {fileID: 2326571120414365793}
 --- !u!1 &781201733928680609
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,6 +201,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 25
+--- !u!114 &4133709902589716546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329354906897102880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 869a369cff0c4ea47b52bed20d87517d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  event1:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6332720259763591864}
+        m_MethodName: EndCollider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  event2:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2326571120414365793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329354906897102880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2215a895de15ebb4f96095e46fd28397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  survivorMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &9013319393500913679
 GameObject:
   m_ObjectHideFlags: 0

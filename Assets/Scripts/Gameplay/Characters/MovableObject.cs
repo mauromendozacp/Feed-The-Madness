@@ -12,7 +12,6 @@ public class MovableObject : MonoBehaviour
     #region EXPOSED_FIELDS
 
     [SerializeField] private float speed = 0f;
-    [SerializeField] private LayerMask limitMask = default;
 
     #endregion
 

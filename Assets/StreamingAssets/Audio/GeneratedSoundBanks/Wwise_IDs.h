@@ -17,6 +17,7 @@ namespace AK
         static const AkUniqueID AMB_RAIN = 3302041772U;
         static const AkUniqueID AMB_TENT = 3300706377U;
         static const AkUniqueID AMB_WIND = 1439088316U;
+        static const AkUniqueID BACK_TO_MENU = 1110175026U;
         static const AkUniqueID CHA_AXE = 3931567716U;
         static const AkUniqueID CHA_AXE_SUCCESS = 1266274484U;
         static const AkUniqueID CHA_BOOST = 3502767369U;
@@ -42,6 +43,7 @@ namespace AK
 
             namespace STATE
             {
+                static const AkUniqueID MX_GAMEOVER = 4087515445U;
                 static const AkUniqueID MX_GAMEPLAY = 2655229457U;
                 static const AkUniqueID MX_MENU = 2103702368U;
                 static const AkUniqueID NONE = 748895195U;
@@ -74,6 +76,7 @@ namespace AK
                 static const AkUniqueID MX2 = 897451064U;
                 static const AkUniqueID MX3 = 897451065U;
                 static const AkUniqueID MX4 = 897451070U;
+                static const AkUniqueID MX5 = 897451071U;
             } // namespace SWITCH
         } // namespace MX_GAMEPLAY
 
@@ -102,13 +105,13 @@ namespace AK
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
-        static const AkUniqueID SOUNDBANKTESTXD = 3815026176U;
+        static const AkUniqueID MAIN = 3161908922U;
     } // namespace BANKS
 
     namespace BUSSES
     {
         static const AkUniqueID ACTOR = 2213570372U;
-        static const AkUniqueID HDR = 931844945U;
+        static const AkUniqueID AMB = 1117531639U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID MX = 1685527054U;
         static const AkUniqueID UI = 1551306167U;

@@ -42,19 +42,18 @@ public class PauseUI : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;
         gameObject.SetActive(false);
+        optionsPanel.SetActive(false);
         AkSoundEngine.SetState("pause", "off");
         paused = false;
     }
 
     public void ShowPause()
     {
-        gameObject.SetActive(true);
         optionsPanel.SetActive(false);
     }
 
     public void ShowOptions()
     {
-        gameObject.SetActive(false);
         optionsPanel.SetActive(true);
     }
 

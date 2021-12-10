@@ -7,6 +7,7 @@ public class TreeFall : MonoBehaviour
 
     [SerializeField] private Animator anim;
     [SerializeField] private float startAnimPosZ = 0f;
+    [SerializeField] private TreeObstacle treeObstacle = null;
 
     #endregion
 
@@ -28,13 +29,22 @@ public class TreeFall : MonoBehaviour
         }
 
         playAnim = false;
+        treeObstacle.ColliderOn = true;
         anim.SetTrigger("off");
-        UnityEngine.Debug.Log("idle");
     }
 
     private void Update()
     {
         Fall();
+    }
+
+    #endregion
+
+    #region PUBLIC_METHODS
+
+    public void EndCollider()
+    {
+        treeObstacle.ColliderOn = false;
     }
 
     #endregion
@@ -50,7 +60,6 @@ public class TreeFall : MonoBehaviour
         {
             playAnim = true;
             anim.SetTrigger("fall");
-            UnityEngine.Debug.Log("caer");
             AkSoundEngine.PostEvent("amb_falling_tree", gameObject);
         }
     }
