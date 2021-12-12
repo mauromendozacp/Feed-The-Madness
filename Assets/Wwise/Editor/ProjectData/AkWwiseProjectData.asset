@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 2a70283be1c03f4ea481655b176d90e2
     GuidInternal: 
-    m_lastTime: -8585626931361548289
+    m_lastTime: -8585622680057393274
     List:
     - name: actor
       guid: 4cfbe9950881334da79f891d6fa48649
@@ -162,7 +162,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 56714d5b82b64b4895ddb6b49b972b1f
     GuidInternal: 
-    m_lastTime: -8585626931362176597
+    m_lastTime: -8585622680057502982
     List:
     - name: amb_falling_tree
       guid: b4d4a0c590fc23478ef28b565eae5d6c
@@ -384,7 +384,7 @@ MonoBehaviour:
       Path: Events\Default Work Unit\cha_footsteps
       maxAttenuation: 0
       maxDuration: 1.431656
-      minDuration: 0.557173
+      minDuration: 0.393986
     - name: cha_heart
       guid: 1876a66ebe15a4488ab8e9cf1c01129b
       id: 3994005892

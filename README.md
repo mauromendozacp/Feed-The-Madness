@@ -27,6 +27,10 @@ This is a game being developed by students from <a href="https://www.imagecampus
 - Tomas Hirsch "Tester"
 - Ignacio Carrizo "Tester"
 - Gabriel Manrique "Tester"
+- Gonzalo Stutz "Tester"
+- Mariano Rey Ordoñez "Tester"
+- Javier Hernan Fernandez Scianca "Tester"
+- Alejandro Oddera "Tester"
 
 This game was also possible thanks to the support of these professors:
 

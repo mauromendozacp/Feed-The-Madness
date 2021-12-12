@@ -80,7 +80,7 @@ public class LevelController : MonoBehaviour
 
         killer.InitModuleHandlers(lcActions);
         hud.InitModuleHandlers(killer.KActions);
-        debug.InitModuleHandlers(killer.KActions, lcActions);
+        //debug.InitModuleHandlers(killer.KActions, lcActions);
     }
 
     private void Init()
