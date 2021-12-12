@@ -6,8 +6,7 @@ public class Character : MonoBehaviour
 
     [SerializeField] protected float horizontalSpeed = 0f;
     [SerializeField] protected float jumpForce = 0f;
-    [SerializeField] protected float jumpTimer = 0f;
-    [SerializeField] protected float jumpDistance = 0f;
+    [SerializeField] protected float gravityMultiplier = 0f;
     [SerializeField] protected LayerMask obstacleMask = default;
 
     #endregion
@@ -22,7 +21,6 @@ public class Character : MonoBehaviour
     protected bool isGrounded = false;
     protected float origGroundCheckDistance = 0f;
     protected float groundCheckDistance = 0.2f;
-    protected float gravityMultiplier = 5f;
 
     #endregion
 
@@ -42,6 +40,10 @@ public class Character : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody>();
         capsule = GetComponent<CapsuleCollider>();
+
+        float height = capsule.height;
+        origGroundCheckDistance = height * 15 / 16;
+        groundCheckDistance = height / 2 + 0.5f;
     }
 
     #endregion
@@ -50,23 +52,15 @@ public class Character : MonoBehaviour
 
     protected virtual void Jump()
     {
-        if (jumping)
+        if (!isGrounded)
             return;
 
-        jumping = true;
-        rigid.velocity = Vector3.zero;
-        rigid.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-        Invoke(nameof(RestartJump), jumpTimer);
-    }
-
-    protected void RestartJump()
-    {
-        jumping = false;
+        rigid.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 
     protected void CheckGroundStatus()
     {
-        isGrounded = Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out _, groundCheckDistance);
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, out _, groundCheckDistance);
 
         if (!isGrounded)
             HandleAirborneMovement();
@@ -74,9 +68,7 @@ public class Character : MonoBehaviour
 
     private void HandleAirborneMovement()
     {
-        Vector3 extraGravityForce = (Physics.gravity * gravityMultiplier) - Physics.gravity;
-        rigid.AddForce(extraGravityForce);
-
+        rigid.AddForce(Physics.gravity * gravityMultiplier);
         groundCheckDistance = rigid.velocity.y < 0 ? origGroundCheckDistance : groundCheckDistance;
     }
 

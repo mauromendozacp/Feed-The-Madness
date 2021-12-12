@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public struct RESPAWN
     public GameObject prefab;
     public float percent;
     public int length;
+    public bool once;
     public bool enabled;
 }
 
@@ -21,6 +23,7 @@ public class PoolManager : MonoBehaviour
 
     #region PRIVATE_FIELDS
 
+    private float onceTimer = 15f;
     private float limitZ = -6f;
     private Queue<GameObject>[] pool;
 
@@ -89,7 +92,18 @@ public class PoolManager : MonoBehaviour
             if (percent < respawns[i].percent
                 && respawns[i].enabled)
             {
+                if (respawns[i].once)
+                {
+                     respawns[i].enabled = false;
+                    IEnumerator RestartOnce()
+                    {
+                        yield return new WaitForSeconds(onceTimer);
+                        respawns[i].enabled = true;
+                    }
+                    StartCoroutine(RestartOnce());
+                }
                 index = i;
+
                 break;
             }
         }

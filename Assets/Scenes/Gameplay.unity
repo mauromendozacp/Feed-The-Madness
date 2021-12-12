@@ -569,8 +569,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 50, y: 5, z: 50}
-  m_Center: {x: 33, y: 0, z: 0}
+  m_Size: {x: 50, y: 0.5754986, z: 50}
+  m_Center: {x: 33, y: -0.07996082, z: 0}
 --- !u!114 &142289333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1518,76 +1518,91 @@ MonoBehaviour:
       type: 3}
     percent: 6
     length: 5
+    once: 0
     enabled: 1
   - prefab: {fileID: 3702245979201308299, guid: b410b2fe28635a74dbcc9272a10009ed,
       type: 3}
     percent: 12
     length: 5
+    once: 0
     enabled: 1
   - prefab: {fileID: 3702245979201308299, guid: 06a25a0faa658da4188312f92bd2a2c2,
       type: 3}
     percent: 18
     length: 5
+    once: 0
     enabled: 1
   - prefab: {fileID: 3702245979201308299, guid: f37ef95a3688a224b9a6b9846a61a29e,
       type: 3}
     percent: 24
     length: 5
+    once: 0
     enabled: 1
   - prefab: {fileID: 3702245979201308299, guid: 1e19ed5267e36774288d052920a24b92,
       type: 3}
     percent: 30
     length: 5
+    once: 0
     enabled: 1
   - prefab: {fileID: 3702245979201308299, guid: c9178d07ed7666645bcc10565c45b6c0,
       type: 3}
     percent: 36
     length: 5
+    once: 0
     enabled: 1
   - prefab: {fileID: 3702245979201308299, guid: 704abcedde869be478e9f503e0cb4ecb,
       type: 3}
     percent: 42
     length: 5
+    once: 0
     enabled: 1
   - prefab: {fileID: 3702245979201308299, guid: b6479ba04333a074ca2831d11cac6542,
       type: 3}
     percent: 48
     length: 5
+    once: 0
     enabled: 1
   - prefab: {fileID: 3702245979201308299, guid: ff15df4b14f588240a0fcb642c34c65f,
       type: 3}
     percent: 54
     length: 5
+    once: 0
     enabled: 1
   - prefab: {fileID: 3702245979201308299, guid: 7d4de1c235c862744bf9401703641b30,
       type: 3}
     percent: 60
     length: 5
+    once: 0
     enabled: 1
   - prefab: {fileID: 3702245979201308299, guid: 77b0ba69ddb619f4fa1d6c53f656849e,
       type: 3}
     percent: 66
     length: 5
+    once: 0
     enabled: 1
   - prefab: {fileID: 3702245979201308299, guid: f623a40ac24b28545b5e837042a0a560,
       type: 3}
     percent: 72
     length: 5
+    once: 0
     enabled: 1
   - prefab: {fileID: 3702245979201308299, guid: f32651f62beaa9a4e9cc25c1273ec0fd,
       type: 3}
     percent: 78
     length: 5
+    once: 0
     enabled: 1
   - prefab: {fileID: 3702245979201308299, guid: 1864ffec06597fc4c872e68503dc61ee,
       type: 3}
     percent: 85
     length: 5
+    once: 0
     enabled: 1
   - prefab: {fileID: 3702245979201308299, guid: baa5290b71f05fd4f81825413a398e3f,
       type: 3}
     percent: 100
     length: 5
+    once: 0
     enabled: 1
 --- !u!1 &356593702
 GameObject:
@@ -1658,18 +1673,21 @@ MonoBehaviour:
   respawns:
   - prefab: {fileID: 1587300316429414045, guid: ca819a5c6db1cb145b2da1d8ef76172e,
       type: 3}
-    percent: 65
+    percent: 55
     length: 15
+    once: 0
     enabled: 1
   - prefab: {fileID: 2658974923963703165, guid: 3c5a2122dd926444c8ba78a3675aae83,
       type: 3}
-    percent: 95
+    percent: 85
     length: 15
+    once: 0
     enabled: 0
   - prefab: {fileID: 6339138212634853913, guid: ad003cd33992a034b875148010d6aa58,
       type: 3}
     percent: 100
     length: 10
+    once: 1
     enabled: 0
 --- !u!4 &360270197 stripped
 Transform:
@@ -2625,17 +2643,20 @@ MonoBehaviour:
   respawns:
   - prefab: {fileID: 4308386678919005538, guid: 17337c45921c4854ba9424256da553cb,
       type: 3}
-    percent: 90
+    percent: 85
     length: 50
+    once: 0
     enabled: 1
   - prefab: {fileID: 1422037559557303383, guid: 78ab0c9040307584c84d2e6524d30a55,
       type: 3}
-    percent: 91
+    percent: 90
     length: 10
+    once: 1
     enabled: 1
   - prefab: {fileID: 405364177551208027, guid: 7de74012b15a5334f9b02e4cc6880c29, type: 3}
     percent: 100
     length: 20
+    once: 0
     enabled: 0
 --- !u!1 &458157522
 GameObject:
@@ -2895,7 +2916,6 @@ GameObject:
   m_Component:
   - component: {fileID: 499798608}
   - component: {fileID: 499798609}
-  - component: {fileID: 499798610}
   m_Layer: 0
   m_Name: Environment
   m_TagString: Untagged
@@ -2944,7 +2964,7 @@ MonoBehaviour:
   killer: {fileID: 2056854051}
   hud: {fileID: 712251332}
   floorLoop: {fileID: 41454200}
-  debug: {fileID: 499798610}
+  debug: {fileID: 0}
   difficulties:
   - difficulty: 0
     time: 30
@@ -2961,20 +2981,6 @@ MonoBehaviour:
   obstacleManager: {fileID: 356593705}
   treeLeftManager: {fileID: 457548435}
   treeRightManager: {fileID: 1453028427}
---- !u!114 &499798610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 499798607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 145010c73116eca438a7ece4acf4b9a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debugPanel: {fileID: 1214217912}
-  transitionTime: 0.5
 --- !u!1001 &528772497
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4350,7 +4356,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 499798610}
+      - m_Target: {fileID: 0}
         m_MethodName: Invincible
         m_Mode: 1
         m_Arguments:
@@ -5283,7 +5289,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 499798610}
+      - m_Target: {fileID: 0}
         m_MethodName: ChangeDifficulty
         m_Mode: 3
         m_Arguments:
@@ -6637,8 +6643,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 50, y: 5, z: 33}
-  m_Center: {x: 33, y: 0, z: 17}
+  m_Size: {x: 50, y: 0.4982834, z: 33}
+  m_Center: {x: 33, y: -0.08590889, z: 17}
 --- !u!114 &1214910057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6904,6 +6910,7 @@ MonoBehaviour:
       type: 3}
     percent: 100
     length: 50
+    once: 0
     enabled: 1
 --- !u!1 &1249307390
 GameObject:
@@ -7753,7 +7760,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 499798610}
+      - m_Target: {fileID: 0}
         m_MethodName: ChangeDifficulty
         m_Mode: 3
         m_Arguments:
@@ -7876,17 +7883,20 @@ MonoBehaviour:
   respawns:
   - prefab: {fileID: 4308386678919005538, guid: 335dea94c15c81243806c37af0e0818c,
       type: 3}
-    percent: 90
+    percent: 85
     length: 50
+    once: 0
     enabled: 1
   - prefab: {fileID: 1422037559557303383, guid: 2e88d957efa3a3649b16c35e11d13e9b,
       type: 3}
-    percent: 91
+    percent: 90
     length: 10
+    once: 1
     enabled: 1
   - prefab: {fileID: 405364177551208027, guid: 4457533ecbfe80d40927b773b41a45c5, type: 3}
     percent: 100
     length: 20
+    once: 0
     enabled: 0
 --- !u!1001 &1461227464
 PrefabInstance:
@@ -9412,7 +9422,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 499798610}
+      - m_Target: {fileID: 0}
         m_MethodName: ChangeDifficulty
         m_Mode: 3
         m_Arguments:
@@ -9702,8 +9712,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 50, y: 5, z: 50}
-  m_Center: {x: 33, y: 0, z: 0}
+  m_Size: {x: 50, y: 0.6380291, z: 50}
+  m_Center: {x: 33, y: 0.0671072, z: 0}
 --- !u!114 &1789357286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9944,7 +9954,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 499798610}
+      - m_Target: {fileID: 0}
         m_MethodName: UnlimitedAxes
         m_Mode: 1
         m_Arguments:
@@ -10771,6 +10781,7 @@ MonoBehaviour:
       type: 3}
     percent: 100
     length: 50
+    once: 0
     enabled: 1
 --- !u!4 &1998010297 stripped
 Transform:
@@ -11289,7 +11300,7 @@ PrefabInstance:
     - target: {fileID: 4543504702171015179, guid: 16f9c7563e3648a4eac8583defa32e0e,
         type: 3}
       propertyPath: jumpForce
-      value: 225
+      value: 275
       objectReference: {fileID: 0}
     - target: {fileID: 4543504702171015179, guid: 16f9c7563e3648a4eac8583defa32e0e,
         type: 3}
@@ -11360,6 +11371,11 @@ PrefabInstance:
         type: 3}
       propertyPath: limitMask.m_Bits
       value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 4543504702171015179, guid: 16f9c7563e3648a4eac8583defa32e0e,
+        type: 3}
+      propertyPath: gravityMultiplier
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 4543504702171015179, guid: 16f9c7563e3648a4eac8583defa32e0e,
         type: 3}

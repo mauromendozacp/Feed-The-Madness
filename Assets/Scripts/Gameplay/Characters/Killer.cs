@@ -125,7 +125,6 @@ public class Killer : Character
         base.Awake();
 
         postProcessManager.Init();
-        origGroundCheckDistance = capsule.height * 15 / 16;
     }
 
     private void Start()
@@ -139,15 +138,15 @@ public class Killer : Character
 
     private void Update()
     {
-        if (!dead)
-        {
-            Attack();
-            Throw();
-            InputJump();
-            CheckGroundStatus();
-            DecreaseCraziness();
-            LocationSound();
-        }
+        if (dead)
+            return;
+
+        Attack();
+        Throw();
+        InputJump();
+        CheckGroundStatus();
+        DecreaseCraziness();
+        LocationSound();
     }
 
     private void FixedUpdate()
