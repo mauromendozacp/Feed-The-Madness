@@ -296,6 +296,108 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{40BE0899-DB8C-4413-A5EB-0707ECCAE6DB}" ShortID="955394694">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="FadeTime" Type="Real64" Value="3"/>
+								<Property Name="Lowpass" Type="int16" Value="40"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ambient" ID="{98A4AAD4-8E6B-47D0-B5B3-CC6A3EBD03F8}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{58D13AA7-140F-47C9-B873-CDA79F212021}" ShortID="961653563">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="26"/>
+								<Property Name="FadeTime" Type="Real64" Value="3"/>
+								<Property Name="Lowpass" Type="int16" Value="40"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="mx" ID="{4683BB79-93D5-4503-A91B-47EEC292E344}" WorkUnitID="{2635C566-F42E-485A-AC76-B775F6474BC5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{DE88E5BC-4608-489C-8CF3-08457667847F}" ShortID="191399014">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="27"/>
+								<Property Name="Delay" Type="Real64" Value="3"/>
+								<Property Name="FadeTime" Type="Real64" Value="2.5"/>
+								<Property Name="Lowpass" Type="int16" Value="40"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ambient" ID="{98A4AAD4-8E6B-47D0-B5B3-CC6A3EBD03F8}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{968178AE-93B3-4984-8D5B-607876E3D505}" ShortID="341003178">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="27"/>
+								<Property Name="Delay" Type="Real64" Value="3"/>
+								<Property Name="FadeTime" Type="Real64" Value="2.5"/>
+								<Property Name="Lowpass" Type="int16" Value="40"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="mx" ID="{4683BB79-93D5-4503-A91B-47EEC292E344}" WorkUnitID="{2635C566-F42E-485A-AC76-B775F6474BC5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{413606D5-FFE8-4C22-BC6D-03C208A47A52}" ShortID="945408569">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="29"/>
+								<Property Name="FadeTime" Type="Real64" Value="3"/>
+								<Property Name="Highpass" Type="int16" Value="20"/>
+								<Property Name="Lowpass" Type="int16" Value="40"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ambient" ID="{98A4AAD4-8E6B-47D0-B5B3-CC6A3EBD03F8}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{57B5BD6D-1AA6-4E78-A27A-12142B66AF95}" ShortID="194043679">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="29"/>
+								<Property Name="FadeTime" Type="Real64" Value="3"/>
+								<Property Name="Highpass" Type="int16" Value="20"/>
+								<Property Name="Lowpass" Type="int16" Value="40"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="mx" ID="{4683BB79-93D5-4503-A91B-47EEC292E344}" WorkUnitID="{2635C566-F42E-485A-AC76-B775F6474BC5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{C637CAC3-4D25-447B-933A-AB1538F37A8B}" ShortID="13897360">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="30"/>
+								<Property Name="Delay" Type="Real64" Value="3"/>
+								<Property Name="FadeTime" Type="Real64" Value="2.5"/>
+								<Property Name="Lowpass" Type="int16" Value="40"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ambient" ID="{98A4AAD4-8E6B-47D0-B5B3-CC6A3EBD03F8}" WorkUnitID="{06F532AF-9487-4992-B555-064973FD96F2}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{077BA892-2080-4E19-880E-B648280E1C64}" ShortID="333161924">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="30"/>
+								<Property Name="Delay" Type="Real64" Value="3"/>
+								<Property Name="FadeTime" Type="Real64" Value="2.5"/>
+								<Property Name="Lowpass" Type="int16" Value="40"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="mx" ID="{4683BB79-93D5-4503-A91B-47EEC292E344}" WorkUnitID="{2635C566-F42E-485A-AC76-B775F6474BC5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="amb_falling_tree" ID="{C5A0D4B4-FC90-4723-8EF2-8B565EAE5D6C}">

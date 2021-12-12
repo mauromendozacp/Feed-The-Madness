@@ -166,6 +166,7 @@
 						</Bus>
 						<Bus Name="UI" ID="{9B362709-8CAB-4C0A-9D3A-A22AD8EF4E5E}">
 							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="BusVolume" Type="Real64">
 									<RTPCList>
 										<RTPC Name="" ID="{A6772948-8CFF-4C0C-B768-0CD64967E1A1}" ShortID="251304932">
@@ -197,7 +198,15 @@
 								</Property>
 								<Property Name="Color" Type="int16" Value="19"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="20"/>
 							</PropertyList>
+							<PositioningInfo>
+								<Panner Name="" ID="{74F04344-1A6A-4A45-B882-3BAA61A95875}">
+									<PropertyList>
+										<Property Name="PanX" Type="Real64" Value="-86.1486486486486"/>
+									</PropertyList>
+								</Panner>
+							</PositioningInfo>
 							<ObjectLists/>
 						</Bus>
 						<Bus Name="amb" ID="{14A8922E-3952-404E-B557-AB4E42225EF2}">

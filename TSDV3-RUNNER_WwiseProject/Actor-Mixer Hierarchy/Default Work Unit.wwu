@@ -7,6 +7,11 @@
 					<PropertyList>
 						<Property Name="Color" Type="int16" Value="1"/>
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>3</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -18,6 +23,13 @@
 					</ReferenceList>
 					<ChildrenList>
 						<SwitchContainer Name="footsteps" ID="{2ABCC5DA-3438-4E26-AF8A-271138A21558}" ShortID="1037496378">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F4B47D6-CD1C-452F-8B2B-ABD4A8FD7570}"/>
@@ -82,6 +94,11 @@
 													<PropertyList>
 														<Property Name="3DSpatialization" Type="int16" Value="2"/>
 														<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+														<Property Name="Highpass" Type="int16">
+															<ValueList>
+																<Value>35</Value>
+															</ValueList>
+														</Property>
 														<Property Name="SpeakerPanning" Type="int16" Value="1"/>
 														<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="20"/>
 													</PropertyList>
@@ -131,6 +148,11 @@
 													<PropertyList>
 														<Property Name="3DSpatialization" Type="int16" Value="2"/>
 														<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+														<Property Name="Highpass" Type="int16">
+															<ValueList>
+																<Value>35</Value>
+															</ValueList>
+														</Property>
 														<Property Name="SpeakerPanning" Type="int16" Value="1"/>
 														<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="20"/>
 													</PropertyList>
@@ -322,12 +344,28 @@
 											</ChildrenList>
 											<ObjectLists/>
 										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="water" ID="{C9C28D9F-CE66-47B2-B90B-6B63A8CEE0DA}" ShortID="475908522">
+										<RandomSequenceContainer Name="water" ID="{9B526F3D-1926-494B-954F-6BB6ADA5C77A}" ShortID="8175654">
 											<PropertyList>
 												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 												<Property Name="Pitch" Type="int32">
 													<ValueList>
 														<Value>-600</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{B9A5A61E-B5CF-4369-805A-94BDBDDC76EB}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="300"/>
+																	<Property Name="Min" Type="Real64" Value="-300"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-3</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -340,7 +378,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<Sound Name="water_footstep2" ID="{5E949330-F8BF-42DC-AF9C-8A3CAF977D92}" ShortID="257253611">
+												<Sound Name="water_footstep2" ID="{743C7565-1C33-4927-AE79-3316921E441E}" ShortID="360320700">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F4B47D6-CD1C-452F-8B2B-ABD4A8FD7570}"/>
@@ -350,7 +388,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="water_footstep2" ID="{29F3B5C0-A47C-457C-9904-CB95631DC140}">
+														<AudioFileSource Name="water_footstep2" ID="{716BABEE-06FD-4AB0-BF97-330263D035DF}">
 															<PropertyList>
 																<Property Name="FadeInDuration" Type="Real64" Value="0.23920244665195"/>
 																<Property Name="FadeOutDuration" Type="Real64" Value="0.246877391464312"/>
@@ -367,10 +405,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="water_footstep2" ID="{29F3B5C0-A47C-457C-9904-CB95631DC140}" Platform="Linked"/>
+														<ActiveSource Name="water_footstep2" ID="{716BABEE-06FD-4AB0-BF97-330263D035DF}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="water_footstep3" ID="{E8D20267-CF88-4BD0-9B4E-0564F49979B6}" ShortID="169766681">
+												<Sound Name="water_footstep3" ID="{065CE80F-E4A9-4319-9730-21F837351286}" ShortID="684263121">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F4B47D6-CD1C-452F-8B2B-ABD4A8FD7570}"/>
@@ -380,7 +418,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="water_footstep3" ID="{3358C7F2-1475-4EF2-9938-500219327D0C}">
+														<AudioFileSource Name="water_footstep3" ID="{D73EA7B4-7F94-48A8-A353-78D6A96B9795}">
 															<PropertyList>
 																<Property Name="FadeInDuration" Type="Real64" Value="0.15923289183223"/>
 																<Property Name="FadeOutDuration" Type="Real64" Value="0.296247240618102"/>
@@ -397,7 +435,69 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="water_footstep3" ID="{3358C7F2-1475-4EF2-9938-500219327D0C}" Platform="Linked"/>
+														<ActiveSource Name="water_footstep3" ID="{D73EA7B4-7F94-48A8-A353-78D6A96B9795}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="water_footstep2_01" ID="{7E6E2813-E9A1-46F7-865D-3BF7448A1F0E}" ShortID="223185205">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F4B47D6-CD1C-452F-8B2B-ABD4A8FD7570}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="actor" ID="{95E9FB4C-8108-4D33-A79F-891D6FA48649}" WorkUnitID="{3B28702A-C0E1-4E3F-A481-655B176D90E2}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="water_footstep2" ID="{7451DA65-0E43-46BD-BE40-ACC19E7A12F3}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.23920244665195"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.246877391464312"/>
+																<Property Name="FadeOutShape" Type="int16" Value="1"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.0626787159676233"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.393980500367918"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>water_footstep2.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1053524387"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="water_footstep2" ID="{7451DA65-0E43-46BD-BE40-ACC19E7A12F3}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="water_footstep3_01" ID="{A1E4B089-5FC6-48CC-B27D-5B9C1D24C0ED}" ShortID="966378416">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F4B47D6-CD1C-452F-8B2B-ABD4A8FD7570}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="actor" ID="{95E9FB4C-8108-4D33-A79F-891D6FA48649}" WorkUnitID="{3B28702A-C0E1-4E3F-A481-655B176D90E2}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="water_footstep3" ID="{BB888F20-5EEE-433A-8D5E-5B128CC36406}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.15923289183223"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.296247240618102"/>
+																<Property Name="FadeOutShape" Type="int16" Value="1"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.0592494481236203"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.440667770419426"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>water_footstep3.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="384573135"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="water_footstep3" ID="{BB888F20-5EEE-433A-8D5E-5B128CC36406}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
@@ -561,17 +661,28 @@
 											</ChildrenList>
 											<ObjectLists/>
 										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="water" ID="{DB6F3724-0B2F-4597-BC62-2885B2285E2F}" ShortID="102530684">
+										<RandomSequenceContainer Name="water" ID="{01C4BE58-51F8-4952-936A-E669B366A15F}" ShortID="798952816">
 											<PropertyList>
 												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 												<Property Name="Pitch" Type="int32">
 													<ValueList>
 														<Value>-600</Value>
 													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{F086BFC7-F860-4C5F-A3A7-7223ADD4B0A2}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="300"/>
+																	<Property Name="Min" Type="Real64" Value="-300"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-3</Value>
+														<Value>-6</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -584,7 +695,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<Sound Name="water_footstep2" ID="{0AD5B6A5-3708-445D-8BEA-8061177DF410}" ShortID="1028686214">
+												<Sound Name="water_footstep2" ID="{EEBB7FE9-703A-4689-A240-C2E397BA3238}" ShortID="372384867">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F4B47D6-CD1C-452F-8B2B-ABD4A8FD7570}"/>
@@ -594,7 +705,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="water_footstep2" ID="{8406FA7A-88A9-4258-A0BB-BCADD99BFAF1}">
+														<AudioFileSource Name="water_footstep2" ID="{40B9FC06-CFBF-439C-A16A-F25E36C00500}">
 															<PropertyList>
 																<Property Name="FadeInDuration" Type="Real64" Value="0.23920244665195"/>
 																<Property Name="FadeOutDuration" Type="Real64" Value="0.246877391464312"/>
@@ -611,10 +722,10 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="water_footstep2" ID="{8406FA7A-88A9-4258-A0BB-BCADD99BFAF1}" Platform="Linked"/>
+														<ActiveSource Name="water_footstep2" ID="{40B9FC06-CFBF-439C-A16A-F25E36C00500}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="water_footstep3" ID="{3ED935D0-D4F8-47A3-8967-C892F071533F}" ShortID="366557989">
+												<Sound Name="water_footstep3" ID="{F16845B4-ABED-49DB-870D-70E2B4FA3707}" ShortID="84863498">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F4B47D6-CD1C-452F-8B2B-ABD4A8FD7570}"/>
@@ -624,7 +735,7 @@
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
-														<AudioFileSource Name="water_footstep3" ID="{59D9AD28-0A3D-48DD-B9F4-3AE2F42B9061}">
+														<AudioFileSource Name="water_footstep3" ID="{997AD24A-4EE3-49C0-8A68-F24B79DFF63F}">
 															<PropertyList>
 																<Property Name="FadeInDuration" Type="Real64" Value="0.15923289183223"/>
 																<Property Name="FadeOutDuration" Type="Real64" Value="0.296247240618102"/>
@@ -641,7 +752,69 @@
 													</ChildrenList>
 													<ObjectLists/>
 													<ActiveSourceList>
-														<ActiveSource Name="water_footstep3" ID="{59D9AD28-0A3D-48DD-B9F4-3AE2F42B9061}" Platform="Linked"/>
+														<ActiveSource Name="water_footstep3" ID="{997AD24A-4EE3-49C0-8A68-F24B79DFF63F}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="water_footstep2_01" ID="{ADDA93CC-BDBA-430C-A3F1-DBAA2CDD023D}" ShortID="926569526">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F4B47D6-CD1C-452F-8B2B-ABD4A8FD7570}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="actor" ID="{95E9FB4C-8108-4D33-A79F-891D6FA48649}" WorkUnitID="{3B28702A-C0E1-4E3F-A481-655B176D90E2}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="water_footstep2" ID="{D38E2267-C9CE-41F0-958E-655F97FC4EFE}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.23920244665195"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.246877391464312"/>
+																<Property Name="FadeOutShape" Type="int16" Value="1"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.0626787159676233"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.393980500367918"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>water_footstep2.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1053524387"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="water_footstep2" ID="{D38E2267-C9CE-41F0-958E-655F97FC4EFE}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="water_footstep3_01" ID="{7E32D1D7-99ED-4FA8-9CA4-81A8F2D16D09}" ShortID="1028054630">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F4B47D6-CD1C-452F-8B2B-ABD4A8FD7570}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="actor" ID="{95E9FB4C-8108-4D33-A79F-891D6FA48649}" WorkUnitID="{3B28702A-C0E1-4E3F-A481-655B176D90E2}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="water_footstep3" ID="{740247E1-A3C4-461C-820C-CE65E49BB843}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.15923289183223"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.296247240618102"/>
+																<Property Name="FadeOutShape" Type="int16" Value="1"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.0592494481236203"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.440667770419426"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>water_footstep3.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="384573135"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="water_footstep3" ID="{740247E1-A3C4-461C-820C-CE65E49BB843}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
@@ -662,6 +835,11 @@
 									<ChildrenList>
 										<RandomSequenceContainer Name="dirt" ID="{6E0D644A-4D8B-44BA-B47D-ED13E1B10FA8}" ShortID="542367293">
 											<PropertyList>
+												<Property Name="Highpass" Type="int16">
+													<ValueList>
+														<Value>40</Value>
+													</ValueList>
+												</Property>
 												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
 												<Property Name="Pitch" Type="int32">
 													<ValueList>
@@ -816,10 +994,21 @@
 													<ValueList>
 														<Value>-600</Value>
 													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{D34318D2-A8C9-403B-8BE4-69AF82D32C88}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="300"/>
+																	<Property Name="Min" Type="Real64" Value="-300"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
 												</Property>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-3</Value>
+														<Value>-9</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -892,6 +1081,68 @@
 														<ActiveSource Name="water_footstep3" ID="{03C87D79-B136-49F2-A3EE-ED3DD9CB6DE9}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
+												<Sound Name="water_footstep2_01" ID="{BDA0918E-79F4-4A43-B7C1-C4467B736DD9}" ShortID="888338820">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F4B47D6-CD1C-452F-8B2B-ABD4A8FD7570}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="actor" ID="{95E9FB4C-8108-4D33-A79F-891D6FA48649}" WorkUnitID="{3B28702A-C0E1-4E3F-A481-655B176D90E2}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="water_footstep2" ID="{FE8A84E9-51DC-4622-88E9-CB70425E553F}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.23920244665195"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.246877391464312"/>
+																<Property Name="FadeOutShape" Type="int16" Value="1"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.0626787159676233"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.393980500367918"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>water_footstep2.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1053524387"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="water_footstep2" ID="{FE8A84E9-51DC-4622-88E9-CB70425E553F}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="water_footstep3_01" ID="{55DC943C-5AC3-4324-83C5-B3D85CB91713}" ShortID="626745839">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F4B47D6-CD1C-452F-8B2B-ABD4A8FD7570}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="actor" ID="{95E9FB4C-8108-4D33-A79F-891D6FA48649}" WorkUnitID="{3B28702A-C0E1-4E3F-A481-655B176D90E2}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="water_footstep3" ID="{F20B69F5-7358-4B2C-8E09-96CDF96F1602}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.15923289183223"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.296247240618102"/>
+																<Property Name="FadeOutShape" Type="int16" Value="1"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimBegin" Type="Real64" Value="0.0592494481236203"/>
+																<Property Name="TrimEnd" Type="Real64" Value="0.440667770419426"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>water_footstep3.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="384573135"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="water_footstep3" ID="{F20B69F5-7358-4B2C-8E09-96CDF96F1602}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
 											</ChildrenList>
 											<ObjectLists/>
 										</RandomSequenceContainer>
@@ -935,15 +1186,12 @@
 							</GroupingInfo>
 						</SwitchContainer>
 						<ActorMixer Name="Horn" ID="{0CCA432A-319B-4353-9B8C-7ED46DF33EF7}" ShortID="711905908">
-							<PropertyList>
-								<Property Name="OverrideOutput" Type="bool" Value="True"/>
-							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F4B47D6-CD1C-452F-8B2B-ABD4A8FD7570}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="amb" ID="{14A8922E-3952-404E-B557-AB4E42225EF2}" WorkUnitID="{3B28702A-C0E1-4E3F-A481-655B176D90E2}"/>
+									<ObjectRef Name="actor" ID="{95E9FB4C-8108-4D33-A79F-891D6FA48649}" WorkUnitID="{3B28702A-C0E1-4E3F-A481-655B176D90E2}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -951,7 +1199,7 @@
 									<PropertyList>
 										<Property Name="MakeUpGain" Type="Real64">
 											<ValueList>
-												<Value>-18</Value>
+												<Value>-12</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -5415,7 +5663,7 @@
 										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-9</Value>
+												<Value>-6</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -5717,11 +5965,6 @@
 											</ModifierList>
 										</Property>
 										<Property Name="OverrideOutput" Type="bool" Value="True"/>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>-6</Value>
-											</ValueList>
-										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -6545,11 +6788,6 @@
 							</RTPCList>
 						</Property>
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-6</Value>
-							</ValueList>
-						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -6612,7 +6850,7 @@
 										<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="15"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>9</Value>
+												<Value>4</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -7382,7 +7620,7 @@
 										<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="15"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>9</Value>
+												<Value>4</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -9113,13 +9351,42 @@
 						<BlendContainer Name="Rain" ID="{B4636EA9-35F2-41C3-AFDD-24140C7DAF04}" ShortID="477022857">
 							<PropertyList>
 								<Property Name="BlendBehavior" Type="int16" Value="1"/>
+								<Property Name="OutputBusVolume" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{677BAF7B-F17B-4A0A-B2EC-FF0FE1267984}" ShortID="828316397">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="frenesi" ID="{01EA4C00-2601-4D67-A26A-A0009DA23B36}" WorkUnitID="{B618A953-CDD5-417A-9182-61FF8A662B32}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{F279B6BF-A4DC-4315-B0C5-145B3752E9F0}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-12</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>0</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+								<Property Name="OverrideOutput" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{1F4B47D6-CD1C-452F-8B2B-ABD4A8FD7570}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="amb" ID="{14A8922E-3952-404E-B557-AB4E42225EF2}" WorkUnitID="{3B28702A-C0E1-4E3F-A481-655B176D90E2}"/>
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3B28702A-C0E1-4E3F-A481-655B176D90E2}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -9280,6 +9547,9 @@
 									</ModifierList>
 								</Property>
 								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>6</Value>
+									</ValueList>
 									<ModifierList>
 										<ModifierInfo>
 											<Modifier Name="" ID="{28BC0381-062F-404C-AFF6-CE9F04950706}"/>
@@ -9431,11 +9701,6 @@
 											</Modifier>
 										</ModifierInfo>
 									</ModifierList>
-								</Property>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-6</Value>
-									</ValueList>
 								</Property>
 							</PropertyList>
 							<ReferenceList>
@@ -9594,6 +9859,11 @@
 						<Sound Name="ui_cooldown" ID="{407C2B4B-1EF6-41F8-80C7-C9114C4B6449}" ShortID="532397992">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>30</Value>
+									</ValueList>
+								</Property>
 								<Property Name="OverridePositioning" Type="bool" Value="True"/>
 								<Property Name="Pitch" Type="int32">
 									<ModifierList>
@@ -9608,12 +9878,7 @@
 									</ModifierList>
 								</Property>
 								<Property Name="SpeakerPanning" Type="int16" Value="1"/>
-								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-12</Value>
-									</ValueList>
-								</Property>
+								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="60"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -9635,7 +9900,7 @@
 							<PositioningInfo>
 								<Panner Name="" ID="{9B053DF2-453C-448C-A2F8-BABAC16958D6}">
 									<PropertyList>
-										<Property Name="PanX" Type="Real64" Value="-62.5"/>
+										<Property Name="PanX" Type="Real64" Value="-100"/>
 										<Property Name="PanY" Type="Real64" Value="100"/>
 									</PropertyList>
 								</Panner>
