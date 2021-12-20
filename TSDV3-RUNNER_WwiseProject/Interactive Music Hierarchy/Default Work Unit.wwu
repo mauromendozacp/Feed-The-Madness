@@ -23,7 +23,7 @@
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-3</Value>
+										<Value>3</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -69,6 +69,11 @@
 												<Property Name="LookAheadTime" Type="int16">
 													<ValueList>
 														<Value>200</Value>
+													</ValueList>
+												</Property>
+												<Property Name="PreFetchLength" Type="int16">
+													<ValueList>
+														<Value>2000</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -248,6 +253,11 @@
 														<Value>200</Value>
 													</ValueList>
 												</Property>
+												<Property Name="PreFetchLength" Type="int16">
+													<ValueList>
+														<Value>2000</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
@@ -425,6 +435,11 @@
 														<Value>200</Value>
 													</ValueList>
 												</Property>
+												<Property Name="PreFetchLength" Type="int16">
+													<ValueList>
+														<Value>2000</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
@@ -600,6 +615,11 @@
 												<Property Name="LookAheadTime" Type="int16">
 													<ValueList>
 														<Value>200</Value>
+													</ValueList>
+												</Property>
+												<Property Name="PreFetchLength" Type="int16">
+													<ValueList>
+														<Value>2000</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -847,6 +867,11 @@
 														<Value>200</Value>
 													</ValueList>
 												</Property>
+												<Property Name="PreFetchLength" Type="int16">
+													<ValueList>
+														<Value>1000</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
@@ -955,6 +980,11 @@
 												<Property Name="LookAheadTime" Type="int16">
 													<ValueList>
 														<Value>200</Value>
+													</ValueList>
+												</Property>
+												<Property Name="PreFetchLength" Type="int16">
+													<ValueList>
+														<Value>1000</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -1202,9 +1232,14 @@
 																<Value>True</Value>
 															</ValueList>
 														</Property>
+														<Property Name="LookAheadTime" Type="int16">
+															<ValueList>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
 														<Property Name="PreFetchLength" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -1305,9 +1340,14 @@
 																<Value>True</Value>
 															</ValueList>
 														</Property>
+														<Property Name="LookAheadTime" Type="int16">
+															<ValueList>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
 														<Property Name="PreFetchLength" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -1408,9 +1448,14 @@
 																<Value>True</Value>
 															</ValueList>
 														</Property>
+														<Property Name="LookAheadTime" Type="int16">
+															<ValueList>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
 														<Property Name="PreFetchLength" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -1511,9 +1556,14 @@
 																<Value>True</Value>
 															</ValueList>
 														</Property>
+														<Property Name="LookAheadTime" Type="int16">
+															<ValueList>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
 														<Property Name="PreFetchLength" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -1617,9 +1667,14 @@
 																<Value>True</Value>
 															</ValueList>
 														</Property>
+														<Property Name="LookAheadTime" Type="int16">
+															<ValueList>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
 														<Property Name="PreFetchLength" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -1876,9 +1931,14 @@
 																<Value>True</Value>
 															</ValueList>
 														</Property>
+														<Property Name="LookAheadTime" Type="int16">
+															<ValueList>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
 														<Property Name="PreFetchLength" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -2121,9 +2181,14 @@
 																<Value>True</Value>
 															</ValueList>
 														</Property>
+														<Property Name="LookAheadTime" Type="int16">
+															<ValueList>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
 														<Property Name="PreFetchLength" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -2467,7 +2532,12 @@
 														</Property>
 														<Property Name="LookAheadTime" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
+														<Property Name="PreFetchLength" Type="int16">
+															<ValueList>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -2573,7 +2643,12 @@
 														</Property>
 														<Property Name="LookAheadTime" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
+														<Property Name="PreFetchLength" Type="int16">
+															<ValueList>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -2679,7 +2754,12 @@
 														</Property>
 														<Property Name="LookAheadTime" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
+														<Property Name="PreFetchLength" Type="int16">
+															<ValueList>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -2844,7 +2924,12 @@
 														</Property>
 														<Property Name="LookAheadTime" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
+														<Property Name="PreFetchLength" Type="int16">
+															<ValueList>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -2950,7 +3035,12 @@
 														</Property>
 														<Property Name="LookAheadTime" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
+														<Property Name="PreFetchLength" Type="int16">
+															<ValueList>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -3261,7 +3351,12 @@
 														</Property>
 														<Property Name="LookAheadTime" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
+														<Property Name="PreFetchLength" Type="int16">
+															<ValueList>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -3646,7 +3741,12 @@
 														</Property>
 														<Property Name="LookAheadTime" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
+														<Property Name="PreFetchLength" Type="int16">
+															<ValueList>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -4117,7 +4217,12 @@
 														</Property>
 														<Property Name="LookAheadTime" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
+														<Property Name="PreFetchLength" Type="int16">
+															<ValueList>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -4527,7 +4632,12 @@
 														</Property>
 														<Property Name="LookAheadTime" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
+														<Property Name="PreFetchLength" Type="int16">
+															<ValueList>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -4630,7 +4740,12 @@
 														</Property>
 														<Property Name="LookAheadTime" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
+														<Property Name="PreFetchLength" Type="int16">
+															<ValueList>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -4733,7 +4848,12 @@
 														</Property>
 														<Property Name="LookAheadTime" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
+														<Property Name="PreFetchLength" Type="int16">
+															<ValueList>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -4836,7 +4956,12 @@
 														</Property>
 														<Property Name="LookAheadTime" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
+														<Property Name="PreFetchLength" Type="int16">
+															<ValueList>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -4939,7 +5064,12 @@
 														</Property>
 														<Property Name="LookAheadTime" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
+														<Property Name="PreFetchLength" Type="int16">
+															<ValueList>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -5253,7 +5383,12 @@
 														</Property>
 														<Property Name="LookAheadTime" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
+														<Property Name="PreFetchLength" Type="int16">
+															<ValueList>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -5580,7 +5715,12 @@
 														</Property>
 														<Property Name="LookAheadTime" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
+														<Property Name="PreFetchLength" Type="int16">
+															<ValueList>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -6085,7 +6225,12 @@
 														</Property>
 														<Property Name="LookAheadTime" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
+														<Property Name="PreFetchLength" Type="int16">
+															<ValueList>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -6188,7 +6333,12 @@
 														</Property>
 														<Property Name="LookAheadTime" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
+														<Property Name="PreFetchLength" Type="int16">
+															<ValueList>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -6291,7 +6441,12 @@
 														</Property>
 														<Property Name="LookAheadTime" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
+														<Property Name="PreFetchLength" Type="int16">
+															<ValueList>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -6394,7 +6549,12 @@
 														</Property>
 														<Property Name="LookAheadTime" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
+														<Property Name="PreFetchLength" Type="int16">
+															<ValueList>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -6500,7 +6660,12 @@
 														</Property>
 														<Property Name="LookAheadTime" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
+														<Property Name="PreFetchLength" Type="int16">
+															<ValueList>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -6816,7 +6981,12 @@
 														</Property>
 														<Property Name="LookAheadTime" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
+														<Property Name="PreFetchLength" Type="int16">
+															<ValueList>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -6919,7 +7089,12 @@
 														</Property>
 														<Property Name="LookAheadTime" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
+														<Property Name="PreFetchLength" Type="int16">
+															<ValueList>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -7022,7 +7197,12 @@
 														</Property>
 														<Property Name="LookAheadTime" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
+														<Property Name="PreFetchLength" Type="int16">
+															<ValueList>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -7125,7 +7305,12 @@
 														</Property>
 														<Property Name="LookAheadTime" Type="int16">
 															<ValueList>
-																<Value>200</Value>
+																<Value>0</Value>
+															</ValueList>
+														</Property>
+														<Property Name="PreFetchLength" Type="int16">
+															<ValueList>
+																<Value>2000</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -7374,7 +7559,6 @@
 								<MusicTransition Name="Transition" ID="{72B2E4DB-6874-47A7-B7F3-6D64BDB57D09}">
 									<PropertyList>
 										<Property Name="DestinationContextType" Type="int16" Value="2"/>
-										<Property Name="DestinationJumpPositionPreset" Type="int16" Value="1"/>
 										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
 										<Property Name="ExitSourceAt" Type="int16" Value="0"/>
 										<Property Name="SourceContextType" Type="int16" Value="2"/>

@@ -6576,8 +6576,8 @@
 																		<Flags>0</Flags>
 																	</Point>
 																	<Point>
-																		<XPos>85</XPos>
-																		<YPos>-12</YPos>
+																		<XPos>85.1292</XPos>
+																		<YPos>-2.57442</YPos>
 																		<Flags>0</Flags>
 																	</Point>
 																	<Point>
@@ -6640,8 +6640,8 @@
 																		<Flags>0</Flags>
 																	</Point>
 																	<Point>
-																		<XPos>70</XPos>
-																		<YPos>-6</YPos>
+																		<XPos>69.8708</XPos>
+																		<YPos>-2.17918</YPos>
 																		<Flags>0</Flags>
 																	</Point>
 																	<Point>
@@ -6704,8 +6704,8 @@
 																		<Flags>0</Flags>
 																	</Point>
 																	<Point>
-																		<XPos>55</XPos>
-																		<YPos>0</YPos>
+																		<XPos>55.1292</XPos>
+																		<YPos>2.45434</YPos>
 																		<Flags>0</Flags>
 																	</Point>
 																	<Point>
@@ -8579,7 +8579,7 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
-									<ObjectRef Name="Ambient Objects" ID="{342B6949-BBEE-4632-92E8-5951F9E1B7F7}" WorkUnitID="{9B8D850D-2BCB-40E5-8D94-A819916B2842}"/>
+									<ObjectRef Name="Tent" ID="{26E2C7DF-FD8F-4DBE-BC20-A591406278B2}" WorkUnitID="{9B8D850D-2BCB-40E5-8D94-A819916B2842}"/>
 								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
@@ -9377,6 +9377,31 @@
 												</PointList>
 											</Curve>
 										</RTPC>
+										<RTPC Name="" ID="{FCDC97A9-9506-4C45-A980-C4215FFAB8E0}" ShortID="170239416">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="sfx_volume" ID="{73C2809D-F228-4583-9E06-7D1D4638794A}" WorkUnitID="{B618A953-CDD5-417A-9182-61FF8A662B32}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{F1B7FC92-47CA-4DA9-B8C6-4F5692AED180}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-200</YPos>
+														<Flags>5</Flags>
+														<SegmentShape>Exp1</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>1</XPos>
+														<YPos>0</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
 									</RTPCList>
 								</Property>
 								<Property Name="OverrideOutput" Type="bool" Value="True"/>
@@ -9509,6 +9534,27 @@
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="pause" ID="{F9B1D6DD-5DBF-4111-9587-17F7C41310A5}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="on" ID="{42228F38-D817-4AF9-B33A-80C2725752D9}"/>
+										<CustomState Name="" ID="{BC987F1E-59E0-4B85-B1DC-830058433663}" ShortID="79893620">
+											<PropertyList>
+												<Property Name="Lowpass" Type="int16" Value="40"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="off" ID="{6107D4A2-A104-4E7B-9057-A2245A272303}"/>
+										<CustomState Name="" ID="{80592973-7827-4AB8-A276-F355B11D4832}" ShortID="185716209"/>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
 							<ObjectLists/>
 						</BlendContainer>
 					</ChildrenList>
